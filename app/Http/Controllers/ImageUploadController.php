@@ -29,7 +29,7 @@ class ImageUploadController extends Controller
         $imageName = time().'.'.$request->image->extension();  
      
         $path = Storage::disk('s3')->put('images', $request->image);
-        // $path = Storage::disk('s3')->url($path);
+        //$path = Storage::disk('s3')->url($path);
   
         /* Store $imageName name in DATABASE from HERE */
     
