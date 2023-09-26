@@ -41,3 +41,6 @@ Route::get('/tregister', function () {
     return view('tregister');
 });
 
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
+});
