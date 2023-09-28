@@ -67,11 +67,11 @@ Bootstrap 5 HTML CSS Template
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="login.html"><b>Login</b></a>
+                            <a class="nav-link click-scroll" href="/login"><b>Login</b></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="registration.html"><b>Register</b></a>
+                            <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
                         </li>
                     </ul>
                 </div>
