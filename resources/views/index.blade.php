@@ -148,85 +148,33 @@ Bootstrap 5 HTML CSS Template
                 </div>
             </section>
 
+            
 
+
+
+            
             
                
             <section class= "advertisement" id="section_3">
+
                 <div class="col-lg-12 col-12">
                      <h2>Our Tutors</h2>
                 </div>
             </section>
+            
             <section class="content">
+            
+                
                      <div class="col-lg-12 col-12">
                         <div class="subject">
                             <h3><i><u>Combine Maths</u></i></h3>
                         </div>
                     </div>
+                
+            <div class="row">
 
-                    <div class="row">
-                        <div class="col-lg-4 col-12">
-                            <div class="col">
-                                <img src="images/team-01.png">
-                                    <h2>James Fernando </h2>
-                                        <p> Experience: 5 years<br>
-                                        Rate: $50/hour<br>
-                                        <a href="#">Contact</a></p>
-                        
-                         </div>
-                    </div>
+                <div class="owl-carousel reviews-carousel">
 
-                    <div class="col-lg-4 col-12">
-                         <div class="col">
-                            <img src="images/team-01.png">
-                                <h2>James Fernando </h2>
-                                    <p> Experience: 5 years<br>
-                                    Rate: $50/hour<br>
-                                    <a href="#">Contact</a></p>
-                        </div>
-                    </div>
-
-                        
-                    <div class="col-lg-4 col-12">
-                        <div class="col">
-                            <img src="images/team-01.png">
-                                <h2>James Fernando </h2>
-                                    <p> Experience: 5 years<br>
-                                    Rate: $50/hour<br>
-                                    <a href="#">Contact</a></p>
-                        </div>
-                    </div>
-                </div>
-            
-       
-                <div class="col-lg-12 col-12">
-                    <div class="subject">
-                        <h3><i><u>Biology</u></i></h3>
-                    </div>
-                </div>  
-                <div class="row">
-                    <div class="col-lg-4 col-12">
-                        <div class="col">
-                            <img src="images/team-01.png">
-                                <h2>James Fernando </h2>
-                                    <p> Experience: 5 years<br>
-                                    Rate: $50/hour<br>
-                                    <a href="#">Contact</a></p>
-                    
-                     </div>
-                </div>
-
-                <div class="col-lg-4 col-12">
-                     <div class="col">
-                        <img src="images/team-01.png">
-                            <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                    </div>
-                </div>
-
-                    
-                <div class="col-lg-4 col-12">
                     <div class="col">
                         <img src="images/team-01.png">
                             <h2>James Fernando </h2>
@@ -234,39 +182,116 @@ Bootstrap 5 HTML CSS Template
                                 Rate: $50/hour<br>
                                 <a href="#">Contact</a></p>
                     </div>
+                        
+
+                   <div class="col">
+                        <img src="images/team-01.png">
+                            <h2>James Fernando </h2>
+                                <p> Experience: 5 years<br>
+                                Rate: $50/hour<br>
+                                <a href="#">Contact</a></p>
+                        
+                    </div>
+
+                    
+                    <div class="col">
+                        <img src="images/team-01.png">
+                            <h2>James Fernando </h2>
+                                <p> Experience: 5 years<br>
+                                Rate: $50/hour<br>
+                                <a href="#">Contact</a></p>
+                    </div>
+                    
+                    <div class="col">
+                        <img src="images/team-01.png">
+                            <h2>James Fernando </h2>
+                                <p> Experience: 5 years<br>
+                                Rate: $50/hour<br>
+                                <a href="#">Contact</a></p>
+                    </div>
+                   
+                    <div class="col">
+                        <img src="images/team-01.png">
+                            <h2>James Fernando </h2>
+                                <p> Experience: 5 years<br>
+                                Rate: $50/hour<br>
+                                <a href="#">Contact</a></p>
+                    </div>
+
                 </div>
+            </div>
+            
+       
+               
+            <div class="col-lg-12 col-12">
+                    <div class="subject">
+                        <h3><i><u>Biology</u></i></h3>
+                    </div>
             </div> 
 
+                <div class="row">
+                    
+                    <div class="owl-carousel reviews-carousel">
 
+                        <div class="col">
+                            <img src="images/team-01.png">
+                                <h2>James Fernando </h2>
+                                    <p> Experience: 5 years<br>
+                                    Rate: $50/hour<br>
+                                    <a href="#">Contact</a></p>
+                    
+                        </div>
+               
+
+                        <div class="col">
+                            <img src="images/team-01.png">
+                                <h2>James Fernando </h2>
+                                <p> Experience: 5 years<br>
+                                Rate: $50/hour<br>
+                                <a href="#">Contact</a></p>
+                        </div>
+                
+
+                        <div class="col">
+                            <img src="images/team-01.png">
+                                <h2>James Fernando </h2>
+                                    <p> Experience: 5 years<br>
+                                    Rate: $50/hour<br>
+                                    <a href="#">Contact</a></p>
+                        </div>
+
+
+                        <div class="col">
+                            <img src="images/team-01.png">
+                                <h2>James Fernando </h2>
+                                    <p> Experience: 5 years<br>
+                                    Rate: $50/hour<br>
+                                    <a href="#">Contact</a></p>
+                        </div>
+                    
+                    </div>
+                </div> 
+
+
+            
             <div class="col-lg-12 col-12">
                 <div class="subject">
                     <h3><i><u>Chemistry</u></i></h3>
                 </div>
-            </div>  
-            <div class="row">
-                <div class="col-lg-4 col-12">
-                    <div class="col">
-                        <img src="images/team-01.png">
-                            <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                
-                 </div>
-            </div>
+            </div> 
 
-            <div class="col-lg-4 col-12">
-                 <div class="col">
+            <div class="row">
+                
+            <div class="owl-carousel reviews-carousel">
+
+                <div class="col">
                     <img src="images/team-01.png">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
+                             Rate: $50/hour<br>
                             <a href="#">Contact</a></p>
                 </div>
-            </div>
-
-                
-            <div class="col-lg-4 col-12">
+            
                 <div class="col">
                     <img src="images/team-01.png">
                         <h2>James Fernando </h2>
@@ -274,16 +299,36 @@ Bootstrap 5 HTML CSS Template
                             Rate: $50/hour<br>
                             <a href="#">Contact</a></p>
                 </div>
+          
+                <div class="col">
+                    <img src="images/team-01.png">
+                        <h2>James Fernando </h2>
+                            <p> Experience: 5 years<br>
+                            Rate: $50/hour<br>
+                            <a href="#">Contact</a></p>
+                </div>
+
+                <div class="col">
+                    <img src="images/team-01.png">
+                        <h2>James Fernando </h2>
+                            <p> Experience: 5 years<br>
+                            Rate: $50/hour<br>
+                            <a href="#">Contact</a></p>
+                </div>
+
             </div>
         </div>
+
 
         <div class="col-lg-12 col-12">
             <div class="subject">
                 <h3><i><u>Physics</u></i></h3>
             </div>
-        </div>  
+        </div> 
+
         <div class="row">
-            <div class="col-lg-4 col-12">
+            <div class="owl-carousel reviews-carousel">
+                
                 <div class="col">
                     <img src="images/team-01.png">
                         <h2>James Fernando </h2>
@@ -291,31 +336,33 @@ Bootstrap 5 HTML CSS Template
                             Rate: $50/hour<br>
                             <a href="#">Contact</a></p>
             
-             </div>
-        </div>
-
-        <div class="col-lg-4 col-12">
-             <div class="col">
-                <img src="images/team-01.png">
-                    <h2>James Fernando </h2>
-                        <p> Experience: 5 years<br>
-                        Rate: $50/hour<br>
-                        <a href="#">Contact</a></p>
-            </div>
-        </div>
-
-            
-        <div class="col-lg-4 col-12">
-            <div class="col">
-                <img src="images/team-01.png">
-                    <h2>James Fernando </h2>
-                        <p> Experience: 5 years<br>
-                        Rate: $50/hour<br>
-                        <a href="#">Contact</a></p>
-            </div>
-        </div>
+                </div>
+        
+                <div class="col">
+                    <img src="images/team-01.png">
+                        <h2>James Fernando </h2>
+                            <p> Experience: 5 years<br>
+                            Rate: $50/hour<br>
+                            <a href="#">Contact</a></p>
+                </div>
        
-    </div>
+                <div class="col">
+                    <img src="images/team-01.png">
+                        <h2>James Fernando </h2>
+                            <p> Experience: 5 years<br>
+                            Rate: $50/hour<br>
+                            <a href="#">Contact</a></p>
+                </div>
+
+                <div class="col">
+                    <img src="images/team-01.png">
+                        <h2>James Fernando </h2>
+                            <p> Experience: 5 years<br>
+                            Rate: $50/hour<br>
+                            <a href="#">Contact</a></p>
+                </div>
+            </div>
+        </div>
     
 </section> 
 

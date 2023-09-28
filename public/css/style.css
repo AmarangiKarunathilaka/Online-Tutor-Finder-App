@@ -56,7 +56,7 @@ https://www.tooplate.com/view/2133-moso-interior
   TYPOGRAPHY               
 -----------------------------------------*/
 body {
-    background-color: hsl(52, 7%, 55%);
+    background-color: hsl(49, 25%, 75%);
 }
 
 h2,
@@ -430,6 +430,8 @@ nav ul li:last-child a {
 }
 
 
+
+
   /*---------------------------------------
     advertisement              
   -----------------------------------------*/
@@ -445,9 +447,9 @@ nav ul li:last-child a {
 }
 
 .subject h3{
-    font-size: 35px;
-    margin-bottom: 20px;
-    margin-top: 50px;
+    font-size: 40px;
+    margin-bottom: 70px;
+    margin-top: 120px;
     margin-left: 50px;
     height: 40px;
     width: 25%;
@@ -459,6 +461,8 @@ nav ul li:last-child a {
 }
 .content{
   margin-bottom: 5%;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .content-row    {
@@ -469,14 +473,15 @@ nav ul li:last-child a {
 
 
 .col {
+    height: 580px;
 	  flex-basis: 30%;
     padding: 20px 12px;
     background-color: #d8d6a4fe;
     border: 15px ridge #050500;
     border-radius: 10%;
     margin-bottom: 5%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
     box-sizing: border-box;
     text-align: center;
 }
@@ -489,12 +494,7 @@ nav ul li:last-child a {
     padding: 3px 0 0;
 }
 
-.col img {
-    border-radius: 50%;
-    width: 250px;
-    height: 300px;
-    display: inline-block 
-}
+
 .col img:hover {
     box-shadow: 0 0 20px 0px rgba(9, 0, 0, 0.5);
 }
@@ -621,16 +621,16 @@ nav ul li:last-child a {
 }
 
 .reviews-carousel .owl-item img{
-  border-radius: var(--border-radius-large);
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
+  border-radius: 50%;
+  width: 250px;
+  height: 300px;
+  display: inline-block;
 }
 
 .reviews-carousel .owl-nav {
   position: absolute;
   top: -80px;
-  right: 0;
+  right: 60px;
 }
 
 .reviews-carousel .owl-nav button.owl-next, 
