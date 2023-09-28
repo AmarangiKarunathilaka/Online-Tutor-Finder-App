@@ -129,11 +129,11 @@ Bootstrap 5 HTML CSS Template
                         <div class="col-lg-5 col-12">
                             <small class="section-small-title"><h3>Our Story</h3></small>
 
-                            <h2 class="mt-2 mb-4"><span class="text-muted">Introducing</span> website</h2>
+                            <h2 class="mt-2 mb-4"><span class="text-muted"><b>At Tutor Finder,</b></span></h2>
 
-                            <h4 class="text-muted mb-3">Since 1986, We crafted interior products for better spaces</h4>
-
-                            <p>some thing about</p>
+                            <div class="about">
+                            <p> <b>We're passionate about connecting dedicated tutors with eager learners. Founded in 2023, our platform simplifies the search for quality education tailored to individual needs. From basic subjects to advanced topics, we strive to ensure everyone finds their ideal tutor match. Join our community and embark on a journey towards academic excellence.</b></p>
+                            </div>
                         </div>
 
                         <div class="col-lg-3 col-md-5 col-5 mx-lg-auto">

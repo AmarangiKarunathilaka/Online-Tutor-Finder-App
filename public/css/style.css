@@ -372,8 +372,9 @@ nav ul li:last-child a {
     background: transparent;
     flex: 1;
     border: 0;
+    border-radius: 50px;
     outline: none;
-    padding: 24px 10px;
+    padding: 8px 8px;
     font-size: 20px;
     color: #f1f1f7;
    
@@ -392,7 +393,7 @@ nav ul li:last-child a {
 .search-bar button  {
     border: 0;
     padding: 10px 10px;
-    border-radius:70%;
+    border-radius:50%;
     background-color: #ffffff;
 }
 
@@ -405,11 +406,14 @@ nav ul li:last-child a {
   background-color: #d1ca98;
 }
 .section-small-title h3{
-  font-size:80px ;
+  font-size:70px ;
   margin-top: 3px;
   color: #000000;
 }
-
+.about p{
+  color: #494903;
+  font-size: 25px;
+}
 .about-image {
   display: block;
   border-radius: 100%;
