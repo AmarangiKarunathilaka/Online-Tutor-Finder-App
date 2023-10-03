@@ -37,8 +37,8 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
-Route::get('/tRegister', function () {
-    return view('tregister');
+Route::get('/tregister', function () {
+    return view('tRegister');
 });  
   
 Route::get('/classMaterial', function () {
