@@ -6,24 +6,49 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tregisterstyle.css">
+    <link rel="stylesheet" href="css/tRegisterstyle.css">
+    <link href="css/style.css" rel="stylesheet">
     <title>Registation For Tutor</title>
 </head>
 <body>
     
     <header>
-        <div class="logo">
-            <img src="f.png" style="height: 60px; width: 200px;">
-        </div>
-        <nav>
-            <ul>
-                
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Browse</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
+    <nav class="navbar navbar-expand-lg  fixed-top shadow-lg">
+       
+       <div class="container">
+           
+           <img src="images/f.png" alt="" />
+
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+
+           <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="#section_1"><b>Home</b></a>
+                   </li>
+
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="#section_2"><b>About</b></a>
+                   </li>
+
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="#section_3"><b>Contact Us</b></a>
+                   </li>
+
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="/login"><b>Login</b></a>
+                   </li>
+
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
+                   </li>
+               </ul>
+           </div>
+       </div>
+
+   </nav>
     </header>
 
 
@@ -33,22 +58,22 @@
            
         <div class="form">
             
-            <h1><div class="row justify-content-center"> Registation Form </div></h1>
+            <h1><div class="row justify-content-center"> Registration </div></h1>
 
                 <table>
                     <form method="post">
                         <tr>
                             <div class="mt-4">
                                 
-                                <td><input type="text" class="form-control" placeholder="First Name" name="name" required></td>
-                                <td><input type="text" class="form-control" placeholder="Last Name" name="name" required></td>
+                                <td><input type="text" class="form-control" placeholder="Full Name" name="name" required></td>
+                               
                             </div>
                         </tr>
                 
                         <tr>
                             <div class="mt-4">
                                <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required></td>
-                               <td></td>
+                               
                             </div>
                             
                         </tr>
