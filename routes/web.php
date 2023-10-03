@@ -47,13 +47,11 @@ Route::get('/studentHome', function () {
     return view('studentHome');
 });
 
-});
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
-    return view('tRegister');
-});  
+ 
 
   
 Route::get('/classMaterial', function () {
