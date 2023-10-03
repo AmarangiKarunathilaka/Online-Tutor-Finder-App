@@ -38,6 +38,13 @@ Route::get('/terms', function () {
 });
 
 Route::get('/tregister', function () {
+
+    return view('tregister');
+});
+
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
+});
     return view('tRegister');
 });  
   
