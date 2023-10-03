@@ -39,7 +39,11 @@ Route::get('/terms', function () {
 
 Route::get('/tregister', function () {
     return view('tregister');
-});  
+}); 
+
+Route::get('/studentHome', function () {
+    return view('studentHome');
+});
   
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
