@@ -46,11 +46,20 @@ Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
     return view('tRegister');
-});  
+
   
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 }); 
+
+Route::get('/TutorFeedback', function () {
+    return view('TutorFeedback');
+});
+Route::get('/websiteFeedbackForm', function () {
+    return view('websiteFeedbackForm');
+});
+
+
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
@@ -66,3 +75,5 @@ Route::middleware(['auth'])->group(function () {
 // Display feedback to guests
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 // 2023.10.03-akesh
+
+
