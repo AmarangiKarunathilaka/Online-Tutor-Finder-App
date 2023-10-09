@@ -54,12 +54,27 @@ Route::get('/tutorHome', function () {
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
- 
+
 
   
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 }); 
+
+
+Route::get('/TutorFeedback', function () {
+    return view('TutorFeedback');
+});
+Route::get('/websiteFeedbackForm', function () {
+    return view('websiteFeedbackForm');
+});
+
+
+
+Route::get('/editTutorProfile', function () {
+    return view('editTutorProfile');
+});
+
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
@@ -74,3 +89,9 @@ Route::middleware(['auth'])->group(function () {
 
 // Display feedback to guests
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
+
+
+// edit tutor profile-Gayathtri
+Route::resource('user-profiles', 'UserProfileController');
+
+
