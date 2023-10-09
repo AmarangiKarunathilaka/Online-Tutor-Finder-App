@@ -5,10 +5,10 @@
 
 
 <title>edit Tutor Profile</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    	<link rel="stylesheet" href="css/editTutorProfile" />
+    	<link rel="stylesheet" href="css/editTutorProfile.css" />
 </head>
 <body>
 <div class="container-xl px-4 mt-4">

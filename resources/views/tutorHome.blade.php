@@ -19,12 +19,12 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="logo.png" alt="">
+                    <img src="images/f.png" alt="">
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Codinglab</span>
-                    <span class="profession">Web developer</span>
+                    <span class="name">Tuition</span>
+                    <span class="profession">Management System</span>
                 </div>
             </div>
 
