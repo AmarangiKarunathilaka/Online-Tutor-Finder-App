@@ -40,12 +40,21 @@ Route::get('/terms', function () {
 Route::get('/tregister', function () {
 
     return view('tregister');
+
+}); 
+
+Route::get('/studentHome', function () {
+    return view('studentHome');
+});
+
+Route::get('/tutorHome', function () {
+    return view('tutorHome');
 });
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
-    
+
 
   
 Route::get('/classMaterial', function () {
@@ -69,7 +78,7 @@ Route::get('/editTutorProfile', function () {
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
-// 2023.10.03-akesh
+
 // Submit feedback
 Route::post('/submit-feedback', 'FeedbackController@store')->name('feedback.submit');
 
@@ -80,9 +89,9 @@ Route::middleware(['auth'])->group(function () {
 
 // Display feedback to guests
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
-// 2023.10.03-akesh
 
 
 // edit tutor profile-Gayathtri
 Route::resource('user-profiles', 'UserProfileController');
+
 
