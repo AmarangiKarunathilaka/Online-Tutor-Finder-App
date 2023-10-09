@@ -47,6 +47,9 @@ Route::get('/studentHome', function () {
     return view('studentHome');
 });
 
+Route::get('/tutorHome', function () {
+    return view('tutorHome');
+});
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');

@@ -49,8 +49,8 @@
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-note icon' ></i>
-                            <span class="text nav-text">Class Registration</span>
+                            <i class='bx bx-user-plus icon'></i>
+                            <span class="text nav-text">Class Requests</span>
                         </a>
                     </li>
 
@@ -58,6 +58,13 @@
                         <a href="#">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Class Materials</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-file icon' ></i>
+                            <span class="text nav-text">Advertisements</span>
                         </a>
                     </li>
 
