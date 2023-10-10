@@ -41,6 +41,11 @@ Route::get('/tregister', function () {
     return view('tregister');
 });
 
+
 // Example route definition
-Route::get('/admin/reports', 'AdminReportController@index');
+Route::get('/admin/reports',  'AdminReportController@index');
+
+
+
+
 
