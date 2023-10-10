@@ -71,6 +71,13 @@ Route::get('/websiteFeedbackForm', function () {
 
 
 
+// Example route definition
+Route::get('/admin/reports',  'AdminReportController@index');
+
+
+
+
+
 Route::get('/editTutorProfile', function () {
     return view('editTutorProfile');
 });
@@ -93,5 +100,6 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 // edit tutor profile-Gayathtri
 Route::resource('user-profiles', 'UserProfileController');
+
 
 
