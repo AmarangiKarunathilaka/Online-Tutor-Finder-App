@@ -38,18 +38,18 @@ Route::get('/terms', function () {
 });
 
 Route::get('/tregister', function () {
-
     return view('tregister');
-
 }); 
 
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
 
+
 Route::get('/tutorHome', function () {
     return view('tutorHome');
 });
+
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');
@@ -98,8 +98,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
+
 // edit tutor profile-Gayathtri
 Route::resource('user-profiles', 'UserProfileController');
-
 
 
