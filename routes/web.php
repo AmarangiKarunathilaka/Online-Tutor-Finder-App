@@ -46,17 +46,42 @@ Route::get('/studentHome', function () {
 });
 
 
+Route::get('/tutorHome', function () {
+    return view('tutorHome');
+});
+
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
-    return view('tRegister');
-  
+
 
   
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 }); 
+
+
+Route::get('/TutorFeedback', function () {
+    return view('TutorFeedback');
+});
+Route::get('/websiteFeedbackForm', function () {
+    return view('websiteFeedbackForm');
+});
+
+
+
+// Example route definition
+Route::get('/admin/reports',  'AdminReportController@index');
+
+
+
+
+
+Route::get('/editTutorProfile', function () {
+    return view('editTutorProfile');
+});
+
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
@@ -72,4 +97,9 @@ Route::middleware(['auth'])->group(function () {
 // Display feedback to guests
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
-//kavindra
+
+
+// edit tutor profile-Gayathtri
+Route::resource('user-profiles', 'UserProfileController');
+
+
