@@ -38,22 +38,20 @@ Route::get('/terms', function () {
 });
 
 Route::get('/tregister', function () {
-
     return view('tregister');
-
 }); 
 
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
 
-});
+
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
     return view('tRegister');
-});  
+  
 
   
 Route::get('/classMaterial', function () {
@@ -73,3 +71,5 @@ Route::middleware(['auth'])->group(function () {
 
 // Display feedback to guests
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
+
+//kavindra
