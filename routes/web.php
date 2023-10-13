@@ -39,9 +39,71 @@ Route::get('/terms', function () {
 
 Route::get('/tregister', function () {
     return view('tregister');
-});  
+}); 
+
+Route::get('/studentHome', function () {
+    return view('studentHome');
+});
+
+
+Route::get('/tutorHome', function () {
+    return view('tutorHome');
+});
+
+
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
+});
+
+
   
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
+}); 
+
+
+Route::get('/TutorFeedback', function () {
+    return view('TutorFeedback');
+});
+Route::get('/websiteFeedbackForm', function () {
+    return view('websiteFeedbackForm');
+});
+
+
+
+// Example route definition
+Route::get('/admin/reports',  'AdminReportController@index');
+
+
+
+
+
+Route::get('/editTutorProfile', function () {
+    return view('editTutorProfile');
+});
+
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
+
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
+
+
+// Submit feedback
+Route::post('/submit-feedback', 'FeedbackController@store')->name('feedback.submit');
+
+// Admin accepts feedback
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/feedback', 'FeedbackController@index')->name('feedback.index');
+});
+
+// Display feedback to guests
+Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
+
+
+
+// edit tutor profile-Gayathtri
+Route::resource('user-profiles', 'UserProfileController');
+
+
+
