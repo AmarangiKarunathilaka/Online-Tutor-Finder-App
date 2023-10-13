@@ -86,6 +86,9 @@ Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->nam
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
 
+Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
+
+
 // Submit feedback
 Route::post('/submit-feedback', 'FeedbackController@store')->name('feedback.submit');
 
@@ -101,5 +104,6 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 // edit tutor profile-Gayathtri
 Route::resource('user-profiles', 'UserProfileController');
+
 
 
