@@ -10,9 +10,7 @@ class tutorSubject extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Mathematics',
-        'Biology',
-        'Chemistry',
-        'Physics'
+        'tutorSubject_id',
+        'Subject'
     ];
 }

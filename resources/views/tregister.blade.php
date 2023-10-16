@@ -61,7 +61,8 @@
             <h1><div class="row justify-content-center"> Registration </div></h1>
 
                 <table>
-                    <form method="post">
+                    <form action="{{ url('/tutorInput') }}" method="post">
+                        @csrf 
                         <tr>
                             <div class="mt-4">
                                 
@@ -143,7 +144,7 @@
                             <div class="TutorReg-1">
 
                                 <td> <input type="password" class="form-control" placeholder="Enter Password" name="password"></td>
-                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="password"></td>
+                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="reEnterPassword"></td>
                             </div>
                         </tr>
                     </table>

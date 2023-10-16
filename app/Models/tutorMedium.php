@@ -10,8 +10,7 @@ class tutorMedium extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Sinhala',
-        'English',
-        'Tamil'
+        'tutorMedium_id',
+        'Medium'
     ];
 }

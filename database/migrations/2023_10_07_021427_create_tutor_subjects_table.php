@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('tutorSubjects', function (Blueprint $table) {
             $table->id();
-            $table->string('Mathematics')->nullable();
-            $table->string('Biology')->nullable();
-            $table->string('Chemistry')->nullable();
-            $table->string('Physics')->nullable();
+            $table->unsignedBigInteger('tutorSubject_id');
+            $table->foreign('tutorSubject_id')->references('id')->on('tutorRegisters');
+            $table->string('tutorSubject')->nullable();
             $table->timestamps();
         });
     }

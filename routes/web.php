@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\tutorRegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 
@@ -105,5 +106,6 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 // edit tutor profile-Gayathtri
 Route::resource('user-profiles', 'UserProfileController');
 
-
-
+//kavindra
+Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
+Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('tutorMediums', function (Blueprint $table) {
             $table->id();
-            $table->string('Sinhala')->nullable();
-            $table->string('English')->nullable();
-            $table->string('Tamil')->nullable();
+            $table->unsignedBigInteger('tutorMedium_id');
+            $table->foreign('tutorMedium_id')->references('id')->on('tutorRegisters');
+            $table->string('tutorMedium')->nullable();
             $table->timestamps();
         });
     }
