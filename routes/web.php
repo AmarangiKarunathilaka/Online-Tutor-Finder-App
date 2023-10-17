@@ -47,8 +47,10 @@ Route::get('/studentHome', function () {
 });
 
 
+
 Route::get('/tutorHome', function () {
     return view('tutorHome');
+
 });
 
 
