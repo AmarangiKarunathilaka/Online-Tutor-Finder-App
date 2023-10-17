@@ -13,8 +13,6 @@ class tutorRegister extends Model
         'tutorFullName',
         'tutorPhoneNumber',
         'qualification',
-        'tutorSubject_id',
-        'tutorMedium_id',
         'tutorEmail',
         'tutorPassword',
         'tutorConfirmPassword'

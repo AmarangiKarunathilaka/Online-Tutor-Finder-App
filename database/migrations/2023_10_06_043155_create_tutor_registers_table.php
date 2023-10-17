@@ -18,21 +18,14 @@ return new class extends Migration
             $table->string('tutorFullName');
             $table->string('tutorPhoneNumber');
             $table->string('qualification');
-            //$table->string('tutorSubject')->nullable();
-            //$table->string('tutorMedium')->nullable();
             $table->string('tutorEmail')->unique();
             $table->string('tutorPassword');
             $table->string('tutorConfirmPassword');
             $table->timestamps();
 
             //In tutorSubject and tutorMedium tables
-            $table->unsignedBigInteger('tutorSubject_id');
-            $table->unsignedBigInteger('tutorMedium_id');
-
-            // Foreign keys
-            $table->foreign('tutorSubject_id')->references('id')->on('tutorSubject');
-            $table->foreign('tutorMedium_id')->references('id')->on('tutorMedium');
-
+           
+           
         });
     }
 
