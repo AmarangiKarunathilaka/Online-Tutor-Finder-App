@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\tutorRegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 
@@ -38,31 +39,57 @@ Route::get('/terms', function () {
 });
 
 Route::get('/tregister', function () {
-
     return view('tregister');
-
 }); 
 
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
 
-Route::get('/stregister', function () {
-    return view('stregister');
+
+
+Route::get('/tutorHome', function () {
+    return view('tutorHome');
+
 });
+
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
-    return view('tRegister');
 
 
   
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 }); 
+
+
+Route::get('/TutorFeedback', function () {
+    return view('TutorFeedback');
+});
+Route::get('/websiteFeedbackForm', function () {
+    return view('websiteFeedbackForm');
+});
+
+
+
+// Example route definition
+Route::get('/admin/reports',  'AdminReportController@index');
+
+
+
+
+
+Route::get('/editTutorProfile', function () {
+    return view('editTutorProfile');
+});
+
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+
+
+Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
 
 // Submit feedback
@@ -75,3 +102,12 @@ Route::middleware(['auth'])->group(function () {
 
 // Display feedback to guests
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
+
+
+
+// edit tutor profile-Gayathtri
+Route::resource('user-profiles', 'UserProfileController');
+
+//kavindra
+Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
+Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
