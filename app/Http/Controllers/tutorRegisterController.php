@@ -47,15 +47,14 @@ class tutorRegisterController extends Controller
          'tutorConfirmPassword'=> $request -> reEnterPassword
         ]);
 
-        $users = DB::select("select * from tutor_registers limit 1");
+        $user = DB::select("select * from tutor_registers order by id desc limit 1");
        // $mm = ['users'=> $users];
-        return $users;
+        //return $users;
         //$mm=['users'->$users];
         //return $mm;
-        foreach ($users as $mm) {
             //return $mm->id;
             tutorSubject::create([
-                'tutorSubject_id'=> $mm -> id,
+                'tutorSubject_id'=> $user[0]->id,
                 'tutorSubject'=> $request -> subject1,
                 'tutorSubject'=> $request -> subject2,
                 'tutorSubject'=> $request -> subject3,
@@ -64,14 +63,13 @@ class tutorRegisterController extends Controller
             ]);
 
             tutorMedium::create([
-                'tutorMedium_id'=> $mm -> id,
+                'tutorMedium_id'=> $user[0]->id,
                 'tutorMedium'=> $request -> medium1,
                 'tutorMedium'=> $request -> medium2,
                 'tutorMedium'=> $request -> medium3,
                 //'id'=> $request -> fid
             ]);
 
-        }
 
       /*  $user = DB::table('tutor_registers')->first();
 

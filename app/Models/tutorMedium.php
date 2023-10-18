@@ -13,6 +13,6 @@ class tutorMedium extends Model
 
     protected $fillable = [
         'tutorMedium_id',
-        'Medium'
+        'tutorMedium'
     ];
 }
