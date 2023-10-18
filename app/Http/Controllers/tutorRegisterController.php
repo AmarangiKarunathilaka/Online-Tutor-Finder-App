@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\tutorRegister;
 use App\Models\tutorMedium;
 use App\Models\tutorSubject;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
 class tutorRegisterController extends Controller
@@ -81,6 +82,26 @@ class tutorRegisterController extends Controller
                 'tutorMedium_id' => $user[0]->id,
                 'tutorMedium' => $request->medium3
             ]);
+        } 
+        ////
+
+        $rules = [
+            'tutorFullName' => 'required',
+            'tutorEmail' => 'required|email|unique:tutor_registers',
+            'tutorPassword'   => 'required|min:8',
+            'tutorConfirmPassword'=> 'required|same:tutorPassword',
+        ];
+
+        $customMessages = [
+            'tutorPassword.min' => 'The password must be at least 8 characters.',
+            'tutorConfirmPassword.same'=> 'Password not match',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) 
+        {
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
          return redirect() -> back();
