@@ -16,7 +16,29 @@ class tutorRegisterController extends Controller
     }
 
     public function tutorRegisterInput(Request $request){
-        tutorRegister::create([
+      
+     /* $register = new tutorRegister();
+      $medium = new tutorMedium();
+      $subject = new tutorSubject();
+
+      $register-> tutorFullName = $request-> name;
+      $register-> tutorPhoneNumber = $request-> contact;
+      $register-> qualification = $request-> qualification;
+      $register-> tutorEmail = $request-> email;
+      $register-> tutorPassword = $request-> password;
+      $register-> tutorConfirmPassword = $request-> reEnterPassword;
+      $register-> save();
+
+      $medium-> tutorMedium_id = $request-> medium ;
+      $medium-> tutorMedium = $request-> medium1;
+      $medium-> tutorMedium = $request-> medium2;
+      $medium-> tutorMedium = $request-> medium3;
+      $medium-> save();
+
+      $request->session()-> flash('success','Data inserted successfully!');
+      return redirect('tregister');*/
+
+      tutorRegister::create([
          'tutorFullName'=> $request -> name,
          'tutorPhoneNumber'=> $request -> contact,
          'qualification'=> $request -> qualification,
@@ -25,7 +47,7 @@ class tutorRegisterController extends Controller
          'tutorConfirmPassword'=> $request -> reEnterPassword
         ]);
 
-        /*$users = DB::select("select * from tutorRegisters limit 1");
+        $users = DB::select("select * from tutor_registers limit 1");
        // $mm = ['users'=> $users];
         return $users;
         //$mm=['users'->$users];
@@ -49,9 +71,40 @@ class tutorRegisterController extends Controller
                 //'id'=> $request -> fid
             ]);
 
+        }
+
+      /*  $user = DB::table('tutor_registers')->first();
+
+        if ($user) {
+            // Assuming that subject1, subject2, etc. are in an array
+            $subjects = [
+                $request->subject1,
+                $request->subject2,
+                $request->subject3,
+                $request->subject4,
+            ];
+
+            foreach ($subjects as $subject) {
+                tutor_subject::create([
+                    'tutorSubject_id' => $user->id,
+                    'tutorSubject' => $subject,
+                ]);
+            }
+
+            // Similarly for mediums
+            $mediums = [
+                $request->medium1,
+                $request->medium2,
+                $request->medium3,
+            ];
+
+            foreach ($mediums as $medium) {
+                tutor_medium::create([
+                    'tutorMedium_id' => $user->id,
+                    'tutorMedium' => $medium,
+                ]);
+            }
         }*/
-
-
 
          return redirect() -> back();
      }

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class tutorMedium extends Model
 {
+    protected $table = 'tutor_mediums';
+
     use HasFactory;
 
     protected $fillable = [
