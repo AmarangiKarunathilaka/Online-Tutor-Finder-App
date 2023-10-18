@@ -47,8 +47,10 @@ Route::get('/studentHome', function () {
 });
 
 
+
 Route::get('/tutorHome', function () {
     return view('tutorHome');
+
 });
 
 
@@ -75,7 +77,9 @@ Route::get('/websiteFeedbackForm', function () {
 // Example route definition
 Route::get('/admin/reports',  'AdminReportController@index');
 
-
+Route::get('/report', function () {
+    return view('report');
+});
 
 
 
