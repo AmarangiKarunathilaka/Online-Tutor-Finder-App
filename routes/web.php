@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\tutorRegisterController;
+use App\Http\Controllers\studentRegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,3 +116,6 @@ Route::resource('user-profiles', 'UserProfileController');
 //kavindra
 Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
 Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
+
+Route::post('/sregister', [studentRegisterController::class, 'studentRegister'])->name('studentRegister');
+Route::post('/studentInput',[studentRegisterController::class, 'studentRegisterInput'])->name('studentRegisterInput');

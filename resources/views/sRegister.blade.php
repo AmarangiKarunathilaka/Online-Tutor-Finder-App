@@ -61,7 +61,7 @@
             <h1><div class="row justify-content-center"> Registration </div></h1>
 
                 <table>
-                    <form action="{{ url('/tutorInput') }}" method="post">
+                    <form action="{{ url('/studentInput') }}" method="Post">
                         @csrf 
                         <tr>
                             <div class="mt-4">
@@ -73,8 +73,9 @@
 
                         <tr>
                             <div class="StReg-1">
+                                <td><label for="TR-contact">Date Of Birth: </label></td>
                                 <td>
-                                    <input type="date" class="form-control" name="date_of_birth" required>
+                                    <input type="date" class="form-control" name="dateOfBirth" required>
                                 </td>
                             </div>
                         </tr>
@@ -82,13 +83,13 @@
                         <tr>
                                 <div class="StReg-1">
                                     
-                                    <td> <textarea type="text" class="form-control" placeholder="Address" name="qualification" rows="3" cols="23" required></textarea></td>
+                                    <td> <textarea type="text" class="form-control" placeholder="Address" name="address" rows="3" cols="23" required></textarea></td>
                                 </div>
                             </tr>
                 
                         <tr>
                             <div class="mt-4">
-                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required></td>
+                               <td> <input type="text" class="form-control" placeholder="Phone number" name="studentContact"></td>
                                
                             </div>
                             
@@ -98,7 +99,7 @@
                         <tr>
                             <div class="form-group col-8" style="padding: 5px ;">
                             <div class="TutorReg-1">
-                                <td><input type="email" class="form-control"  placeholder="Enter E-mail" name="email" required></td>
+                                <td><input type="email" class="form-control"  placeholder="Enter E-mail" name="studentEmail" required></td>
                                 <td></td>
                             </div>
                         </div>
@@ -107,8 +108,8 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="password"></td>
-                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="reEnterPassword"></td>
+                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="studentPassword"></td>
+                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="studentReEnterPassword"></td>
                             </div>
                         </tr>
                     </table>
