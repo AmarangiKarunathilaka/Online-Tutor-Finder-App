@@ -30,8 +30,8 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
-Route::get('/sregister', function () {
-    return view('sregister');
+Route::get('/sRegister', function () {
+    return view('sRegister');
 });
 
 Route::get('/terms', function () {
@@ -45,6 +45,7 @@ Route::get('/tregister', function () {
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
+
 
 
 

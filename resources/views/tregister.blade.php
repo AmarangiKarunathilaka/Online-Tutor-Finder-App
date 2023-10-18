@@ -143,8 +143,20 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="password"></td>
-                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="reEnterPassword"></td>
+                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="password" id="password">
+                            
+                                @if ($errors->has('password'))
+                                <span class="text-danger"> {{ $error->first('password') }} </span>
+                                @endif
+
+                                </td>
+
+                                <td> <input type="password" class="form-control @error('reEnterPassword') is-invalid @enderror" placeholder="Re-enter Password" name="reEnterPassword" id="reEnterPassword"></td>
+                                
+                                @error('reEnterPassword')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
+
                             </div>
                         </tr>
                     </table>
