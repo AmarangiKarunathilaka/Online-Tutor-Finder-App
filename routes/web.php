@@ -77,6 +77,10 @@ Route::get('/editTutorProfile', function () {
     return view('editTutorProfile');
 });
 
+Route::get('/advertismentUpload', function () {
+    return view('advertismentUpload');
+});
+
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 

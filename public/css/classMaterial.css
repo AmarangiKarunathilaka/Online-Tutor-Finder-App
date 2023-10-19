@@ -55,7 +55,14 @@ body{
     width: 50%;
     padding-bottom: 15px;
 }
-
+textarea {
+    width: 600px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .user-input-box label{
     width: 95%;
     color: white;
