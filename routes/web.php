@@ -68,7 +68,9 @@ Route::get('/TutorFeedback', function () {
 Route::get('/websiteFeedbackForm', function () {
     return view('websiteFeedbackForm');
 });
-
+Route::get('/popupBox', function () {
+    return view('popupBox');
+});
 
 
 Route::get('/editTutorProfile', function () {
@@ -91,7 +93,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
-// edit tutor profile-Gayathtri
+// edit tutor profile
 Route::resource('user-profiles', 'UserProfileController');
 
 

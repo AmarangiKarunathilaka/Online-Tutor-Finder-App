@@ -63,7 +63,26 @@
           </div>
         </div>
         <div class="form-submit-btn">
-          <input type="submit" value="Register">
+          
+          <button type="submit" class="btn" onclick="openPopup()">Register</button>
+                <div  class = "popup" id="popup">
+                    <img src = "images/tick.png">
+                    <h2>Thank You!</h2>
+                    <p>Your details has been successfully submitted. Thanks!</p>
+                    <button type = "button" onclick="closePopup()">OK</button>
+                </div>
+                    
+                <script>
+                    let popup= document.getElementById("popup");
+
+                    function openPopup(){
+                    popup.classList.add("open-popup"); 
+                    }
+
+                    function closePopup(){
+                    popup.classList.remove("open-popup"); 
+                    }
+                </script>
         </div>
       </form>
     </div>
