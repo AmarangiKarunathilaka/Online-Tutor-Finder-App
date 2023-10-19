@@ -18,6 +18,23 @@ class tutorRegisterController extends Controller
 
     public function tutorRegisterInput(Request $request){
 
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|email|unique:tutor_registers,tutorEmail',
+            'password'   => 'required|min:8',
+            'reEnterPassword'=> 'required|same:tutorPassword',
+        ];
+
+        $customMessages = [
+            'password.min' => 'The password must be at least 8 characters.',
+            'reEnterPassword.same'=> 'Password not match',
+        ];
+
+        $validator = Validator::make($request->all(), $rules,$customMessages);
+        if ($validator->fails()) 
+        {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
       tutorRegister::create([
          'tutorFullName'=> $request -> name,
          'tutorPhoneNumber'=> $request -> contact,
@@ -85,24 +102,7 @@ class tutorRegisterController extends Controller
         } 
         ////
 
-        $rules = [
-            'tutorFullName' => 'required',
-            'tutorEmail' => 'required|email|unique:tutor_registers',
-            'tutorPassword'   => 'required|min:8',
-            'tutorConfirmPassword'=> 'required|same:tutorPassword',
-        ];
-
-        $customMessages = [
-            'tutorPassword.min' => 'The password must be at least 8 characters.',
-            'tutorConfirmPassword.same'=> 'Password not match',
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
-
-        if ($validator->fails()) 
-        {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+       
 
          return redirect() -> back();
      }

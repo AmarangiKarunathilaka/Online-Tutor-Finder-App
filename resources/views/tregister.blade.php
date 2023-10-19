@@ -143,11 +143,11 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="password" id="password">
+                                <td> <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter Password" name="password" id="password">
                             
-                                @if ($errors->has('password'))
-                                <span class="text-danger"> {{ $error->first('password') }} </span>
-                                @endif
+                                @error('password')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
 
                                 </td>
 
