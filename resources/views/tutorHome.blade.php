@@ -1,4 +1,3 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +22,8 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Tuition</span>
-                    <span class="profession">Management System</span>
+                    <span class="name">Tutor</span>
+                    <span class="profession">Finder System</span>
                 </div>
             </div>
 
@@ -76,7 +75,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/websiteFeedbackForm">
                             <i class='bx bx-edit icon' ></i>
                             <span class="text nav-text">Feedback</span>
                         </a>
@@ -110,9 +109,7 @@
 
     </nav>
 
-    <section class="home">
-        <div class="text">Dashboard Sidebar</div>
-    </section>
+   
 
     <script src="js/script.js"></script>
 

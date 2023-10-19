@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
+
 use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +56,11 @@ Route::get('/studentHome', function () {
 Route::get('/tutorHome', function () {
     return view('tutorHome');
 
+});
+
+
+Route::get('/tutorHomeContent', function () {
+    return view('tutorHomeContent');
 });
 
 
