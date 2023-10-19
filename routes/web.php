@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
 
+use App\Http\Controllers\tutorRegisterController;
+use App\Http\Controllers\studentRegisterController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 
@@ -30,8 +34,8 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
-Route::get('/sregister', function () {
-    return view('sregister');
+Route::get('/sRegister', function () {
+    return view('sRegister');
 });
 
 Route::get('/terms', function () {
@@ -39,22 +43,26 @@ Route::get('/terms', function () {
 });
 
 Route::get('/tregister', function () {
-
     return view('tregister');
-
 }); 
 
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
 
+
+
+
 Route::get('/tutorHome', function () {
     return view('tutorHome');
+
 });
+
 
 Route::get('/tutorHomeContent', function () {
     return view('tutorHomeContent');
 });
+
 
 Route::get('/classMaterial', function () {
     return view('classMaterial');
@@ -76,12 +84,24 @@ Route::get('/websiteFeedbackForm', function () {
 
 
 
+// Example route definition
+Route::get('/admin/reports',  'AdminReportController@index');
+
+Route::get('/report', function () {
+    return view('report');
+});
+
+
+
 Route::get('/editTutorProfile', function () {
     return view('editTutorProfile');
 });
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+
+
+Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
 
 // Submit feedback
@@ -96,7 +116,13 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
+
 // edit tutor profile-Gayathtri
 Route::resource('user-profiles', 'UserProfileController');
 
+//kavindra
+Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
+Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
 
+Route::post('/sregister', [studentRegisterController::class, 'studentRegister'])->name('studentRegister');
+Route::post('/studentInput',[studentRegisterController::class, 'studentRegisterInput'])->name('studentRegisterInput');
