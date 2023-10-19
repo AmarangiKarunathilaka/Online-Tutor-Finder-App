@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +50,10 @@ Route::get('/studentHome', function () {
 
 Route::get('/tutorHome', function () {
     return view('tutorHome');
+});
+
+Route::get('/tutorHomeContent', function () {
+    return view('tutorHomeContent');
 });
 
 Route::get('/classMaterial', function () {
