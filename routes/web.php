@@ -5,6 +5,7 @@ use App\Http\Controllers\ImageUploadController;
 
 use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
+use App\Http\Controllers\CustomAuthController;
 
 
 /*
@@ -133,3 +134,11 @@ Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput']
 
 Route::post('/sregister', [studentRegisterController::class, 'studentRegister'])->name('studentRegister');
 Route::post('/studentInput',[studentRegisterController::class, 'studentRegisterInput'])->name('studentRegisterInput');
+
+Route::get('/dashboard', [CustomAuthController::class, 'dashboard']); 
+Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('/postlogin', [CustomAuthController::class, 'login'])->name('postlogin'); 
+//Route::post('/loginInput', [CustomAuthController::class, 'loginInput'])->name('loginInput');
+Route::get('/signup', [CustomAuthController::class, 'signup'])->name('register-user');
+Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
+Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');

@@ -89,7 +89,11 @@
                 
                         <tr>
                             <div class="mt-4">
-                               <td> <input type="text" class="form-control" placeholder="Phone number" name="studentContact"></td>
+                                <td> <input type="text" class="form-control" placeholder="Phone number" name="studentContact">
+                                    @error('studentContact')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </td>
                                
                             </div>
                             
@@ -108,8 +112,18 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="studentPassword"></td>
-                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="studentReEnterPassword"></td>
+                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="studentPassword">
+                                    @error('studentPassword')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </td>
+
+                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="studentReEnterPassword">
+                                    @error('studentReEnterPassword')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </td>
+
                             </div>
                         </tr>
                     </table>

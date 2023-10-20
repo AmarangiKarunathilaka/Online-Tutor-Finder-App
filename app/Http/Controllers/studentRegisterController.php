@@ -14,6 +14,27 @@ class studentRegisterController extends Controller
 
     public function studentRegisterInput(Request $request)
     {
+        $rules = [
+            'name' => 'required',
+            'studentEmail' => 'required|email|unique:student_registers,studentEmail',
+            'studentPassword'   => 'required|min:8',
+            'studentReEnterPassword'=> 'required|same:studentPassword',
+            'studentContact' => 'required|regex:/^0\d{9}$/',
+        ];
+
+        $customMessages = [
+            'studentPassword.min' => 'The password must be at least 8 characters.',
+            'studentReEnterPassword.same'=> 'Password not match',
+            'studentContact' => 'Phone number must be 10 characters',
+        ];
+
+        $validator = Validator::make($request->all(), $rules,$customMessages);
+
+        if ($validator->fails()) 
+        {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         studentRegister::create([
             'studentFullName'=> $request -> name,
             'birthday'=> $request -> dateOfBirth,
@@ -24,24 +45,7 @@ class studentRegisterController extends Controller
             'studentConfirmPassword'=> $request -> studentReEnterPassword
            ]);
 
-        $rules = [
-            'studentFullName' => 'required',
-            'studentEmail' => 'required|email|unique:student_registers',
-            'studentPassword'   => 'required|min:8',
-            'studentConfirmPassword'=> 'required|same:studentPassword',
-        ];
-
-        $customMessages = [
-            'studentPassword.min' => 'The password must be at least 8 characters.',
-            'studentConfirmPassword.same'=> 'Password not match',
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
-
-        if ($validator->fails()) 
-        {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+        
 
         // Create a new record in the database
         //$register = Register::create($request->all());
