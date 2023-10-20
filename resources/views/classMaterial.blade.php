@@ -17,7 +17,7 @@
 <body>
 @extends('studentHomeContent')
     @section('content')
-<div class="container">
+<div class="container1">
         <header>
             <h1>Class Materials</h1>
         </header>

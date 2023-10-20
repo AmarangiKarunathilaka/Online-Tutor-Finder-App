@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Class meterial upload form</title>
+    <title>Class Material Upload form</title>
     <meta name="viewport" content="width=device-width,
       initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/classMaterialUpload.css" />
+    <link rel="stylesheet" href="css/classMaterial.css" />
   </head>
   <body>
   @extends('tutorHomeContent')

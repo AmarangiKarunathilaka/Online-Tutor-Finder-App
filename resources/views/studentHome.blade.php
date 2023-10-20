@@ -22,8 +22,8 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Institute</span>
-                    <span class="profession">Management System</span>
+                    <span class="name">Tutor</span>
+                    <span class="profession">Finder System</span>
                 </div>
             </div>
 
@@ -102,9 +102,7 @@
 
     </nav>
 
-    <section class="home">
-        <div class="text">Dashboard Sidebar</div>
-    </section>
+    
 
     <script src="js/script.js"></script>
 
