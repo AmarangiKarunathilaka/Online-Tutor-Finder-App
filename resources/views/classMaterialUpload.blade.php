@@ -5,15 +5,14 @@
     <title>Class meterial upload form</title>
     <meta name="viewport" content="width=device-width,
       initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/classMaterial.css" />
+    <link rel="stylesheet" href="css/classMaterialUpload.css" />
   </head>
   <body>
-
   @extends('tutorHomeContent')
     @section('content')
-    
+     
     <div class="container">
-      <h1 class="form-title">Advertisment Upload</h1>
+      <h1 class="form-title">Class Material Upload</h1>
       <form action="#">
         <div class="main-user-info">
           <div class="user-input-box">
@@ -21,43 +20,48 @@
             <input type="text"
                     id="fullName"
                     name="fullName"
-                    placeholder="Name to be displayed"/>
+                    placeholder="Enter Full Name"/>
           </div>
           <div class="user-input-box">
             <label for="email">Email</label>
             <input type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your Email"/>
+                    placeholder="Enter Email"/>
           </div>
           
-          
           <div class="user-input-box">
-            <label for="title">Payment</label>
+            <label for="subject">Select Subject</label>
+                <select name="subject" id="subject">
+                    <option value="math">Mathematics</option>
+                    <option value="science">Physics</option>
+                    <option value="history">Chemistry</option>
+                    
+                </select>
+          </div>
+          <div class="user-input-box">
+            <label for="title">Title</label>
             <input type="text"
                     id="title"
                     name="title"
-                    placeholder="Enter Your payment for one hour"/>
+                    placeholder="Enter title for material"/>
           </div>
           <div class="user-input-box">
-            <label for="material">Upload image:</label>
-                <input type="file" name="image"   accept="image/jpeg, image/png, image/jpg" id="input-file" required>
+            <label for="material">Upload Class Material:</label>
+                <input type="file" name="material" id="material" accept=".pdf, .doc, .docx" required>
           </div>
-          <div class="user-input-box">
-            <label for="email">Description</label></div>
-            <textarea id="message" name="message" rows="4" placeholder="" ></textarea>
-          
+
           
         </div>
         <div class="category-details-box">
-          <span class="category-title">select subject</span>
+          <span class="category-title">select category</span>
           <div class="category-category">
-            <input type="checkbox" name="subject" id="Mathematics">
-            <label for="Mathematics">Mathematics</label>
-            <input type="checkbox" name="subject" id="Physics">
-            <label for="Physics">Physics</label>
-            <input type="checkbox" name="subject" id="Chemistry">
-            <label for="Chemistry">Chemistry</label>
+            <input type="radio" name="category" id="classNote">
+            <label for="classNote">Class Note</label>
+            <input type="radio" name="category" id="Assignment">
+            <label for="Assignment">Assignment</label>
+            <input type="radio" name="category" id="Reference">
+            <label for="Reference">Reference</label>
           </div>
         </div>
         <div class="form-submit-btn">
@@ -66,7 +70,7 @@
                 <div  class = "popup" id="popup">
                     <img src = "images/tick.png">
                     <h2>Successful</h2>
-                    <p>Your advertisment uploaded</p>
+                    <p>Your class material uploaded</p>
                     <button type = "button" onclick="closePopup()">OK</button>
                 </div>
                     
@@ -84,6 +88,6 @@
         </div>
       </form>
     </div>
-    @endsection
+    @endsection 
   </body>
 </html>

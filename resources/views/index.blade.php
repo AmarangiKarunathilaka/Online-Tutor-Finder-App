@@ -8,7 +8,7 @@
         
 
 
-        <title>gest-interface</title>
+        <title>guest-interface</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,6 +47,7 @@ Bootstrap 5 HTML CSS Template
             <div class="container">
                 
                 <img src="images/f.png" alt="" />
+                
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -61,11 +62,6 @@ Bootstrap 5 HTML CSS Template
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_2"><b>About</b></a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3"><b>Contact Us</b></a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/login"><b>Login</b></a>
                         </li>
@@ -167,7 +163,7 @@ Bootstrap 5 HTML CSS Template
                 
                      <div class="col-lg-12 col-12">
                         <div class="subject">
-                            <h3><i><u>Combine Maths</u></i></h3>
+                            <h3><i><u>Combined Maths</u></i></h3>
                         </div>
                     </div>
                 
@@ -176,7 +172,7 @@ Bootstrap 5 HTML CSS Template
                 <div class="owl-carousel reviews-carousel">
 
                     <div class="col">
-                        <img src="images/team-01.png">
+                        <img src="images/team-01.jpg">
                             <h2>James Fernando </h2>
                                 <p> Experience: 5 years<br>
                                 Rate: $50/hour<br>
@@ -185,7 +181,7 @@ Bootstrap 5 HTML CSS Template
                         
 
                    <div class="col">
-                        <img src="images/team-01.png">
+                        <img src="images/team-01.jpg">
                             <h2>James Fernando </h2>
                                 <p> Experience: 5 years<br>
                                 Rate: $50/hour<br>
@@ -195,7 +191,7 @@ Bootstrap 5 HTML CSS Template
 
                     
                     <div class="col">
-                        <img src="images/team-01.png">
+                        <img src="images/team-01.jpg">
                             <h2>James Fernando </h2>
                                 <p> Experience: 5 years<br>
                                 Rate: $50/hour<br>
@@ -203,7 +199,7 @@ Bootstrap 5 HTML CSS Template
                     </div>
                     
                     <div class="col">
-                        <img src="images/team-01.png">
+                        <img src="images/team-01.jpg">
                             <h2>James Fernando </h2>
                                 <p> Experience: 5 years<br>
                                 Rate: $50/hour<br>
@@ -211,7 +207,7 @@ Bootstrap 5 HTML CSS Template
                     </div>
                    
                     <div class="col">
-                        <img src="images/team-01.png">
+                        <img src="images/team-01.jpg">
                             <h2>James Fernando </h2>
                                 <p> Experience: 5 years<br>
                                 Rate: $50/hour<br>
@@ -234,7 +230,7 @@ Bootstrap 5 HTML CSS Template
                     <div class="owl-carousel reviews-carousel">
 
                         <div class="col">
-                            <img src="images/team-01.png">
+                            <img src="images/team-01.jpg">
                                 <h2>James Fernando </h2>
                                     <p> Experience: 5 years<br>
                                     Rate: $50/hour<br>
@@ -244,7 +240,7 @@ Bootstrap 5 HTML CSS Template
                
 
                         <div class="col">
-                            <img src="images/team-01.png">
+                            <img src="images/team-01.jpg">
                                 <h2>James Fernando </h2>
                                 <p> Experience: 5 years<br>
                                 Rate: $50/hour<br>
@@ -253,7 +249,7 @@ Bootstrap 5 HTML CSS Template
                 
 
                         <div class="col">
-                            <img src="images/team-01.png">
+                            <img src="images/team-01.jpg">
                                 <h2>James Fernando </h2>
                                     <p> Experience: 5 years<br>
                                     Rate: $50/hour<br>
@@ -262,7 +258,7 @@ Bootstrap 5 HTML CSS Template
 
 
                         <div class="col">
-                            <img src="images/team-01.png">
+                            <img src="images/team-01.jpg">
                                 <h2>James Fernando </h2>
                                     <p> Experience: 5 years<br>
                                     Rate: $50/hour<br>
@@ -285,7 +281,7 @@ Bootstrap 5 HTML CSS Template
             <div class="owl-carousel reviews-carousel">
 
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                              Rate: $50/hour<br>
@@ -293,7 +289,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
             
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                             Rate: $50/hour<br>
@@ -301,7 +297,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
           
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                             Rate: $50/hour<br>
@@ -309,7 +305,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
 
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                             Rate: $50/hour<br>
@@ -330,7 +326,7 @@ Bootstrap 5 HTML CSS Template
             <div class="owl-carousel reviews-carousel">
                 
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                             Rate: $50/hour<br>
@@ -339,7 +335,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
         
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                             Rate: $50/hour<br>
@@ -347,7 +343,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
        
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                             Rate: $50/hour<br>
@@ -355,7 +351,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
 
                 <div class="col">
-                    <img src="images/team-01.png">
+                    <img src="images/team-01.jpg">
                         <h2>James Fernando </h2>
                             <p> Experience: 5 years<br>
                             Rate: $50/hour<br>

@@ -71,8 +71,8 @@ Route::get('/classMaterial', function () {
 
 
   
-Route::get('/classMaterial', function () {
-    return view('classMaterial');
+Route::get('/classMaterialUpload', function () {
+    return view('classMaterialUpload');
 }); 
 
 

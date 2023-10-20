@@ -105,7 +105,7 @@ class tutorRegisterController extends Controller
         } 
         ////
 
-        return redirect(route('login'));
+        return redirect(route('/login'));
 
         // return redirect() -> back();
      }
