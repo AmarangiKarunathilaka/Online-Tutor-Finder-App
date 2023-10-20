@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/feedback1.css" />
 </head>
 <body>
+@extends('tutorHomeContent')
+    @section('content')
     <div class="container">
+        
         <h1 class="form-title">Website Feedback form</h1>
         <p><span class="highlighted">We value your feedback! Please fill out the form below:</span></p>
         <form id="website-feedback-form">
@@ -59,5 +62,6 @@
     </div>
 
     </div>
+    @endsection
 </body>
 </html>
