@@ -23,6 +23,8 @@
         <link href="css/owl.carousel.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/registrationstyle.css">
+
+        <link rel="stylesheet" href="css/style.css">
         
 <!--
 
