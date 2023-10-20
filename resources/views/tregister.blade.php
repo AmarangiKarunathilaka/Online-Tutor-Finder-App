@@ -73,7 +73,11 @@
                 
                         <tr>
                             <div class="mt-4">
-                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required></td>
+                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required>
+                                    @error('contact')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </td>
                                
                             </div>
                             

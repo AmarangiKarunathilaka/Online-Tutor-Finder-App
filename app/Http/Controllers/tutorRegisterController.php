@@ -20,14 +20,17 @@ class tutorRegisterController extends Controller
 
         $rules = [
             'name' => 'required',
+            'qualification' => 'qualification',
             'email' => 'required|email|unique:tutor_registers,tutorEmail',
             'password'   => 'required|min:8',
             'reEnterPassword'=> 'required|same:tutorPassword',
+            'studentContact' => 'required|regex:/^0\d{9}$/',
         ];
 
         $customMessages = [
             'password.min' => 'The password must be at least 8 characters.',
             'reEnterPassword.same'=> 'Password not match',
+            'studentContact' => 'Phone number must be 10 characters',
         ];
 
         $validator = Validator::make($request->all(), $rules,$customMessages);
@@ -35,6 +38,7 @@ class tutorRegisterController extends Controller
         {
             return redirect()->back()->withErrors($validator)->withInput();
         }
+        
       tutorRegister::create([
          'tutorFullName'=> $request -> name,
          'tutorPhoneNumber'=> $request -> contact,
