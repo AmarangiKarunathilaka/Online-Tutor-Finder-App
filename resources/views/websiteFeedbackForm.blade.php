@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
-    <link rel="stylesheet" href="css/Feedback1.css" />
+    <link rel="stylesheet" href="css/feedback1.css" />
 </head>
 <body>
 @extends('tutorHomeContent')
@@ -15,12 +15,12 @@
         <p><span class="highlighted">We value your feedback! Please fill out the form below:</span></p>
         <form id="website-feedback-form">
             <div class="form-group">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+                
+                <input type="text" id="name" name="name" placeholder="Name"required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                
+                <input type="email" id="email" name="email" placeholder="Email">
             </div>
             <div class="form-group">
                 <label for="rating">Rating:</label>
@@ -34,12 +34,30 @@
             </div>
 
             <div class="form-group">
-                <label for="message">Feedback</label>
-                <textarea id="message" name="message" rows="4" placeholder="Type your Feedback" required></textarea>
+                
+                <textarea id="message" name="message" rows="4" placeholder="Type your Feedback" ></textarea>
             </div>
             
     
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn" onclick="openPopup()">submit</button>
+                <div  class = "popup" id="popup">
+                    <img src = "images/tick.png">
+                    <h2>Thank You!</h2>
+                    <p>Your details has been successfully submitted. Thanks!</p>
+                    <button type = "button" onclick="closePopup()">OK</button>
+                </div>
+                    
+                <script>
+                    let popup= document.getElementById("popup");
+
+                    function openPopup(){
+                    popup.classList.add("open-popup"); 
+                    }
+
+                    function closePopup(){
+                    popup.classList.remove("open-popup"); 
+                    }
+                </script>
         </form>
     </div>
 

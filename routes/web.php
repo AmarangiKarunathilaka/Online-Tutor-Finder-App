@@ -81,7 +81,9 @@ Route::get('/TutorFeedback', function () {
 Route::get('/websiteFeedbackForm', function () {
     return view('websiteFeedbackForm');
 });
-
+Route::get('/popupBox', function () {
+    return view('popupBox');
+});
 
 
 // Example route definition
@@ -95,6 +97,10 @@ Route::get('/report', function () {
 
 Route::get('/editTutorProfile', function () {
     return view('editTutorProfile');
+});
+
+Route::get('/advertismentUpload', function () {
+    return view('advertismentUpload');
 });
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
@@ -118,6 +124,7 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 // edit tutor profile-Gayathtri
+
 Route::resource('user-profiles', 'UserProfileController');
 
 //kavindra

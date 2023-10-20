@@ -28,12 +28,14 @@
                     text-align: center;
                     padding-bottom: 6px;
                     color: white;
+            
                     text-shadow: 2px 2px 2px black;
                     border-bottom: solid 1px white;
                 }
 
 
                 .highlighted {
+                    font-weight: bold;
                     background-color: yellow;
                     /* You can add more styles as needed */
                 }
@@ -48,6 +50,9 @@
 
                 label {
                     font-weight: bold;
+                    color:rgb(6, 6, 7);
+                    font-size: 18px;
+                    background-color: yellow;
                 }
 
                 input[type="text"],
@@ -65,18 +70,69 @@
 
                 button {
                     background-color: #ff7b00;
-                    color: #fff;
+                    color: #050505;
                     padding: 10px 20px;
                     border: none;
                     border-radius: 4px;
                     cursor: pointer;
                     width: 100%;
+                    font-size: 18px;
+                    font-weight: bold;
+
                 }
 
                 button:hover {
                     background-color: #ac9202;
                 }
 
+                .popup{
+                    width: 400px;
+                    background: #fff;
+                    border-radius: 6px;
+                    position: absolute;
+                    top: 0;
+                    left:50%;
+                    transform: translate(-50%, -50%) scale(1.0);
+                    text-align: center;
+                    padding: 0 30px 30px;
+                    color: #333;
+                    visibility: hidden;
+                    transition: transform 0.4s, top 0.4s;
+                }
+                .open-popup{
+                    visibility: visible;
+                    top: 50%;
+                    transform: translate(-50%, -50%) scale(1);
+                }
+                
+                .popup img{
+                    width:110px;
+                    height: 100px;
+                    margin-top: -50px;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                }
+                
+                .popup h2{
+                    font-size: 38px;
+                    font-weight: 500;
+                    margin: 30px o 10px;
+                
+                }
+                .popup button{
+                    width: 100%;
+                    margin-top: 50px;
+                    padding: 10px 0;
+                    background: #ff7b00;
+                    color:#fff;
+                    border: 0;
+                    outline: none;
+                    font-size: 18px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+                
 
 
         

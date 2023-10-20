@@ -54,14 +54,14 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/classMaterial">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Class Materials</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/advertismentUpload">
                             <i class='bx bx-file icon' ></i>
                             <span class="text nav-text">Advertisements</span>
                         </a>

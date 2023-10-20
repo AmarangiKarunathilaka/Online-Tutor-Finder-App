@@ -55,7 +55,14 @@ body{
     width: 50%;
     padding-bottom: 15px;
 }
-
+textarea {
+    width: 600px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .user-input-box label{
     width: 95%;
     color: white;
@@ -95,11 +102,11 @@ body{
     cursor: pointer;
 }
 
-.form-submit-btn{
+.btn{
     margin-top: 40px;
 }
 
-.form-submit-btn input{
+.btn{
     display: block;
     width: 100%;
     margin-top: 10px;
@@ -111,8 +118,8 @@ body{
     background: rgba(224, 155, 5, 0.7);
 }
 
-.form-submit-btn input:hover{
-    background:rgba(231, 210, 16, 0.849);
+.btn:hover{
+    background:rgba(230, 226, 9, 0.849);
     color: rgb(255, 255, 255);
 }
 
@@ -166,3 +173,49 @@ input[type="file"] {
 
 
 
+/* popupBox.css */
+.popup{
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left:50%;
+    transform: translate(-50%, -50%) scale(1.0);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px o 10px;
+
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: rgba(190, 133, 9, 0.7);
+    color:#fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
