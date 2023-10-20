@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Session;
+//use Session;
 use App\Models\login;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CustomAuthController extends Controller
 {
@@ -33,7 +34,10 @@ class CustomAuthController extends Controller
         'password'=> $request -> password,
         
        ]);
+       return redirect('/tutorHome');
     }
+
+    
     public function dashboard()
     {
         if(Auth::check()){

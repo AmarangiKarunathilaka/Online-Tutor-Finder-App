@@ -10,9 +10,22 @@ body{
     height: 100%;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg,#d27e00,#e29c04a9,#d6ee02,#c9d523);
+    background: linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);
     background-size: 300% 300%;
     height: 100vh;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    
+    color: #fff;
+    text-align: center;
     
 }
 
@@ -25,6 +38,34 @@ body{
     margin: 0 28px;
     border-radius: 20px;
     box-shadow: inset -5px 2px 2px white;
+    
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.material-list {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.material-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    
+}
+
+.material-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.material-list li:hover {
+    background-color: #fcbe03;
     
 }
 

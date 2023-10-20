@@ -58,7 +58,7 @@
            
         <div class="form">
             
-            <h1><div class="row justify-content-center"> Registration </div></h1>
+            <h2><div class="row justify-content-center"> Registration </div></h2>
 
                 <table>
                     <form action="{{ url('/studentInput') }}" method="Post">

@@ -77,7 +77,7 @@ Bootstrap 5 HTML CSS Template
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form method="POST" action="{{ route('postlogin') }}">
+                <form method="POST" action="{{ route('/tutorHome') }}">
                 @csrf
                     <h2>Login</h2>
 
@@ -105,7 +105,7 @@ Bootstrap 5 HTML CSS Template
                     </div>
                     <button>Submit</button>
                     <div class="register">
-                        <p>New Member <a href="registration.html">Registration here</a></p>
+                        <p>New Member <a href="/registration">Registration here</a></p>
                     </div>
                 </form>
             </div>

@@ -22,8 +22,8 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Institute</span>
-                    <span class="profession">Management System</span>
+                    <span class="name">Tutor</span>
+                    <span class="profession">Finder System</span>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/classMaterial">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Class Materials</span>
                         </a>
@@ -102,9 +102,7 @@
 
     </nav>
 
-    <section class="home">
-        <div class="text">Dashboard Sidebar</div>
-    </section>
+    
 
     <script src="js/script.js"></script>
 
