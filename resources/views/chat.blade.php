@@ -8,6 +8,11 @@
 	
 </head>
 <body>
+@extends('tutorHomeContent')
+@section('content')
+<section class="home">
+        <div class="text"></div>
+    
     <div class="chat-container">
         <div class="chat-box">
             <div class="message tutor">
@@ -21,5 +26,7 @@
             <button>Send</button>
         </div>
     </div>
+    </section>
+    @endsection
 </body>
 </html>
