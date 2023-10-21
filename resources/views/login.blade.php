@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -77,9 +78,11 @@ Bootstrap 5 HTML CSS Template
            
         <section class="hero-section hero-slide d-flex justify-content-center align-items-center">
 
+
     <section>
         <div class="form-box">
             <div class="form-value">
+
                 <form method="post" action="{{ url('/postlogin') }}">
                 @csrf
                     <h2>Login</h2>
@@ -102,13 +105,17 @@ Bootstrap 5 HTML CSS Template
                                 @endif
                     </div>
 
+
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember me  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="">Forget Password</a></label>
                         
                     </div>
                     <button>Submit</button>
                     <div class="register">
+
+                        <p>New Member <a href="">Registration here</a></p>
                         <p>New Member <a href="/registration">Registration here</a></p>
+
                     </div>
                 </form>
             </div>
@@ -116,6 +123,7 @@ Bootstrap 5 HTML CSS Template
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 
  <!-- JAVASCRIPT FILES -->
  <script src="js/jquery.min.js"></script>
@@ -127,3 +135,4 @@ Bootstrap 5 HTML CSS Template
 </html>
 
  
+
