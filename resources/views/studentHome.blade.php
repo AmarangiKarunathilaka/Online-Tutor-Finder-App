@@ -127,7 +127,7 @@
     advertisement   (ishara)           
   ----------------------------------------->
 
-    <section class= "advertisement" id="section_3">
+    <section class= "advertisement" id="">
 
         <div class="col-lg-12 col-12">
             <h2>Our Tutors</h2>

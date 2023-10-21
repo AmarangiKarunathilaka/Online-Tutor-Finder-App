@@ -53,19 +53,16 @@ Bootstrap 5 HTML CSS Template
                     <ul class="navbar-nav ms-auto">
                         
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                            <a class="nav-link click-scroll" href="/">Home</a>
                         </li>
                     
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+                            <a class="nav-link click-scroll" href="/#section_2">About</a>
                         </li>
-        
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_3">Contact Us</a>
-                        </li>
+    
                     
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="registration.html"><b>Register</b></a>
+                            <a class="nav-link click-scroll" href="registration"><b>Register</b></a>
                         </li>
                     </ul>
                 </div>

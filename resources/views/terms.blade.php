@@ -22,61 +22,52 @@
         <link href="css/owl.carousel.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/registrationstyle.css">
+       
         
-<!--
 
-Tooplate 2133 Moso Interior
-
-https://www.tooplate.com/view/2133-moso-interior
-
-Bootstrap 5 HTML CSS Template
-
--->
     </head>
     
     <body>
 
-        <nav class="navbar navbar-expand-lg  fixed-top shadow-lg">
+    <nav class="navbar navbar-expand-lg  fixed-top shadow-lg">
+       
+       <div class="container">
            
-            <div class="container">
-                
-                <img src="images/f.png" alt="" />
+           <img src="images/f.png" alt="" />
+           
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+           </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
-                        </li>
-                    
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
-                        </li>
-        
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_3">Contact Us</a>
-                        </li>
-                    
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="login.html">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="registration.html"><b>Register</b></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+           <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="#section_1"><b>Home</b></a>
+                   </li>
+
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="#section_2"><b>About</b></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="/login"><b>Login</b></a>
+                   </li>
+
+                   <li class="nav-item">
+                       <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
+                   </li>
+               </ul>
+           </div>
+       </div>
+
+   </nav>
+
 
         <section class="hero-section hero-slide d-flex justify-content-center align-items-center">
             <section class="terms-box">
                            
                     
-                  <h1><div class="row justify-content-center">Terms and Conditions </div></h1>
+                  <h2><div class="row justify-content-center">Terms and Conditions </div></h2>
                
                <h4>1. An Intellectual Property clause will inform users that the contents, logo and other visual media you created is your property and is protected by copyright laws.<br><br>
 

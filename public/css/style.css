@@ -56,7 +56,7 @@ https://www.tooplate.com/view/2133-moso-interior
   TYPOGRAPHY               
 -----------------------------------------*/
 body {
-    background-color: #36363e;
+  background:linear-gradient(45deg,#dfdf81,#3b3b33a9,#3d3d38,#e6eba8);
 }
 
 h2 {
@@ -123,12 +123,12 @@ button {
 }
 
 a {
-  color: var(--p-color);
+  color:#4889de;
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: #094696;
 }
 
 b,
@@ -194,6 +194,12 @@ strong {
     border-radius: 5px;
     padding: 8px 15px;
    
+}
+nav ul li:nth-child(3) a {
+  background-color: var(--p-color); 
+  border-radius: 5px;
+  padding: 8px 15px;
+ 
 }
 
 
