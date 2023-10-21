@@ -124,6 +124,10 @@ Route::get('/advertismentUpload', function () {
     return view('advertismentUpload');
 });
 
+Route::get('/aclassRequestList', function () {
+    return view('classRequestList');
+});
+
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
