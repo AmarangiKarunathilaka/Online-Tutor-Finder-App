@@ -85,8 +85,8 @@ Route::get('/popupBox', function () {
     return view('popupBox');
 });
 
-Route::get('/classRequest', function () {
-    return view('classRequest');
+Route::get('/classRequestList', function () {
+    return view('classRequestList');
 });
 
 
