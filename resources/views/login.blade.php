@@ -23,6 +23,8 @@
         <link href="css/owl.carousel.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/registrationstyle.css">
+
+        <link rel="stylesheet" href="css/style.css">
         
 <!--
 
@@ -75,25 +77,35 @@ Bootstrap 5 HTML CSS Template
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form method="POST" action="{{ route('/tutorHome') }}">
+                @csrf
                     <h2>Login</h2>
+
                     <div class="input-box">
                         <ion-icon name="person-outline"></ion-icon>
-                        <input type="text" required>
-                        <label for="">User Name</label>
+                        <input type="text" id="email" name="email" required>
+                        <label for="">E-mail</E-mail></label>
+                                @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
                     </div>
+
                     <div class="input-box">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input type="password" id="password" name="password" required>
                         <label for="">Password</label>
+                                @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                                @endif
                     </div>
+
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember me  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="">Forget Password</a></label>
                         
                     </div>
                     <button>Submit</button>
                     <div class="register">
-                        <p>New Member <a href="registration.html">Registration here</a></p>
+                        <p>New Member <a href="/registration">Registration here</a></p>
                     </div>
                 </form>
             </div>

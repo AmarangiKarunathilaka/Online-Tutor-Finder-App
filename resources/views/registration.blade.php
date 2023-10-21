@@ -23,6 +23,8 @@
         <link href="css/owl.carousel.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/registrationstyle.css">
+
+        <link rel="stylesheet" href="css/style.css">
         
 <!--
 
@@ -63,10 +65,10 @@ Bootstrap 5 HTML CSS Template
                         </li>
                     
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="login.html">Login</a>
+                            <a class="nav-link click-scroll" href="/login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="registration.html"><b>Register</b></a>
+                            <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
                         </li>
                     </ul>
                 </div>
@@ -76,10 +78,10 @@ Bootstrap 5 HTML CSS Template
         <section class="hero-section hero-slide d-flex justify-content-center align-items-center">
             <section class="registration" id="registration_form">               
                 <div class="box1">
-                    <h3>You Want To Register As A</h3>
+                    <h2>You Want To Register As </h2>
                         <div class="row">
-                            <a href="tregister.html"><button> Tutor</button></a>
-                            <a href="sregister.html"><button action="">Student</button> </a> 
+                            <a href="/tregister"><button> Tutor</button></a>
+                            <a href="/sRegister"><button>Student</button> </a> 
                         </div>                      
                 </div>
             </section>

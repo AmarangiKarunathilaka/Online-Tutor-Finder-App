@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tutor_mediums', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('tutorMedium_id')->nullable();
-            $table->foreign('tutorMedium_id')->references('id')->on('tutor_registers');
-            $table->string('tutorMedium')->nullable();
+        Schema::create('messages', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutor_mediums');
+        Schema::dropIfExists('messages');
     }
 };

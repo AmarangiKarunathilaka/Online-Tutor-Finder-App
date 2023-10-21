@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
+
 use App\Http\Controllers\tutorRegisterController;
+use App\Http\Controllers\studentRegisterController;
+use App\Http\Controllers\CustomAuthController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,8 +35,11 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
-Route::get('/stRegister', function () {
-    return view('stRegister');
+
+
+Route::get('/sRegister', function () {
+    return view('sRegister');
+
 });
 
 Route::get('/terms', function () {
@@ -52,9 +60,15 @@ Route::get('/classRequest', function () {
 
 
 
+
 Route::get('/tutorHome', function () {
     return view('tutorHome');
 
+});
+
+
+Route::get('/tutorHomeContent', function () {
+    return view('tutorHomeContent');
 });
 
 
@@ -64,8 +78,8 @@ Route::get('/classMaterial', function () {
 
 
   
-Route::get('/classMaterial', function () {
-    return view('classMaterial');
+Route::get('/classMaterialUpload', function () {
+    return view('classMaterialUpload');
 }); 
 
 
@@ -75,18 +89,26 @@ Route::get('/TutorFeedback', function () {
 Route::get('/websiteFeedbackForm', function () {
     return view('websiteFeedbackForm');
 });
-
+Route::get('/popupBox', function () {
+    return view('popupBox');
+});
 
 
 // Example route definition
 Route::get('/admin/reports',  'AdminReportController@index');
 
-
+Route::get('/report', function () {
+    return view('report');
+});
 
 
 
 Route::get('/editTutorProfile', function () {
     return view('editTutorProfile');
+});
+
+Route::get('/advertismentUpload', function () {
+    return view('advertismentUpload');
 });
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
@@ -110,8 +132,20 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 // edit tutor profile-Gayathtri
+
 Route::resource('user-profiles', 'UserProfileController');
 
 //kavindra
 Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
 Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
+
+Route::post('/sregister', [studentRegisterController::class, 'studentRegister'])->name('studentRegister');
+Route::post('/studentInput',[studentRegisterController::class, 'studentRegisterInput'])->name('studentRegisterInput');
+
+Route::get('/dashboard', [CustomAuthController::class, 'dashboard']); 
+Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('/postlogin', [CustomAuthController::class, 'login'])->name('postlogin'); 
+//Route::post('/loginInput', [CustomAuthController::class, 'loginInput'])->name('loginInput');
+Route::get('/signup', [CustomAuthController::class, 'signup'])->name('register-user');
+Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
+Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');

@@ -58,7 +58,7 @@
            
         <div class="form">
             
-            <h1><div class="row justify-content-center"> Registration </div></h1>
+            <h2><div class="row justify-content-center"> Registration </div></h2 >
 
                 <table>
                     <form action="{{ url('/tutorInput') }}" method="post">
@@ -73,7 +73,11 @@
                 
                         <tr>
                             <div class="mt-4">
-                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required></td>
+                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required>
+                                    @error('contact')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </td>
                                
                             </div>
                             
@@ -89,25 +93,25 @@
                     <tr>
                         <tr>
                             <div class="TutorReg-1">
-                                <td><label for="TR-subject"> Subject :</label></td>
-                                <td><input type="checkbox" class="TR-input"  name="subject1">
+                                <td><label for="TR-subject" name="subject"> Subject :</label></td>
+                                <td><input type="checkbox" class="TR-input"  name="subject1" value="mathematics">
                                 <label for="TR-subject1"> Mathematics </label></td>
                             </div>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject2">
+                            <td><input type="checkbox" class="TR-input"  name="subject2" value="biology">
                                 <label for="TR-subject2"> Biology </label>
                             </td>
                         <tr>
                         <tr>
                             <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject3">
+                            <td><input type="checkbox" class="TR-input"  name="subject3" value="chemistry">
                                 <label for="TR-subject3"> Chemistry </label>
                         </td>
                         <tr>
                             <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject4">
+                            <td><input type="checkbox" class="TR-input"  name="subject4" value="physics">
                                 <label for="TR-subject4"> Physics </label>
                             </td>
                         </tr>
@@ -115,17 +119,17 @@
                         <tr>
                             <tr>
                                 <div class="TutorReg-1">
-                                    <td><label for="TR-medium"> Medium :</label></td>
-                                    <td><input type="checkbox" class="TR-input" name="medium1">
+                                    <td><label for="TR-medium" name="medium"> Medium :</label></td>
+                                    <td><input type="checkbox" class="TR-input" name="medium1" value="sinhala">
                                     <label for="TR-medium1"> Sinhala </label></td>
                                 </div>
                             </tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium2">
+                                <td><td><input type="checkbox" class="TR-input" name="medium2" value="english">
                                     <label for="TR-medium2"> English </label></td></td>
                             <tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium3">
+                                <td><td><input type="checkbox" class="TR-input" name="medium3" value="tamil">
                                     <label for="TR-medium3"> Tamil </label></td></td>
                             <tr>
                         </tr>
@@ -143,8 +147,20 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="password"></td>
-                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="reEnterPassword"></td>
+                                <td> <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter Password" name="password" id="password">
+                            
+                                @error('password')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
+
+                                </td>
+
+                                <td> <input type="password" class="form-control @error('reEnterPassword') is-invalid @enderror" placeholder="Re-enter Password" name="reEnterPassword" id="reEnterPassword"></td>
+                                
+                                @error('reEnterPassword')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
+
                             </div>
                         </tr>
                     </table>
