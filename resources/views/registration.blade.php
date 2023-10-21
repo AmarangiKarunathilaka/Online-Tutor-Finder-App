@@ -23,16 +23,10 @@
         <link href="css/owl.carousel.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/registrationstyle.css">
+
+        <link rel="stylesheet" href="css/style.css">
         
-<!--
 
-Tooplate 2133 Moso Interior
-
-https://www.tooplate.com/view/2133-moso-interior
-
-Bootstrap 5 HTML CSS Template
-
--->
     </head>
     
     <body>
@@ -51,22 +45,18 @@ Bootstrap 5 HTML CSS Template
                     <ul class="navbar-nav ms-auto">
                         
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                            <a class="nav-link click-scroll" href="/">Home</a>
                         </li>
                     
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
-                        </li>
-        
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_3">Contact Us</a>
+                            <a class="nav-link click-scroll" href="/#section_2">About</a>
                         </li>
                     
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="login.html">Login</a>
+                            <a class="nav-link click-scroll" href="/login"><b>Login<b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="registration.html"><b>Register</b></a>
+                            <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
                         </li>
                     </ul>
                 </div>
@@ -76,10 +66,10 @@ Bootstrap 5 HTML CSS Template
         <section class="hero-section hero-slide d-flex justify-content-center align-items-center">
             <section class="registration" id="registration_form">               
                 <div class="box1">
-                    <h3>You Want To Register As A</h3>
+                    <br><h2>You Want To Register As </h2><br>
                         <div class="row">
-                            <a href="tregister.html"><button> Tutor</button></a>
-                            <a href="sregister.html"><button action="">Student</button> </a> 
+                            <a href="/tregister"><button> Tutor</button></a>
+                            <a href="/sRegister"><button>Student</button> </a> 
                         </div>                      
                 </div>
             </section>

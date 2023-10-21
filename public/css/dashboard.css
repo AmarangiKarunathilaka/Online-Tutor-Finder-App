@@ -1,4 +1,5 @@
 /* Google Font Import - Poppins */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
@@ -9,7 +10,7 @@
 
 :root{
     /* ===== Colors ===== */
-    --body-color: #E4E9F7;
+    --body-color: hsl(49, 25%, 75%);
     --sidebar-color: #FFF;
     --primary-color: #fcbe03;
     --primary-color-light: #F6F5FF;
@@ -289,13 +290,13 @@ body.dark .switch::before{
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
-    background-color: var(--body-color);
+    /*background-color: var(--body-color);*/
     transition: var(--tran-05);
 }
 .home .text{
     font-size: 30px;
     font-weight: 500;
-    color: var(--text-color);
+    color: #707070;
     padding: 12px 60px;
 }
 

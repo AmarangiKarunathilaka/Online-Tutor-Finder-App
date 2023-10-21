@@ -1,4 +1,3 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +22,8 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Tuition</span>
-                    <span class="profession">Management System</span>
+                    <span class="name">Tutor</span>
+                    <span class="profession">Finder System</span>
                 </div>
             </div>
 
@@ -41,7 +40,7 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/editTutorProfile">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -55,14 +54,14 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/classMaterialUpload">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Class Materials</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/advertismentUpload">
                             <i class='bx bx-file icon' ></i>
                             <span class="text nav-text">Advertisements</span>
                         </a>
@@ -76,7 +75,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/websiteFeedbackForm">
                             <i class='bx bx-edit icon' ></i>
                             <span class="text nav-text">Feedback</span>
                         </a>
@@ -87,7 +86,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="/">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -110,9 +109,7 @@
 
     </nav>
 
-    <section class="home">
-        <div class="text">Dashboard Sidebar</div>
-    </section>
+   
 
     <script src="js/script.js"></script>
 

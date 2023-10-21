@@ -12,7 +12,7 @@ body {
         background-attachment: fixed;
         background-size: cover;
 		background-position: center;
-		background: linear-gradient(45deg,#d27e00,#e29c04a9,#d6ee02,#c9d523);
+		background: linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);
     background-size: 300% 300%;
         justify-content: center;
         align-items: center;
@@ -185,8 +185,8 @@ nav ul li:last-child a {
 
 .btn {
     display: inline-block;
-    background-color: rgba(207, 178, 11, 0.5);
-    color: #fff;
+    background-color: rgb(244, 242, 105);
+    color: #575656;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -194,7 +194,8 @@ nav ul li:last-child a {
 }
 
 .btn:hover {
-    background-color: #e71313;
+    background-color: #ffea03;
+    color: #0e0d0d;
 }
 
 .form-box {

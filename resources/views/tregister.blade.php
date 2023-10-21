@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/tRegisterstyle.css">
     <link href="css/style.css" rel="stylesheet">
+   
     <title>Registation For Tutor</title>
 </head>
 <body>
@@ -26,15 +27,11 @@
            <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav ms-auto">
                    <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_1"><b>Home</b></a>
+                       <a class="nav-link click-scroll" href="/#section_1"><b>Home</b></a>
                    </li>
 
                    <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_2"><b>About</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_3"><b>Contact Us</b></a>
+                       <a class="nav-link click-scroll" href="/#section_2"><b>About</b></a>
                    </li>
 
                    <li class="nav-item">
@@ -58,10 +55,11 @@
            
         <div class="form">
             
-            <h1><div class="row justify-content-center"> Registration </div></h1>
+            <h2><div class="row justify-content-center"> Registration </div></h2 >
 
                 <table>
-                    <form method="post">
+                    <form action="{{ url('/tutorInput') }}" method="post">
+                        @csrf 
                         <tr>
                             <div class="mt-4">
                                 
@@ -72,7 +70,11 @@
                 
                         <tr>
                             <div class="mt-4">
-                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required></td>
+                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required>
+                                    @error('contact')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </td>
                                
                             </div>
                             
@@ -88,25 +90,25 @@
                     <tr>
                         <tr>
                             <div class="TutorReg-1">
-                                <td><label for="TR-subject"> Subject :</label></td>
-                                <td><input type="checkbox" class="TR-input"  name="subject1">
+                                <td><label for="TR-subject" name="subject"> Subject :</label></td>
+                                <td><input type="checkbox" class="TR-input"  name="subject1" value="mathematics">
                                 <label for="TR-subject1"> Mathematics </label></td>
                             </div>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject2">
+                            <td><input type="checkbox" class="TR-input"  name="subject2" value="biology">
                                 <label for="TR-subject2"> Biology </label>
                             </td>
                         <tr>
                         <tr>
                             <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject3">
+                            <td><input type="checkbox" class="TR-input"  name="subject3" value="chemistry">
                                 <label for="TR-subject3"> Chemistry </label>
                         </td>
                         <tr>
                             <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject4">
+                            <td><input type="checkbox" class="TR-input"  name="subject4" value="physics">
                                 <label for="TR-subject4"> Physics </label>
                             </td>
                         </tr>
@@ -114,17 +116,17 @@
                         <tr>
                             <tr>
                                 <div class="TutorReg-1">
-                                    <td><label for="TR-medium"> Medium :</label></td>
-                                    <td><input type="checkbox" class="TR-input" name="medium1">
+                                    <td><label for="TR-medium" name="medium"> Medium :</label></td>
+                                    <td><input type="checkbox" class="TR-input" name="medium1" value="sinhala">
                                     <label for="TR-medium1"> Sinhala </label></td>
                                 </div>
                             </tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium2">
+                                <td><td><input type="checkbox" class="TR-input" name="medium2" value="english">
                                     <label for="TR-medium2"> English </label></td></td>
                             <tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium3">
+                                <td><td><input type="checkbox" class="TR-input" name="medium3" value="tamil">
                                     <label for="TR-medium3"> Tamil </label></td></td>
                             <tr>
                         </tr>
@@ -142,24 +144,36 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="password"></td>
-                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="password"></td>
+                                <td> <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter Password" name="password" id="password">
+                            
+                                @error('password')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
+
+                                </td>
+
+                                <td> <input type="password" class="form-control @error('reEnterPassword') is-invalid @enderror" placeholder="Re-enter Password" name="reEnterPassword" id="reEnterPassword"></td>
+                                
+                                @error('reEnterPassword')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
+
                             </div>
                         </tr>
                     </table>
                     </tr>
                 
                             <div class="row">
-                            <div class="form-group col-1">
+                            <div class="form-group col-1"><br>
                                 <input type="checkbox" class="TR-input" name="terms" required>
                                 </div>
                                 <div class="form-group col-11">
-                                <label for="TR-terms"> I Agree to the <a href="terms.html">Terms and Conditions</a>  </label>
+                                <br><label for="TR-terms"> I Agree to the <a href="/terms"> Terms and Conditions</a>  </label>
                             </div>
                         </div>
                         
                         
-                        <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> Register </button>
+                       <br> <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> <b>Register<b> </button>
                         
         
                     </form>
