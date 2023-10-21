@@ -103,9 +103,9 @@ class tutorRegisterController extends Controller
                 'tutorMedium' => $request->medium3
             ]);
         } 
-        ////
+        
 
-        return redirect(route('/login'));
+        return redirect('/login');
 
         // return redirect() -> back();
      }

@@ -10,7 +10,8 @@
   <body>
   @extends('tutorHomeContent')
     @section('content')
-     
+    <section class="home">
+        <div class="text"></div>
     <div class="container">
       <h1 class="form-title">Class Material Upload</h1>
       <form action="#">
@@ -88,6 +89,7 @@
         </div>
       </form>
     </div>
-    @endsection 
+    @endsection
+    </section>
   </body>
 </html>
