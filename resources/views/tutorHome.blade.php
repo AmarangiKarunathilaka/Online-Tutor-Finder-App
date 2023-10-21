@@ -47,7 +47,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/classRequestList">
                             <i class='bx bx-user-plus icon'></i>
                             <span class="text nav-text">Class Requests</span>
                         </a>
@@ -68,7 +68,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/chat">
                             <i class='bx bxs-conversation icon' ></i>
                             <span class="text nav-text">Conversation</span>
                         </a>

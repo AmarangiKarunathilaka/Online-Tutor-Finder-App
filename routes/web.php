@@ -118,6 +118,10 @@ Route::get('/report', function () {
     return view('report');
 });
 
+Route::get('/chat', function () {
+    return view('chat');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -137,7 +141,7 @@ Route::get('/advertismentUpload', function () {
     return view('advertismentUpload');
 });
 
-Route::get('/aclassRequestList', function () {
+Route::get('/classRequestList', function () {
     return view('classRequestList');
 });
 
