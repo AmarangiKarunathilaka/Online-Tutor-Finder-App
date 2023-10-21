@@ -1,0 +1,74 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th, td {
+    border: 1px solid #dfdbce;;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #918e84;;
+}
+
+tr {
+    background-color: #f9f8f7;; 
+}
+/*tr:nth-child(even) {
+    background-color: #f2f2f2;
+}*/
+
+.values{
+    padding: 50px 500px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.values .val-box{
+    background: #fff;
+    width: 235px;
+    padding: 16px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.values .val-box i {
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    background-color: greenyellow;
+    margin-right: 15px;
+}
+
+.values .val-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.values .val-box span {
+    font-size: 15px;
+    color: #7e7d7d;
+}
+.accept{
+    background-color: rgb(233, 175, 15);
+    border-radius: 5px;
+}
+.remove{
+    background-color: rgb(255, 0, 0);
+    border-radius: 5px;
+}
+
+.form-box {
+    padding: 150px;
+}

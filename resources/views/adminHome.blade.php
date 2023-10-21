@@ -7,19 +7,6 @@
     
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="css/dashboard.css">
-    <!--<link rel="stylesheet" href="css/advertisementstyle.css"-->
-    
-
-    <!--<link href="css/bootstrap-icons.css" rel="stylesheet">   
-
-    <link href="css/owl.carousel.min.css" rel="stylesheet"> 
-
-    <link href="css/bootstrap-icons.css" rel="stylesheet"> -->
-
-       
-        
-
-
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -35,12 +22,8 @@
                 </span>
 
                 <div class="text logo-text">
-
-
                     <span class="name">Tutor</span>
                     <span class="profession">Finder System</span>
-
-
                 </div>
             </div>
 
@@ -57,37 +40,44 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/editTutorProfile">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-note icon' ></i>
-                            <span class="text nav-text">Class Registration</span>
+                        <a href="/adminStudentList">
+                            <i class='bx bx-user-plus icon'></i>
+                            <span class="text nav-text">Student List</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="/classMaterial">
-                            <i class='bx bx-book-open icon'></i>
-                            <span class="text nav-text">Class Materials</span>
+                        <a href="/adminTutorList">
+                            <i class='bx bx-user-plus icon'></i>
+                            <span class="text nav-text">Tutor List</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/adminAdvertisementList">
+                            <i class='bx bx-file icon' ></i>
+                            <span class="text nav-text">Advertisement List</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/adminFeedbackList">
                             <i class='bx bxs-conversation icon' ></i>
-                            <span class="text nav-text">Conversation</span>
+                            <span class="text nav-text">Feedback List</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/report">
                             <i class='bx bx-edit icon' ></i>
-                            <span class="text nav-text">Feedback</span>
+                            <span class="text nav-text">Reports</span>
                         </a>
                     </li>
 
@@ -119,18 +109,9 @@
 
     </nav>
 
-    <section class="home">
+   
 
-        <div class="text">Dashboard Sidebar</div>
-    </section>
-
-        
-
-
-<script src="js/script.js"></script>
-
-
-    
+    <script src="js/script.js"></script>
 
 </body>
 </html>

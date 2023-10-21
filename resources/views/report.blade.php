@@ -20,7 +20,7 @@
             <label for="reportType">Report Type:</label>
             <select id="reportType" name="reportType" required>
                 <option value="pdf">PDF</option>
-                <option value="csv">CSV</option>
+            
                 <!-- Add more options based on your requirements -->
             </select>
 

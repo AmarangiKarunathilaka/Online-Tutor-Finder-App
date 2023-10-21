@@ -1,8 +1,9 @@
 
-body{margin-top:20px;
-background-color:#f2f6fc;
-color:#69707a;
-background: linear-gradient(45deg,#d27e00,#e29c04a9,#d6ee02,#c9d523);
+body{
+    margin-top:20px;
+    background-color:#f2f6fc;
+    color:#69707a;
+    background: linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);
     background-size: 300% 300%;
 }
 .img-account-profile {
@@ -21,7 +22,7 @@ background: linear-gradient(45deg,#d27e00,#e29c04a9,#d6ee02,#c9d523);
     border-radius: 0.35rem 0.35rem 0 0;
 }
 .card-header {
-    padding: 1rem 1.35rem;
+    /*padding: 1rem 1.35rem;*/
     margin-bottom: 0;
     background-color: rgba(175, 221, 8, 0.03);
     border-bottom: 1px solid rgba(33, 40, 50, 0.125);
@@ -57,9 +58,10 @@ background: linear-gradient(45deg,#d27e00,#e29c04a9,#d6ee02,#c9d523);
     padding-bottom: 0.5rem;
     padding-left: 0;
     padding-right: 0;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    /*margin-left: 1rem;*/
+    /*margin-right: 1rem;*/
 }
+
 button {
                     background-color: #ff7b00;
                     color: #fff;

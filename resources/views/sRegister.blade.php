@@ -26,16 +26,13 @@
            <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav ms-auto">
                    <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_1"><b>Home</b></a>
+                       <a class="nav-link click-scroll" href="/#section_1"><b>Home</b></a>
                    </li>
 
                    <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_2"><b>About</b></a>
+                       <a class="nav-link click-scroll" href="/#section_2"><b>About</b></a>
                    </li>
 
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_3"><b>Contact Us</b></a>
-                   </li>
 
                    <li class="nav-item">
                        <a class="nav-link click-scroll" href="/login"><b>Login</b></a>
@@ -58,7 +55,7 @@
            
         <div class="form">
             
-            <h1><div class="row justify-content-center"> Registration </div></h1>
+            <h2><div class="row justify-content-center"> Registration </div></h2>
 
                 <table>
                     <form action="{{ url('/studentInput') }}" method="Post">
@@ -130,16 +127,16 @@
                     </tr>
                 
                             <div class="row">
-                            <div class="form-group col-1">
+                            <div class="form-group col-1"><br>
                                 <input type="checkbox" class="TR-input" name="terms" required>
                                 </div>
                                 <div class="form-group col-11">
-                                <label for="TR-terms"> I Agree to the <a href="terms.html">Terms and Conditions</a>  </label>
+                                <br><label for="TR-terms"> I Agree to the <a href="/terms"> Terms and Conditions</a>  </label>
                             </div>
                         </div>
                         
                         
-                        <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> Register </button>
+                        <br><button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> <b>Register<b> </button>
                         
         
                     </form>

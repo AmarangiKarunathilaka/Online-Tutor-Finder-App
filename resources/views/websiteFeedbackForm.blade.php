@@ -8,7 +8,11 @@
 </head>
 <body>
 @extends('tutorHomeContent')
-    @section('content')
+@section('content')
+<section class="home">
+        <div class="text"></div>
+    
+    
     <div class="container">
         
         <h1 class="form-title">Website Feedback form</h1>
@@ -62,6 +66,8 @@
     </div>
 
     </div>
+    
+    </section>
     @endsection
 </body>
 </html>

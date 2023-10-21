@@ -35,8 +35,11 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
+
+
 Route::get('/sRegister', function () {
     return view('sRegister');
+
 });
 
 Route::get('/terms', function () {
@@ -50,13 +53,18 @@ Route::get('/tregister', function () {
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
+Route::get('/studentHomeContent', function () {
+    return view('studentHomeContent');
+});
 
 
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
+});
 
 
 Route::get('/tutorHome', function () {
     return view('tutorHome');
-
 });
 
 
@@ -64,15 +72,9 @@ Route::get('/tutorHomeContent', function () {
     return view('tutorHomeContent');
 });
 
-
-Route::get('/classMaterial', function () {
-    return view('classMaterial');
-});
-
-
-  
-Route::get('/classMaterial', function () {
-    return view('classMaterial');
+ 
+Route::get('/classMaterialUpload', function () {
+    return view('classMaterialUpload');
 }); 
 
 
@@ -87,12 +89,43 @@ Route::get('/popupBox', function () {
 });
 
 
-// Example route definition
+Route::get('/adminHome', function () {
+    return view('adminHome');
+});
+
+Route::get('/adminStudentList', function () {
+    return view('adminStudentList');
+});
+
+Route::get('/adminTutorList', function () {
+    return view('adminTutorList');
+});
+
+Route::get('/classRequest', function () {
+    return view('classRequest');
+});
+
+
+
+
+
+
+// Ramal Start
+
 Route::get('/admin/reports',  'AdminReportController@index');
 
 Route::get('/report', function () {
     return view('report');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+// Ramal End
+
+
+
 
 
 
@@ -102,6 +135,10 @@ Route::get('/editTutorProfile', function () {
 
 Route::get('/advertismentUpload', function () {
     return view('advertismentUpload');
+});
+
+Route::get('/aclassRequestList', function () {
+    return view('classRequestList');
 });
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
