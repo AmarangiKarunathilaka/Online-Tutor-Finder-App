@@ -1,0 +1,95 @@
+header{
+  text-align:center;
+  background-color:#86807d;
+  padding:1em 
+}
+
+
+form{
+  background-color:#F0F8FF
+  }
+#formLogin{  
+  text-align:center;
+}
+.text{
+  padding:0.5em;  
+  align-left:5em;
+  width:200px;
+  height:10px;
+}
+label{
+  padding:0.5em;
+  align-left:5em;
+}
+
+.btnSubmit{
+  color: aqua;
+}
+
+.logout{ 
+  float:right;
+background-color:yellow;
+}
+#Details{
+  background-color:#F0F8FF
+  }
+
+table tr th{
+  border:1px solid black; 
+  text-align:center;
+}
+table tr td{
+  border:1px solid black; 
+  text-align:center;
+}
+#Details{
+  padding:0.5em;  
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FF7F50;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+
+
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#upload{
+    display:none
+}
+
+.badge{
+  background-color:red;
+  position:relative;
+}
+
+.drop{
+  border: 1px solid black;
+ background-color:#F0FFFF;
+  
+}
+h1{
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 6px;
+    color: rgb(0, 0, 0);
+    
+    border-bottom: solid 1px white;
+}
+.btn{
+    background: #d81717;
+}

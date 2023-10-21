@@ -16,6 +16,9 @@
 </head>
 <body>
 @extends('studentHomeContent')
+<section class="home">
+        <div class="text">Dashboard Sidebar</div>
+    
     @section('content')
 <div class="container1">
         <header>
@@ -29,6 +32,8 @@
             <!-- Add more class materials here -->
         </ul>
     </div>
-@endsection
+    @endsection
+    </section>
+
 </body>
 </html>

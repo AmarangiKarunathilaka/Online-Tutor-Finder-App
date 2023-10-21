@@ -51,6 +51,7 @@ Bootstrap 5 HTML CSS Template
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+
                         
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/">Home</a>
@@ -63,6 +64,11 @@ Bootstrap 5 HTML CSS Template
                     
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="registration"><b>Register</b></a>
+
+                    
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
+
                         </li>
                     </ul>
                 </div>
@@ -74,7 +80,7 @@ Bootstrap 5 HTML CSS Template
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form method="POST" action="{{ route('/tutorHome') }}">
+                <form method="post" action="{{ url('/postlogin') }}">
                 @csrf
                     <h2>Login</h2>
 

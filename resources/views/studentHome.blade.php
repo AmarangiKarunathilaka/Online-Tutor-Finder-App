@@ -40,6 +40,7 @@
                     <span class="name">Tutor</span>
                     <span class="profession">Finder System</span>
 
+
                 </div>
             </div>
 
@@ -95,7 +96,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="/">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -119,6 +120,10 @@
     </nav>
 
     <section class="home">
+
+        <div class="text">Dashboard Sidebar</div>
+    </section>
+
         
    
 
@@ -340,6 +345,7 @@
 </section> 
 
 <script src="js/script.js"></script>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
