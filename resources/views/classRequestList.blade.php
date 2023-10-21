@@ -4,6 +4,11 @@
     <link href="css/classRequest.css" rel="stylesheet">
   </head>
   <body ng-app="Leave" ng-controller="myCtrl">
+
+  @extends('tutorHomeContent')
+@section('content')
+<section class="home">
+        <div class="text"></div>
  
     <header>  
  
@@ -74,7 +79,8 @@
         </tr>
       </table>
     </div>
-  
+    </section>
+    @endsection
   
     <script type="text/javascript">
           var app=angular.module('Leave',[]);
@@ -85,7 +91,10 @@
               $scope.hello="how are you";
             }
           });
+
     </script>
+
+    
 
   </body>
 </html>
