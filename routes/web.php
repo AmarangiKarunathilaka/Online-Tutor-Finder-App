@@ -50,13 +50,16 @@ Route::get('/tregister', function () {
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
+Route::get('/studentHomeContent', function () {
+    return view('studentHomeContent');
+});
 
-
-
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
+});
 
 Route::get('/tutorHome', function () {
     return view('tutorHome');
-
 });
 
 
@@ -64,13 +67,7 @@ Route::get('/tutorHomeContent', function () {
     return view('tutorHomeContent');
 });
 
-
-Route::get('/classMaterial', function () {
-    return view('classMaterial');
-});
-
-
-  
+ 
 Route::get('/classMaterialUpload', function () {
     return view('classMaterialUpload');
 }); 
@@ -86,6 +83,17 @@ Route::get('/popupBox', function () {
     return view('popupBox');
 });
 
+Route::get('/adminHome', function () {
+    return view('adminHome');
+});
+
+Route::get('/adminStudentList', function () {
+    return view('adminStudentList');
+});
+
+Route::get('/adminTutorList', function () {
+    return view('adminTutorList');
+});
 
 // Example route definition
 Route::get('/admin/reports',  'AdminReportController@index');

@@ -11,9 +11,13 @@
     	<link rel="stylesheet" href="css/editTutorProfile.css" />
 </head>
 <body>
+
 @extends('tutorHomeContent')
-    @section('content')
-<div class="container-xl px-4 mt-4">
+
+@section('content')
+<section class="home">
+        <div class="text"></div>
+<div class="container-xl  mt-4">
 
 <hr class="mt-0 mb-4">
 <div class="row">
@@ -146,6 +150,8 @@
 </div>
 
 	
-@endsection
+            </section>
+    @endsection
+
 </body>
 </html>
