@@ -1,0 +1,216 @@
+:root {
+  --white-color:                  #ffffff;
+  --primary-color:                #eed171;
+  --secondary-color:              #b8b5a3;
+  --section-bg-color:             #eee458;
+  --site-footer-bg-color:         #36363e;
+  --custom-btn-bg-color:          #fdab31;
+  --dark-color:                   #000000;
+  --p-color:                      #464643;
+  --border-color:                 #e9eaeb;
+  --nav-btn-color:                #aeae9b;
+  --p-bg-color:                   #dfd72f;
+
+  
+
+  --twitter-color:                #1da1f2;
+  --facebook-color:               #094696;
+  --instagram-color:              #c13584;
+  --pinterest-color:              #e60023;
+  --whatsapp-color:               #128c7e;
+
+  --body-font-family:             'League Spartan', sans-serif;
+
+  --h1-font-size:                 62px;
+  --h2-font-size:                 48px;
+  --h3-font-size:                 36px;
+  --h4-font-size:                 32px;
+  --h5-font-size:                 26px;
+  --h6-font-size:                 22px;
+  --p-font-size:                  20px;
+  --btn-font-size:                16px;
+  --copyright-font-size:          14px;
+
+  --border-radius-large:          100px;
+  --border-radius-medium:         20px;
+  --border-radius-small:          10px;
+
+  --font-weight-thin:             100;
+  --font-weight-light:            300;
+  --font-weight-normal:           400;
+  --font-weight-semibold:         600;
+  --font-weight-bold:             700;
+}
+
+ /*---------------------------------------
+    advertisement              
+  -----------------------------------------*/
+  .advertisement h2{
+    font-size: 40px;
+    width: 100%;
+    padding: 15px;
+    font-weight: bolder;
+    text-align: center;
+    color: #eceaf3;
+    background-color: #090901;
+
+}
+
+.subject h3{
+    font-size: 40px;
+    margin-bottom: 70px;
+    margin-top: 120px;
+    margin-left: 50px;
+    height: 40px;
+    width: 25%;
+    font-weight: bold;
+    color: #0b3e85;
+    background-color: #f0f187;
+    display: flex;
+    
+}
+.content{
+  margin-bottom: 5%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.content-row    {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.col {
+    height: 540px;
+    width: 88%;
+	  flex-basis: 40%;
+    padding: 30px 25px;
+    background-color: #d8d6a4fe;
+    border: 15px ridge #050500;
+    border-radius: 10%;
+    margin-bottom: 4%;
+    margin-left: 12%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.col h2{
+    margin: 10px 0;
+    font-weight: 600;
+    color: #052883;
+    padding: 3px 0 0;
+}
+
+.col img{
+  
+    display: block;
+    object-fit:contain;
+ 
+}
+
+.col img:hover {
+    box-shadow: 0 0 20px 0px rgba(9, 0, 0, 0.5);
+    
+}
+
+.col p {
+    color: #0c0242;
+    display: block;
+    font-size: 25px;
+    font-style: normal;
+    line-height: 30px;
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.col a{
+  color: #086ba9;
+ 
+}
+.col:hover a{
+  text-decoration: underline;
+}
+.col:hover{
+    box-shadow: 0 0 30px 0px rgba(7, 8, 0, 0.982);
+}
+
+
+
+
+
+
+
+
+
+/*---------------------------------------
+  previous,next button              
+-----------------------------------------*/
+  
+  .reviews-carousel .owl-item img{
+    border-radius: 50%;
+    width: 230px;
+    height: 300px;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  
+  .reviews-carousel .owl-nav {
+    position: absolute;
+    top: -80px;
+    right: 60px;
+    background:#787853;
+    border-radius: var(--border-radius-large);
+    
+  }
+  
+  .reviews-carousel .owl-nav button.owl-next, 
+  .reviews-carousel .owl-nav button.owl-prev {
+   
+    border-radius: var(--border-radius-large);
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    transition: all 0.5s;
+    
+  }
+  
+  .reviews-carousel .owl-nav button.owl-next:hover, 
+  .reviews-carousel .owl-nav button.owl-prev:hover {
+    background:#edeb64 ;
+  }
+  
+  .reviews-carousel .owl-prev:hover span::before, 
+  .reviews-carousel .owl-next:hover span::before {
+    color: #b54c06;
+  }
+  
+  .reviews-carousel .owl-prev span, 
+  .reviews-carousel .owl-next span {
+    display: block;
+    color: transparent;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+  
+  .reviews-carousel .owl-prev span::before, 
+  .reviews-carousel .owl-next span::before {
+    font-family: bootstrap-icons;
+    display: block;
+    font-size: var(--h4-font-size);
+    color: #0c0c0d;
+  }
+  
+  .reviews-carousel .owl-prev span::before {
+    content: "\f12f";
+  }
+  
+  .reviews-carousel .owl-next span::before {
+    content: "\f138";
+  }
+  
+  

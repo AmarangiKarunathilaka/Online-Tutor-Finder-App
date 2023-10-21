@@ -31,7 +31,7 @@
         
 <!--
 
-Tooplate 2133 Moso Interior
+
 
 https://www.tooplate.com/view/2133-moso-interior
 
@@ -372,7 +372,7 @@ Bootstrap 5 HTML CSS Template
                 <div class="owl-carousel reviews-carousel">
                     <div class="reviews-thumb">
                         <div class="reviews-body">
-                            <h4>Moso Interior is the most suitable website layout.</h4>
+                            <h4>Tutor4u is the most suitable website layout.</h4>
                         </div>
 
                         <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
@@ -396,7 +396,7 @@ Bootstrap 5 HTML CSS Template
 
                     <div class="reviews-thumb">
                         <div class="reviews-body">
-                            <h4>Explore more HTML Templates to download for your website.</h4>
+                            <h4> Prefect tutors.</h4>
                         </div>
 
                         <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
@@ -420,7 +420,7 @@ Bootstrap 5 HTML CSS Template
 
                     <div class="reviews-thumb">
                         <div class="reviews-body">
-                            <h4>Please recommend Tooplate website to your friends.</h4>
+                            <h4>Please recommend Tutor4u website to your friends.</h4>
                         </div>
 
                         <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
@@ -444,7 +444,7 @@ Bootstrap 5 HTML CSS Template
 
                     <div class="reviews-thumb">
                         <div class="reviews-body">
-                            <h4>This Bootstrap 5 layout is free to use for your website.</h4>
+                            <h4>Nice website. Love it.</h4>
                         </div>
 
                         <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">

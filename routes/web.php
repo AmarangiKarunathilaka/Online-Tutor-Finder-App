@@ -35,8 +35,11 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
+
+
 Route::get('/sRegister', function () {
     return view('sRegister');
+
 });
 
 Route::get('/terms', function () {
@@ -54,9 +57,11 @@ Route::get('/studentHomeContent', function () {
     return view('studentHomeContent');
 });
 
+
 Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
+
 
 Route::get('/tutorHome', function () {
     return view('tutorHome');
@@ -83,6 +88,7 @@ Route::get('/popupBox', function () {
     return view('popupBox');
 });
 
+
 Route::get('/adminHome', function () {
     return view('adminHome');
 });
@@ -94,6 +100,12 @@ Route::get('/adminStudentList', function () {
 Route::get('/adminTutorList', function () {
     return view('adminTutorList');
 });
+
+Route::get('/classRequest', function () {
+    return view('classRequest');
+});
+
+
 
 // Example route definition
 Route::get('/admin/reports',  'AdminReportController@index');
