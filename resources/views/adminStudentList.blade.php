@@ -34,7 +34,7 @@
     @extends('adminHomeContent')
     @section('content')
     <section class="home">
-        <div class="text"></div>
+        <div class="text">Student List</div>
     
 
 

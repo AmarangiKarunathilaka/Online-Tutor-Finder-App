@@ -54,21 +54,21 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/classMaterialUpload">
+                        <a href="/adminTutorList">
                             <i class='bx bx-user-plus icon'></i>
                             <span class="text nav-text">Tutor List</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="/advertismentUpload">
+                        <a href="/adminAdvertisementList">
                             <i class='bx bx-file icon' ></i>
                             <span class="text nav-text">Advertisement List</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/adminFeedbackList">
                             <i class='bx bxs-conversation icon' ></i>
                             <span class="text nav-text">Feedback List</span>
                         </a>

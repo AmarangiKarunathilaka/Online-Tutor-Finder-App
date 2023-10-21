@@ -13,7 +13,6 @@
 <body>
 
 @extends('tutorHomeContent')
-
 @section('content')
 <section class="home">
         <div class="text"></div>
