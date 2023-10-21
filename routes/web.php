@@ -93,6 +93,10 @@ Route::get('/popupBox', function () {
     return view('popupBox');
 });
 
+Route::get('/classRequest', function () {
+    return view('classRequest');
+});
+
 
 // Example route definition
 Route::get('/admin/reports',  'AdminReportController@index');
