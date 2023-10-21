@@ -1,0 +1,181 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan',sans-serif;
+    
+}
+
+header {
+    background-color: #1a1910;
+    color: #ffffff;
+    padding: 3px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(207, 178, 11, 0.5);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-right: 20px;
+    padding: 10px 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+nav a:hover {
+    text-decoration: none;
+    color: hwb(60 4% 10%);
+}
+nav ul li:last-child {
+    margin-right: 20; 
+}
+nav ul li:last-child a {
+    background-color: rgb(233, 175, 15);
+    border-radius: 5px;
+    padding: 8px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li:last-child a:hover {
+    background-color:#e71313;
+}
+section{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url(a.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-box{
+    position: relative;
+    right: 20px;
+    padding: 5px 5px;
+    width: 350px;
+    height: 450px;
+    background: transparent;
+    border: 4px solid  rgba(207, 178, 11, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 40px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    margin: 30px 0;
+    width: 300px;
+    border-bottom: 2px solid #021b2e9c;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: aliceblue;
+    font-size: lem;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: aliceblue);
+}
+
+.input-box ion-icon{
+    position: absolute;
+    right: 5px;
+    color: aliceblue;
+    font-size: 1.2em;
+    top: 15px;
+}
+
+.forget{
+    margin: -15px 0 15px;
+    font-size: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.forget label input{
+    margin-right: 3px;
+}
+
+.forget label a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    
+}
+
+.forget label a:hover{
+    text-decoration: underline;
+    
+}
+
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover{
+    text-decoration: underline;
+    color: #fff;
+    font-weight: 600;
+}

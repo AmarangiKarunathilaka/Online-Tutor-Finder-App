@@ -107,12 +107,25 @@ Route::get('/classRequest', function () {
 
 
 
-// Example route definition
+
+
+
+// Ramal Start
+
 Route::get('/admin/reports',  'AdminReportController@index');
 
 Route::get('/report', function () {
     return view('report');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+// Ramal End
+
+
+
 
 
 
@@ -122,6 +135,10 @@ Route::get('/editTutorProfile', function () {
 
 Route::get('/advertismentUpload', function () {
     return view('advertismentUpload');
+});
+
+Route::get('/aclassRequestList', function () {
+    return view('classRequestList');
 });
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
