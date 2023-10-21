@@ -13,26 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tutorRegisters', function (Blueprint $table) {
+        Schema::create('tutor_registers', function (Blueprint $table) {
             $table->id();
             $table->string('tutorFullName');
             $table->string('tutorPhoneNumber');
             $table->string('qualification');
-            //$table->string('tutorSubject')->nullable();
-            //$table->string('tutorMedium')->nullable();
             $table->string('tutorEmail')->unique();
             $table->string('tutorPassword');
             $table->string('tutorConfirmPassword');
             $table->timestamps();
 
             //In tutorSubject and tutorMedium tables
-            $table->unsignedBigInteger('tutorSubject_id');
-            $table->unsignedBigInteger('tutorMedium_id');
-
-            // Foreign keys
-            $table->foreign('tutorSubject_id')->references('id')->on('tutorSubject');
-            $table->foreign('tutorMedium_id')->references('id')->on('tutorMedium');
-
+           
+           
         });
     }
 
@@ -43,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutorRegisters');
+        Schema::dropIfExists('tutor_registers');
     }
 };

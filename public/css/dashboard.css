@@ -154,6 +154,12 @@ header .image-text .profession{
     cursor: pointer;
     transition: var(--tran-05);
 }
+header {
+    
+    color: #fff;
+    text-align: center;
+    
+}
 
 body.dark .sidebar header .toggle{
     color: var(--text-color);

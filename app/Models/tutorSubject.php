@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class tutorSubject extends Model
 {
+    protected $table = 'tutor_subjects';
+
     use HasFactory;
 
     protected $fillable = [
-        'Mathematics',
-        'Biology',
-        'Chemistry',
-        'Physics'
+        'tutorSubject_id',
+        'tutorSubject'
     ];
 }

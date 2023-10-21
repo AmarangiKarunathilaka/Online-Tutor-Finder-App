@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tutorSubjects', function (Blueprint $table) {
+        Schema::create('tutor_subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('Mathematics')->nullable();
-            $table->string('Biology')->nullable();
-            $table->string('Chemistry')->nullable();
-            $table->string('Physics')->nullable();
+            $table->unsignedBigInteger('tutorSubject_id')->nullable();
+            $table->foreign('tutorSubject_id')->references('id')->on('tutor_registers');
+            $table->string('tutorSubject')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutorSubjects');
+        Schema::dropIfExists('tutor_subjects');
     }
 };

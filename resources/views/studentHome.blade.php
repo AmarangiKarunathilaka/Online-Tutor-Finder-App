@@ -1,4 +1,3 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +35,11 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">&nbsp&nbsp&nbsp&nbsp  Institute</span>
-                    <span class="profession">&nbspManagement System</span>
+
+
+                    <span class="name">Tutor</span>
+                    <span class="profession">Finder System</span>
+
                 </div>
             </div>
 
@@ -68,7 +70,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/classMaterial">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Class Materials</span>
                         </a>
@@ -117,7 +119,7 @@
     </nav>
 
     <section class="home">
-        <div class="text">Dashboard Sidebar</div>
+        
    
 
     
@@ -131,6 +133,7 @@
             <h2>Our Tutors</h2>
         </div>
     </section>
+
 
 <section class="content">
 

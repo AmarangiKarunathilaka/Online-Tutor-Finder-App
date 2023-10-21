@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/tRegisterstyle.css">
     <link href="css/style.css" rel="stylesheet">
-    <title>Registation For Tutor</title>
+    <title>Registation For Student</title>
 </head>
 <body>
     
@@ -58,10 +58,10 @@
            
         <div class="form">
             
-            <h2><div class="row justify-content-center"> Registration </div></h2 >
+            <h2><div class="row justify-content-center"> Registration </div></h2>
 
                 <table>
-                    <form action="{{ url('/tutorInput') }}" method="post">
+                    <form action="{{ url('/studentInput') }}" method="Post">
                         @csrf 
                         <tr>
                             <div class="mt-4">
@@ -70,11 +70,27 @@
                                
                             </div>
                         </tr>
+
+                        <tr>
+                            <div class="StReg-1">
+                                <td><label for="TR-contact">Date Of Birth: </label></td>
+                                <td>
+                                    <input type="date" class="form-control" name="dateOfBirth" required>
+                                </td>
+                            </div>
+                        </tr>
+
+                        <tr>
+                                <div class="StReg-1">
+                                    
+                                    <td> <textarea type="text" class="form-control" placeholder="Address" name="address" rows="3" cols="23" required></textarea></td>
+                                </div>
+                            </tr>
                 
                         <tr>
                             <div class="mt-4">
-                               <td> <input type="text" class="form-control" placeholder="Phone number" name="contact" required>
-                                    @error('contact')
+                                <td> <input type="text" class="form-control" placeholder="Phone number" name="studentContact">
+                                    @error('studentContact')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </td>
@@ -84,61 +100,10 @@
                         </tr>
                     </table>
 
-                        
-                        <div class="TutorReg-1" style="padding: 5px;">
-                                <textarea type="text" class="form-control" placeholder="Qualifications" name="qualification" rows="5" cols="10" required></textarea>
-                        </div>
-                        
-                <table>
-                    <tr>
-                        <tr>
-                            <div class="TutorReg-1">
-                                <td><label for="TR-subject" name="subject"> Subject :</label></td>
-                                <td><input type="checkbox" class="TR-input"  name="subject1" value="mathematics">
-                                <label for="TR-subject1"> Mathematics </label></td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject2" value="biology">
-                                <label for="TR-subject2"> Biology </label>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject3" value="chemistry">
-                                <label for="TR-subject3"> Chemistry </label>
-                        </td>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject4" value="physics">
-                                <label for="TR-subject4"> Physics </label>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <tr>
-                                <div class="TutorReg-1">
-                                    <td><label for="TR-medium" name="medium"> Medium :</label></td>
-                                    <td><input type="checkbox" class="TR-input" name="medium1" value="sinhala">
-                                    <label for="TR-medium1"> Sinhala </label></td>
-                                </div>
-                            </tr>
-                            <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium2" value="english">
-                                    <label for="TR-medium2"> English </label></td></td>
-                            <tr>
-                            <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium3" value="tamil">
-                                    <label for="TR-medium3"> Tamil </label></td></td>
-                            <tr>
-                        </tr>
-                    
-                    </table>
                         <tr>
                             <div class="form-group col-8" style="padding: 5px ;">
                             <div class="TutorReg-1">
-                                <td><input type="email" class="form-control"  placeholder="Enter University E-mail" name="email" required></td>
+                                <td><input type="email" class="form-control"  placeholder="Enter E-mail" name="studentEmail" required></td>
                                 <td></td>
                             </div>
                         </div>
@@ -147,19 +112,17 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter Password" name="password" id="password">
-                            
-                                @error('password')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                @enderror
-
+                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="studentPassword">
+                                    @error('studentPassword')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </td>
 
-                                <td> <input type="password" class="form-control @error('reEnterPassword') is-invalid @enderror" placeholder="Re-enter Password" name="reEnterPassword" id="reEnterPassword"></td>
-                                
-                                @error('reEnterPassword')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                @enderror
+                                <td> <input type="password" class="form-control" placeholder="Re-enter Password" name="studentReEnterPassword">
+                                    @error('studentReEnterPassword')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </td>
 
                             </div>
                         </tr>
@@ -193,3 +156,8 @@
     
 </body>
 </html>
+
+
+                                
+
+                        
