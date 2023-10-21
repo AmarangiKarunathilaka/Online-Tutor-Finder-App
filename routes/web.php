@@ -30,8 +30,8 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
-Route::get('/sregister', function () {
-    return view('sregister');
+Route::get('/stRegister', function () {
+    return view('stRegister');
 });
 
 Route::get('/terms', function () {
@@ -44,6 +44,10 @@ Route::get('/tregister', function () {
 
 Route::get('/studentHome', function () {
     return view('studentHome');
+});
+
+Route::get('/classRequest', function () {
+    return view('classRequest');
 });
 
 
