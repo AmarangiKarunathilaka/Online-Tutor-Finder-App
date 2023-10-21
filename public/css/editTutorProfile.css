@@ -1,8 +1,9 @@
 
-body{margin-top:20px;
-background-color:#f2f6fc;
-color:#69707a;
-background: linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);
+body{
+    margin-top:20px;
+    background-color:#f2f6fc;
+    color:#69707a;
+    background: linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);
     background-size: 300% 300%;
 }
 .img-account-profile {
@@ -57,8 +58,8 @@ background: linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);
     padding-bottom: 0.5rem;
     padding-left: 0;
     padding-right: 0;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    /*margin-left: 1rem;*/
+    /*margin-right: 1rem;*/
 }
 
 button {
