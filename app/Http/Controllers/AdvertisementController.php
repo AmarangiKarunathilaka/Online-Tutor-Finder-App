@@ -9,6 +9,9 @@ use App\Models\Advertisement;
 class AdvertisementController extends Controller
 {
     // app/Http/Controllers/AdvertisementController.php
+    public function advertisements(){
+        return view('advertisementUpload');
+    }
 
 public function index()
 {
@@ -17,18 +20,30 @@ public function index()
     return compact('advertisements');
 }
 
-public function create()
+/*public function create()
 {
     return view('advertisements.create');
-}
+}*/
 
-public function store(Request $request)
+public function uploadAdvertisementInput(Request $request)
 {
     // Validate and store a new advertisement
+    
     // You can use $request->input('field_name') to get the input values
-    Advertisement::create($request->all());
+    Advertisement::create([
+        'tutorName'=> $request -> fullname,
+        'email'=> $request -> email,
+        'payment'=> $request -> payment,
+        'imageUpload'=> $request -> image,
+        'description'=> $request -> message,
+        'subject'=> $request -> subject,
+        
+       ]);
+    
+    //Advertisement::create($request->all());
 
-    return redirect()->route('advertisements.index');
+    return redirect() -> back();
+    //return redirect()->route('advertisements.index');
 }
 
 public function edit($id)
