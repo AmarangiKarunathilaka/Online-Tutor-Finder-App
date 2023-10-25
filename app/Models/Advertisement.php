@@ -8,10 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Advertisement extends Model
 {
     protected $fillable = [
-        'tutorName', // Add other attributes here as needed
-        'description',
+        'tutorName', 
+        'email',
         'imageUpload',
-        'status',
+        'payment',
+        'description',
         'subject',
+        'status',
+        'tutor_id',
+        
     ];
 }

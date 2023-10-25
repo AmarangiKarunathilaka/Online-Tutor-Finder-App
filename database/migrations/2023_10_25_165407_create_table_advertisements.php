@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('tutorName');
             $table->string('email')->nullable();
+            $table->string('payment');
             $table->string('imageUpload')->nullable();
             $table->text('description');
             $table->string('subject');
