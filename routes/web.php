@@ -53,6 +53,11 @@ Route::get('/tregister', function () {
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
+
+Route::get('/studentdashboard', function () {
+    return view('studentdashboard');
+});
+
 Route::get('/studentHomeContent', function () {
     return view('studentHomeContent');
 });
