@@ -29,9 +29,15 @@ public function uploadAdvertisementInput(Request $request)
 {
     // Validate and store a new advertisement
     
+    $keyValue = $request->input('key');
+
+    
+    // Assuming you have a model named `YourModel` and a column named `key` in your table.
+    
     // You can use $request->input('field_name') to get the input values
     Advertisement::create([
-        'tutorName'=> $request -> fullname,
+        'tutor_id'=> $request -> key,
+        'tutorName'=> $request -> fullName,
         'email'=> $request -> email,
         'payment'=> $request -> payment,
         'imageUpload'=> $request -> image,

@@ -18,6 +18,9 @@
     <div class="container">
       <h1 class="form-title">Advertisment Upload</h1>
       <form action="{{ url('/advertisementInput') }}" method="post">
+        @csrf
+
+        <input type="hidden" name="key" value="1">
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="fullName">Name</label>
