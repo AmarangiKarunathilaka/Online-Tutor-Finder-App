@@ -93,6 +93,9 @@ Route::get('/adminHome', function () {
     return view('adminHome');
 });
 
+Route::get('/classRequest', function () {
+    return view('classRequest');
+});
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
 });
@@ -124,7 +127,7 @@ Route::get('/advertismentUpload', function () {
     return view('advertismentUpload');
 });
 
-Route::get('/aclassRequestList', function () {
+Route::get('/classRequestList', function () {
     return view('classRequestList');
 });
 
