@@ -101,6 +101,10 @@ Route::get('/adminHome', function () {
     return view('adminHome');
 });
 
+Route::get('/adminAdvertisementList', function () {
+    return view('adminAdvertisementList');
+});
+
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
 });
