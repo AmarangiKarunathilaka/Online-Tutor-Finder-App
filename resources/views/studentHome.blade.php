@@ -121,7 +121,7 @@
 
     <section class="home">
 
-        <div class="text">Dashboard Sidebar</div>
+        <div class="text"></div>
     </section>
 
         
