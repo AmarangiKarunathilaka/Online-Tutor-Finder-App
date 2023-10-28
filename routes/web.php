@@ -61,6 +61,10 @@ Route::get('/studentdashboard', function () {
     return view('studentdashboard');
 });
 
+Route::get('/student', function () {
+    return view('student');
+});
+
 Route::get('/studentHomeContent', function () {
     return view('studentHomeContent');
 });

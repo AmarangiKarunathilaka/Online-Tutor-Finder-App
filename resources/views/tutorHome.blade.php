@@ -108,7 +108,10 @@
         </div>
 
     </nav>
+    <section class="home">
 
+        <div class="text"></div>
+    </section>
    
 
     <script src="js/script.js"></script>
