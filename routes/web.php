@@ -130,6 +130,9 @@ Route::get('/advertismentUpload', function () {
 Route::get('/classRequestList', function () {
     return view('classRequestList');
 });
+Route::get('/tutorDashboard', function () {
+    return view('/tutorDashboard');
+});
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
@@ -152,8 +155,10 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 // edit tutor profile-Gayathtri
-
 Route::resource('user-profiles', 'UserProfileController');
+
+
+
 
 //kavindra
 Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
