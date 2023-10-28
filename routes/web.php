@@ -105,9 +105,14 @@ Route::get('/adminHome', function () {
     return view('adminHome');
 });
 
+Route::get('/classRequest', function () {
+    return view('classRequest');
+});
+
 Route::get('/adminAdvertisementList', function () {
     return view('adminAdvertisementList');
 });
+
 
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
@@ -160,6 +165,9 @@ Route::get('/advertismentUpload', function () {
 Route::get('/classRequestList', function () {
     return view('classRequestList');
 });
+Route::get('/tutorDashboard', function () {
+    return view('/tutorDashboard');
+});
 
 //Amarangi
 
@@ -187,8 +195,10 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 // edit tutor profile-Gayathtri
-
 Route::resource('user-profiles', 'UserProfileController');
+
+
+
 
 //kavindra
 Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
