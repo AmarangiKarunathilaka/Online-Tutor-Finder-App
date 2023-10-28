@@ -17,7 +17,10 @@
     
     <div class="container">
       <h1 class="form-title">Advertisment Upload</h1>
-      <form action="#">
+      <form action="{{ url('/advertisementInput') }}" method="post">
+        @csrf
+
+        <input type="hidden" name="key" value="1">
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="fullName">Name</label>
@@ -39,7 +42,7 @@
             <label for="title">Payment</label>
             <input type="text"
                     id="title"
-                    name="title"
+                    name="payment"
                     placeholder="Enter Your payment for one hour"/>
           </div>
           <div class="user-input-box">
@@ -65,7 +68,7 @@
         </div>
         <div class="form-submit-btn">
           
-          <button type="submit" class="btn" onclick="openPopup()">Register</button>
+          <button type="submit" class="btn" onclick="openPopup()">Upload</button>
                 <div  class = "popup" id="popup">
                     <img src = "images/tick.png">
                     <h2>Successful</h2>

@@ -85,10 +85,10 @@
 .col {
     height: 540px;
     width: 88%;
-	  flex-basis: 40%;
+	  flex-basis: 10%;
     padding: 30px 25px;
-    background-color: #d8d6a4fe;
-    border: 15px ridge #050500;
+    background-color:#e7e7bbfe;
+    border: 6px ridge #86864e;
     border-radius: 10%;
     margin-bottom: 4%;
     margin-left: 12%;
@@ -104,15 +104,9 @@
     padding: 3px 0 0;
 }
 
-.col img{
-  
-    display: block;
-    object-fit:contain;
- 
-}
 
 .col img:hover {
-    box-shadow: 0 0 20px 0px rgba(9, 0, 0, 0.5);
+    box-shadow: 0 0 20px 3px rgba(9, 0, 0, 0.7);
     
 }
 
@@ -135,7 +129,7 @@
   text-decoration: underline;
 }
 .col:hover{
-    box-shadow: 0 0 30px 0px rgba(7, 8, 0, 0.982);
+    box-shadow: 0 0 10px 1px rgba(7, 8, 0, 0.982);
 }
 
 
@@ -150,21 +144,22 @@
   previous,next button              
 -----------------------------------------*/
   
-  .reviews-carousel .owl-item img{
+  .reviews-carousel .owl-item img {
     border-radius: 50%;
-    width: 230px;
-    height: 300px;
+    padding: 30px 30px;
+    width: 200px;
+    height: 320px;
     display: inline-block;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .reviews-carousel .owl-nav {
     position: absolute;
     top: -80px;
     right: 60px;
-    background:#787853;
+    background:#838356;
     border-radius: var(--border-radius-large);
-    
+   
   }
   
   .reviews-carousel .owl-nav button.owl-next, 
@@ -180,7 +175,7 @@
   
   .reviews-carousel .owl-nav button.owl-next:hover, 
   .reviews-carousel .owl-nav button.owl-prev:hover {
-    background:#edeb64 ;
+    background:#f6f47e ;
   }
   
   .reviews-carousel .owl-prev:hover span::before, 

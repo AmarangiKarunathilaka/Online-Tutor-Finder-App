@@ -57,7 +57,7 @@ https://www.tooplate.com/view/2133-moso-interior
     -----------------------------------------*/
 
 body{
-  background-image: url(/images/bgi.jpg);
+  background:linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);;
   background-position: top;
   background-size:cover;
 }
@@ -149,125 +149,134 @@ strong {
 
     
 
+
 .navbar {
-    background-color: #2a2a28;
-    padding-top: 0;
-    padding-bottom: 0;
-    transition: all 0.3s;
-  }
-  .navbar img  {
-    margin-bottom: 1px;
-    border-radius: 5%;
-    width: 22%;
-  }
+  background-color: #36363e;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: all 0.3s;
+  height: 75px;
+}
+.navbar img  {
+  margin-bottom: 1px;
+  border-radius: 5%;
+  width: 10%;
+  padding-top: 8px;
+}
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  margin-right: 10px;
+  margin-left: 0;
+  margin-bottom: 5px;
+  padding: 5px 5px;
+ 
   
-  
-  .navbar-expand-lg .navbar-nav .nav-link {
-    margin-right: 10px;
-    margin-left: 0;
-    margin-bottom: 5px;
-    padding: 15px 15px;
-   
-    
-  }
-  
-  .navbar-nav .nav-link {
-    display: inline-block;
-    color: var(--p-bg-color);
-    font-size: var(--h5-font-size);
-    font-weight: bold;
-    position: relative;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  
-  .navbar-nav .nav-link.active, 
-  .navbar-nav .nav-link:hover {
-    background: var(--primary-color);
-    color: var(--dark-color);
-  }
-  
-  nav ul li:nth-child(4) a {
-    background-color: var(--p-color); 
-    border-radius: 5px;
-    padding: 8px 15px;
-   
+}
+
+.navbar-nav .nav-link {
+  display: inline-block;
+  color: var(--p-bg-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link:hover {
+  background: var(--primary-color);
+  color: var(--dark-color);
+}
+
+nav ul li:nth-child(4) a {
+  background-color: var(--p-color); 
+  border-radius: 5px;
+  padding: 8px 15px;
+ 
+}
+nav ul li:nth-child(3) a {
+background-color: var(--p-color); 
+border-radius: 5px;
+padding: 8px 15px;
+
 }
 
 
 nav ul li:last-child a {
-    background-color: var(--p-color); 
-    border-radius: 5px;
-    padding: 8px 15px;
-   
+  background-color: var(--p-color); 
+  border-radius: 5px;
+  padding: 8px 15px;
+ 
 }
 
-  
-  .navbar-toggler {
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    margin: 0;
-    width: 30px;
-    height: 35px;
-    outline: none;
-  }
-  
-  .navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
-  }
-  
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background: transparent;
-  }
-  
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-    transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
-    transition: top 300ms 50ms ease, transform 300ms 350ms ease;
-    transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
-    top: 0;
-  }
-  
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-    transform: rotate(45deg);
-  }
-  
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-    transform: rotate(-45deg);
-  }
-  
-  .navbar-toggler .navbar-toggler-icon {
-    background: var(--dark-color);
-    transition: background 10ms 300ms ease;
-    display: block;
-    width: 30px;
-    height: 2px;
-    position: relative;
-  }
-  
-  .navbar-toggler .navbar-toggler-icon:before,
-  .navbar-toggler .navbar-toggler-icon:after {
-    transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
-    transition: top 300ms 350ms ease, transform 300ms 50ms ease;
-    transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
-    position: absolute;
-    right: 0;
-    left: 0;
-    background: var(--dark-color);
-    width: 30px;
-    height: 2px;
-    content: '';
-  }
-  
-  .navbar-toggler .navbar-toggler-icon::before {
-    top: -8px;
-  }
-  
-  .navbar-toggler .navbar-toggler-icon::after {
-    top: 8px;
-  }
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  margin: 0;
+  width: 30px;
+  height: 35px;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(-45deg);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background: var(--white-color);
+  transition: background 10ms 300ms ease;
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon:before,
+.navbar-toggler .navbar-toggler-icon:after {
+  transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: var(--white-color);
+  width: 30px;
+  height: 2px;
+  content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  top: 8px;
+}
 
 /*---------------------------------------
   identifing tutor or student, befor registration             
@@ -278,7 +287,7 @@ nav ul li:last-child a {
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    margin-top: 5%;
+    margin-top: -3%;
     background-position: center;
     background-size: cover;  
 }
@@ -287,7 +296,8 @@ nav ul li:last-child a {
 .box1{
     position: relative;
     right: 20px;
-    padding: 5px 5px;
+    
+    padding: 10px 15px;
     width: 800px;
     height: 400px;
     background: transparent;
@@ -298,7 +308,7 @@ nav ul li:last-child a {
     align-items: center;
 }
 h3{
-    margin-top: 5%;
+    margin-top: 15%;
     text-align: center;
     color: #fff;
     font-size: 50px;
@@ -377,10 +387,16 @@ text-align: left;
 
 }
 
+.terms-box h2 {
+  color: #ffffff;
+  font-size: 40px;
+}
+
 .terms-box h4 {
   padding: 20px 20px 20px 20px;
   text-align: left;
   color: #ebeab0;
+  font-size: 30px;
 }
 
 @media screen and (max-width: 991px) {

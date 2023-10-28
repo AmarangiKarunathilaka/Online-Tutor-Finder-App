@@ -4,10 +4,12 @@
     </head>
 
 <body>
+@extends('adminHomeContent')
+    @section('content')
+    <section class="home">
+        <div class="text">Generate reports</div>
 
-    <header>
-        <h1>Admin Report Download</h1>
-    </header>
+  
 
  
         <form id="reportForm">
@@ -20,13 +22,15 @@
             <label for="reportType">Report Type:</label>
             <select id="reportType" name="reportType" required>
                 <option value="pdf">PDF</option>
-                <option value="csv">CSV</option>
+            
                 <!-- Add more options based on your requirements -->
             </select>
 
             <button type="button" onclick="generateReport()">Generate Report</button>
         </form>
    
+        </section>
+    @endsection
 
 </body>  
 </html>
