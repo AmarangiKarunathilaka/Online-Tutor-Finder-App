@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard | By Code Info</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" href="css/student.css" />
   <link rel="stylesheet" href="css/dashboard.css">
 
