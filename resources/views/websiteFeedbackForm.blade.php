@@ -17,7 +17,7 @@
         
         <h1 class="form-title">Website Feedback form</h1>
         <p><span class="highlighted">We value your feedback! Please fill out the form below:</span></p>
-        <form id="website-feedback-form">
+        <form id="website-feedback-form" action="{{ route('feedback.submit') }}" method="POST">
             <div class="form-group">
                 
                 <input type="text" id="name" name="name" placeholder="Name"required>

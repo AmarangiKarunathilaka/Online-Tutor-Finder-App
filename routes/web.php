@@ -8,6 +8,7 @@ use App\Http\Controllers\studentRegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdvertisementController;
 use App\Models\Advertisement;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -168,6 +169,10 @@ Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvert
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
+// akesh
+Route::get('/feedback-form', function () {
+    return view('websiteFeedbackForm');
+})->name('feedback.form');
 
 // Submit feedback
 Route::post('/submit-feedback', 'FeedbackController@store')->name('feedback.submit');
