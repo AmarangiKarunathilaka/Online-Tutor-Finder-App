@@ -7,7 +7,9 @@ use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\UserProfileController;
 use App\Models\Advertisement;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -195,8 +197,8 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 // edit tutor profile-Gayathtri
-Route::resource('user-profiles', 'UserProfileController');
-
+//Route::resource('user-profiles', 'UserProfileController');
+Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
 
 
