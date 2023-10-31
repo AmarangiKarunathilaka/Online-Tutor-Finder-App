@@ -4,10 +4,12 @@
     </head>
 
 <body>
+@extends('adminHomeContent')
+    @section('content')
+    <section class="home">
+        <div class="text">Generate reports</div>
 
-    <header>
-        <h1>Admin Report Download</h1>
-    </header>
+  
 
  
         <form id="reportForm">
@@ -27,6 +29,8 @@
             <button type="button" onclick="generateReport()">Generate Report</button>
         </form>
    
+        </section>
+    @endsection
 
 </body>  
 </html>

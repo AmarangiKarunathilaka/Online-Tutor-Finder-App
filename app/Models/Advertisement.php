@@ -4,14 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Advertisement extends Model
 {
     protected $fillable = [
-        'tutorName', // Add other attributes here as needed
-        'description',
+        'tutorName', 
+        'email',
         'imageUpload',
-        'status',
+        'payment',
+        'description',
         'subject',
+        'status',
+        'tutor_id',
+        
     ];
+
+   
 }

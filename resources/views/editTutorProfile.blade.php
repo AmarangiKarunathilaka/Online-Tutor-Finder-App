@@ -51,11 +51,12 @@
 <div class="card mb-4">
 <div class="card-header">Account Details</div>
 <div class="card-body">
-<form>
+<form action='add' method="POST">
+    @csrf
 
 <div class="mb-3">
 <label class="small mb-1" for="Username">Username (how your name will appear to other users on the site)</label>
-<input class="form-control" id="Username" type="text" placeholder="Enter your username" value="username">
+<input class="form-control" id="Username" type="text" placeholder="Enter your username" name="name">
 </div>
 
 <div class="row gx-3 mb-3">
@@ -65,7 +66,10 @@
     <label for="contact"> Contact Number :</label>
     <input type="text" class="form-control" placeholder="+94" name="contact">
 </div>
-
+<div class="row gx-3 mb-3">
+    <label for="contact"> Image :</label>
+    <input type="text" class="form-control" placeholder="+94" name="image">
+</div>
 <div class="row gx-3 mb-3">
     <label for="qualification">Add New Qualifications :</label>
     <textarea type="text" class="form-control" placeholder="" name="qualification" rows="6" cols="23" ></textarea>
@@ -78,24 +82,24 @@
                 <tr>
                     <div class="TutorReg-1">
                         <td><label for="subject"> Subject :</label></td>
-                        <td><input type="checkbox" class="TR-input"  name="subject1">
+                        <td><input type="checkbox" class="TR-input"  name="subject">
                         <label for="TR-subject1"> Mathematics </label></td>
                     </div>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="checkbox" class="TR-input"  name="subject2">
+                    <td><input type="checkbox" class="TR-input"  name="subject">
                         <label for="TR-subject2"> Biology </label>
                     </td>
                 <tr>
                 <tr>
                     <td></td>
-                    <td><input type="checkbox" class="TR-input"  name="subject3">
+                    <td><input type="checkbox" class="TR-input"  name="subject">
                         <label for="TR-subject3"> Chemistry </label>
                 </td>
                 <tr>
                     <td></td>
-                    <td><input type="checkbox" class="TR-input"  name="subject4">
+                    <td><input type="checkbox" class="TR-input"  name="subject">
                         <label for="TR-subject4"> Physics </label>
                     </td>
                 </tr>
@@ -104,16 +108,16 @@
                     <tr>
                         <div class="TutorReg-1">
                             <td><label for="TR-medium"> Medium :</label></td>
-                            <td><input type="checkbox" class="TR-input" name="medium1">
+                            <td><input type="checkbox" class="TR-input" name="medium">
                             <label for="TR-medium1"> Sinhala </label></td>
                         </div>
                     </tr>
                     <tr>
-                        <td><td><input type="checkbox" class="TR-input" name="medium2">
+                        <td><td><input type="checkbox" class="TR-input" name="medium">
                             <label for="TR-medium2"> English </label></td></td>
                     <tr>
                     <tr>
-                        <td><td><input type="checkbox" class="TR-input" name="medium3">
+                        <td><td><input type="checkbox" class="TR-input" name="medium">
                             <label for="TR-medium3"> Tamil </label></td></td>
                     <tr>
                 </tr>
