@@ -6,6 +6,9 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\UserProfileController;
+use App\Models\Advertisement;
 
 
 /*
@@ -50,9 +53,20 @@ Route::get('/tregister', function () {
     return view('tregister');
 }); 
 
+//Amarangi
+
 Route::get('/studentHome', function () {
     return view('studentHome');
 });
+
+Route::get('/studentdashboard', function () {
+    return view('studentdashboard');
+});
+
+Route::get('/student', function () {
+    return view('student');
+});
+
 Route::get('/studentHomeContent', function () {
     return view('studentHomeContent');
 });
@@ -93,9 +107,14 @@ Route::get('/adminHome', function () {
     return view('adminHome');
 });
 
+Route::get('/classRequest', function () {
+    return view('classRequest');
+});
+
 Route::get('/adminAdvertisementList', function () {
     return view('adminAdvertisementList');
 });
+
 
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
@@ -148,10 +167,18 @@ Route::get('/advertismentUpload', function () {
 Route::get('/classRequestList', function () {
     return view('classRequestList');
 });
+Route::get('/tutorDashboard', function () {
+    return view('/tutorDashboard');
+});
+
+//Amarangi
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
+//Amarangi - advertisements
+Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
+Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvertisementInput'])->name('uploadAdvertisementInput');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
@@ -170,8 +197,10 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 // edit tutor profile-Gayathtri
+//Route::resource('user-profiles', 'UserProfileController');
+Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
-Route::resource('user-profiles', 'UserProfileController');
+
 
 //kavindra
 Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');

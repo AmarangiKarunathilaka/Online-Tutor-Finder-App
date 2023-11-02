@@ -24,7 +24,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title></title> 
 </head>
 <body>
     <nav class="sidebar close">
@@ -57,7 +57,7 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/studentdashboard">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -121,7 +121,7 @@
 
     <section class="home">
 
-        <div class="text">Dashboard Sidebar</div>
+        <div class="text"></div>
     </section>
 
         
