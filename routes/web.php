@@ -7,8 +7,10 @@ use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\UserProfileController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +64,10 @@ Route::get('/studentdashboard', function () {
     return view('studentdashboard');
 });
 
+Route::get('/student', function () {
+    return view('student');
+});
+
 Route::get('/studentHomeContent', function () {
     return view('studentHomeContent');
 });
@@ -102,9 +108,14 @@ Route::get('/adminHome', function () {
     return view('adminHome');
 });
 
+Route::get('/classRequest', function () {
+    return view('classRequest');
+});
+
 Route::get('/adminAdvertisementList', function () {
     return view('adminAdvertisementList');
 });
+
 
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
@@ -157,6 +168,9 @@ Route::get('/advertismentUpload', function () {
 Route::get('/classRequestList', function () {
     return view('classRequestList');
 });
+Route::get('/tutorDashboard', function () {
+    return view('/tutorDashboard');
+});
 
 //Amarangi
 
@@ -188,8 +202,10 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 // edit tutor profile-Gayathtri
+//Route::resource('user-profiles', 'UserProfileController');
+Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
-Route::resource('user-profiles', 'UserProfileController');
+
 
 //kavindra
 Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');

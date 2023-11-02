@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 
 class UserProfileController extends Controller
 {
-    public function index()
+   /* public function index()
 {
     $userProfiles = UserProfile::all();
     return view('user-profiles.index', compact('userProfiles'));
@@ -42,6 +43,20 @@ public function update(Request $request, $id)
 public function destroy($id)
 {
     // Delete the user profile
-}
+}*/
+    function editTutorProfile(Request $req){
+        $UserProfile=new UserProfile;
+        $UserProfile->id=$req->id;
+        $UserProfile->username=$req->name;
+        $UserProfile->contact=$req->contact;
+        $UserProfile->qualification=$req->qualification;
+        $UserProfile->subject=$req->subject;
+        $UserProfile->medium=$req->medium;
+        $UserProfile->image=$req->image;
+        $UserProfile->save();
+        
+    
+
+    }
 
 }
