@@ -7,6 +7,9 @@ use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
 use App\Http\Controllers\CustomAuthController;
 
+//Ramal
+use App\Http\Controllers\PDFController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +124,16 @@ Route::get('/report', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+/*
+Route::get('/', [UserController::class, 'index']);
+*/
+
+Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pdf');
+
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
 
 // Ramal End
 

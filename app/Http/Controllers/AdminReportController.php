@@ -1,8 +1,17 @@
-public function index()
-{
-    // Retrieve and prepare the data for the report
-    $data = YourModel::all(); // Replace YourModel with your actual model and logic
+<!--
+class YourControllerName extends Controller {
+    public function exportTableToPDF() {
+        
+        $data = YourModelName::all();
 
-    // Pass the data to a view or export it
-    return view('admin.reports.index', ['data' => $data]);
+        // Load the view and pass the data
+        $pdf = PDF::loadView('your.pdf.view', compact('data'));
+
+        // Set paper size to A4
+        $pdf->setPaper('a4', 'landscape');
+
+        // Download the PDF file
+        return $pdf->download('table_export.pdf');
+    }
 }
+-->
