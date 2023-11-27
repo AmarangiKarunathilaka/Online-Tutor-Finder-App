@@ -6,6 +6,7 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\ClassRequestController;
 
 
 /*
@@ -149,3 +150,8 @@ Route::post('/postlogin', [CustomAuthController::class, 'login'])->name('postlog
 Route::get('/signup', [CustomAuthController::class, 'signup'])->name('register-user');
 Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
 Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
+
+
+//nalaka
+Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');

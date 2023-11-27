@@ -77,7 +77,7 @@ Bootstrap 5 HTML CSS Template
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form method="POST" action="{{ route('/tutorHome') }}">
+                <form method="POST" action="{{ url('/postlogin') }}">
                 @csrf
                     <h2>Login</h2>
 
