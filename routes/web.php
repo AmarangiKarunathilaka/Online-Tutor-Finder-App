@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Models\Advertisement;
+use App\Http\Controllers\FeedbackController;
 
 
 /*
@@ -22,9 +23,9 @@ use App\Models\Advertisement;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/', function () {
     return view('index');
@@ -182,17 +183,13 @@ Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvert
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
+// akesh
 
-// Submit feedback
-Route::post('/submit-feedback', 'FeedbackController@store')->name('feedback.submit');
+/*Route::view('add', 'websiteFeedbackForm') ;
+Route::POST('add', [FeedbackController::class,'websiteFeedbackForm']) ;*/
+Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
+Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
 
-// Admin accepts feedback
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/feedback', 'FeedbackController@index')->name('feedback.index');
-});
-
-// Display feedback to guests
-Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 
 
 
