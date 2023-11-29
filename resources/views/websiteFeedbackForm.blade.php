@@ -17,7 +17,10 @@
         
         <h1 class="form-title">Website Feedback form</h1>
         <p><span class="highlighted">We value your feedback! Please fill out the form below:</span></p>
-        <form id="website-feedback-form" action="{{ route('feedback.submit') }}" method="POST">
+        <form id="website-feedback-form" action="{{url('/feedbackInput')}}" method="POST">
+            @csrf
+
+            <input type="hidden" name="key" value="1">
             <div class="form-group">
                 
                 <input type="text" id="name" name="name" placeholder="Name"required>
@@ -63,6 +66,9 @@
                     }
                 </script>
         </form>
+            <!--@if(isset($success) && $success)
+                <div class="success-message">Thank you! Your feedback has been submitted successfully.</div>
+            @endif-->
     </div>
 
     </div>
