@@ -10,6 +10,10 @@ use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ClassMaterialController;
 use App\Models\Advertisement;
+use App\Http\Controllers\FeedbackController;
+
+//Ramal
+use App\Http\Controllers\PDFController;
 
 
 /*
@@ -23,9 +27,9 @@ use App\Models\Advertisement;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/', function () {
     return view('index');
@@ -150,6 +154,16 @@ Route::get('/login', function () {
     return view('login');
 });
 
+/*
+Route::get('/', [UserController::class, 'index']);
+*/
+
+Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pdf');
+
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
+
 // Ramal End
 
 
@@ -182,18 +196,20 @@ Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisem
 Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvertisementInput'])->name('uploadAdvertisementInput');
 
 
+//Amarangi - view advertisements
+//Route::view('/index','list');
+Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
 
 
-// Submit feedback
-Route::post('/submit-feedback', 'FeedbackController@store')->name('feedback.submit');
+Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
-// Admin accepts feedback
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/feedback', 'FeedbackController@index')->name('feedback.index');
-});
+// akesh
 
-// Display feedback to guests
-Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
+/*Route::view('add', 'websiteFeedbackForm') ;
+Route::POST('add', [FeedbackController::class,'websiteFeedbackForm']) ;*/
+Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
+Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
+
 
 
 
