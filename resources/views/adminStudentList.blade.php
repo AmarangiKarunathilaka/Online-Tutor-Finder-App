@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/adminstyle.css">
+    <link href="css/report.css" rel="stylesheet">
     <title>Student Table</title>
 
 </head>
@@ -95,6 +96,14 @@
                         
             </div>
         </div>
+        
+        <form action="{{ route('view-pdf') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button type="button" onclick="generateReport()">Generate Report</button>
+
+                </div>
+            </form>
     </div>
     </section>
     @endsection

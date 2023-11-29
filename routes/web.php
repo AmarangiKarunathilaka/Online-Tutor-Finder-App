@@ -11,6 +11,9 @@ use App\Http\Controllers\UserProfileController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 
+//Ramal
+use App\Http\Controllers\PDFController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -149,6 +152,16 @@ Route::get('/chat', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+/*
+Route::get('/', [UserController::class, 'index']);
+*/
+
+Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pdf');
+
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
 
 // Ramal End
 
