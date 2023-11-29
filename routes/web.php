@@ -178,6 +178,10 @@ Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])
 Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
 Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvertisementInput'])->name('uploadAdvertisementInput');
 
+//Amarangi - view advertisements
+//Route::view('/index','list');
+Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
+
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
 
