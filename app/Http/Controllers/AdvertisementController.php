@@ -74,17 +74,4 @@ public function destroy($id)
 
     return redirect()->route('advertisements.index');
 }
-
-
-    //search function -ishara
-    public function search(Request $request)
-{
-    $query = $request->input('query');
-
-    $advertisements = Advertisement::where('subject', 'LIKE', '%' . $query . '%')->get();
-
-    return view('advertisements.index', compact('advertisements'));
-}
-
-
 }
