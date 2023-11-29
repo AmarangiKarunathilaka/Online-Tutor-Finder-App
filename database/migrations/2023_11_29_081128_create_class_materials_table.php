@@ -13,19 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('advertisements', function (Blueprint $table) {
+        Schema::create('class_materials', function (Blueprint $table) {
             $table->id();
             $table->string('tutorName');
-            $table->string('email')->nullable();
-            $table->string('payment');
-            $table->string('imageUpload')->nullable();
-            $table->text('description');
+            $table->string('email');
             $table->string('subject');
-            $table->boolean('status')->default(0); // You can set a default status value.
+            $table->string('title');
+            $table->string('lecNote');
+            $table->string('file');
             $table->unsignedBigInteger('tutor_id');
-            $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
+          
 
+            $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+
         });
     }
 
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advertisements');
+        Schema::dropIfExists('class_materials');
     }
 };
