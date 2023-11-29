@@ -8,6 +8,7 @@ use App\Http\Controllers\studentRegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\ClassMaterialController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 
@@ -76,8 +77,8 @@ Route::get('/studentHomeContent', function () {
 });
 
 
-Route::get('/classMaterial', function () {
-    return view('classMaterial');
+Route::get('/class-materials-list', function () {
+    return view('class-materials-list');
 });
 
 
@@ -91,9 +92,9 @@ Route::get('/tutorHomeContent', function () {
 });
 
  
-Route::get('/classMaterialUpload', function () {
-    return view('classMaterialUpload');
-}); 
+Route::get('/upload-class-material', function () {
+    return view('upload-class-material');
+});
 
 
 Route::get('/TutorFeedback', function () {
@@ -194,9 +195,11 @@ Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])
 Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
 Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvertisementInput'])->name('uploadAdvertisementInput');
 
+
 //Amarangi - view advertisements
 //Route::view('/index','list');
 Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
+
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
@@ -230,3 +233,21 @@ Route::post('/postlogin', [CustomAuthController::class, 'login'])->name('postlog
 Route::get('/signup', [CustomAuthController::class, 'signup'])->name('register-user');
 Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
 Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
+
+//ishara-class material upload
+// routes/web.php
+
+//use App\Http\Controllers\ClassMaterialController;
+
+// routes/web.php
+
+/*Route::post('/class-material/upload', [ClassMaterialController::class, 'upload']);
+Route::get('/class-materials', [ClassMaterialController::class, 'display']);
+
+Route::get('/tutors/{email}', [TutorController::class, 'show']);
+
+Route::get('/class-materials/download/{id}', [TutorController::class, 'download']);*/
+
+//ishara
+Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
+Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
