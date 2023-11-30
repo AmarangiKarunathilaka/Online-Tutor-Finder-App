@@ -195,8 +195,16 @@ return [
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+
+        /*ramal
+        Barryvdh\DomPDF\ServiceProvider::class, 
+        99
+        */
+
         //ramal
         //Barryvdh\DomPDF\ServiceProvider::class,
+
     ],
 
     /*
@@ -217,3 +225,4 @@ return [
     ])->toArray(),
 
 ];
+
