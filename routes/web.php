@@ -12,7 +12,7 @@ use App\Http\Controllers\ClassMaterialController;
 //use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
-
+use App\Http\Controllers\CustomAuthController;
 //Ramal
 use App\Http\Controllers\PDFController;
 
