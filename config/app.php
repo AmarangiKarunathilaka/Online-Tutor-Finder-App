@@ -195,25 +195,15 @@ return [
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        //ramal
-        Barryvdh\DomPDF\ServiceProvider::class,
+
+        /*ramal
+        Barryvdh\DomPDF\ServiceProvider::class, 
+        99
+        */
     ],
 
-    /*
-    |--------------------------------------------------------------------------
+    /*8888888888888
+    |---------------888999999999999999999999999999999999999-----------------------------------------------------------
     | Class Aliases
     |--------------------------------------------------------------------------
-    |
-    | This array of class aliases will be registered when this application
-    | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
-    |
-    */
-
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
-        //ramal
-        'PDF' => Barryvdh\DomPDF\Facade::class,
-    ])->toArray(),
-
-];
+    |999999888
