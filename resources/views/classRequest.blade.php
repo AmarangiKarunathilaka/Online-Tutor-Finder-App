@@ -12,45 +12,10 @@
 </head>
 <body>
     
-    <header>
-    <nav class="navbar navbar-expand-lg  fixed-top shadow-lg">
-       
-       <div class="container">
-           
-           <img src="images/f.png" alt="" />
-
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-           </button>
-
-           <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav ms-auto">
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_1"><b>Home</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_2"><b>About</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_3"><b>Contact Us</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="/login"><b>Login</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
-                   </li>
-               </ul>
-           </div>
-       </div>
-
-   </nav>
-    </header>
-
+   
+    @extends('studentHomeContent')
+    @section('content')
+    <div class="container1">
 
     <div class="row justify-content-center">
     <div class="form-box">
@@ -61,27 +26,12 @@
             <h1><div class="row justify-content-center"> Request</div></h1>
 
                 <table>
-                    <form action="{{ url('/classRequestInput') }}" method="post">
+                    <form action="{{ url('/tutorInput') }}" method="post">
                         @csrf 
-                        <input type="hidden" name="key" value="1">
                         <tr>
                             <div class="mt-4">
                                 
-                                <td><input type="text" class="form-control" placeholder="Tutor Id" name="tutorId" required></td>
-                               
-                            </div>
-                        </tr>
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="Tutor Name" name="tutorname" required></td>
-                               
-                            </div>
-                        </tr>
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="Student Name" name="studentname" required></td>
+                                <td><input type="text" class="form-control" placeholder="TutorName" name="TutorName" required></td>
                                
                             </div>
                         </tr>
@@ -115,28 +65,32 @@
                         
                 <table>
                     <tr>
-                    <td><input type="text" class="form-control" placeholder="Subject" name="subject" required></td>
-                    </tr>
+                        <tr>
+                            <div class="TutorReg-1">
+                            <td><input type="text" class="form-control" placeholder="Subject" name="subject" required></td>
+                                
+                            </div>
+                       
 
                         <tr>
                             <tr>
                                 <div class="TutorReg-1">
                                     <td><label for="TR-medium"> Medium :</label></td>
-                                    <td><input type="radio" class="TR-input" name="medium">
+                                    <td><input type="radio" class="TR-input" name="medium1">
                                     <label for="TR-medium1"> Sinhala </label></td>
                                 </div>
                             </tr>
                             <tr>
-                                <td><td><input type="radio" class="TR-input" name="medium">
+                                <td><td><input type="radio" class="TR-input" name="medium2">
                                     <label for="TR-medium2"> English </label></td></td>
                             <tr>
                             <tr>
-                                <td><td><input type="radio" class="TR-input" name="medium">
+                                <td><td><input type="radio" class="TR-input" name="medium3">
                                     <label for="TR-medium3"> Tamil </label></td></td>
                             </tr>
                         </tr>
                         
-                       
+                        
                     
                         
                     </table>
@@ -152,7 +106,7 @@
                         </div>
                         
                         
-                        <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> Register </button>
+                        <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> Submit </button>
                         
         
                     </form>
@@ -163,9 +117,7 @@
     </div>
     </div>
 
-         <footer>
-            <p>&copy; 2023 Tutor Finder</p>
-        </footer> 
-    
+        </div>
+@endsection
 </body>
 </html>
