@@ -12,6 +12,7 @@ use App\Http\Controllers\ClassMaterialController;
 //use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\ClassRequestController;
 
 //Ramal
 use App\Http\Controllers\PDFController;
@@ -279,3 +280,6 @@ Route::get('/class-materials/download/{id}', [TutorController::class, 'download'
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
 
+//nalaka
+Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');

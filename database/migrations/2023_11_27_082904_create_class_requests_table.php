@@ -13,20 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('class_materials', function (Blueprint $table) {
+        Schema::create('class_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('tutorName');
-            $table->string('email');
+            $table->date('keydate')->nullable();
+            $table->time('time')->nullable();
             $table->string('subject');
-            $table->string('title');
-            $table->string('lecNote');
-            $table->string('file');
-            $table->unsignedBigInteger('tutor_id');
-          
-
+            $table->string('medium');
+            $table->unsignedInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('student_registers')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('student_name');
+            $table->unsignedInteger('tutor_id');
             $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('tutor_name');
+            $table->boolean('status')->default(0);
             $table->timestamps();
-
         });
     }
 
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_materials');
+        Schema::dropIfExists('class_requests');
     }
 };

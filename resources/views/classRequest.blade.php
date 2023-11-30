@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -60,12 +61,27 @@
             <h1><div class="row justify-content-center"> Request</div></h1>
 
                 <table>
-                    <form action="{{ url('/tutorInput') }}" method="post">
+                    <form action="{{ url('/classRequestInput') }}" method="post">
                         @csrf 
+                        <input type="hidden" name="key" value="1">
                         <tr>
                             <div class="mt-4">
                                 
-                                <td><input type="text" class="form-control" placeholder="Class Id" name="name" required></td>
+                                <td><input type="text" class="form-control" placeholder="Tutor Id" name="tutorId" required></td>
+                               
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="Tutor Name" name="tutorname" required></td>
+                               
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="Student Name" name="studentname" required></td>
                                
                             </div>
                         </tr>
@@ -99,56 +115,28 @@
                         
                 <table>
                     <tr>
-                        <tr>
-                            <div class="TutorReg-1">
-                                <td><label for="TR-subject"> Subject :</label></td>
-                                <td><input type="checkbox" class="TR-input"  name="subject1">
-                                <label for="TR-subject1"> Mathematics </label></td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject2">
-                                <label for="TR-subject2"> Biology </label>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject3">
-                                <label for="TR-subject3"> Chemistry </label>
-                        </td>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject4">
-                                <label for="TR-subject4"> Physics </label>
-                            </td>
-                        </tr>
+                    <td><input type="text" class="form-control" placeholder="Subject" name="subject" required></td>
+                    </tr>
 
                         <tr>
                             <tr>
                                 <div class="TutorReg-1">
                                     <td><label for="TR-medium"> Medium :</label></td>
-                                    <td><input type="checkbox" class="TR-input" name="medium1">
+                                    <td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium1"> Sinhala </label></td>
                                 </div>
                             </tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium2">
+                                <td><td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium2"> English </label></td></td>
                             <tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium3">
+                                <td><td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium3"> Tamil </label></td></td>
                             </tr>
                         </tr>
                         
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="Status" name="name" required></td>
-                               
-                            </div>
-                        </tr>
+                       
                     
                         
                     </table>
@@ -181,4 +169,3 @@
     
 </body>
 </html>
-
