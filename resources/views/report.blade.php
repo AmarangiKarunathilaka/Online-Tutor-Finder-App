@@ -12,7 +12,8 @@
   
 
  
-        <form id="reportForm">
+    <!--   
+    <form id="reportForm">
             <label for="startDate">Start Date:</label>
             <input type="date" id="startDate" name="startDate" required>
 
@@ -22,11 +23,21 @@
             <label for="reportType">Report Type:</label>
             <select id="reportType" name="reportType" required>
                 <option value="pdf">PDF</option>
+
+     --> 
             
                 <!-- Add more options based on your requirements -->
             </select>
 
-            <button type="button" onclick="generateReport()">Generate Report</button>
+            <form action="{{ route('view-pdf') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button type="button" onclick="generateReport()">Generate Report</button>
+
+                </div>
+            </form>
+
+            
         </form>
    
         </section>
