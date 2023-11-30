@@ -13,19 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tutor_registers', function (Blueprint $table) {
+        Schema::create('admin_registers', function (Blueprint $table) {
             $table->id();
-            $table->string('tutorFullName');
-            $table->string('tutorPhoneNumber');
-            $table->string('qualification');
-            $table->string('tutorEmail')->unique();
+            $table->string('adminName');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->string('tutorConfirmPassword')->nullable();
             $table->timestamps();
-
-            //In tutorSubject and tutorMedium tables
-           
-           
         });
     }
 
@@ -36,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutor_registers');
+        Schema::dropIfExists('admin_registers');
     }
 };
