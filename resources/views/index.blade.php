@@ -173,11 +173,9 @@ Bootstrap 5 HTML CSS Template
             <div class="owl-carousel reviews-carousel">
                     <div class="col">
                     @if(isset($advertisements) && count($advertisements)>0)
-                    @foreach($advertisements as $advertisement)
-                    {{ dd($advertisement) }}
+                    @foreach ($advertisements as $advertisement)
                     
-                  
-                    <img src="{{ asset('path/to/images/' . $advertisement->imageUpload) }}" alt="{{ $advertisement->tutorName }} Image">
+                    <!--<img src="{{ asset('path/to/images/' . $advertisement->imageUpload) }}" alt="{{ $advertisement->tutorName }} Image">-->
                     <h2>{{ $advertisement->tutorName }}</h2>
                     <h3>{{ $advertisement->email}}</h3>
                     <h3>{{ $advertisement->payment}}</h3>
