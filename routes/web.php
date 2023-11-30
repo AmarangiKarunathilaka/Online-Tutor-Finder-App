@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ClassMaterialController;
+//use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 
@@ -245,7 +246,7 @@ Route::get('/adminStudentList', [studentRegisterController::class, 'adminStudent
 Route::get('/adminTutorList', [tutorRegisterController::class, 'adminTutorList'])->name('adminTutorList');
 
 //kavindra
-Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
+/*Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
 Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
 
 Route::post('/sregister', [studentRegisterController::class, 'studentRegister'])->name('studentRegister');
@@ -258,6 +259,7 @@ Route::post('/postlogin', [CustomAuthController::class, 'login'])->name('postlog
 Route::get('/signup', [CustomAuthController::class, 'signup'])->name('register-user');
 Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
 Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
+*/
 
 //ishara-class material upload
 // routes/web.php
