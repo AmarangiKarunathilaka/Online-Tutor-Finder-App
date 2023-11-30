@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Advertisement;
-
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class AdvertisementController extends Controller
 {
@@ -17,7 +18,9 @@ public function index()
 {
     // Retrieve all advertisements
     $advertisements = Advertisement::all();
-    return compact('advertisements');
+    //$advertisements = DB::table('advertisements')->get();
+    return view('advertisement.index',['advertisements' => $advertisements]);
+    //return compact('advertisements');
 }
 
 /*public function create()
@@ -74,17 +77,4 @@ public function destroy($id)
 
     return redirect()->route('advertisements.index');
 }
-
-
-    //search function -ishara
-    public function search(Request $request)
-{
-    $query = $request->input('query');
-
-    $advertisements = Advertisement::where('subject', 'LIKE', '%' . $query . '%')->get();
-
-    return view('advertisements.index', compact('advertisements'));
-}
-
-
 }

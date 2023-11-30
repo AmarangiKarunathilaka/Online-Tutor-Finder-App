@@ -166,9 +166,32 @@ Bootstrap 5 HTML CSS Template
                             <h3><i><u>Combined Maths</u></i></h3>
                         </div>
                     </div>
+
+                   
                 
             <div class="row">
-
+            <div class="owl-carousel reviews-carousel">
+                    <div class="col">
+                    @if(isset($advertisements) && count($advertisements)>0)
+                    @foreach($advertisements as $advertisement)
+                    {{ dd($advertisement) }}
+                    
+                  
+                    <img src="{{ asset('path/to/images/' . $advertisement->imageUpload) }}" alt="{{ $advertisement->tutorName }} Image">
+                    <h2>{{ $advertisement->tutorName }}</h2>
+                    <h3>{{ $advertisement->email}}</h3>
+                    <h3>{{ $advertisement->payment}}</h3>
+                    <p>{{ $advertisement->description }}</p>
+                    <submit>Book Now</submit>
+                    <!-- Add other fields as needed -->
+                    
+                    
+                    @endforeach
+                    @else
+                    <p>No advertisements found</p>
+                    @endif
+                    </div>
+                    </div>
                 <div class="owl-carousel reviews-carousel">
 
                     <div class="col">

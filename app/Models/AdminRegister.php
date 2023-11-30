@@ -7,19 +7,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class studentRegister extends Authenticatable
+class AdminRegister extends Authenticatable
 {
-    protected $table = 'student_registers';
-
     use HasFactory;
 
+    protected $table = 'admin_registers';
+
     protected $fillable = [
-        'studentFullName',
-        'birthday',
-        'address',
-        'studentPhoneNumber',
-        'studentEmail',
+        'adminName',
+        'email',
         'password',
-        'studentConfirmPassword'
     ];
 }

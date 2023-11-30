@@ -43,65 +43,38 @@
             <div class="container mt-4 ">
                 
                 <table class="table table-success table-striped">
-                    
+                
+                <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">tID</th>
-                        <th scope="col">tPwd</th>
-                        <th scope="col">tName</th>
-                        <th scope="col">tEmail</th>
-                        <th scope="col">profilePicID</th>
-                        <th scope="col">tContactNo</th>
-                        <th scope="col">medium</th>
+                        <th scope="col">tutorFullName</th>
+                        <th scope="col">tutorPhoneNumber</th>
                         <th scope="col">qualification</th>
-                        <th scope="col">payment</th>
+                        <th scope="col">tutorEmail</th>
+                        <th scope="col">tutorMedium</th>
+                        <th scope="col">tutorSubject</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
-                    
+                </thead> 
+
+                <tbody>
+                     
+                    @foreach ($data as $item)
+
                     <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th scope="row">{{ $item->id }}</th>
+                        <td>{{ $item->tutorFullName }}</td>
+                        <td>{{ $item->tutorPhoneNumber }}</td>
+                        <td>{{ $item->qualification }}</td>
+                        <td>{{ $item->tutorEmail }}</td>
+                        <td>{{ optional($item->tutorMedium)->name }}</td>
+                        <td>{{ optional($item->tutorSubject)->name }}</td>
                         <td><button type="button" class="accept">Accept </button>
                             <button type="button" class="remove">Remove</button></td>
                     </tr>
-                    
-                    <tr>
-                        <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
-                    </tr>
+                        
+                    @endforeach
+                </tbody>    
                     
                 </table>
                         

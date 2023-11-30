@@ -45,53 +45,35 @@
                 
                 <table class="table table-success table-striped">
                     
+                <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">sID</th>
-                        <th scope="col">sPwd</th>
-                        <th scope="col">sName</th>
-                        <th scope="col">sEmail</th>
-                        <th scope="col">age</th>
-                        <th scope="col">sContact No</th>
+                        <th scope="col">studentFullName</th>
+                        <th scope="col">birthday</th>
+                        <th scope="col">address</th>
+                        <th scope="col">studentPhoneNumber</th>
+                        <th scope="col">studentEmail</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
-                    
+                </thead>  
+
+                <tbody>
+                    @foreach ($students as $student)
+                
                     <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <th scope="row">{{ $student->id }}</th>
+                    <td>{{ $student->studentFullName }}</td>
+                    <td>{{ $student->birthday }}</td>
+                    <td>{{ $student->address }}</td>
+                    <td>{{ $student->studentPhoneNumber }}</td>
+                    <td>{{ $student->studentEmail }}</td>
                         <td><button type="button" class="accept">Accept </button>
                             <button type="button" class="remove">Remove</button></td>
                     </tr>
                     
-                    <tr>
-                        <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
-                    </tr>
-                    
+                    @endforeach
+                </tbody>
+
                 </table>
                         
             </div>
