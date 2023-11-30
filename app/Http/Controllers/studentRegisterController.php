@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\studentRegister;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class studentRegisterController extends Controller
 {
@@ -12,18 +13,23 @@ class studentRegisterController extends Controller
         return view('sRegister');
     }
 
+    public function adminStudentList(){
+        $students = studentRegister::all(); 
+        return view('adminStudentList', compact('students'));
+    }
+
     public function studentRegisterInput(Request $request)
     {
         $rules = [
             'name' => 'required',
             'studentEmail' => 'required|email|unique:student_registers,studentEmail',
-            'studentPassword'   => 'required|min:8',
-            'studentReEnterPassword'=> 'required|same:studentPassword',
+            'password'   => 'required|min:8',
+            'studentReEnterPassword'=> 'required|same:password',
             'studentContact' => 'required|regex:/^0\d{9}$/',
         ];
 
         $customMessages = [
-            'studentPassword.min' => 'The password must be at least 8 characters.',
+            'password.min' => 'The password must be at least 8 characters.',
             'studentReEnterPassword.same'=> 'Password not match',
             'studentContact' => 'Phone number must be 10 characters',
         ];
@@ -41,8 +47,8 @@ class studentRegisterController extends Controller
             'address'=> $request -> address,
             'studentPhoneNumber'=> $request -> studentContact,
             'studentEmail'=> $request -> studentEmail,
-            'studentPassword'=> $request -> studentPassword,
-            'studentConfirmPassword'=> $request -> studentReEnterPassword
+            'password'=> Hash::make($request -> password),
+            // 'studentConfirmPassword'=> $request -> studentReEnterPassword
            ]);
 
         
@@ -52,6 +58,7 @@ class studentRegisterController extends Controller
  
         // Redirect after successfully creating the record
         //return redirect(route('tregister'));
-        return redirect() -> back();
+        $user_type = 'student';
+        return view('login', compact('user_type'));
     }
 }

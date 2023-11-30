@@ -2,16 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
-
 use App\Http\Controllers\tutorRegisterController;
 use App\Http\Controllers\studentRegisterController;
-use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\PasswordResetLinkController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ClassMaterialController;
+//use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
-
+use App\Http\Controllers\CustomAuthController;
 //Ramal
 use App\Http\Controllers\PDFController;
 
@@ -35,9 +36,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
 
 Route::get('/registration', function () {
     return view('registration');
@@ -60,9 +59,9 @@ Route::get('/tregister', function () {
 
 //Amarangi
 
-Route::get('/studentHome', function () {
-    return view('studentHome');
-});
+// Route::get('/studentHome', function () {
+//     return view('studentHome');
+// });
 
 Route::get('/studentdashboard', function () {
     return view('studentdashboard');
@@ -81,10 +80,24 @@ Route::get('/class-materials-list', function () {
     return view('class-materials-list');
 });
 
-
-Route::get('/tutorHome', function () {
-    return view('tutorHome');
+Route::middleware('auth:tutor')->group(function() {
+    Route::get('/tutorHome', function () {
+        return view('tutorHome');
+    });
 });
+
+Route::middleware('auth:student')->group(function() {
+    Route::get('/studentHome', function () {
+        return view('studentHome');
+    });
+});
+
+Route::middleware('auth:admin')->group(function() {
+    Route::get('/adminHome', function () {
+        return view('adminHome');
+    });
+});
+
 
 
 Route::get('/tutorHomeContent', function () {
@@ -108,9 +121,9 @@ Route::get('/popupBox', function () {
 });
 
 
-Route::get('/adminHome', function () {
-    return view('adminHome');
-});
+// Route::get('/adminHome', function () {
+//     return view('adminHome');
+// });
 
 Route::get('/classRequest', function () {
     return view('classRequest');
@@ -120,6 +133,9 @@ Route::get('/adminAdvertisementList', function () {
     return view('adminAdvertisementList');
 });
 
+Route::get('/adminFeedbackList', function () {
+    return view('adminFeedbackList');
+});
 
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
@@ -149,6 +165,7 @@ Route::get('/report', function () {
 Route::get('/chat', function () {
     return view('chat');
 });
+
 
 Route::get('/login', function () {
     return view('login');
@@ -210,6 +227,11 @@ Route::POST('add', [FeedbackController::class,'websiteFeedbackForm']) ;*/
 Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
 Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
 
+// View admin feedback list
+Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
+
+
+
 
 
 
@@ -217,10 +239,22 @@ Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])
 //Route::resource('user-profiles', 'UserProfileController');
 Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
+ 
+//kavindra
+Route::post('/postlogin', [LoginController::class, 'login'])->name('postlogin'); 
+Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request'); 
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email'); 
 
+Route::post('/studentInput', [studentRegisterController::class, 'studentRegisterInput'])->name('studentRegisterInput');
+Route::post('/tutorInput', [tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
+
+
+Route::get('/adminStudentList', [studentRegisterController::class, 'adminStudentList']);
+
+Route::get('/adminTutorList', [tutorRegisterController::class, 'adminTutorList'])->name('adminTutorList');
 
 //kavindra
-Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
+/*Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
 Route::post('/tutorInput',[tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
 
 Route::post('/sregister', [studentRegisterController::class, 'studentRegister'])->name('studentRegister');
@@ -233,6 +267,7 @@ Route::post('/postlogin', [CustomAuthController::class, 'login'])->name('postlog
 Route::get('/signup', [CustomAuthController::class, 'signup'])->name('register-user');
 Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
 Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
+*/
 
 //ishara-class material upload
 // routes/web.php
@@ -251,3 +286,4 @@ Route::get('/class-materials/download/{id}', [TutorController::class, 'download'
 //ishara
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
+

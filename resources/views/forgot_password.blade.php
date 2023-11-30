@@ -76,65 +76,16 @@ Bootstrap 5 HTML CSS Template
 
 
     <section>
-        <div class="form-box">
-            <div class="form-value">
-
-                @if(session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
+        <div class="form-box" style="margin-top: 10%; height:400px;">
+            <div class="form-value text-center"  style="padding:25px">
+                <form method="POST" action="{{ route('password.email') }}">
+                    @csrf
+                    <h3 class="mt-0">Forgot Password</h3>
+                    <div class="mb-4 text-sm text-gray-600">
+                        {{ __('Forgot your password? No problem.') }}
+                        <br>
+                        {{__('Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.')}}
                     </div>
-                @endif
-                <form method="post" action="{{ url('/postlogin') }}">
-                @csrf
-                    <h2>Login</h2>
-
-                   <!-- <div class="input-box">
-                        <ion-icon name="person-outline"></ion-icon>
-                        <input type="text" id="email" name="email" required>
-                        <label for="">E-mail</E-mail></label>
-                                @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif
-                    </div>
-
-                    <div class="input-box">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" id="password" name="password" required>
-                        <label for="">Password</label>
-                                @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                                @endif
-                    </div> -->
-
-                    <div class="input-box login-form">
-                    <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" id="email" name="email" required>
-                    <label for="email">E-mail</label>
-                    @if ($errors->has('email'))
-                        <span class="text-danger">{{ $errors->first('email') }}</span>
-                    @endif
-                </div>
-
-                <div class="input-box">
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" id="password" name="password" required>
-                    <label for="password">Password</label>
-                    @if ($errors->has('password'))
-                        <span class="text-danger">{{ $errors->first('password') }}</span>
-                    @endif
-                </div>
-                @if(isset($user_type))
-                    <div class="radio-box text-white mb-md-4 mb-2">
-                        <input type="radio" id="student" name="user_type" value="student" {{ old('user_type', $user_type) === 'student' ? 'checked' : '' }} required>
-                        <label for="student">Student</label>
-
-                        <input type="radio" id="tutor" name="user_type" class="ms-3" value="tutor" {{ old('user_type', $user_type) === 'tutor' ? 'checked' : '' }} required>
-                        <label for="tutor">Tutor</label>
-
-                        <input type="radio" id="admin" name="user_type" class="ms-3" value="admin" {{ old('user_type', $user_type) === 'admin' ? 'checked' : '' }} required>
-                        <label for="admin">Admin</label>
-                    </div>
-                @else
                     <div class="radio-box text-white mb-md-4 mb-2">
                         <input type="radio" id="student" name="user_type" value="student" {{ old('user_type', 'student') === 'student' ? 'checked' : '' }} required>
                         <label for="student">Student</label>
@@ -145,17 +96,16 @@ Bootstrap 5 HTML CSS Template
                         <input type="radio" id="admin" name="user_type" class="ms-3" value="admin" {{ old('user_type') === 'admin' ? 'checked' : '' }} required>
                         <label for="admin">Admin</label>
                     </div>
-                @endif                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember me  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="{{ route('password.request') }}">Forget Password</a></label>
-                        
+                    <div class="text-center mt-md-5 mt-2 mb-2 mb-md-5">
+                        <input type="text" class="form-control" name="email" placeholder="Email" required>
+                        <!-- Validation for email -->
+                        @if ($errors->has('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
                     </div>
-                    <button>Submit</button>
-                    <div class="register">
 
-                       
-                        <p>New Member <a href="/registration">Registration here</a></p>
+                    <button style="font-size: 15px;">{{ __('Email Password Reset Link') }}</button>
 
-                    </div>
                 </form>
             </div>
         </div>

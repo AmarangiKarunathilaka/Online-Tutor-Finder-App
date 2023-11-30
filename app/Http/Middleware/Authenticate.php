@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use App\Models\LoginController;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 

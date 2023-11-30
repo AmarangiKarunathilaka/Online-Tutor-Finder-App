@@ -86,7 +86,7 @@
                 
                         <tr>
                             <div class="mt-4">
-                                <td> <input type="text" class="form-control" placeholder="Phone number" name="studentContact">
+                                <td> <input type="text" class="form-control" placeholder="Phone number" name="studentContact" required>
                                     @error('studentContact')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -109,8 +109,8 @@
                         <tr>
                             <div class="TutorReg-1">
 
-                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="studentPassword">
-                                    @error('studentPassword')
+                                <td> <input type="password" class="form-control" placeholder="Enter Password" name="password">
+                                    @error('Password')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </td>

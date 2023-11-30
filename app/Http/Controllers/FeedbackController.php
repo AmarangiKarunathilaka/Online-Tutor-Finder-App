@@ -33,5 +33,18 @@ class FeedbackController extends Controller
         ]);
 
         return redirect() -> back();
-}
+    }
+
+    public function adminFeedbackList()
+    {
+        // dd('Controller method is being called.');
+        
+        // Fetch feedback data from the database
+        $feedback = Feedback::all();
+
+        // Return the admin feedback list view
+        return view('adminFeedbackList', compact('feedback'));
+    }
+
+   
 }
