@@ -15,6 +15,7 @@
    
     @extends('studentHomeContent')
     @section('content')
+   
     <div class="container1">
 
     <div class="row justify-content-center">
