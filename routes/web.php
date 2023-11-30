@@ -116,6 +116,9 @@ Route::get('/adminAdvertisementList', function () {
     return view('adminAdvertisementList');
 });
 
+Route::get('/adminFeedbackList', function () {
+    return view('adminFeedbackList');
+});
 
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
@@ -189,6 +192,11 @@ Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementControll
 Route::POST('add', [FeedbackController::class,'websiteFeedbackForm']) ;*/
 Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
 Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
+
+// View admin feedback list
+Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
+
+
 
 
 
