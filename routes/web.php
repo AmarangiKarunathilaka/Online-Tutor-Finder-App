@@ -215,8 +215,9 @@ Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvert
 
 //Amarangi - view advertisements
 //Route::view('/index','list');
-Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
-
+//Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
+// View admin advertisement list
+Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
@@ -234,7 +235,7 @@ Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'
 
 
 
-
+//Gayathri
 // edit tutor profile-Gayathtri
 //Route::resource('user-profiles', 'UserProfileController');
 Route::POST('add',[UserProfileController::class,'editTutorProfile']);
