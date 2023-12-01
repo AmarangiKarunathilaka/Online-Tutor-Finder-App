@@ -240,7 +240,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
             </div>
             
-       
+                
                
             <div class="col-lg-12 col-12">
                     <div class="subject">
@@ -393,6 +393,8 @@ Bootstrap 5 HTML CSS Template
                 <h2 class="mt-2 mb-4">Reviews</h2>
 
                 <div class="owl-carousel reviews-carousel">
+
+
                     <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Tutor4u is the most suitable website layout.</h4>
@@ -417,29 +419,7 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
 
-                    <div class="reviews-thumb">
-                        <div class="reviews-body">
-                            <h4> Prefect tutors.</h4>
-                        </div>
-
-                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                            
-
-                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                <p class="text-white mb-0">
-                                    <strong>Jack</strong>, <small>Partner</small>
-                                </p>
-
-                                <div class="reviews-icons">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star"></i>
-                                    <i class="bi-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="reviews-thumb">
                         <div class="reviews-body">
@@ -465,29 +445,38 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
 
-                    <div class="reviews-thumb">
-                        <div class="reviews-body">
-                            <h4>Nice website. Love it.</h4>
-                        </div>
+                    @section('content')
+                        <!-- <h1>Guest Feedback</h1> -->
 
-                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                           
+                        <!-- <div class="reviews-container"> -->
+                            <!-- @if(isset($feedback) && count($feedback)>0) -->
+                            @foreach ($feedback as $item)
+                            <!-- {{ dd($item) }} -->
+                                <div class="reviews-thumb">
+                                    <div class="reviews-body">
+                                        <h4>{{ $item->message }}</h4>
+                                    </div>
 
-                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                <p class="text-white mb-0">
-                                    <strong>Bill</strong>, <small>Designer</small>
-                                </p>
+                                    <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                            <p class="text-white mb-0">
+                                                <strong>{{ $item->name }}</strong>
+                                            </p>
 
-                                <div class="reviews-icons">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star"></i>
-                                    <i class="bi-star"></i>
+                                            <div class="reviews-icons">
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    <i class="bi-star-fill{{ $i <= $item->rating ? ' active' : '' }}"></i>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            @endforeach
+                            <!-- @else
+                            <p>No reviews found</p>
+                            @endif -->
+                        <!-- </div> -->
+                    @endsection
 
                     <div class="reviews-thumb">
                         <div class="reviews-body">

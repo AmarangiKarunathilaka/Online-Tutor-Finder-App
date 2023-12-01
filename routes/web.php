@@ -221,15 +221,22 @@ Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
 // akesh
-
-/*Route::view('add', 'websiteFeedbackForm') ;
-Route::POST('add', [FeedbackController::class,'websiteFeedbackForm']) ;*/
+// store feedback to database
 Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
 Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
 
-// View admin feedback list
+// View feedback list to admin
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
+// view feedback in guest interface
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('admin.feedback.index');
+    Route::post('/admin/feedback/{id}/accept', [FeedbackController::class, 'acceptFeedback'])->name('admin.feedback.accept');
+    Route::post('/admin/feedback/{id}/reject', [FeedbackController::class, 'rejectFeedback'])->name('admin.feedback.reject');
+});
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('guest.feedback.index');
 
 
 
