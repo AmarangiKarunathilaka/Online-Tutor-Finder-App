@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ClassMaterial;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
+//use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 class ClassMaterialController extends Controller
