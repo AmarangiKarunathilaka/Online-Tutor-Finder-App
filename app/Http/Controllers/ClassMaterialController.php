@@ -62,17 +62,19 @@ class ClassMaterialController extends Controller
         'lecNote' => $request->lecNote,
         'file' => $request->material,
         
-        
+          
 
     ]);
 
     return redirect() -> back();
     }
 
-    public function display()
+    
+
+    public function adminClassMaterialList()
 {
-    $classMaterials = ClassMaterial::all();
-    return view('class-materials-list', ['classMaterials' => $classMaterials]);
+    $classmaterial = ClassMaterial::all();
+    return view('adminClassMaterialList', compact('classmaterial'));
 }
 
 }
