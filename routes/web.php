@@ -137,6 +137,10 @@ Route::get('/adminFeedbackList', function () {
     return view('adminFeedbackList');
 });
 
+Route::get('/adminClassMaterialList', function () {
+    return view('adminClassMaterialList');
+});
+
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
 });
@@ -232,6 +236,7 @@ Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
 
+Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminClassMaterialList'])->name('adminClassMaterialList');
 
 
 
