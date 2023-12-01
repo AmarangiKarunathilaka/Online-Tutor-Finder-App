@@ -81,17 +81,33 @@
                 </table>
                         
             </div>
-        </div>
+            
+        
 
-        <form action="{{ route('view-pdf') }}" method="post" target="_blank">
+</nav>
+</header>
+
+<form action="{{ route('view-pdf') }}" method="post" target="_blank">
 	            @csrf
                 <div>
                     <button type="button" onclick="generateReport()">Generate Report</button>
 
                 </div>
             </form>
-    </div>
+
+        </div>
+    
     </section>
     @endsection
+
+    <script type="text/javascript">
+        var app = angular.module('Leave', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.ExpandNotifications = function () {
+                $(".notification").css("min-width", "300px");
+                $scope.hello = "how are you";
+            };
+        });
+    </script>
 </body>
 </html>
