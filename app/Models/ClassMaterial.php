@@ -18,6 +18,7 @@ class ClassMaterial extends Model
         'lecNote',
         'file',
         'tutor_id',
+        'status',
     ];
 
     public function tutor()

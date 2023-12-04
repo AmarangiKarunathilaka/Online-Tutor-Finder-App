@@ -76,8 +76,8 @@ Route::get('/studentHomeContent', function () {
 });
 
 
-Route::get('/class-materials-list', function () {
-    return view('class-materials-list');
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
 });
 
 Route::middleware('auth:tutor')->group(function() {
@@ -300,3 +300,7 @@ Route::get('/class-materials/download/{id}', [TutorController::class, 'download'
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
 
+Route::get('/classMaterial', [ClassMaterialController::class, 'materialDisplay'])->name('materialDisplay');
+
+Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
+Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
