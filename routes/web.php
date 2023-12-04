@@ -16,6 +16,10 @@ use App\Http\Controllers\CustomAuthController;
 //Ramal
 use App\Http\Controllers\PDFController;
 
+//chat
+use App\Events\Message;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -158,6 +162,7 @@ Route::get('/classRequest', function () {
 
 
 
+
 // Ramal Start
 
 Route::get('/admin/reports',  'AdminReportController@index');
@@ -224,6 +229,28 @@ Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvert
 Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
+
+//chat - Amarangi
+Route::get('/chatPusher', function () {
+    return view('chatPusher');
+});
+
+
+Route::post('send-message',function (Request $request){
+    event(new Message($request->username, $request->message));
+   return ['success' => true];
+});
+
+//Route::middleware(['auth'])->group(function () {
+  //  Route::get('/chat', 'ChatController@index');
+   // Route::post('/send-message', 'ChatController@sendMessage');
+//});
+
+
+
+
+
+
 
 // akesh
 // store feedback to database
