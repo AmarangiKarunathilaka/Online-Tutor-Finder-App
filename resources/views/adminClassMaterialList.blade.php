@@ -33,24 +33,26 @@
                         <th scope="col">Catagory</th>
                         <th scope="col">File</th>
                         <th scope="col">Tutor Id</th>
+                        <th scope="col">Status Accept</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
                 </thead>  
 
                 <tbody>
-                  @foreach ($classmaterial as $item)
+                  @foreach ($classmaterial as $classmaterial)
                 
                     <tr>
-                    <th scope="row">{{ $item->id }}</th>
-                    <td>{{ $item->tutorName }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->subject }}</td>
-                    <td>{{ $item->title }}</td>
-                    <td>{{ $item->lecNote }}</td>
-                    <td>{{ $item->file }}</td>
-                    <td>{{ $item->tutor_id }}</td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Reject</button></td>
+                    <th scope="row">{{ $classmaterial->id }}</th>
+                    <td>{{ $classmaterial->tutorName }}</td>
+                    <td>{{ $classmaterial->email }}</td>
+                    <td>{{ $classmaterial->subject }}</td>
+                    <td>{{ $classmaterial->title }}</td>
+                    <td>{{ $classmaterial->lecNote }}</td>
+                    <td>{{ $classmaterial->file }}</td>
+                    <td>{{ $classmaterial->tutor_id }}</td>
+                    <td>{{ $classmaterial->status }}</td>
+                        <td> <a href="{{url('accept_material',$classmaterial->id)}}"> <button type="button" class="accept">Accept</button></a>
+                            <a href="{{url('reject_material',$classmaterial->id)}}" ><button type="button" class="remove">Reject</a></button></td>
                     </tr>
                     
                     @endforeach

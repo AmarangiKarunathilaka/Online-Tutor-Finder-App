@@ -77,4 +77,31 @@ class ClassMaterialController extends Controller
     return view('adminClassMaterialList', compact('classmaterial'));
 }
 
+
+public function materialDisplay()
+{
+    $classmaterial = ClassMaterial::where('status','=','active')->get();
+    return view('classMaterial', compact('classmaterial'));
+}
+
+
+public function accept_material($id)
+    {
+        $data = ClassMaterial::find($id);
+        $data->status = 'active';
+        $data->save();
+
+        return redirect()->route('adminClassMaterialList')->with('success', 'Class Material accepted successfully!');
+    }
+
+public function reject_material($id)
+    {
+        $data = ClassMaterial::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+        return redirect()->route('adminClassMaterialList')->with('success', 'Class Material rejected successfully!');
+    }
+
+
 }
