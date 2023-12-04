@@ -236,15 +236,15 @@ Route::get('/chatPusher', function () {
 });
 
 
-//Route::post('send-message',function (Request $request){
- //   event(new Message($request->username, $request->message));
- //   return ['success' => true];
-//});
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/chat', 'ChatController@index');
-    Route::post('/send-message', 'ChatController@sendMessage');
+Route::post('send-message',function (Request $request){
+    event(new Message($request->username, $request->message));
+   return ['success' => true];
 });
+
+//Route::middleware(['auth'])->group(function () {
+  //  Route::get('/chat', 'ChatController@index');
+   // Route::post('/send-message', 'ChatController@sendMessage');
+//});
 
 
 

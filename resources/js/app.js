@@ -26,7 +26,13 @@ $(document).ready(function(){
 });
 
 window.Echo.channel('chat')
-    .listen('.message',(e)=>{
-        $('#messages').append('<p><strong>'+e.username+'</strong>'+ ': ' + e.message+'</p>');
+   .listen('.message',(e)=>{
+       $('#messages').append('<p><strong>'+e.username+'</strong>'+ ': ' + e.message+'</p>');
         $('#message').val('');
     });
+
+   // window.Echo.private(`chat.${userId}.${otherUserId}`)
+    //.listen('.message', (e) => {
+        // Handle received messages
+       // $('#messages').append(`<p><strong>${e.username}</strong>: ${e.message}</p>`);
+   // });

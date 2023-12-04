@@ -16,23 +16,16 @@ class Message implements ShouldBroadcast
 
     public $username;
     public $message;
-    public $sender_id;
-    public $receiver_id;
 
-
-    public function __construct($sender_id, $receiver_id, $username, $message)
+    public function __construct($username,$message)
     {
-        $this->sender_id = $sender_id;
-        $this->receiver_id = $receiver_id;
         $this->username = $username;
         $this->message = $message;
     }
 
-
     public function broadcastOn()
     {
-        // Use the user IDs to create a unique private channel for this chat
-        return new PrivateChannel('chat.' . $this->sender_id . '.' . $this->receiver_id);
+        return new Channel('chat');
     }
 
     public function broadcastAs()
