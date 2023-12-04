@@ -168,29 +168,25 @@ Bootstrap 5 HTML CSS Template
                     </div>
 
                    
-                
+                     
             <div class="row">
             <div class="owl-carousel reviews-carousel">
+            @foreach ($advertisement as $advertisement)  
                     <div class="col">
-                    <!---@if(isset($advertisements) && count($advertisements)>0)-->
-                    @foreach ($advertisements as $advertisement)
-                    <img src="{{ $advertisement->imageUpload }}"></img>
-                    <!--<img src="{{ asset('path/to/images/' . $advertisement->imageUpload) }}" alt="{{ $advertisement->tutorName }} Image">-->
+                    
+                    <h4>{{$advertisement->imageUpload }}</h4>
                     <h2>{{ $advertisement->tutorName }}</h2>
-                    <h3>{{ $advertisement->email}}</h3>
-                    <h3>{{ $advertisement->payment}}</h3>
+                    <h5>{{ $advertisement->email}}</h5>
+                    <h5>{{ $advertisement->payment}}</h5>
                     <p>{{ $advertisement->description }}</p>
                     <p>{{ $advertisement->subject }}</p>
                     <submit>Book Now</submit>
                     <!-- Add other fields as needed -->
                     
-                    
+                    </div>
                     @endforeach
-                    <!--@else
-                    <p>No advertisements found</p>
-                    @endif -->
                     </div>
-                    </div>
+                   
                 <div class="owl-carousel reviews-carousel">
 
                     <div class="col">
@@ -444,38 +440,7 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
 
-                    @section('content')
-                        <!-- <h1>Guest Feedback</h1> -->
-
-                        <!-- <div class="reviews-container"> -->
-                            <!-- @if(isset($feedback) && count($feedback)>0) -->
-                            @foreach ($feedback as $item)
-                            <!-- {{ dd($item) }} -->
-                                <div class="reviews-thumb">
-                                    <div class="reviews-body">
-                                        <h4>{{ $item->message }}</h4>
-                                    </div>
-
-                                    <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                                        <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                            <p class="text-white mb-0">
-                                                <strong>{{ $item->name }}</strong>
-                                            </p>
-
-                                            <div class="reviews-icons">
-                                                @for ($i = 1; $i <= 5; $i++)
-                                                    <i class="bi-star-fill{{ $i <= $item->rating ? ' active' : '' }}"></i>
-                                                @endfor
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            <!-- @else
-                            <p>No reviews found</p>
-                            @endif -->
-                        <!-- </div> -->
-                    @endsection
+                    
 
                     <div class="reviews-thumb">
                         <div class="reviews-body">

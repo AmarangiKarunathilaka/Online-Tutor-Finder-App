@@ -56,14 +56,17 @@
           
         </div>
         <div class="category-details-box">
-          <span class="category-title">select subject</span>
-          <div class="category-category">
-            <input type="checkbox" name="subject" id="Mathematics">
-            <label for="Mathematics">Mathematics</label>
-            <input type="checkbox" name="subject" id="Physics">
-            <label for="Physics">Physics</label>
-            <input type="checkbox" name="subject" id="Chemistry">
-            <label for="Chemistry">Chemistry</label>
+          
+          </br>
+          </br>
+          <div class="user-input-box">
+            <label for="subject">Select Subject</label>
+                <select name="subject" id="subject">
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    
+                </select>
           </div>
         </div>
         <div class="form-submit-btn">

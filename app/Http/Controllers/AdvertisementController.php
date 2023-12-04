@@ -29,6 +29,7 @@ public function uploadAdvertisementInput(Request $request)
         'imageUpload'=> $request -> image,
         'description'=> $request -> message,
         'subject'=> $request -> subject,
+
         
        ]);
     
@@ -55,15 +56,44 @@ public function adminAdvertisementList()
     return view('adminAdvertisementList', compact('advertisements'));
 }
 
-
-public function index()
+public function advertisementDisplay()
 {
-    // Retrieve all advertisements
-    $advertisements = Advertisement::all();
-    //$advertisements = DB::table('advertisements')->get();
-    return view('advertisement.index',['advertisements' => $advertisements]);
-    //return compact('advertisements');
+    
+    $advertisement = Advertisement::where('status','=','accepted')->get();
+    return view('index', compact('advertisement'));
+    dd('advertisement');
 }
+
+
+public function accept_advertisement($id)
+    {
+        
+        $data = Advertisement::find($id);
+        $data->status = 'accepted';
+        $data->save();
+
+        return redirect()->route('adminAdvertisementList')->with('success', 'Advertisement accepted successfully!');
+    }
+
+public function reject_advertisement($id)
+    {
+        $data = Advertisement::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+        return redirect()->route('adminAdvertisementList')->with('success', 'Advertisement rejected successfully!');
+    }
+
+
+
+//public function index()
+//{
+    // Retrieve all advertisements
+    //$advertisements = Advertisement::all();
+    //$advertisements = DB::table('advertisements')->get();
+    //return view('advertisement.index',['advertisements' => $advertisements]);
+    //return compact('advertisements');
+//}
 
 public function edit($id)
 {
