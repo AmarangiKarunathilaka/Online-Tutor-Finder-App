@@ -16,6 +16,8 @@ use App\Http\Controllers\CustomAuthController;
 //Ramal
 use App\Http\Controllers\PDFController;
 
+
+
 //chat
 use App\Events\Message;
 use Illuminate\Http\Request;
@@ -193,6 +195,19 @@ Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pd
 
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
+//2023.12.05
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/billing_invoice', function () {
+    return view('billing_invoice');
+});
+Route::get('/generate-pdf',[PdfController::class,'generate_pdf']);
+Route::get('/download-pdf',[PdfController::class,'download_pdf']);
+
 
 
 // Ramal End
