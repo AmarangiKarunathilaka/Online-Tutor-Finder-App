@@ -36,7 +36,7 @@ use Illuminate\Http\Request;
     return view('welcome');
 });*/
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 
@@ -234,7 +234,7 @@ Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvert
 // View admin advertisement list
 Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
 
-Route::get('/index', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
 
 Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
 Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);

@@ -54,7 +54,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/classMaterialUpload">
+                        <a href="/upload-class-material">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Class Materials</span>
                         </a>

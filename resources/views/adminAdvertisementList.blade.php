@@ -37,9 +37,7 @@
     <section class="home">
         <div class="text">Advertisement List</div>
     
-
-
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
         <div class="form-box">
             <div class="container mt-4 ">
                 
@@ -47,7 +45,7 @@
                     
                 <thead>
                     <tr>
-                        <th scope="col">Advertisement Id</th>
+                        <th scope="col">Id</th>
                         <th scope="col">Tutor Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Payment</th>
