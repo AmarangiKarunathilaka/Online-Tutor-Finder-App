@@ -1,30 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Models\User;
-use PDF;
-class PDFController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-    */
+use Barryvdh\DomPDF\Facade\Pdf;
 
-    public function generatePDF()
+class PdfController extends Controller
+{
+    public function generate_pdf()
     {
-        $users = User::get();
-  
-        $data = [
-            'title' => 'Welcome to Online Tutor',
-            'date' => date('m/d/Y'),
-            'users' => $users
-        ]; 
-            
-        $pdf = PDF::loadView('myPDF', $data);
-     
-        return $pdf->download('laraveltuts.pdf');
+        $data = 'webjourney.dev';
+        $pdf = Pdf::loadView('billing_invoice',compact('data'));
+        return $pdf->stream('billing-invoice');
+    }
+
+    public function download_pdf()
+    {
+        $data = 'webjourney.dev';
+        $pdf = Pdf::loadView('billing_invoice',compact('data'));
+        return $pdf->download('billing-invoice.pdf');
     }
 }
