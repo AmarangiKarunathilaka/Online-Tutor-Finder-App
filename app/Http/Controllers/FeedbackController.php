@@ -46,5 +46,31 @@ class FeedbackController extends Controller
         return view('adminFeedbackList', compact('feedback'));
     }
 
+    public function index()
+    {
+        $feedback = Feedback::where('status', 'accepted')->get();
+        return view('index', compact('feedback'));
+    }
+
+    public function acceptFeedback($id)
+    {
+        $feedback = Feedback::findOrFail($id);
+        $feedback->status = 'accepted';
+        $feedback->save();
+
+        return redirect()->route('adminFeedbackList')->with('success', 'Feedback accepted successfully!');
+    }
+
+    public function rejectFeedback($id)
+    {
+        $feedback = Feedback::findOrFail($id);
+        $feedback->status = 'rejected';
+        $feedback->save();
+
+        return redirect()->route('adminFeedbackList')->with('success', 'Feedback rejected successfully!');
+    }
+
+
+
    
 }

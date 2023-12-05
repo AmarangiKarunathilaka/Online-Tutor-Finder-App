@@ -12,16 +12,15 @@ use App\Http\Controllers\ClassMaterialController;
 //use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
-
+use App\Http\Controllers\CustomAuthController;
 //Ramal
 use App\Http\Controllers\PDFController;
 
-//2023.12.05
 
 
-
-
-
+//chat
+use App\Events\Message;
+use Illuminate\Http\Request;
 
 
 /*
@@ -83,9 +82,14 @@ Route::get('/studentHomeContent', function () {
 });
 
 
-Route::get('/class-materials-list', function () {
-    return view('class-materials-list');
+Route::get('/classMaterial', function () {
+    return view('classMaterial');
 });
+
+Route::get('/materialContent', function () {
+    return view('materialContent');
+});
+
 
 Route::middleware('auth:tutor')->group(function() {
     Route::get('/tutorHome', function () {
@@ -144,6 +148,10 @@ Route::get('/adminFeedbackList', function () {
     return view('adminFeedbackList');
 });
 
+Route::get('/adminClassMaterialList', function () {
+    return view('adminClassMaterialList');
+});
+
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
 });
@@ -155,6 +163,7 @@ Route::get('/adminTutorList', function () {
 Route::get('/classRequest', function () {
     return view('classRequest');
 });
+
 
 
 
@@ -223,6 +232,7 @@ Route::get('/tutorDashboard', function () {
     return view('/tutorDashboard');
 });
 
+
 //Amarangi
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
@@ -235,26 +245,62 @@ Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvert
 
 //Amarangi - view advertisements
 //Route::view('/index','list');
-Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
+//Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
+// View admin advertisement list
+Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
 
+Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
+Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
+Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
-// akesh
+//chat - Amarangi
+Route::get('/chatPusher', function () {
+    return view('chatPusher');
+});
 
-/*Route::view('add', 'websiteFeedbackForm') ;
-Route::POST('add', [FeedbackController::class,'websiteFeedbackForm']) ;*/
+
+Route::post('send-message',function (Request $request){
+    event(new Message($request->username, $request->message));
+   return ['success' => true];
+});
+
+//Route::middleware(['auth'])->group(function () {
+  //  Route::get('/chat', 'ChatController@index');
+   // Route::post('/send-message', 'ChatController@sendMessage');
+//});
+
+
+
+
+
+
+
+// akesh
+// store feedback to database
 Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
 Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
 
-// View admin feedback list
+// View feedback list to admin
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
+// view feedback in guest interface
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('admin.feedback.index');
+    Route::post('/admin/feedback/{id}/accept', [FeedbackController::class, 'acceptFeedback'])->name('admin.feedback.accept');
+    Route::post('/admin/feedback/{id}/reject', [FeedbackController::class, 'rejectFeedback'])->name('admin.feedback.reject');
+});
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('guest.feedback.index');
+
+Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminClassMaterialList'])->name('adminClassMaterialList');
 
 
 
-
-
+//Gayathri
 // edit tutor profile-Gayathtri
 //Route::resource('user-profiles', 'UserProfileController');
 Route::POST('add',[UserProfileController::class,'editTutorProfile']);
@@ -307,3 +353,10 @@ Route::get('/class-materials/download/{id}', [TutorController::class, 'download'
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
 
+Route::get('/classMaterial', [ClassMaterialController::class, 'materialDisplay'])->name('materialDisplay');
+Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
+
+Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
+Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
+
+Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');

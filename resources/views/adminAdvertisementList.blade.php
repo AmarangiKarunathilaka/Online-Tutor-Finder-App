@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/adminstyle.css">
+    <link href="css/report.css" rel="stylesheet">
     <title>Student Table</title>
 
 </head>
@@ -36,67 +37,78 @@
     <section class="home">
         <div class="text">Advertisement List</div>
     
-
-
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
         <div class="form-box">
             <div class="container mt-4 ">
                 
                 <table class="table table-success table-striped">
                     
+                <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Add ID</th>
+                        <th scope="col">Id</th>
                         <th scope="col">Tutor Name</th>
-                        <th scope="col">Discription</th>
-                        <th scope="col">Tutor Image Upload</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Payment</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">description</th>
                         <th scope="col">Subject</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col">Tutor Id</th>
+                        <th scope="col">Status Accept</th>
+                        <th scope="col">Accept/Reject</th>
+                    </tr>
+                </thead>  
+
+                <tbody>
+                    @foreach ($advertisements as $advertisement)
+                
+                    <tr>
+                    <th scope="row">{{ $advertisement->id }}</th>
+                    <td>{{ $advertisement->tutorName }}</td>
+                    <td>{{ $advertisement->email }}</td>
+                    <td>{{ $advertisement->payment }}</td>
+                    <td>{{ $advertisement->imageUpload }}</td>
+                    <td>{{ $advertisement->description }}</td>
+                    <td>{{ $advertisement->subject }}</td>
+                    <td>{{ $advertisement->tutor_id }}</td>
+                    <td>{{ $advertisement->status }}</td>
+                        <td><a href="{{url('accept_advertisement',$advertisement->id)}}"><button type="button" class="accept">Accept </button>
+                        <a href="{{url('reject_advertisement',$advertisement->id)}}" ><button type="button" class="remove">Reject</button></td>
                     </tr>
                     
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
-                    </tr>
+                    @endforeach
+                </tbody>
                     
                 </table>
                         
             </div>
+            
+</br>
+</br>
+
+</nav>
+</header>
+
+<form action="{{ route('view-pdf') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button type="button" onclick="generateReport()">Generate Report</button>
+
+                </div>
+            </form>
+
         </div>
-    </div>
+    
     </section>
     @endsection
+
+    <script type="text/javascript">
+        var app = angular.module('Leave', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.ExpandNotifications = function () {
+                $(".notification").css("min-width", "300px");
+                $scope.hello = "how are you";
+            };
+        });
+    </script>
 </body>
 </html>

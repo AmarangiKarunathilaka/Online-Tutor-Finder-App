@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('lecNote');
             $table->string('file');
             $table->unsignedBigInteger('tutor_id');
-          
+            $table->string('status')->default('pending');
 
             $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

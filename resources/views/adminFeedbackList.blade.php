@@ -31,7 +31,7 @@
                         <th scope="col">Rating</th>
                         <th scope="col">Message</th>
                         <th scope="col">Student Id</th>
-                        <th scope="col">Accept/Remove</th>
+                        <th scope="col">Accept/Reject</th>
                     </tr>
                 </thead>  
 
@@ -45,8 +45,16 @@
                     <td>{{ $item->rating }}</td>
                     <td>{{ $item->message }}</td>
                     <td>{{ $item->student_id }}</td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Reject</button></td>
+                    <td>
+                        <form method="POST" action="{{ route('admin.feedback.accept', $item->id) }}">
+                            @csrf
+                            <button type="submit" class="accept">Accept</button>
+                        </form>
+                        <form method="POST" action="{{ route('admin.feedback.reject', $item->id) }}">
+                            @csrf
+                            <button type="submit" class="remove">Reject</button>
+                        </form>
+                    </td>
                     </tr>
                     
                     @endforeach
@@ -59,7 +67,7 @@
     </section>
     @endsection
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var app = angular.module('Leave', []);
         app.controller('myCtrl', function ($scope) {
             $scope.ExpandNotifications = function () {
@@ -67,6 +75,6 @@
                 $scope.hello = "how are you";
             };
         });
-    </script>
+    </script> -->
 </body>
 </html>

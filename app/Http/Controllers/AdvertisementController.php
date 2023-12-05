@@ -14,28 +14,11 @@ class AdvertisementController extends Controller
         return view('advertisementUpload');
     }
 
-public function index()
-{
-    // Retrieve all advertisements
-    $advertisements = Advertisement::all();
-    //$advertisements = DB::table('advertisements')->get();
-    return view('advertisement.index',['advertisements' => $advertisements]);
-    //return compact('advertisements');
-}
-
-/*public function create()
-{
-    return view('advertisements.create');
-}*/
-
 public function uploadAdvertisementInput(Request $request)
 {
     // Validate and store a new advertisement
     
     $keyValue = $request->input('key');
-
-    
-    // Assuming you have a model named `YourModel` and a column named `key` in your table.
     
     // You can use $request->input('field_name') to get the input values
     Advertisement::create([
@@ -46,6 +29,7 @@ public function uploadAdvertisementInput(Request $request)
         'imageUpload'=> $request -> image,
         'description'=> $request -> message,
         'subject'=> $request -> subject,
+
         
        ]);
     
@@ -54,6 +38,62 @@ public function uploadAdvertisementInput(Request $request)
     return redirect() -> back();
     //return redirect()->route('advertisements.index');
 }
+
+//postman api testing
+/*public function create()
+{
+    return view('advertisements.create');
+}*/
+
+
+// List all advertisements
+public function adminAdvertisementList()
+{
+     // Fetch advertisement data from the database
+    $advertisements = Advertisement::all();
+
+    // Return the advertisement  list view
+    return view('adminAdvertisementList', compact('advertisements'));
+}
+
+public function advertisementDisplay()
+{
+    
+    $advertisement = Advertisement::where('status','=','accepted')->get();
+    return view('index', compact('advertisement'));
+    dd('advertisement');
+}
+
+
+public function accept_advertisement($id)
+    {
+        
+        $data = Advertisement::find($id);
+        $data->status = 'accepted';
+        $data->save();
+
+        return redirect()->route('adminAdvertisementList')->with('success', 'Advertisement accepted successfully!');
+    }
+
+public function reject_advertisement($id)
+    {
+        $data = Advertisement::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+        return redirect()->route('adminAdvertisementList')->with('success', 'Advertisement rejected successfully!');
+    }
+
+
+
+//public function index()
+//{
+    // Retrieve all advertisements
+    //$advertisements = Advertisement::all();
+    //$advertisements = DB::table('advertisements')->get();
+    //return view('advertisement.index',['advertisements' => $advertisements]);
+    //return compact('advertisements');
+//}
 
 public function edit($id)
 {
