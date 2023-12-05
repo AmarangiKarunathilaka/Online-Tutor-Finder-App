@@ -80,6 +80,11 @@ Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
 
+Route::get('/materialContent', function () {
+    return view('materialContent');
+});
+
+
 Route::middleware('auth:tutor')->group(function() {
     Route::get('/tutorHome', function () {
         return view('tutorHome');
@@ -207,6 +212,7 @@ Route::get('/tutorDashboard', function () {
     return view('/tutorDashboard');
 });
 
+
 //Amarangi
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
@@ -301,6 +307,7 @@ Route::post('/upload-class-material', [ClassMaterialController::class, 'classMat
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
 
 Route::get('/classMaterial', [ClassMaterialController::class, 'materialDisplay'])->name('materialDisplay');
+Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
 
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
