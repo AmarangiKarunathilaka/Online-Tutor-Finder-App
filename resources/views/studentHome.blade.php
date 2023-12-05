@@ -7,24 +7,11 @@
     
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="css/dashboard.css">
-    <!--<link rel="stylesheet" href="css/advertisementstyle.css"-->
-    
-
-    <!--<link href="css/bootstrap-icons.css" rel="stylesheet">   
-
-    <link href="css/owl.carousel.min.css" rel="stylesheet"> 
-
-    <link href="css/bootstrap-icons.css" rel="stylesheet"> -->
-
-       
-        
-
-
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title></title> 
+    <title>Dashboard Sidebar Menu</title> 
 </head>
 <body>
     <nav class="sidebar close">
@@ -34,13 +21,10 @@
                     <img src="images/f.png" alt="">
                 </span>
 
+                
                 <div class="text logo-text">
-
-
                     <span class="name">Tutor</span>
                     <span class="profession">Finder System</span>
-
-
                 </div>
             </div>
 
@@ -50,14 +34,14 @@
         <div class="menu-bar">
             <div class="menu">
 
-                <li class="search-box">
+            <li class="search-box">
                     <i class='bx bx-search icon'></i>
                     <input type="text" placeholder="Search...">
                 </li>
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="/studentdashboard">
+                        <a href="">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>

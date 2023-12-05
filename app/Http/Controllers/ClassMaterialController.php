@@ -82,8 +82,15 @@ public function materialDisplay()
 {
     $classmaterial = ClassMaterial::where('status','=','active')->get();
     return view('classMaterial', compact('classmaterial'));
+   
 }
 
+
+public function materialcontent()
+{
+    $classmaterial = ClassMaterial::where('status','=','active')->get();
+    return view('materialContent', compact('classmaterial'));
+}
 
 public function accept_material($id)
     {
