@@ -71,6 +71,29 @@ class ClassMaterialController extends Controller
 
     
 
+    public function classMaterialInput(Request $request)
+    {
+        $classmaterial= new ClassMaterial;
+        $classmaterial->tutorName = $request->tutorName;
+        $classmaterial->email = $request->email;
+        $classmaterial->subject = $request->subject;
+        $classmaterial->title = $request->title;
+        $classmaterial->lecNote = $request->lecNote;
+        $classmaterial->file = $request->material;
+        $classmaterial->tutor_id = $request->key;
+        $file=$request->file;
+
+        if($file)
+        {
+            $filename=time().'.'.$file->getClientOriginalExtension();
+            $request->file->move('filestore',$filename);
+
+            $classmaterial->file=$filename;
+        }
+        $classmaterial->save();
+        return redirect()->back();
+    }
+
     public function adminClassMaterialList()
 {
     $classmaterial = ClassMaterial::all();
