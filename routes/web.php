@@ -343,3 +343,5 @@ Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent
 
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
+
+Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');

@@ -38,7 +38,7 @@
         <td>{{ $classmaterial->title }}
         <ul class="list">
             <li class="post"><b>Class Note</b></li>
-            {{ $classmaterial->file }}
+            <a href= "/filestore/{{ $classmaterial->file }}" target="_blank"></a>
 
             <li class="post"><b>Assignment</b></li>
             {{ $classmaterial->file }}
