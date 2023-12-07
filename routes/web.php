@@ -336,7 +336,7 @@ Route::get('/class-materials/download/{id}', [TutorController::class, 'download'
 
 //ishara
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
-Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
+/*Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');*/
 
 Route::get('/classMaterial', [ClassMaterialController::class, 'materialDisplay'])->name('materialDisplay');
 Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
@@ -345,3 +345,5 @@ Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_mat
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
+
+Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
