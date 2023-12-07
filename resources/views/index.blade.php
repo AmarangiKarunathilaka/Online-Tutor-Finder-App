@@ -16,6 +16,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -167,11 +170,21 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
 
+
                    
                      
-            <div class="row">
+          
             
                    
+                    <div class="owl-carousel reviews-carousel">
+
+                        <div class="col">   
+                        @foreach ($advertisements as $advertisement)
+                        <td><img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/></td>
+                        @endforeach
+                        </div>
+                    </div>
+
                 <div class="owl-carousel reviews-carousel">
 
                     <div class="col">

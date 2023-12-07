@@ -14,7 +14,7 @@
         <div class="text"></div>
     <div class="container">
       <h1 class="form-title">Class Material Upload</h1>
-      <form action="{{ url('/classMaterialInput') }}" method="POST"  enctype="multipart/form-data">
+      <form action="{{ url('/classMaterialInput') }}" method="post"  enctype="multipart/form-data">
             @csrf
      
             <input type="hidden" name="key" value="1">
@@ -69,7 +69,7 @@
 
           <div class="user-input-box">
             <label for="material">Upload Class Material:</label>
-                <input type="file" name="material" id="input-file" accept="material/pdf, material/doc, material/docx" enctype="multipart/form-data" required>
+                <input type="file" name="file" id="input-file" accept="material/pdf, material/doc, material/docx" enctype="multipart/form-data" required>
           </div>
 
           

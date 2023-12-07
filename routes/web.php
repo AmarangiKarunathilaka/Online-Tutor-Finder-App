@@ -233,44 +233,7 @@ Route::get('/tutorDashboard', function () {
 });
 
 
-//Amarangi
 
-Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
-Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
-
-//Amarangi - advertisements
-Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
-Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvertisementInput'])->name('uploadAdvertisementInput');
-
-
-//Amarangi - view advertisements
-//Route::view('/index','list');
-//Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
-// View admin advertisement list
-Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
-
-Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
-
-Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
-Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
-
-Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
-
-//chat - Amarangi
-Route::get('/chatPusher', function () {
-    return view('chatPusher');
-});
-
-
-Route::post('send-message',function (Request $request){
-    event(new Message($request->username, $request->message));
-   return ['success' => true];
-});
-
-//Route::middleware(['auth'])->group(function () {
-  //  Route::get('/chat', 'ChatController@index');
-   // Route::post('/send-message', 'ChatController@sendMessage');
-//});
 
 
 
@@ -333,30 +296,59 @@ Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('p
 Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
 */
 
-//ishara-class material upload
-// routes/web.php
 
-//use App\Http\Controllers\ClassMaterialController;
 
-// routes/web.php
-
-/*Route::post('/class-material/upload', [ClassMaterialController::class, 'upload']);
-Route::get('/class-materials', [ClassMaterialController::class, 'display']);
-
-Route::get('/tutors/{email}', [TutorController::class, 'show']);
-
-Route::get('/class-materials/download/{id}', [TutorController::class, 'download']);*/
 
 //ishara
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
-Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');
-
-Route::get('/classMaterial', [ClassMaterialController::class, 'materialDisplay'])->name('materialDisplay');
-Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
-
-Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
-Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
 
 Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminClassMaterialList'])->name('adminClassMaterialList');
+
+Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
+Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
+
+Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
+
+Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
+
+
+
+//Amarangi
+
+Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
+Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+
+//Amarangi - advertisements upload
+Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
+Route::post('/advertisementInput',[AdvertisementController::class, 'advertisementUploadInput'])->name('advertisementUploadInput');
+
+
+//Amarangi - view advertisements
+
+Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
+
+Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
+Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
+
+Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
+Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
+
+//chat - Amarangi
+Route::get('/chatPusher', function () {
+    return view('chatPusher');
+});
+
+
+Route::post('send-message',function (Request $request){
+    event(new Message($request->username, $request->message));
+   return ['success' => true];
+});
+
+//Route::middleware(['auth'])->group(function () {
+  //  Route::get('/chat', 'ChatController@index');
+   // Route::post('/send-message', 'ChatController@sendMessage');
+//});
+

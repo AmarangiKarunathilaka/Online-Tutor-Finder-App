@@ -17,7 +17,7 @@
     
     <div class="container">
       <h1 class="form-title">Advertisment Upload</h1>
-      <form action="{{ url('/advertisementInput') }}" method="post">
+      <form action="{{ url('/advertisementInput') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <input type="hidden" name="key" value="1">
@@ -47,7 +47,7 @@
           </div>
           <div class="user-input-box">
             <label for="material">Upload image:</label>
-                <input type="file" name="image"   accept="image/jpeg, image/png, image/jpg" id="input-file" required>
+                <input type="file" name="photo"   accept="image/jpeg, image/png, image/jpg" id="input-file" required>
           </div>
           <div class="user-input-box">
             <label for="email">Description</label></div>
