@@ -66,7 +66,7 @@
                     <td>{{ $advertisement->tutorName }}</td>
                     <td>{{ $advertisement->email }}</td>
                     <td>{{ $advertisement->payment }}</td>
-                    <td>{{ $advertisement->imageUpload }}</td>
+                    <td><img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/></td>
                     <td>{{ $advertisement->description }}</td>
                     <td>{{ $advertisement->subject }}</td>
                     <td>{{ $advertisement->tutor_id }}</td>

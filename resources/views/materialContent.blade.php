@@ -35,17 +35,18 @@
 
     <tbody>
         <tr>
-        <td>{{ $classmaterial->title }}
+        <td>{{ $classmaterial->tutorName }}
         <ul class="list">
             <li class="post"><b>Class Note</b></li>
-            <a href= "/filestore/{{ $classmaterial->file }}" target="_blank"></a>
+            <a href="{{url('/download',$classmaterial->file)}}"> {{ $classmaterial->title }} </a>
+
+           <!-- <iframe src = "/filestore/{{ $classmaterial->file }}" > </iframe> -->
 
             <li class="post"><b>Assignment</b></li>
-            {{ $classmaterial->file }}
+            <a href="{{url('/download',$classmaterial->file)}}"> {{ $classmaterial->title }} </a>
 
             <li class="post"><b>Reference</b></li>
-            {{ $classmaterial->file }}
-</ul>
+           <a href="{{url('/download',$classmaterial->file)}}"> {{ $classmaterial->title }} </a>
         </td>
         </tr>
     </tbody>

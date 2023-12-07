@@ -31,29 +31,25 @@
                         <th scope="col">Rating</th>
                         <th scope="col">Message</th>
                         <th scope="col">Student Id</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Accept/Reject</th>
                     </tr>
                 </thead>  
 
                 <tbody>
-                    @foreach ($feedback as $item)
+                    @foreach ($feedback as $feedback)
                 
                     <tr>
-                    <th scope="row">{{ $item->id }}</th>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->rating }}</td>
-                    <td>{{ $item->message }}</td>
-                    <td>{{ $item->student_id }}</td>
+                    <th scope="row">{{ $feedback->id }}</th>
+                    <td>{{ $feedback->name }}</td>
+                    <td>{{ $feedback->email }}</td>
+                    <td>{{ $feedback->rating }}</td>
+                    <td>{{ $feedback->message }}</td>
+                    <td>{{ $feedback->student_id }}</td>
+                    <td>{{ $feedback->status }}</td>
                     <td>
-                        <form method="POST" action="{{ route('admin.feedback.accept', $item->id) }}">
-                            @csrf
-                            <button type="submit" class="accept">Accept</button>
-                        </form>
-                        <form method="POST" action="{{ route('admin.feedback.reject', $item->id) }}">
-                            @csrf
-                            <button type="submit" class="remove">Reject</button>
-                        </form>
+                        <a href="{{url('acceptFeedback',$feedback->id)}}"><button type="button" class="accept">Accept </button>
+                        <a href="{{url('rejectFeedback',$feedback->id)}}" ><button type="button" class="remove">Reject</button>
                     </td>
                     </tr>
                     
@@ -66,15 +62,6 @@
         </header>
     </section>
     @endsection
-
-    <!-- <script type="text/javascript">
-        var app = angular.module('Leave', []);
-        app.controller('myCtrl', function ($scope) {
-            $scope.ExpandNotifications = function () {
-                $(".notification").css("min-width", "300px");
-                $scope.hello = "how are you";
-            };
-        });
-    </script> -->
+    
 </body>
 </html>
