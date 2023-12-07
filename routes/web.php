@@ -86,8 +86,8 @@ Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
 
-Route::get('/materialContent', function () {
-    return view('materialContent');
+Route::get('/materialContent/maths', function () {
+    return view('materialContent/maths');
 });
 
 
@@ -349,6 +349,9 @@ Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminCla
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
-Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
+Route::get('/materialContent/maths', [ClassMaterialController::class, 'maths'])->name('maths');
+Route::get('/materialContent/chemistry', [ClassMaterialController::class, 'chemistry'])->name('chemistry');
+Route::get('/materialContent/physics', [ClassMaterialController::class, 'physics'])->name('physics');
+Route::get('/materialContent/biology', [ClassMaterialController::class, 'biology'])->name('biology');
 
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
