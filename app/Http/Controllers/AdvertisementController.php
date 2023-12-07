@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Advertisement;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class AdvertisementController extends Controller
 {
@@ -14,19 +15,30 @@ class AdvertisementController extends Controller
         return view('advertisementUpload');
     }
 
-public function uploadAdvertisementInput(Request $request)
+public function store(Request $request)
 {
+
+    //dd($request->all());
+    //$request->validate([
+       // 'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the allowed file types and size
+   // ]);
+
     // Validate and store a new advertisement
     
     $keyValue = $request->input('key');
-    
-    // You can use $request->input('field_name') to get the input values
+
+
+    $requestData = $request -> all();
+    $fileName = time().$request->file('photo')->getClientOriginalName();
+    $path = $request->file('photo')->storeAs('images', $fileName, 'public');
+    $requestData["photo"] = '/storage/'.$path;
     Advertisement::create([
         'tutor_id'=> $request -> key,
         'tutorName'=> $request -> fullName,
         'email'=> $request -> email,
         'payment'=> $request -> payment,
-        'imageUpload'=> $request -> image,
+        //'image_path' => str_replace('public/', '', $imagePath), // Remove 'public/' from the path
+        'photo'=> $path,
         'description'=> $request -> message,
         'subject'=> $request -> subject,
 
@@ -85,13 +97,11 @@ public function reject_advertisement($id)
     }
 
 
-
-//public function index()
-//{
+//public function index(){
     // Retrieve all advertisements
     //$advertisements = Advertisement::all();
     //$advertisements = DB::table('advertisements')->get();
-    //return view('advertisement.index',['advertisements' => $advertisements]);
+    //return view('index')->with('advertisements', $advertisements);
     //return compact('advertisements');
 //}
 

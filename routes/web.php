@@ -240,7 +240,7 @@ Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])
 
 //Amarangi - advertisements
 Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
-Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvertisementInput'])->name('uploadAdvertisementInput');
+Route::post('/advertisementInput',[AdvertisementController::class, 'store'])->name('store');
 
 
 //Amarangi - view advertisements
@@ -250,6 +250,8 @@ Route::post('/advertisementInput',[AdvertisementController::class, 'uploadAdvert
 Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
 
 Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
+//Route::resource("/", AdvertisementController::class);
 
 Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
 Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
