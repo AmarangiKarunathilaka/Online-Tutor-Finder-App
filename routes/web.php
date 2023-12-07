@@ -287,16 +287,14 @@ Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
 // view feedback in guest interface
+Route::get('/', [FeedbackController::class, 'feedbackDisplay'])->name('feedbackDisplay');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('admin.feedback.index');
-    Route::post('/admin/feedback/{id}/accept', [FeedbackController::class, 'acceptFeedback'])->name('admin.feedback.accept');
-    Route::post('/admin/feedback/{id}/reject', [FeedbackController::class, 'rejectFeedback'])->name('admin.feedback.reject');
-});
+Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
+Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('guest.feedback.index');
 
-Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminClassMaterialList'])->name('adminClassMaterialList');
+
+
 
 
 
@@ -360,3 +358,5 @@ Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_mat
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
+
+Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminClassMaterialList'])->name('adminClassMaterialList');
