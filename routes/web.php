@@ -321,23 +321,19 @@ Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->nam
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
-//Amarangi - advertisements
+//Amarangi - advertisements upload
 Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
 Route::post('/advertisementInput',[AdvertisementController::class, 'advertisementUploadInput'])->name('advertisementUploadInput');
 
 
 //Amarangi - view advertisements
-//Route::view('/index','list');
-//Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
-// View admin advertisement list
+
 Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
-
-Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
-
-//Route::resource("/", AdvertisementController::class);
 
 Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
 Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
+
+Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
