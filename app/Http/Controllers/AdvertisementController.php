@@ -10,47 +10,38 @@ use Illuminate\Support\Facades\Log;
 
 class AdvertisementController extends Controller
 {
-    // app/Http/Controllers/AdvertisementController.php
-    public function advertisements(){
+   
+    public function advertisements()
+    {
         return view('advertisementUpload');
     }
 
-public function store(Request $request)
+public function advertisementUploadInput(Request $request)
 {
-
-    //dd($request->all());
-    //$request->validate([
-       // 'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the allowed file types and size
-   // ]);
-
-    // Validate and store a new advertisement
-    
     $keyValue = $request->input('key');
 
+    $advertisement= new Advertisement();
+    $advertisement->tutor_id = $request->key;
+    $advertisement->tutorName = $request -> fullName;
+    $advertisement->email = $request->email;
+    $advertisement->payment = $request -> payment;
+    $advertisement->subject = $request->subject;
+    $advertisement->photo = $request->photo;
+    $advertisement->description = $request -> message;
 
-    $requestData = $request -> all();
-    $fileName = time().$request->file('photo')->getClientOriginalName();
-    $path = $request->file('photo')->storeAs('images', $fileName, 'public');
-    $requestData["photo"] = '/storage/'.$path;
-    Advertisement::create([
-        'tutor_id'=> $request -> key,
-        'tutorName'=> $request -> fullName,
-        'email'=> $request -> email,
-        'payment'=> $request -> payment,
-        //'image_path' => str_replace('public/', '', $imagePath), // Remove 'public/' from the path
-        'photo'=> $path,
-        'description'=> $request -> message,
-        'subject'=> $request -> subject,
 
-        
-       ]);
-    
-    //Advertisement::create($request->all());
+    $photo=$request->photo;
 
-    return redirect() -> back();
-    //return redirect()->route('advertisements.index');
+    if($photo)
+    {
+        $photoname=time().'.'.$photo->getClientOriginalExtension();
+        $request->photo->move('uploads',$photoname);
+
+        $advertisement->photo=$photoname;
+    }
+    $advertisement->save();
+    return redirect()->back();
 }
-
 //postman api testing
 /*public function create()
 {
