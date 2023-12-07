@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ClassMaterialController;
+use App\Http\controllers\ClassRequestController;
 //use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
@@ -233,46 +234,7 @@ Route::get('/tutorDashboard', function () {
 });
 
 
-//Amarangi
 
-Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
-Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
-
-//Amarangi - advertisements
-Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
-Route::post('/advertisementInput',[AdvertisementController::class, 'store'])->name('store');
-
-
-//Amarangi - view advertisements
-//Route::view('/index','list');
-//Route::get('/advertisements', [AdvertisementController::class, 'index'])->name('index');
-// View admin advertisement list
-Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
-
-Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
-
-//Route::resource("/", AdvertisementController::class);
-
-Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
-Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
-
-Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
-
-//chat - Amarangi
-Route::get('/chatPusher', function () {
-    return view('chatPusher');
-});
-
-
-Route::post('send-message',function (Request $request){
-    event(new Message($request->username, $request->message));
-   return ['success' => true];
-});
-
-//Route::middleware(['auth'])->group(function () {
-  //  Route::get('/chat', 'ChatController@index');
-   // Route::post('/send-message', 'ChatController@sendMessage');
-//});
 
 
 
@@ -289,14 +251,13 @@ Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
 // view feedback in guest interface
+Route::get('/', [FeedbackController::class, 'feedbackDisplay'])->name('feedbackDisplay');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('admin.feedback.index');
-    Route::post('/admin/feedback/{id}/accept', [FeedbackController::class, 'acceptFeedback'])->name('admin.feedback.accept');
-    Route::post('/admin/feedback/{id}/reject', [FeedbackController::class, 'rejectFeedback'])->name('admin.feedback.reject');
-});
+Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
+Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('guest.feedback.index');
+
+
 
 
 
@@ -349,9 +310,55 @@ Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminCla
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
+
 Route::get('/materialContent/maths', [ClassMaterialController::class, 'maths'])->name('maths');
 Route::get('/materialContent/chemistry', [ClassMaterialController::class, 'chemistry'])->name('chemistry');
 Route::get('/materialContent/physics', [ClassMaterialController::class, 'physics'])->name('physics');
 Route::get('/materialContent/biology', [ClassMaterialController::class, 'biology'])->name('biology');
 
+
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
+
+//nalaka
+Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+
+
+
+//Amarangi
+
+Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
+Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+
+//Amarangi - advertisements upload
+Route::post('/advertisementUpload', [AdvertisementController::class, 'advertisements'])->name('advertisements');
+Route::post('/advertisementInput',[AdvertisementController::class, 'advertisementUploadInput'])->name('advertisementUploadInput');
+
+
+//Amarangi - view advertisements
+
+Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdvertisementList'])->name('adminAdvertisementList');
+
+Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
+Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
+
+Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
+Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
+
+//chat - Amarangi
+Route::get('/chatPusher', function () {
+    return view('chatPusher');
+});
+
+
+Route::post('send-message',function (Request $request){
+    event(new Message($request->username, $request->message));
+   return ['success' => true];
+});
+
+//Route::middleware(['auth'])->group(function () {
+  //  Route::get('/chat', 'ChatController@index');
+   // Route::post('/send-message', 'ChatController@sendMessage');
+//});
+
