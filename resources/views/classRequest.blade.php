@@ -27,15 +27,42 @@
             <h1><div class="row justify-content-center"> Request</div></h1>
 
                 <table>
-                    <form action="{{ url('/tutorInput') }}" method="post">
+                    <form id="" action="{{ url('/classRequestInput') }}" method="post">
                         @csrf 
+                        <input type="hidden" name="key" value="1">
+                        
                         <tr>
                             <div class="mt-4">
                                 
-                                <td><input type="text" class="form-control" placeholder="TutorName" name="TutorName" required></td>
+                                <td><input type="text" class="form-control" placeholder="TutorId" name="tutorId" required></td>
                                
                             </div>
                         </tr>
+                        
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="TutorName" name="tutorname" required></td>
+                               
+                            </div>
+                        </tr>
+
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="studentId"  name="studentId" required></td>
+                               
+                            </div>
+                        </tr>
+                        
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="studentname" name="studentname" required></td>
+                               
+                            </div>
+                        </tr>
+
 
                         <tr>
                             <div class="mt-4">
@@ -77,16 +104,16 @@
                             <tr>
                                 <div class="TutorReg-1">
                                     <td><label for="TR-medium"> Medium :</label></td>
-                                    <td><input type="radio" class="TR-input" name="medium1">
+                                    <td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium1"> Sinhala </label></td>
                                 </div>
                             </tr>
                             <tr>
-                                <td><td><input type="radio" class="TR-input" name="medium2">
+                                <td><td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium2"> English </label></td></td>
                             <tr>
                             <tr>
-                                <td><td><input type="radio" class="TR-input" name="medium3">
+                                <td><td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium3"> Tamil </label></td></td>
                             </tr>
                         </tr>

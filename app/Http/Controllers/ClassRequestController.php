@@ -20,12 +20,14 @@ class ClassRequestController extends Controller
             'student_id'=> $request -> key,
             'tutor_id'=> $request -> tutorId,
             'tutor_name'=> $request -> tutorname, 
+            'student_id'=> $request -> studentId,
             'student_name'=> $request -> studentname,
             'keydate'=> $request -> date,
             'time'=> $request -> time, 
             'subject'=> $request -> subject, 
             'medium'=> $request -> medium, 
 
+        
         ]);
 
         return redirect() -> back();

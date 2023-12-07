@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ClassMaterialController;
+use App\Http\controllers\ClassRequestController;
 //use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
@@ -360,3 +361,7 @@ Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_mat
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
+
+//nalaka
+Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
