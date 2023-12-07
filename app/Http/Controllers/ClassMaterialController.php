@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ClassMaterial;
-//use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Stroage;
+/*use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;*/
 
 class ClassMaterialController extends Controller
 {
@@ -27,21 +27,37 @@ class ClassMaterialController extends Controller
         $fileName = $file->getClientOriginalName();
         $file->storeAs('public/uploads', $fileName);
 
+          // Return a success message
+        return response()->json(['message' => 'Class material uploaded successfully!']);
+    }*/
+
+
         // Store the material data in the database
+    public function upload(Request $request)
+     {
         $classMaterial = new ClassMaterial();
         $classMaterial->tutorName = $request->tutorName;
         $classMaterial->email = $request->email;
         $classMaterial->subject = $request->subject;
         $classMaterial->title = $request->title;
         $classMaterial->lecNote = $request->lecNote;
-        $classMaterial->file = $fileName;
-        $classMaterial->tutor_id = $request->tutor_id;
-        $classMaterial->save();
+        $classmaterial->file = $request->file;
+        $classmaterial->tutor_id = $request->key;
 
-        // Return a success message
-        return response()->json(['message' => 'Class material uploaded successfully!']);
-    }*/
+        $file=$request->file;
 
+        if($file)
+        {
+            $filename=time().'.'.$file->getClientOriginalExtension();
+            $request->file->move('filestore',$filename);
+
+            $classmaterial->file=$filename;
+        }
+        $classmaterial->save();
+        return redirect()->back();
+       
+
+     }
     public function classMaterials(){
         return view('upload-class-material');
     }
@@ -79,8 +95,9 @@ class ClassMaterialController extends Controller
         $classmaterial->subject = $request->subject;
         $classmaterial->title = $request->title;
         $classmaterial->lecNote = $request->lecNote;
-        $classmaterial->file = $request->material;
+        $classmaterial->file = $request->file;
         $classmaterial->tutor_id = $request->key;
+        
         $file=$request->file;
 
         if($file)
@@ -94,7 +111,14 @@ class ClassMaterialController extends Controller
         return redirect()->back();
     }
 
-    public function adminClassMaterialList()
+public function download(Request $request,$file)
+{
+    return response()->download(public_path('filestore/'.$file));
+}
+
+
+
+public function adminClassMaterialList()
 {
     $classmaterial = ClassMaterial::all();
     return view('adminClassMaterialList', compact('classmaterial'));

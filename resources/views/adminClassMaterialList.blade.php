@@ -48,7 +48,7 @@
                     <td>{{ $classmaterial->subject }}</td>
                     <td>{{ $classmaterial->title }}</td>
                     <td>{{ $classmaterial->lecNote }}</td>
-                    <td>{{ $classmaterial->file }}</td>
+                    <td> <iframe src = "/filestore/{{ $classmaterial->file }}" > </iframe></td>
                     <td>{{ $classmaterial->tutor_id }}</td>
                     <td>{{ $classmaterial->status }}</td>
                         <td> <a href="{{url('accept_material',$classmaterial->id)}}"> <button type="button" class="accept">Accept</button></a>
