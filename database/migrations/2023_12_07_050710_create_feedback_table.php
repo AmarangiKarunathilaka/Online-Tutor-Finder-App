@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->integer('rating');
             $table->text('message');
+            $table->string('status')->default('pending'); // You can set a default status value.
 
             //$table->unsignedBigInteger('tutor_id');
             //$table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');

@@ -250,14 +250,13 @@ Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
 // view feedback in guest interface
+Route::get('/', [FeedbackController::class, 'feedbackDisplay'])->name('feedbackDisplay');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('admin.feedback.index');
-    Route::post('/admin/feedback/{id}/accept', [FeedbackController::class, 'acceptFeedback'])->name('admin.feedback.accept');
-    Route::post('/admin/feedback/{id}/reject', [FeedbackController::class, 'rejectFeedback'])->name('admin.feedback.reject');
-});
+Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
+Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('guest.feedback.index');
+
+
 
 
 
@@ -352,3 +351,4 @@ Route::post('send-message',function (Request $request){
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
 //});
+

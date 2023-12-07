@@ -170,6 +170,12 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
 
+
+                   
+                     
+          
+            
+                   
                     <div class="owl-carousel reviews-carousel">
 
                         <div class="col">   
@@ -178,6 +184,7 @@ Bootstrap 5 HTML CSS Template
                         @endforeach
                         </div>
                     </div>
+
                 <div class="owl-carousel reviews-carousel">
 
                     <div class="col">
@@ -381,7 +388,7 @@ Bootstrap 5 HTML CSS Template
                 <div class="owl-carousel reviews-carousel">
 
 
-                    <div class="reviews-thumb">
+                    <!-- <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Tutor4u is the most suitable website layout.</h4>
                         </div>
@@ -403,11 +410,38 @@ Bootstrap 5 HTML CSS Template
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     
+                    @if(isset($feedback) && count($feedback)>0)                       
+                        @foreach ($feedback as $feedback)                        
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>{{ $feedback->message }}</h4>
+                                </div>
 
-                    <div class="reviews-thumb">
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>{{ $feedback->name }}</strong> ( <small>Student</small> )
+                                        </p>
+
+                                        <div class="reviews-icons">                                            
+                                            @for ($i = 0; $i <= 4; $i++)
+                                            <i class="bi-star-fill{{ $i >= $feedback->rating ? 'active' : '' }}"></i>
+                                            @endfor
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>No reviews found</p>
+                    @endif                   
+                                               
+                                        
+
+                    <!-- <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Please recommend Tutor4u website to your friends.</h4>
                         </div>
@@ -429,11 +463,10 @@ Bootstrap 5 HTML CSS Template
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div> -->
                     
 
-                    <div class="reviews-thumb">
+                    <!-- <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Thank you for visiting Tooplate to download free templates.</h4>
                         </div>
@@ -455,7 +488,7 @@ Bootstrap 5 HTML CSS Template
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="col-lg-12 col-12">

@@ -37,8 +37,7 @@ class FeedbackController extends Controller
 
     public function adminFeedbackList()
     {
-        // dd('Controller method is being called.');
-        
+                
         // Fetch feedback data from the database
         $feedback = Feedback::all();
 
@@ -46,26 +45,27 @@ class FeedbackController extends Controller
         return view('adminFeedbackList', compact('feedback'));
     }
 
-    public function index()
+    public function feedbackDisplay()
     {
-        $feedback = Feedback::where('status', 'accepted')->get();
+        $feedback = Feedback::where('status','=','accepted')->get();
         return view('index', compact('feedback'));
+        dd('feedback');
     }
 
     public function acceptFeedback($id)
     {
-        $feedback = Feedback::findOrFail($id);
-        $feedback->status = 'accepted';
-        $feedback->save();
+        $data = Feedback::find($id);
+        $data->status = 'accepted';
+        $data->save();
 
         return redirect()->route('adminFeedbackList')->with('success', 'Feedback accepted successfully!');
     }
 
     public function rejectFeedback($id)
     {
-        $feedback = Feedback::findOrFail($id);
-        $feedback->status = 'rejected';
-        $feedback->save();
+        $data = Feedback::find($id);
+        $data->status = 'rejected';
+        $data->save();
 
         return redirect()->route('adminFeedbackList')->with('success', 'Feedback rejected successfully!');
     }
