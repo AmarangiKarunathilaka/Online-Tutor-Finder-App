@@ -298,7 +298,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('guest.feedback.index');
 
-Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminClassMaterialList'])->name('adminClassMaterialList');
 
 
 
@@ -337,30 +336,19 @@ Route::post('/postsignup', [CustomAuthController::class, 'signupsave'])->name('p
 Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
 */
 
-//ishara-class material upload
-// routes/web.php
 
-//use App\Http\Controllers\ClassMaterialController;
 
-// routes/web.php
-
-/*Route::post('/class-material/upload', [ClassMaterialController::class, 'upload']);
-Route::get('/class-materials', [ClassMaterialController::class, 'display']);
-
-Route::get('/tutors/{email}', [TutorController::class, 'show']);
-
-Route::get('/class-materials/download/{id}', [TutorController::class, 'download']);*/
 
 //ishara
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
-/*Route::post('/classMaterialInput',[ClassMaterialController::class, 'uploadClassMaterialInput'])->name('uploadClassMaterialInput');*/
 
-Route::get('/classMaterial', [ClassMaterialController::class, 'materialDisplay'])->name('materialDisplay');
-Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
+Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
+
+Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminClassMaterialList'])->name('adminClassMaterialList');
 
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
-Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
+Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
 
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
