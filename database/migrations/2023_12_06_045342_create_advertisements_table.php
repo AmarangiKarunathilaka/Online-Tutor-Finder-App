@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('tutorName');
             $table->string('email')->nullable();
             $table->text('payment');
-            $table->string('imageUpload')->nullable();
+            //$table->string('imageUpload')->nullable();
+            $table->string('photo', 300);
             $table->text('description');
             $table->string('subject');
             $table->string('status')->default('pending'); // You can set a default status value.
