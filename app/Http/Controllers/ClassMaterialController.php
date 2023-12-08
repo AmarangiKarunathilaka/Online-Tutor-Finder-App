@@ -121,4 +121,11 @@ class ClassMaterialController extends Controller
          return response()->download(public_path('filestore/'.$file));
     }
 
+
+    public function view($id)
+    {
+        $classmaterial=ClassMaterial::find($id);
+        return view('adminView', compact('classmaterial'));
+    }
+
 }
