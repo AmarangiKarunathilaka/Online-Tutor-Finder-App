@@ -48,8 +48,8 @@ class FeedbackController extends Controller
     public function feedbackDisplay()
     {
         $feedback = Feedback::where('status','=','accepted')->get();
-        return view('index', compact('feedback'));
-        dd('feedback');
+        return view('index', compact('feedback'));        
+        // dd('feedback');
     }
 
     public function acceptFeedback($id)
