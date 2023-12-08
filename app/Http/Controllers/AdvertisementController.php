@@ -76,7 +76,7 @@ class AdvertisementController extends Controller
 
     public function advertisementDisplay()
     {
-        
+        $advertisements = 'Value 1';
         $advertisements = Advertisement::where('status','=','accepted')->get();
         return view('index', compact('advertisements'));
         

@@ -47,9 +47,10 @@ class FeedbackController extends Controller
 
     public function feedbackDisplay()
     {
+    
         $feedback = Feedback::where('status','=','accepted')->get();
         return view('index', compact('feedback'));
-        dd('feedback');
+        
     }
 
     public function acceptFeedback($id)
@@ -69,6 +70,8 @@ class FeedbackController extends Controller
 
         return redirect()->route('adminFeedbackList')->with('success', 'Feedback rejected successfully!');
     }
+
+    
 
 
 

@@ -15,7 +15,7 @@ use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 //Ramal
-use App\Http\Controllers\PDFController;
+use App\Http\Controllers\PdfController;
 
 
 
@@ -312,6 +312,7 @@ Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_mat
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
 
+
 Route::get('/materialContent/maths', [ClassMaterialController::class, 'maths'])->name('maths');
 Route::get('/materialContent/chemistry', [ClassMaterialController::class, 'chemistry'])->name('chemistry');
 Route::get('/materialContent/physics', [ClassMaterialController::class, 'physics'])->name('physics');
@@ -321,6 +322,7 @@ Route::get('/materialContent/biology', [ClassMaterialController::class, 'biology
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
 
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
+
 
 
 //nalaka
