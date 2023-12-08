@@ -35,9 +35,9 @@ use Illuminate\Http\Request;
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 Route::get('/', function () {
     return view('index');
@@ -152,6 +152,7 @@ Route::get('/adminFeedbackList', function () {
 Route::get('/adminClassMaterialList', function () {
     return view('adminClassMaterialList');
 });
+
 
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
@@ -318,6 +319,9 @@ Route::get('/materialContent/biology', [ClassMaterialController::class, 'biology
 
 
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
+
+Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
+
 
 //nalaka
 Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
