@@ -20,7 +20,6 @@
       <form action="{{ url('/advertisementInput') }}" method="post" enctype="multipart/form-data">
         @csrf
 
-        <input type="hidden" name="key" value="1">
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="fullName">Name</label>

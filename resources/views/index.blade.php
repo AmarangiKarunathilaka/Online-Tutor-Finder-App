@@ -173,12 +173,13 @@ Bootstrap 5 HTML CSS Template
 
 
                     <div class="owl-carousel reviews-carousel">
-
-                        <div class="col">   
                         @foreach ($advertisements as $advertisement)
-                        <td><img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/></td>
-                        @endforeach
+                        <div class="col">   
+                        
+                        <img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                       
                         </div>
+                        @endforeach
                     </div>
                   
 

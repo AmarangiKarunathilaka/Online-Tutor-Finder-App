@@ -31,7 +31,7 @@
                 <table>
                     <form id="" action="{{ url('/classRequestInput') }}" method="post">
                         @csrf 
-                        <input type="hidden" name="key" value="1">
+                        
                         
                         <tr>
                             <div class="mt-4">
