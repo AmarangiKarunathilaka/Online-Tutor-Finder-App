@@ -8,7 +8,7 @@
         
 
 
-        <title>guest-interface</title>
+        <title>Guest Interface</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -170,6 +170,8 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
 
+
+
                     <div class="owl-carousel reviews-carousel">
 
                         <div class="col">   
@@ -178,6 +180,7 @@ Bootstrap 5 HTML CSS Template
                         @endforeach
                         </div>
                     </div>
+                  
 
                 <div class="owl-carousel reviews-carousel">
 
@@ -406,9 +409,9 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div> -->
 
-                    
-                    @if(isset($feedback) && count($feedback)>0)                       
-                        @foreach ($feedback as $feedback)                        
+                
+                    @if(isset($feedback) && count($feedback)>0)
+                        @foreach ($feedback as $feedback)
                             <div class="reviews-thumb">
                                 <div class="reviews-body">
                                     <h4>{{ $feedback->message }}</h4>
@@ -420,7 +423,7 @@ Bootstrap 5 HTML CSS Template
                                             <strong>{{ $feedback->name }}</strong> ( <small>Student</small> )
                                         </p>
 
-                                        <div class="reviews-icons">                                            
+                                        <div class="reviews-icons">
                                             @for ($i = 0; $i <= 4; $i++)
                                             <i class="bi-star-fill{{ $i >= $feedback->rating ? 'active' : '' }}"></i>
                                             @endfor
@@ -431,7 +434,7 @@ Bootstrap 5 HTML CSS Template
                         @endforeach
                     @else
                         <p>No reviews found</p>
-                    @endif                   
+                    @endif
                                                
                                         
 
@@ -485,9 +488,9 @@ Bootstrap 5 HTML CSS Template
                     </div> -->
                 </div>
 
-                <div class="col-lg-12 col-12">
+                <!-- <div class="col-lg-12 col-12">
                     <p class="d-flex justify-content-center align-items-center mt-lg-5">Write some reviews on <a href="#" class="custom-btn btn ms-3"><i class="bi-facebook me-2"></i>facebook</a></p>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -537,7 +540,7 @@ Bootstrap 5 HTML CSS Template
 
                     <p class="text-white mt-2">
                         <i class="bi-geo-alt"></i>
-                        Mathara
+                        Matara
                     </p>
                 </div>
 

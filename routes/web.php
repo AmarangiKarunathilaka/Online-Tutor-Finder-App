@@ -14,6 +14,7 @@ use App\Http\controllers\ClassRequestController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\combinedDisplayController;
 //Ramal
 use App\Http\Controllers\PdfController;
 
@@ -252,10 +253,13 @@ Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
 // view feedback in guest interface
-Route::get('/', [FeedbackController::class, 'feedbackDisplay'])->name('feedbackDisplay');
+// Route::get('/', [FeedbackController::class, 'feedbackDisplay'])->name('feedbackDisplay');
 
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
+
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
 
 
 
@@ -348,7 +352,7 @@ Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdv
 Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
 Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
 
-Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+// Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 

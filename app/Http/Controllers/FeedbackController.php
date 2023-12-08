@@ -49,8 +49,10 @@ class FeedbackController extends Controller
     {
     
         $feedback = Feedback::where('status','=','accepted')->get();
+
         return view('index', compact('feedback'));
         
+
     }
 
     public function acceptFeedback($id)

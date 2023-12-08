@@ -48,7 +48,7 @@
                     <td>{{ $feedback->student_id }}</td>
                     <td>{{ $feedback->status }}</td>
                     <td>
-                        <a href="{{url('acceptFeedback',$feedback->id)}}"><button type="button" class="accept">Accept </button>
+                        <a href="{{url('acceptFeedback',$feedback->id)}}"><button type="button" class="accept">Accept </button><br><br>
                         <a href="{{url('rejectFeedback',$feedback->id)}}" ><button type="button" class="remove">Reject</button>
                     </td>
                     </tr>
