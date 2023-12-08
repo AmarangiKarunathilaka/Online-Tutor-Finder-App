@@ -10,7 +10,8 @@
     <title>Class Request Form</title>
 </head>
 <body>
-    
+@extends('studentHomeContent')
+    @section('content')
     <header>
     <nav class="navbar navbar-expand-lg  fixed-top shadow-lg">
        
@@ -178,7 +179,7 @@
          <footer>
             <p>&copy; 2023 Tutor Finder</p>
         </footer> 
-    
+        @endsection
 </body>
 </html>
 
