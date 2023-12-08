@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Dashboard</title>
-  <link rel="stylesheet" href="css/student.css" />
-  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="{{ asset('css/student.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
       <!----===== Boxicons CSS ===== -->
       <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -69,28 +69,28 @@
             <div class="box">
               <h3>Combined Mathematics</h3>
               
-              <a href="/materialContent"> <button>continue</button></a>
+              <a href="/materialContent/maths"> <button>continue</button></a>
               <i class="fab fa-html5 html"></i>
             </div>
 
             <div class="box">
               <h3>Biology</h3>
               
-              <a href="/materialContent"> <button>continue</button></a>
+              <a href="/materialContent/biology"> <button>continue</button></a>
               <i class="fab fa-css3-alt css"></i>
             </div>
 
             <div class="box">
               <h3>Chemistry</h3>
               
-              <a href="/materialContent"> <button>continue</button></a>
+              <a href="/materialContent/chemistry"> <button>continue</button></a>
               <i class="fab fa-js-square js"></i>
             </div>
 
             <div class="box">
               <h3>Physics</h3>
               
-              <a href="/materialContent"> <button>continue</button></a>
+              <a href="/materialContent/physics"> <button>continue</button></a>
               <i class="fab fa-js-square js"></i>
             </div>
 

@@ -295,8 +295,8 @@ body.dark .switch::before{
 }
 .home .text{
     font-size: 30px;
-    font-weight: 500;
-    color: #707070;
+    font-weight:500;
+    color: rgb(1, 52, 65);
     padding: 12px 60px;
 }
 

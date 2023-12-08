@@ -75,17 +75,57 @@ class ClassMaterialController extends Controller
 
     
 
-    public function materialcontent()
+    public function maths()
     {
         $classmaterial = ClassMaterial::where('status','=','active')->get();
-        return view('materialContent', compact('classmaterial'));
+
+        $classmaterial = ClassMaterial::where('subject','=','mathematics')->get();
+
+        return view('materialContent.maths', compact('classmaterial'));
     }
+
+    public function chemistry()
+    {
+        $classmaterial = ClassMaterial::where('status','=','active')->get();
+
+        $classmaterial = ClassMaterial::where('subject','=','chemistry')->get();
+
+        return view('materialContent.chemistry', compact('classmaterial'));
+    }
+
+
+    public function physics()
+    {
+        $classmaterial = ClassMaterial::where('status','=','active')->get();
+
+        $classmaterial = ClassMaterial::where('subject','=','physics')->get();
+
+        return view('materialContent.physics', compact('classmaterial'));
+    }
+
+    public function biology()
+    {
+        $classmaterial = ClassMaterial::where('status','=','active')->get();
+
+        $classmaterial = ClassMaterial::where('subject','=','biology')->get();
+
+        return view('materialContent.physics', compact('classmaterial'));
+    }
+
+
 
 
 
     public function download(Request $request,$file)
     {
          return response()->download(public_path('filestore/'.$file));
+    }
+
+
+    public function view($id)
+    {
+        $classmaterial=ClassMaterial::find($id);
+        return view('adminView', compact('classmaterial'));
     }
 
 }
