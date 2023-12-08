@@ -280,6 +280,12 @@ Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('co
 //Route::resource('user-profiles', 'UserProfileController');
 Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
+
+use App\Http\Controllers\YourController;
+
+Route::delete('/items/{id}', [YourController::class, 'destroy']);
+
+
  
 //kavindra
 Route::post('/postlogin', [LoginController::class, 'login'])->name('postlogin'); 

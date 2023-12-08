@@ -66,8 +66,11 @@
                                     <div class="buttons">
                                         <a href="#" class="btn">Edit</a>
                                         <input type="checkbox" id="check">
+                                        @csrf
+                                        @method('DELETE')
                                         <label class="show_button" for="check">Delete</label>
                                     <div class="background"></div>
+                                
                                     <div class="alert_box">
                                         <div class="icon">
                                             <i class="fas fa-exclamation"></i>
@@ -173,7 +176,7 @@
                     <td>3:00PM</td>
                     <td><button>View</button></td>
                   </tr>
-                  <!-- <tr >
+                   <tr >
                     <td>05</td>
                     <td>Salina</td>
                     <td>Coding</td>
@@ -190,7 +193,7 @@
                     <td>9:00AM</td>
                     <td>4:00PM</td>
                     <td><button>View</button></td>
-                  </tr> -->
+                  </tr> 
                 </tbody>
               </table>
             </div>
