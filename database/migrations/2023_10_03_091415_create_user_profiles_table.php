@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('qualification');
             $table->string('subject');
             $table->string('medium');
-            $table->string('image'); // Assuming you store the image path in the database
+            $table->string('image');// Assuming you store the image path in the database
             $table->timestamps();
         });
     }

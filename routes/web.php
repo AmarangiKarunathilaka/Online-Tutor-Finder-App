@@ -200,6 +200,10 @@ Route::get('/feedback', 'FeedbackController@show')->name('feedback.show');
 //Route::resource('user-profiles', 'UserProfileController');
 Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
+use App\Http\Controllers\YourController;
+
+Route::delete('/items/{id}', [YourController::class, 'destroy']);
+
 
 
 //kavindra
