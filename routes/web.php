@@ -137,9 +137,7 @@ Route::get('/popupBox', function () {
 //     return view('adminHome');
 // });
 
-Route::get('/classRequest', function () {
-    return view('classRequest');
-});
+
 
 Route::get('/adminAdvertisementList', function () {
     return view('adminAdvertisementList');
@@ -161,9 +159,19 @@ Route::get('/adminTutorList', function () {
     return view('adminTutorList');
 });
 
+// nalaka
 Route::get('/classRequest', function () {
     return view('classRequest');
 });
+
+Route::get('/adminClassRequestList', function () {
+    return view('adminClassRequestList');
+});
+
+Route::get('/studentRequestView', function () {
+    return view('studentRequestView');
+});
+
 
 
 
@@ -318,6 +326,15 @@ Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->nam
 //nalaka
 Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
 Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+// view requests in admin
+Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
+
+// view student home
+Route::get('/studentRequestView', [ClassRequestController::class, 'studentRequestView'])->name('studentRequestView');
+
+
+Route::get('/acceptRequest/{id}', [ClassRequestController::class, 'acceptRequest']);
+Route::get('/rejectRequest/{id}', [ClassRequestController::class, 'rejectRequest']);
 
 
 

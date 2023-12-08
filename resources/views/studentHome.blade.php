@@ -62,6 +62,13 @@
                     </li>
 
                     <li class="nav-link">
+                        <a href="/classRequest">
+                            <i class='bx bx-book-open icon'></i>
+                            <span class="text nav-text">Class Request</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
                         <a href="#">
                             <i class='bx bxs-conversation icon' ></i>
                             <span class="text nav-text">Conversation</span>
