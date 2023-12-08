@@ -8,10 +8,14 @@ use Illuminate\Support\Facades\Storage;
 
 class Advertisement extends Model
 {
+    use HasFactory;
+    protected $table = 'advertisements';
+    protected $primarykey = 'id'; 
     protected $fillable = [
         'tutorName', 
         'email',
-        'imageUpload',
+        //'imageUpload',
+        'photo',
         'payment',
         'description',
         'subject',

@@ -8,6 +8,7 @@ use App\Models\tutorMedium;
 use App\Models\tutorSubject;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class tutorRegisterController extends Controller
 {
@@ -15,6 +16,22 @@ class tutorRegisterController extends Controller
     public function tutorRegister(){
         return view('tregister');
     }
+
+    public function adminTutorList()
+    {
+        $data = tutorRegister::join('tutor_mediums', 'tutor_mediums.tutorMedium_id', '=', 'tutor_registers.id')
+                            ->join('tutor_subjects', 'tutor_subjects.tutorSubject_id', '=', 'tutor_registers.id')
+                            ->get(['tutor_registers.tutorFullName',
+                                    'tutor_registers.tutorPhoneNumber',
+                                    'tutor_registers.qualification',
+                                    'tutor_registers.tutorEmail',
+                                    'tutor_mediums.tutorMedium', 'tutor_subjects.tutorSubject']);
+
+
+        return view('adminTutorList', compact('data'));
+
+    }
+    
 
     public function tutorRegisterInput(Request $request){
 
@@ -43,8 +60,8 @@ class tutorRegisterController extends Controller
          'tutorPhoneNumber'=> $request -> contact,
          'qualification'=> $request -> qualification,
          'tutorEmail'=> $request -> email,
-         'tutorPassword'=> $request -> password,
-         'tutorConfirmPassword'=> $request -> reEnterPassword
+         'password'=> Hash::make($request -> password),
+        //  'tutorConfirmPassword'=> $request -> reEnterPassword
         ]);
 
         $user = DB::select("select * from tutor_registers order by id desc limit 1");
@@ -104,8 +121,8 @@ class tutorRegisterController extends Controller
             ]);
         } 
         
-
-        return redirect('/login');
+        $user_type = 'tutor';
+        return view('login', compact('user_type'));
 
         // return redirect() -> back();
      }

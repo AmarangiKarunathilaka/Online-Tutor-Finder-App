@@ -3,32 +3,79 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Feedback;
 
 class FeedbackController extends Controller
-{        
-    public function store(Request $request)
-    {
-        // Validation rules for the feedback form
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'message' => 'required|string',
+{
+    /*function websiteFeedbackForm(Request $req){
+        $feedback = new Feedback;
+        $feedback->name=$req->name;
+        $feedback->email=$req->email;
+        $feedback->rating=$req->rating;
+        $feedback->message=$req->message;
+        $feedback->save();
+    }*/
+
+    public function feedback(){
+        return view('websiteFeedbackForm');
+    }
+
+    public function uploadFeedbackInput(Request $request){
+
+        $keyValue = $request->input('key');
+
+        Feedback::create([
+            'student_id'=> $request -> key,
+            'name'=> $request -> name,
+            'email'=> $request -> email,
+            'rating'=> $request -> rating,
+            'message'=> $request -> message,
         ]);
 
-        Feedback::create($validatedData);
-
-        return redirect()->route('feedback.show')->with('success', 'Feedback submitted successfully!');
+        return redirect() -> back();
     }
 
-    public function index()
+    public function adminFeedbackList()
     {
-        $feedback = Feedback::latest()->get();
-        return view('admin.feedback.index', compact('feedback'));
+                
+        // Fetch feedback data from the database
+        $feedback = Feedback::all();
+
+        // Return the admin feedback list view
+        return view('adminFeedbackList', compact('feedback'));
     }
 
-    public function show()
+    public function feedbackDisplay()
     {
-        $feedback = Feedback::latest()->get();
-        return view('guest.feedback', compact('feedback'));
+    
+        $feedback = Feedback::where('status','=','accepted')->get();
+
+        return view('index', compact('feedback'));
+        
+
     }
 
+    public function acceptFeedback($id)
+    {
+        $data = Feedback::find($id);
+        $data->status = 'accepted';
+        $data->save();
+
+        return redirect()->route('adminFeedbackList')->with('success', 'Feedback accepted successfully!');
+    }
+
+    public function rejectFeedback($id)
+    {
+        $data = Feedback::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+        return redirect()->route('adminFeedbackList')->with('success', 'Feedback rejected successfully!');
+    }
+
+    
+
+
+
+   
 }

@@ -21,8 +21,8 @@ return new class extends Migration
                 $table->string('address');
                 $table->string('studentPhoneNumber')->nullable;
                 $table->string('studentEmail')->unique();
-                $table->string('studentPassword');
-                $table->string('studentConfirmPassword');
+                $table->string('password');
+                $table->string('studentConfirmPassword')->nullable();
                 $table->timestamps();
         });
     }

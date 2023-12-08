@@ -61,10 +61,6 @@ Bootstrap 5 HTML CSS Template
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/#section_2">About</a>
                         </li>
-    
-                    
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="registration"><b>Register</b></a>
 
                     
                         <li class="nav-item">
@@ -83,11 +79,16 @@ Bootstrap 5 HTML CSS Template
         <div class="form-box">
             <div class="form-value">
 
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <form method="post" action="{{ url('/postlogin') }}">
                 @csrf
                     <h2>Login</h2>
 
-                    <div class="input-box">
+                   <!-- <div class="input-box">
                         <ion-icon name="person-outline"></ion-icon>
                         <input type="text" id="email" name="email" required>
                         <label for="">E-mail</E-mail></label>
@@ -103,17 +104,55 @@ Bootstrap 5 HTML CSS Template
                                 @if ($errors->has('password'))
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                                 @endif
+                    </div> -->
+
+                    <div class="input-box login-form">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" id="email" name="email" required>
+                    <label for="email">E-mail</label>
+                    @if ($errors->has('email'))
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                    @endif
+                </div>
+
+                <div class="input-box">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                    @if ($errors->has('password'))
+                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                    @endif
+                </div>
+                @if(isset($user_type))
+                    <div class="radio-box text-white mb-md-4 mb-2">
+                        <input type="radio" id="student" name="user_type" value="student" {{ old('user_type', $user_type) === 'student' ? 'checked' : '' }} required>
+                        <label for="student">Student</label>
+
+                        <input type="radio" id="tutor" name="user_type" class="ms-3" value="tutor" {{ old('user_type', $user_type) === 'tutor' ? 'checked' : '' }} required>
+                        <label for="tutor">Tutor</label>
+
+                        <input type="radio" id="admin" name="user_type" class="ms-3" value="admin" {{ old('user_type', $user_type) === 'admin' ? 'checked' : '' }} required>
+                        <label for="admin">Admin</label>
                     </div>
+                @else
+                    <div class="radio-box text-white mb-md-4 mb-2">
+                        <input type="radio" id="student" name="user_type" value="student" {{ old('user_type', 'student') === 'student' ? 'checked' : '' }} required>
+                        <label for="student">Student</label>
 
+                        <input type="radio" id="tutor" name="user_type" class="ms-3" value="tutor" {{ old('user_type') === 'tutor' ? 'checked' : '' }} required>
+                        <label for="tutor">Tutor</label>
 
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember me  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="">Forget Password</a></label>
+                        <input type="radio" id="admin" name="user_type" class="ms-3" value="admin" {{ old('user_type') === 'admin' ? 'checked' : '' }} required>
+                        <label for="admin">Admin</label>
+                    </div>
+                @endif                    <div class="forget">
+                        <label for=""><input type="checkbox">Remember me  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="{{ route('password.request') }}">Forget Password</a></label>
                         
                     </div>
                     <button>Submit</button>
                     <div class="register">
 
-                        <p>New Member <a href="">Registration here</a></p>
+                       
                         <p>New Member <a href="/registration">Registration here</a></p>
 
                     </div>

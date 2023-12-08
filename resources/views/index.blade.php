@@ -8,7 +8,7 @@
         
 
 
-        <title>guest-interface</title>
+        <title>Guest Interface</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -166,8 +169,18 @@ Bootstrap 5 HTML CSS Template
                             <h3><i><u>Combined Maths</u></i></h3>
                         </div>
                     </div>
-                
-            <div class="row">
+
+
+
+                    <div class="owl-carousel reviews-carousel">
+
+                        <div class="col">   
+                        @foreach ($advertisements as $advertisement)
+                        <td><img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/></td>
+                        @endforeach
+                        </div>
+                    </div>
+                  
 
                 <div class="owl-carousel reviews-carousel">
 
@@ -217,7 +230,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
             </div>
             
-       
+                
                
             <div class="col-lg-12 col-12">
                     <div class="subject">
@@ -370,7 +383,9 @@ Bootstrap 5 HTML CSS Template
                 <h2 class="mt-2 mb-4">Reviews</h2>
 
                 <div class="owl-carousel reviews-carousel">
-                    <div class="reviews-thumb">
+
+
+                    <!-- <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Tutor4u is the most suitable website layout.</h4>
                         </div>
@@ -392,33 +407,38 @@ Bootstrap 5 HTML CSS Template
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="reviews-thumb">
-                        <div class="reviews-body">
-                            <h4> Prefect tutors.</h4>
-                        </div>
+                
+                    @if(isset($feedback) && count($feedback)>0)
+                        @foreach ($feedback as $feedback)
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>{{ $feedback->message }}</h4>
+                                </div>
 
-                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                            
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>{{ $feedback->name }}</strong> ( <small>Student</small> )
+                                        </p>
 
-                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                <p class="text-white mb-0">
-                                    <strong>Jack</strong>, <small>Partner</small>
-                                </p>
-
-                                <div class="reviews-icons">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star"></i>
-                                    <i class="bi-star"></i>
+                                        <div class="reviews-icons">
+                                            @for ($i = 0; $i <= 4; $i++)
+                                            <i class="bi-star-fill{{ $i >= $feedback->rating ? 'active' : '' }}"></i>
+                                            @endfor
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @else
+                        <p>No reviews found</p>
+                    @endif
+                                               
+                                        
 
-                    <div class="reviews-thumb">
+                    <!-- <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Please recommend Tutor4u website to your friends.</h4>
                         </div>
@@ -440,33 +460,10 @@ Bootstrap 5 HTML CSS Template
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    
 
-                    <div class="reviews-thumb">
-                        <div class="reviews-body">
-                            <h4>Nice website. Love it.</h4>
-                        </div>
-
-                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                           
-
-                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                <p class="text-white mb-0">
-                                    <strong>Bill</strong>, <small>Designer</small>
-                                </p>
-
-                                <div class="reviews-icons">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star"></i>
-                                    <i class="bi-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviews-thumb">
+                    <!-- <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Thank you for visiting Tooplate to download free templates.</h4>
                         </div>
@@ -488,12 +485,12 @@ Bootstrap 5 HTML CSS Template
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
-                <div class="col-lg-12 col-12">
+                <!-- <div class="col-lg-12 col-12">
                     <p class="d-flex justify-content-center align-items-center mt-lg-5">Write some reviews on <a href="#" class="custom-btn btn ms-3"><i class="bi-facebook me-2"></i>facebook</a></p>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -543,7 +540,7 @@ Bootstrap 5 HTML CSS Template
 
                     <p class="text-white mt-2">
                         <i class="bi-geo-alt"></i>
-                        Mathara
+                        Matara
                     </p>
                 </div>
 

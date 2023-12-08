@@ -13,13 +13,13 @@ form{
 }
 .text{
   padding:0.5em;  
-  align-left:5em;
+  margin-left:5em;
   width:200px;
   height:10px;
 }
 label{
   padding:0.5em;
-  align-left:5em;
+  margin-left:5em;
 }
 
 .btnSubmit{

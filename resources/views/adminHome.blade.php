@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="images/f.png" alt="">
+                <img src="{{asset('images/f.png')}}" alt="">
                 </span>
 
                 <div class="text logo-text">
@@ -68,6 +68,20 @@
                     </li>
 
                     <li class="nav-link">
+                        <a href="/adminClassMaterialList">
+                            <i class='bx bx-file icon' ></i>
+                            <span class="text nav-text">Class Material List</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/adminClassRequestList">
+                            <i class='bx bx-file icon' ></i>
+                            <span class="text nav-text">Class Request List</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
                         <a href="/adminFeedbackList">
                             <i class='bx bxs-conversation icon' ></i>
                             <span class="text nav-text">Feedback List</span>
@@ -111,7 +125,7 @@
 
    
 
-    <script src="js/script.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 
 </body>
 </html>

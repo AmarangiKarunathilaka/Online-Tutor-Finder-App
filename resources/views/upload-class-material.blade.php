@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/classMaterial.css') }}">
     <title>Class Material Upload form</title>
-    <meta name="viewport" content="width=device-width,
-      initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/classMaterial.css" />
+    
   </head>
   <body>
   @extends('tutorHomeContent')
@@ -14,13 +14,16 @@
         <div class="text"></div>
     <div class="container">
       <h1 class="form-title">Class Material Upload</h1>
-      <form action="#">
+      <form action="{{ url('/classMaterialInput') }}" method="post"  enctype="multipart/form-data">
+            @csrf
+     
+            <input type="hidden" name="key" value="1">
         <div class="main-user-info">
           <div class="user-input-box">
-            <label for="fullName">Name</label>
+            <label for="tutorName">Name</label>
             <input type="text"
-                    id="fullName"
-                    name="fullName"
+                    id="tutorName"
+                    name="tutorName"
                     placeholder="Enter Full Name"/>
           </div>
           <div class="user-input-box">
@@ -34,9 +37,10 @@
           <div class="user-input-box">
             <label for="subject">Select Subject</label>
                 <select name="subject" id="subject">
-                    <option value="math">Mathematics</option>
-                    <option value="science">Physics</option>
-                    <option value="history">Chemistry</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Biology ">Biology</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Physics">Physics</option>
                     
                 </select>
           </div>
@@ -47,13 +51,33 @@
                     name="title"
                     placeholder="Enter title for material"/>
           </div>
+
+         <!-- <div class="user-input-box">
+          <label for="lecNote">Category:</label>
+          <input type="text"  id="lecNote" name="lecNote" required>
+          </div>-->
+
+          <div class="user-input-box">
+            <label for="subject">Select category</label>
+                <select name="lecNote" id="lecNote">
+                    <option value="classNote">Class Note</option>
+                    <option value="Assignment">Assignment</option>
+                    <option value="Reference">Reference</option>
+                    
+                </select>
+          </div>
+
+
           <div class="user-input-box">
             <label for="material">Upload Class Material:</label>
-                <input type="file" name="material" id="material" accept=".pdf, .doc, .docx" required>
+                <input type="file" name="file" id="input-file" accept="material/pdf, material/doc, material/docx" enctype="multipart/form-data" required>
           </div>
 
           
         </div>
+
+        
+         <!--  
         <div class="category-details-box">
           <span class="category-title">select category</span>
           <div class="category-category">
@@ -64,10 +88,10 @@
             <input type="radio" name="category" id="Reference">
             <label for="Reference">Reference</label>
           </div>
-        </div>
+        </div>-->
         <div class="form-submit-btn">
           
-          <button type="submit" class="btn" onclick="openPopup()">Register</button>
+          <button type="submit" class="btn" onclick="openPopup()">Upload</button>
                 <div  class = "popup" id="popup">
                     <img src = "images/tick.png">
                     <h2>Successful</h2>

@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class studentRegister extends Model
+class studentRegister extends Authenticatable
 {
     protected $table = 'student_registers';
 
@@ -17,7 +19,7 @@ class studentRegister extends Model
         'address',
         'studentPhoneNumber',
         'studentEmail',
-        'studentPassword',
+        'password',
         'studentConfirmPassword'
     ];
 }

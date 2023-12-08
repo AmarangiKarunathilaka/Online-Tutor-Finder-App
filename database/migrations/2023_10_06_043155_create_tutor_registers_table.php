@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('tutorPhoneNumber');
             $table->string('qualification');
             $table->string('tutorEmail')->unique();
-            $table->string('tutorPassword');
-            $table->string('tutorConfirmPassword');
+            $table->string('password');
+            $table->string('tutorConfirmPassword')->nullable();
             $table->timestamps();
 
             //In tutorSubject and tutorMedium tables

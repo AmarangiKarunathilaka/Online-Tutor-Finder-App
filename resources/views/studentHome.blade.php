@@ -6,41 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="css/dashboard.css">
-    <!--<link rel="stylesheet" href="css/advertisementstyle.css"-->
-    
-
-    <!--<link href="css/bootstrap-icons.css" rel="stylesheet">   
-
-    <link href="css/owl.carousel.min.css" rel="stylesheet"> 
-
-    <link href="css/bootstrap-icons.css" rel="stylesheet"> -->
-
-       
-        
-
-
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     
     <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="{{asset('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css')}}" rel='stylesheet'>
     
-    <title></title> 
+    <title>Dashboard Sidebar Menu</title> 
 </head>
 <body>
     <nav class="sidebar close">
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="images/f.png" alt="">
+                    <img src="{{asset('images/f.png')}}" alt="">
                 </span>
 
+                
                 <div class="text logo-text">
-
-
                     <span class="name">Tutor</span>
                     <span class="profession">Finder System</span>
-
-
                 </div>
             </div>
 
@@ -50,14 +34,14 @@
         <div class="menu-bar">
             <div class="menu">
 
-                <li class="search-box">
+            <li class="search-box">
                     <i class='bx bx-search icon'></i>
                     <input type="text" placeholder="Search...">
                 </li>
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="/studentdashboard">
+                        <a href="">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -74,6 +58,13 @@
                         <a href="/classMaterial">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Class Materials</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/classRequest">
+                            <i class='bx bx-book-open icon'></i>
+                            <span class="text nav-text">Class Request</span>
                         </a>
                     </li>
 
@@ -127,7 +118,7 @@
         
 
 
-<script src="js/script.js"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 
 
     
