@@ -7,6 +7,7 @@ use App\Models\ClassMaterial;
 use Illuminate\Support\Facades\Stroage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ClassMaterialController extends Controller
 {
@@ -20,6 +21,7 @@ class ClassMaterialController extends Controller
 
     public function classMaterialInput(Request $request)
     {
+        $userId = Session::get('user_id');
         $classmaterial= new ClassMaterial;
         $classmaterial->tutorName = $request->tutorName;
         $classmaterial->email = $request->email;
@@ -27,7 +29,7 @@ class ClassMaterialController extends Controller
         $classmaterial->title = $request->title;
         $classmaterial->lecNote = $request->lecNote;
         $classmaterial->file = $request->file;
-        $classmaterial->tutor_id = $request->key;
+        $classmaterial->tutor_id = $userId;
         
         $file=$request->file;
 

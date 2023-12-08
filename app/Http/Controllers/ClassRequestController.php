@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ClassRequest;
 use App\Http\controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class ClassRequestController extends Controller
 {
@@ -14,13 +15,13 @@ class ClassRequestController extends Controller
     }
 
     public function uploadClassRequestInput(Request $request){
-        $keyvalue = $request ->input('key');
-
+        
+        $userId = Session::get('user_id');
         ClassRequest::create([
             
             'tutor_id'=> $request -> tutorId,
             'tutor_name'=> $request -> tutorname,
-            'student_id'=> $request -> key, 
+            'student_id'=> $userId, 
             'student_name'=> $request -> studentname,
             'date'=> $request -> date,
             'time'=> $request -> time, 
