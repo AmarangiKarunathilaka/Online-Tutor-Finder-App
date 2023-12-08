@@ -9,12 +9,13 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ClassMaterialController;
+use App\Http\controllers\ClassRequestController;
 //use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 //Ramal
-use App\Http\Controllers\PDFController;
+use App\Http\Controllers\PdfController;
 
 
 
@@ -309,9 +310,14 @@ Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminCla
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
+
 Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
 
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
+
+//nalaka
+Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
 
 
 
