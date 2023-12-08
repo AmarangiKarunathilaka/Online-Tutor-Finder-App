@@ -171,11 +171,7 @@ Bootstrap 5 HTML CSS Template
                     </div>
 
 
-                   
-                     
-          
-            
-                    
+
                     <div class="owl-carousel reviews-carousel">
 
                         <div class="col">   

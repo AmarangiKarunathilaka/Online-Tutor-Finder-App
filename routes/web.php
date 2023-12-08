@@ -9,13 +9,14 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ClassMaterialController;
+use App\Http\controllers\ClassRequestController;
 //use App\Http\Controllers\CustomAuthController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\combinedDisplayController;
 //Ramal
-use App\Http\Controllers\PDFController;
+use App\Http\Controllers\PdfController;
 
 
 
@@ -35,9 +36,9 @@ use Illuminate\Http\Request;
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 Route::get('/', function () {
     return view('index');
@@ -87,8 +88,8 @@ Route::get('/classMaterial', function () {
     return view('classMaterial');
 });
 
-Route::get('/materialContent', function () {
-    return view('materialContent');
+Route::get('/materialContent/maths', function () {
+    return view('materialContent/maths');
 });
 
 
@@ -152,6 +153,7 @@ Route::get('/adminFeedbackList', function () {
 Route::get('/adminClassMaterialList', function () {
     return view('adminClassMaterialList');
 });
+
 
 Route::get('/adminStudentList', function () {
     return view('adminStudentList');
@@ -313,9 +315,23 @@ Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminCla
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
-Route::get('/materialContent', [ClassMaterialController::class, 'materialcontent'])->name('materialcontent');
+
+
+Route::get('/materialContent/maths', [ClassMaterialController::class, 'maths'])->name('maths');
+Route::get('/materialContent/chemistry', [ClassMaterialController::class, 'chemistry'])->name('chemistry');
+Route::get('/materialContent/physics', [ClassMaterialController::class, 'physics'])->name('physics');
+Route::get('/materialContent/biology', [ClassMaterialController::class, 'biology'])->name('biology');
+
 
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
+
+Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
+
+
+
+//nalaka
+Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
 
 
 

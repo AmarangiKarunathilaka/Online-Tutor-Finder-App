@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -10,46 +11,13 @@
     <title>Class Request Form</title>
 </head>
 <body>
-@extends('studentHomeContent')
+
+    
+   
+    @extends('studentHomeContent')
     @section('content')
-    <header>
-    <nav class="navbar navbar-expand-lg  fixed-top shadow-lg">
-       
-       <div class="container">
-           
-           <img src="images/f.png" alt="" />
-
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-           </button>
-
-           <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav ms-auto">
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_1"><b>Home</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_2"><b>About</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="#section_3"><b>Contact Us</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="/login"><b>Login</b></a>
-                   </li>
-
-                   <li class="nav-item">
-                       <a class="nav-link click-scroll" href="/registration"><b>Register</b></a>
-                   </li>
-               </ul>
-           </div>
-       </div>
-
-   </nav>
-    </header>
+   
+    <div class="container1">
 
 
     <div class="row justify-content-center">
@@ -61,15 +29,42 @@
             <h1><div class="row justify-content-center"> Request</div></h1>
 
                 <table>
-                    <form action="{{ url('/tutorInput') }}" method="post">
+                    <form id="" action="{{ url('/classRequestInput') }}" method="post">
                         @csrf 
+                        <input type="hidden" name="key" value="1">
+                        
                         <tr>
                             <div class="mt-4">
                                 
-                                <td><input type="text" class="form-control" placeholder="Class Id" name="name" required></td>
+                                <td><input type="text" class="form-control" placeholder="TutorId" name="tutorId" required></td>
                                
                             </div>
                         </tr>
+                        
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="TutorName" name="tutorname" required></td>
+                               
+                            </div>
+                        </tr>
+
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="studentId"  name="studentId" required></td>
+                               
+                            </div>
+                        </tr>
+                        
+                        <tr>
+                            <div class="mt-4">
+                                
+                                <td><input type="text" class="form-control" placeholder="studentname" name="studentname" required></td>
+                               
+                            </div>
+                        </tr>
+
 
                         <tr>
                             <div class="mt-4">
@@ -102,54 +97,30 @@
                     <tr>
                         <tr>
                             <div class="TutorReg-1">
-                                <td><label for="TR-subject"> Subject :</label></td>
-                                <td><input type="checkbox" class="TR-input"  name="subject1">
-                                <label for="TR-subject1"> Mathematics </label></td>
+                            <td><input type="text" class="form-control" placeholder="Subject" name="subject" required></td>
+                                
                             </div>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject2">
-                                <label for="TR-subject2"> Biology </label>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject3">
-                                <label for="TR-subject3"> Chemistry </label>
-                        </td>
-                        <tr>
-                            <td></td>
-                            <td><input type="checkbox" class="TR-input"  name="subject4">
-                                <label for="TR-subject4"> Physics </label>
-                            </td>
-                        </tr>
+                       
 
                         <tr>
                             <tr>
                                 <div class="TutorReg-1">
                                     <td><label for="TR-medium"> Medium :</label></td>
-                                    <td><input type="checkbox" class="TR-input" name="medium1">
+                                    <td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium1"> Sinhala </label></td>
                                 </div>
                             </tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium2">
+                                <td><td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium2"> English </label></td></td>
                             <tr>
                             <tr>
-                                <td><td><input type="checkbox" class="TR-input" name="medium3">
+                                <td><td><input type="radio" class="TR-input" name="medium">
                                     <label for="TR-medium3"> Tamil </label></td></td>
                             </tr>
                         </tr>
                         
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="Status" name="name" required></td>
-                               
-                            </div>
-                        </tr>
+                        
                     
                         
                     </table>
@@ -165,7 +136,7 @@
                         </div>
                         
                         
-                        <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> Register </button>
+                        <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> Submit </button>
                         
         
                     </form>
@@ -176,10 +147,8 @@
     </div>
     </div>
 
-         <footer>
-            <p>&copy; 2023 Tutor Finder</p>
-        </footer> 
-        @endsection
+        </div>
+@endsection
+
 </body>
 </html>
-

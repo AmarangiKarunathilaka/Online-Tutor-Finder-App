@@ -38,8 +38,9 @@
             <label for="subject">Select Subject</label>
                 <select name="subject" id="subject">
                     <option value="Mathematics">Mathematics</option>
-                    <option value="Physics">Physics</option>
+                    <option value="Biology ">Biology</option>
                     <option value="Chemistry">Chemistry</option>
+                    <option value="Physics">Physics</option>
                     
                 </select>
           </div>
