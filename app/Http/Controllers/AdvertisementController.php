@@ -7,6 +7,9 @@ use App\Models\Advertisement;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Session;
+use Auth;
 
 class AdvertisementController extends Controller
 {
@@ -18,10 +21,10 @@ class AdvertisementController extends Controller
 
     public function advertisementUploadInput(Request $request)
     {
-        $keyValue = $request->input('key');
-
+        
+        $userId = Session::get('user_id');
         $advertisement= new Advertisement();
-        $advertisement->tutor_id = $request->key;
+        $advertisement->tutor_id = $userId;
         $advertisement->tutorName = $request -> fullName;
         $advertisement->email = $request->email;
         $advertisement->payment = $request -> payment;
