@@ -19,9 +19,17 @@ class tutorRegisterController extends Controller
 
     public function adminTutorList()
     {
-        $data = tutorRegister::with(['tutorMedium', 'tutorSubject'])->get();
+        $data = tutorRegister::join('tutor_mediums', 'tutor_mediums.tutorMedium_id', '=', 'tutor_registers.id')
+                            ->join('tutor_subjects', 'tutor_subjects.tutorSubject_id', '=', 'tutor_registers.id')
+                            ->get(['tutor_registers.tutorFullName',
+                                    'tutor_registers.tutorPhoneNumber',
+                                    'tutor_registers.qualification',
+                                    'tutor_registers.tutorEmail',
+                                    'tutor_mediums.tutorMedium', 'tutor_subjects.tutorSubject']);
+
 
         return view('adminTutorList', compact('data'));
+
     }
     
 

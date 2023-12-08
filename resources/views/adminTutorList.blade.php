@@ -62,13 +62,13 @@
                     @foreach ($data as $item)
 
                     <tr>
-                        <th scope="row">{{ $item->id }}</th>
+                        <th {{ $item->id }}</th>
                         <td>{{ $item->tutorFullName }}</td>
                         <td>{{ $item->tutorPhoneNumber }}</td>
                         <td>{{ $item->qualification }}</td>
                         <td>{{ $item->tutorEmail }}</td>
-                        <td>{{ optional($item->tutorMedium)->name }}</td>
-                        <td>{{ optional($item->tutorSubject)->name }}</td>
+                        <td>{{ $item->tutorMedium }}</td>
+                        <td>{{ $item->tutorSubject}}</td>
                         <td><button type="button" class="accept">Accept </button>
                             <button type="button" class="remove">Remove</button></td>
                     </tr>

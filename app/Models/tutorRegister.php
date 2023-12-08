@@ -22,7 +22,7 @@ class tutorRegister extends Authenticatable
         'tutorConfirmPassword'
     ];
 
-    public function tutorMedium()
+    /*public function tutorMedium()
     {
         return $this->belongsTo(tutorMedium::class);
     }
@@ -30,5 +30,5 @@ class tutorRegister extends Authenticatable
     public function tutorSubject()
     {
         return $this->belongsTo(tutorSubject::class);
-    }
+    }*/
 }
