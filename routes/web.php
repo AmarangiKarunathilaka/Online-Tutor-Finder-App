@@ -170,6 +170,10 @@ Route::get('/adminClassRequestList', function () {
     return view('adminClassRequestList');
 });
 
+Route::get('/adminDashboard', function () {
+    return view('adminDashboard');
+});
+
 Route::get('/studentRequestView', function () {
     return view('studentRequestView');
 });
@@ -390,6 +394,8 @@ Route::post('send-message',function (Request $request){
    return ['success' => true];
 });
 
+
+Route::get('/adminDashboard', [CombinedDisplayController::class, 'adminDashboardCountDisplay'])->name('adminDashboardCountDisplay');
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
