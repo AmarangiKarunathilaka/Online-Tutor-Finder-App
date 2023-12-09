@@ -398,7 +398,10 @@ Route::post('send-message',function (Request $request){
 });
 
 
-Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardCountDisplay'])->name('adminDashboardCountDisplay');
+Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardDisplay'])->name('adminDashboardDisplay');
+
+Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
+Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
