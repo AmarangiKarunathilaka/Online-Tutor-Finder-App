@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Feedback;
 use App\Models\Advertisement;
 
+
+
 class CombinedDisplayController extends Controller
 {
     public function combinedDisplay()
@@ -15,5 +17,7 @@ class CombinedDisplayController extends Controller
     
         return view('index', compact('advertisements', 'feedback'));
     }
+
+    
     
 }

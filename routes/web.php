@@ -15,6 +15,8 @@ use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CombinedDisplayController;
+use App\Http\Controllers\AdminDashboardController;
+
 //Ramal
 use App\Http\Controllers\PdfController;
 
@@ -22,6 +24,7 @@ use App\Http\Controllers\PdfController;
 
 //chat
 use App\Events\Message;
+
 use Illuminate\Http\Request;
 
 
@@ -168,6 +171,10 @@ Route::get('/classRequest', function () {
 
 Route::get('/adminClassRequestList', function () {
     return view('adminClassRequestList');
+});
+
+Route::get('/adminDashboard', function () {
+    return view('adminDashboard');
 });
 
 Route::get('/studentRequestView', function () {
@@ -390,6 +397,11 @@ Route::post('send-message',function (Request $request){
    return ['success' => true];
 });
 
+
+Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardDisplay'])->name('adminDashboardDisplay');
+
+Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
+Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');

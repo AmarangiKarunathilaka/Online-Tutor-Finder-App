@@ -47,8 +47,9 @@ a{
   color: rgb(85, 83, 83);
   font-size: 14px;
   display: table;
-  width: 280px;
+  width: 50px;
   padding: 10px;
+  
 }
 nav .fas{
   position: relative;
