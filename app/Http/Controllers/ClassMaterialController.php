@@ -77,11 +77,23 @@ class ClassMaterialController extends Controller
 
     public function maths()
     {
-        $classmaterial = ClassMaterial::where('status','=','active')->get();
+        $note = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','mathematics')
+                            ->where('lecNote','=','ClassNote')
+                            ->get();
+        
+        $ass = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','mathematics')
+                            ->where('lecNote','=','Assignment')
+                            ->get();
+        
+        $ref = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','mathematics')
+                            ->where('lecNote','=','Reference')
+                            ->get();
+        
 
-        $classmaterial = ClassMaterial::where('subject','=','mathematics')->get();
-
-        return view('materialContent.maths', compact('classmaterial'));
+        return view('materialContent.maths', compact('note','ass','ref'));
     }
 
     public function chemistry()
@@ -109,7 +121,7 @@ class ClassMaterialController extends Controller
 
         $classmaterial = ClassMaterial::where('subject','=','biology')->get();
 
-        return view('materialContent.physics', compact('classmaterial'));
+        return view('materialContent.biology', compact('classmaterial'));
     }
 
 

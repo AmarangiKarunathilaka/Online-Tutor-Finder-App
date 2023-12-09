@@ -14,7 +14,7 @@ use App\Http\controllers\ClassRequestController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\combinedDisplayController;
+use App\Http\Controllers\CombinedDisplayController;
 //Ramal
 use App\Http\Controllers\PdfController;
 
@@ -258,7 +258,7 @@ Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
-Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
 
 
 

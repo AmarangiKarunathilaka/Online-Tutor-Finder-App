@@ -60,7 +60,7 @@
           <div class="user-input-box">
             <label for="subject">Select category</label>
                 <select name="lecNote" id="lecNote">
-                    <option value="classNote">Class Note</option>
+                    <option value="ClassNote">Class Note</option>
                     <option value="Assignment">Assignment</option>
                     <option value="Reference">Reference</option>
                     

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Feedback;
 use App\Models\Advertisement;
 
-class combinedDisplayController extends Controller
+class CombinedDisplayController extends Controller
 {
     public function combinedDisplay()
     {
