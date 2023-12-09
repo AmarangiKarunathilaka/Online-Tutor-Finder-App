@@ -15,6 +15,8 @@ use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CombinedDisplayController;
+use App\Http\Controllers\AdminDashboardController;
+
 //Ramal
 use App\Http\Controllers\PdfController;
 
@@ -22,6 +24,7 @@ use App\Http\Controllers\PdfController;
 
 //chat
 use App\Events\Message;
+
 use Illuminate\Http\Request;
 
 
@@ -395,7 +398,7 @@ Route::post('send-message',function (Request $request){
 });
 
 
-Route::get('/adminDashboard', [CombinedDisplayController::class, 'adminDashboardCountDisplay'])->name('adminDashboardCountDisplay');
+Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardCountDisplay'])->name('adminDashboardCountDisplay');
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
