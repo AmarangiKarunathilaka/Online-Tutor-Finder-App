@@ -65,7 +65,7 @@
 
         <div class="card">
         <i class='bx bxs-add-to-queue'></i>
-          <h3>No of scheduled classes</h3>
+          <h3>No of Requested classes</h3>
           <p>0</p>
           </br>
           <table>
@@ -79,6 +79,7 @@
             </tr>
           </table>
         </div>
+
         <div class="card">
         <i class='bx bx-table' ></i>
           <h3>Time Table</h3>
@@ -86,6 +87,8 @@
           <button>Open</button>
         </div>
       </div>
+
+     
       <section class="main-course" id="section_1">
       <div class="main-top">
         <h1>Accepted Student List</h1>
