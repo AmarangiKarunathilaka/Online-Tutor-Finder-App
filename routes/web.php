@@ -16,6 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CombinedDisplayController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\StudentDashboardController;
 
 //Ramal
 use App\Http\Controllers\PdfController;
@@ -74,8 +75,8 @@ Route::get('/tregister', function () {
 //     return view('studentHome');
 // });
 
-Route::get('/studentdashboard', function () {
-    return view('studentdashboard');
+Route::get('/studentDashboard', function () {
+    return view('studentDashboard');
 });
 
 Route::get('/student', function () {
@@ -382,7 +383,7 @@ Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdv
 Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
 Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
 
-// Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
@@ -402,6 +403,7 @@ Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardD
 
 Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
 Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
+
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');

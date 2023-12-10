@@ -150,54 +150,18 @@
 
 <div class="row">
 
-    <div class="owl-carousel reviews-carousel">
-
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                    <p> Experience: 5 years<br>
-                    Rate: $50/hour<br>
-                    <a href="#">Contact</a></p>
-    
-        </div>
-
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                    <p> Experience: 5 years<br>
-                    Rate: $50/hour<br>
-                    <a href="#">Contact</a></p>
-  
-        </div>
-
-    
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-    
-</div>
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-    </div>
-   
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-    </div>
+<div class="owl-carousel reviews-carousel">
+                        @foreach ($advertisements as $advertisement)
+                        <div class="col">   
+                        
+                        <img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                       
+                        </div>
+                        @endforeach
+                    </div>
 
 </div>
 </div>
-
 
 
 <div class="col-lg-12 col-12">
