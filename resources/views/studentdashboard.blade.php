@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
+    
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/advertisementstyle.css">
     
@@ -24,7 +25,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Student Dashboard</title> 
 </head>
 <body>
 @extends('studentHomeContent')
@@ -68,6 +69,7 @@
                                     
                             <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
                             <h1>{{ $advertisementMath->tutorName }}</h1>
+                            <button class="register">Register Now</button>
                         </div>
                     @endforeach
             </div>
@@ -139,21 +141,27 @@
         </div>
 
     </section>
+    
     </div>
-    @endsection
-</section> 
+    
 
 
 
 
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
      <script src="js/click-scroll.js"></script>
      <script src="js/jquery.backstretch.min.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/custom.js"></script>
 
+     </section> 
+
+     @endsection
+
 </body>
 </html>
+</span>
