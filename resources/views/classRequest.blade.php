@@ -6,8 +6,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/tRegisterstyle.css">
-    <link href="css/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/classMaterial.css" />
+    
     <title>Class Request Form</title>
 </head>
 <body>

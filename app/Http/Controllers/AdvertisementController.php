@@ -81,7 +81,7 @@ class AdvertisementController extends Controller
     {
         $advertisements = 'Value 1';
         $advertisements = Advertisement::where('status','=','accepted')->get();
-        return view('index', compact('advertisements'));
+        return view('studentDashboard', compact('advertisements'));
         
     }
     
