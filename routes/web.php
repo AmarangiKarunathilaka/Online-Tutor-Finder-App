@@ -405,6 +405,8 @@ Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardD
 Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
 Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
 
+Route::get('/delete_advertisement/{id}', [AdvertisementController::class, 'destroy']);
+
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');

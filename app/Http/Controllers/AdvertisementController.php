@@ -108,6 +108,6 @@ class AdvertisementController extends Controller
         // Delete the advertisement
         Advertisement::destroy($id);
 
-        return redirect()->route('advertisements.index');
+        return redirect()->back();
     }
 }
