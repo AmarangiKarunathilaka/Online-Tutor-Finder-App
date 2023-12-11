@@ -164,170 +164,29 @@ Bootstrap 5 HTML CSS Template
             <section class="content">
             
                 
-                     <div class="col-lg-12 col-12">
-                        <div class="subject">
-                            <h3><i><u>Combined Maths</u></i></h3>
-                        </div>
-                    </div>
-
-
-
-                    <div class="owl-carousel reviews-carousel">
-                        @foreach ($advertisements as $advertisement)
-                        <div class="col">   
-                        
-                        <img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                       
-                        </div>
-                        @endforeach
-                    </div>
-                  
-
-                <div class="owl-carousel reviews-carousel">
-
-                    <div class="col">
-                        <img src="images/team-01.jpg">
-                            <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                    </div>
-                        
-
-                   <div class="col">
-                        <img src="images/team-01.jpg">
-                            <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                        
-                    </div>
-
-                    
-                    <div class="col">
-                        <img src="images/team-01.jpg">
-                            <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                    </div>
-                    
-                    <div class="col">
-                        <img src="images/team-01.jpg">
-                            <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                    </div>
-                   
-                    <div class="col">
-                        <img src="images/team-01.jpg">
-                            <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                    </div>
-
-                </div>
-            </div>
-            
-                
-               
             <div class="col-lg-12 col-12">
-                    <div class="subject">
-                        <h3><i><u>Biology</u></i></h3>
-                    </div>
-            </div> 
-
-                <div class="row">
-                    
-                    <div class="owl-carousel reviews-carousel">
-
-                        <div class="col">
-                            <img src="images/team-01.jpg">
-                                <h2>James Fernando </h2>
-                                    <p> Experience: 5 years<br>
-                                    Rate: $50/hour<br>
-                                    <a href="#">Contact</a></p>
-                    
-                        </div>
-               
-
-                        <div class="col">
-                            <img src="images/team-01.jpg">
-                                <h2>James Fernando </h2>
-                                <p> Experience: 5 years<br>
-                                Rate: $50/hour<br>
-                                <a href="#">Contact</a></p>
-                        </div>
-                
-
-                        <div class="col">
-                            <img src="images/team-01.jpg">
-                                <h2>James Fernando </h2>
-                                    <p> Experience: 5 years<br>
-                                    Rate: $50/hour<br>
-                                    <a href="#">Contact</a></p>
-                        </div>
-
-
-                        <div class="col">
-                            <img src="images/team-01.jpg">
-                                <h2>James Fernando </h2>
-                                    <p> Experience: 5 years<br>
-                                    Rate: $50/hour<br>
-                                    <a href="#">Contact</a></p>
-                        </div>
-                    
-                    </div>
-                </div> 
-
-
-            
-            <div class="col-lg-12 col-12">
-                <div class="subject">
-                    <h3><i><u>Chemistry</u></i></h3>
-                </div>
-            </div> 
-
-            <div class="row">
-                
-            <div class="owl-carousel reviews-carousel">
-
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                             Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
-                </div>
-            
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
-                </div>
-          
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
-                </div>
-
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
-                </div>
-
+            <div class="subject">
+                <h3><i><u>Mathematics</u></i></h3>
             </div>
         </div>
+
+        <div class="row">
+
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementMaths as $advertisementMath)
+                        <div class="col">   
+                                    
+                            <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                            <h2>{{ $advertisementMath->tutorName }}</h2>
+                            <p>{{ $advertisementMath->description }}</p>
+                            <h3>{{ $advertisementMath->subject }}</h3>
+                            <button class="register">Register Now</button>
+                        </div>
+                    @endforeach
+            </div>
+
+        </div>
+
 
 
         <div class="col-lg-12 col-12">
@@ -337,41 +196,68 @@ Bootstrap 5 HTML CSS Template
         </div> 
 
         <div class="row">
-            <div class="owl-carousel reviews-carousel">
-                
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
             
-                </div>
-        
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
-                </div>
-       
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
-                </div>
-
-                <div class="col">
-                    <img src="images/team-01.jpg">
-                        <h2>James Fernando </h2>
-                            <p> Experience: 5 years<br>
-                            Rate: $50/hour<br>
-                            <a href="#">Contact</a></p>
-                </div>
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementPhysics as $advertisementPhysic)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementPhysic ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h2>{{ $advertisementPhysic->tutorName }}</h2>
+                                <p>{{ $advertisementPhysic->description }}</p>
+                                <h3>{{ $advertisementPhysic->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
             </div>
+            
+        </div> 
+
+
+
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Chemistry</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementChemistry as $advertisementChem)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementChem ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h2>{{ $advertisementChem->tutorName }}</h2>
+                                <p>{{ $advertisementChem->description }}</p>
+                                <h3>{{ $advertisementChem->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Biology</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementBiology as $advertisementBio)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementBio ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h2>{{ $advertisementBio->tutorName }}</h2>
+                                <p>{{ $advertisementBio->description }}</p>
+                                <h3>{{ $advertisementBio->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+
         </div>
     
 </section> 
