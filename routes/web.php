@@ -210,7 +210,7 @@ Route::get('/login', function () {
 Route::get('/', [UserController::class, 'index']);
 */
 
-Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pdf');
+//Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pdf');
 
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
@@ -384,6 +384,7 @@ Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accep
 Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
 
 Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+Route::get('/advertismentUpload', [AdvertisementController::class, 'myAdvertisements'])->name('myAdvertisements');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
