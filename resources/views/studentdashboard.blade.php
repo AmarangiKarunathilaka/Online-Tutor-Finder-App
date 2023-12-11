@@ -68,7 +68,9 @@
                         <div class="col">   
                                     
                             <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                            <h1>{{ $advertisementMath->tutorName }}</h1>
+                            <h2>{{ $advertisementMath->tutorName }}</h2>
+                            <p>{{ $advertisementMath->description }}</p>
+                            <h3>{{ $advertisementMath->subject }}</h3>
                             <button class="register">Register Now</button>
                         </div>
                     @endforeach
@@ -91,7 +93,10 @@
                             <div class="col">   
                                 
                                 <img src="/uploads/{{ $advertisementPhysic ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                                <h1>{{ $advertisementPhysic->tutorName }}</h1>
+                                <h2>{{ $advertisementPhysic->tutorName }}</h2>
+                                <p>{{ $advertisementPhysic->description }}</p>
+                                <h3>{{ $advertisementPhysic->subject }}</h3>
+                                <button class="register">Register Now</button>
                             </div>
                     @endforeach
             </div>
@@ -113,7 +118,10 @@
                             <div class="col">   
                                 
                                 <img src="/uploads/{{ $advertisementChem ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                                <h1>{{ $advertisementChem ->tutorName }}</h1>
+                                <h2>{{ $advertisementChem->tutorName }}</h2>
+                                <p>{{ $advertisementChem->description }}</p>
+                                <h3>{{ $advertisementChem->subject }}</h3>
+                                <button class="register">Register Now</button>
                             </div>
                     @endforeach
             </div>
@@ -133,7 +141,10 @@
                             <div class="col">   
                                 
                                 <img src="/uploads/{{ $advertisementBio ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                                <h1>{{ $advertisementBio ->tutorName }}</h1>
+                                <h2>{{ $advertisementBio->tutorName }}</h2>
+                                <p>{{ $advertisementBio->description }}</p>
+                                <h3>{{ $advertisementBio->subject }}</h3>
+                                <button class="register">Register Now</button>
                             </div>
                     @endforeach
             </div>
