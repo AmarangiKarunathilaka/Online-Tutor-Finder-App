@@ -77,11 +77,13 @@ class AdvertisementController extends Controller
         return redirect()->route('adminAdvertisementList')->with('success', 'Advertisement rejected successfully!');
     }
 
-    public function advertisementDisplay()
+    public function myAdvertisements()
     {
-        $advertisements = 'Value 1';
-        $advertisements = Advertisement::where('status','=','accepted')->get();
-        return view('studentDashboard', compact('advertisements'));
+        
+        $advertisements = Advertisement::where('status','=','accepted')
+        ->where('tutor_id','=',Session::get('user_id'))
+        ->get();
+        return view('advertismentUpload', compact('advertisements'));
         
     }
     
