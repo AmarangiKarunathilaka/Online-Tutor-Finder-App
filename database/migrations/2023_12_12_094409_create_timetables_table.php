@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('timetables', function (Blueprint $table) {
             $table->id();
             $table->string('day');
-            $table->string('time_slot');
+            $table->string('time');
+            $table->string('any');
+            $table->unsignedBigInteger('tutor_id');
+
+            $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -10,6 +10,8 @@ class Timetable extends Model
     use HasFactory;
     protected $fillable = [
         'day', 
-        'time_slot'
+        'time',
+        'any',
+        'tutor_id',
     ];
 }
