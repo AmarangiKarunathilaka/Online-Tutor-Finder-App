@@ -21,10 +21,7 @@ class ClassMaterial extends Model
         'status',
     ];
 
-    public function tutor()
-    {
-        return $this->belongsTo(Tutor::class);
-    }
+    
 }
 
 
