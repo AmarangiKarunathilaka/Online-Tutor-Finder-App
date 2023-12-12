@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advertisement upload form</title>
    
-    <link rel="stylesheet" href="css/classMaterial.css" />
-    <link rel="stylesheet" href="css/advertisement.css" />
+    <link rel="stylesheet" href="{{ asset('css/classMaterial.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/advertisement.css')}}" />
     
 
     <link href="css/bootstrap-icons.css" rel="stylesheet">   
@@ -27,24 +27,24 @@
     
     <div class="container">
       <div>
-      <h1 class="form-title">Advertisment Upload</h1>
-      <form action="{{ url('/advertisementInput') }}" method="post" enctype="multipart/form-data">
+      <h1 class="form-title">Advertisement Upload</h1>
+      <form action="{{ url('edit',$advertisements->id) }}" method="post" enctype="multipart/form-data">
         @csrf
-
+        {{method_field('PUT')}}
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="fullName">Name</label>
             <input type="text"
                     id="fullName"
                     name="fullName"
-                    placeholder="Name to be displayed"/>
+                    placeholder="Name to be displayed" value="{{$advertisements->tutorName}}"/>
           </div>
           <div class="user-input-box">
             <label for="email">Email</label>
             <input type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your Email"/>
+                    placeholder="Enter your Email" value="{{$advertisements->email}}"/>
           </div>
           
           
@@ -53,16 +53,16 @@
             <input type="text"
                     id="title"
                     name="payment"
-                    placeholder="Enter Your payment for one hour : LKR"/>
+                    placeholder="Enter Your payment for one hour : LKR" value="{{$advertisements->payment}}"/>
           </div>
           <div class="user-input-box">
             <label for="material">Upload image:</label>
-                <input type="file" name="photo"   accept="image/jpeg, image/png, image/jpg" id="input-file" required>
+                <input type="file" name="photo"   accept="image/jpeg, image/png, image/jpg" id="input-file"  value="/uploads/{{$advertisements->photo}}"/>
           </div>
           <div class="user-input-box">
-            <label for="email">Description</label></div>
-            <textarea id="message" name="message" rows="4" placeholder="Your Qualifications..." ></textarea>
-          
+            <label for="email">Description</label>
+            <input type="text" id="message" name="message" rows="4" placeholder="Your Qualifications..." value="{{$advertisements->description}}"/>
+            </div>
           
         </div>
         <div class="category-details-box">
@@ -72,10 +72,10 @@
           <div class="user-input-box">
             <label for="subject">Select Subject</label>
                 <select name="subject" id="subject">
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Chemistry">Biology</option>
+                    <option value="Mathematics" value="{{$advertisements->subject}}">Mathematics</option>
+                    <option value="Physics" value="{{$advertisements->subject}}">Physics</option>
+                    <option value="Chemistry" value="{{$advertisements->subject}}">Chemistry</option>
+                    <option value="Chemistry" value="{{$advertisements->subject}}">Biology</option>
                     
                 </select>
           </div>
@@ -88,7 +88,7 @@
                 <div  class = "popup" id="popup">
                     <img src = "images/tick.png">
                     <h2>Successful</h2>
-                    <p>Your advertisment uploaded</p>
+                    <p>Your advertisment updated</p>
                     <button type = "button" onclick="closePopup()">OK</button>
                 </div>
                     
@@ -111,34 +111,7 @@
     </div>
                   </br>
     
-    <section class= "advertisement">
-    <div class="col-lg-12 col-12">
-            <h2>My Advertisements</h2>
-        </div>
-        
-    </section>
-
-                  </br>
-    <section class="content">
-
-        <div class="row">
-
-            <div class="owl-carousel reviews-carousel">
-                    @foreach ($advertisements as $advertisement)
-                        <div class="col">   
-                                    
-                            <img class="ad" src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                            <h2>{{ $advertisement->tutorName }}</h2>
-                            <p>{{ $advertisement->description }}</p>
-                            <h3>{{ $advertisement->subject }}</h3>
-                            <a href="{{url('update_advertisement',$advertisement->id)}}" ><button type="button" class="register">Update Advertisement</button>
-                            <a href="{{url('delete_advertisement',$advertisement->id)}}" ><button type="button" class="register">Delete</button>
-                        </div>
-                    @endforeach
-            </div>
-
-        </div>
-      </section>
+    
 
       <script src="js/jquery.min.js"></script>
      <script src="js/bootstrap.min.js"></script>

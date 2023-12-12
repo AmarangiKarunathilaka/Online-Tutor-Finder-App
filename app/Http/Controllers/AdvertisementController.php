@@ -86,21 +86,31 @@ class AdvertisementController extends Controller
         return view('advertismentUpload', compact('advertisements'));
         
     }
-    
 
-    public function edit($id)
+    public function showData($id)
     {
-        $advertisement = Advertisement::find($id);
-        return view('advertisements.edit', compact('advertisement'));
+        // update the advertisement
+        $data = Advertisement::find($id);
+        return view('editAdvertisement', ['advertisements'=>$data]);
+      
     }
 
-    public function update(Request $request, $id)
+    public function updateAdvertisement(Request $request, $id)
     {
-        // Validate and update the advertisement
+        // update the advertisement
         $advertisement = Advertisement::find($id);
+        $photo=$request->photo;
+
+        if($photo)
+        {
+            $photoname=time().'.'.$photo->getClientOriginalExtension();
+            $request->photo->move('uploads',$photoname);
+
+            $advertisement->photo=$photoname;
+        }
         $advertisement->update($request->all());
 
-        return redirect()->route('advertisements.index');
+        return redirect()->back();
     }
 
     public function destroy($id)

@@ -185,7 +185,9 @@ Route::get('/studentRequestView', function () {
     return view('studentRequestView');
 });
 
-
+Route::get('/editAdvertisement', function () {
+    return view('editAdvertisement');
+});
 
 
 
@@ -421,7 +423,12 @@ Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardD
 Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
 Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
 
+//Amarangi - delete advertisement
 Route::get('/delete_advertisement/{id}', [AdvertisementController::class, 'destroy']);
+
+//Amarangi - update advertisement
+Route::get('/update_advertisement/{id}', [AdvertisementController::class, 'showData']);
+Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']);
 
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');

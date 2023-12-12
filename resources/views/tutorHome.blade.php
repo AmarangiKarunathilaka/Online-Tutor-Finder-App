@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="images/f.png" alt="">
+                    <img src="{{ asset('images/f.png')}}" alt="">
                 </span>
 
                 <div class="text logo-text">
@@ -114,7 +114,7 @@
     </section>
    
 
-    <script src="js/script.js"></script>
+    <script src="{{ asset('js/script.js')}}"></script>
 
 </body>
 </html>
