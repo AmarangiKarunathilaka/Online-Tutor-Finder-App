@@ -343,12 +343,15 @@ Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
 //TIMETABLE
-Route::get('/editTutorProfile', [TimetableController::class, 'index']);
-Route::post('/update-timetable', [TimetableController::class, 'update']);
+//Route::get('/editTutorProfile', [TimetableController::class, 'index']);
+//Route::post('/update-timetable', [TimetableController::class, 'update']);
+Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+
+Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
 
 //Tutorprofile
-//Route::post('/editTutorProfile', [TutorProfileController::class, 'editTutorProfile'])->name('editTutorProfile');
+Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfile'])->name('editTutorProfile');
 
 Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
 
