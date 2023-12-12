@@ -17,7 +17,8 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\combinedDisplayController;
 //Ramal
 use App\Http\Controllers\PdfController;
-
+//kavin
+use App\Http\controllers\ForgetPasswordManager;
 
 
 //chat
@@ -45,6 +46,8 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
+
+Route::get('/login', [ForgetPasswordManager::class,'showLoginForm'])->name('login');
 
 Route::get('/registration', function () {
     return view('registration');
@@ -275,8 +278,8 @@ Route::POST('add',[UserProfileController::class,'editTutorProfile']);
  
 //kavindra
 Route::post('/postlogin', [LoginController::class, 'login'])->name('postlogin'); 
-Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request'); 
-Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email'); 
+//Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request'); 
+//Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email'); 
 
 Route::post('/studentInput', [studentRegisterController::class, 'studentRegisterInput'])->name('studentRegisterInput');
 Route::post('/tutorInput', [tutorRegisterController::class, 'tutorRegisterInput'])->name('tutorRegisterInput');
@@ -285,6 +288,20 @@ Route::post('/tutorInput', [tutorRegisterController::class, 'tutorRegisterInput'
 Route::get('/adminStudentList', [studentRegisterController::class, 'adminStudentList']);
 
 Route::get('/adminTutorList', [tutorRegisterController::class, 'adminTutorList'])->name('adminTutorList');
+
+Route::get('/passwordReset', function () {
+    return view('passwordReset');
+});
+
+// password reset new
+
+Route::get("/forget-password",[ForgetPasswordManager::class, "forgetPassword"])->name("forget.password");
+Route::post("/forget-password",[ForgetPasswordManager::class, "forgetPasswordPost"])->name("forget.password.post");
+Route::get("reset-password/{token}",[ForgetPasswordManager::class,"resetPassword"])->name("reset.password");
+Route::post("/reset-password", [ForgetPasswordManager::class, "resetPasswordPost"])->name("reset.password.post");
+
+//Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+
 
 //kavindra
 /*Route::post('/tregister', [tutorRegisterController::class, 'tutorRegister'])->name('tutorRegister');
