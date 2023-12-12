@@ -33,12 +33,18 @@
             <div class="hero">
                 
                     
-                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt>
+                                     
+            @foreach ($profile as $profile)
+                          
+                          <img  src="/profileImage/{{ $profile ->image }}" width='150' height='150' class="img-account-profile rounded-circle mb-2" alt/>
+                                 
+                          @endforeach
 
-                    <div class="small font-italic text-muted mb-4">JPG or PNG or JPEG no larger than 5 MB</div>
-                    <lable for="input-file">Upload image</lable>
-                    <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
-                
+                    <div class="col-xl-6">
+                    <lable for="input-file"><b>Upload image:</b></div>
+                    <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file"></lable>
+                    <div class="back" style= "margin-top:40px; margin-bottom:40px;"><a href="#"> <b>Update</b></a></div>
+            
             </div>
 
             <script>
