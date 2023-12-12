@@ -10,7 +10,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     	<link rel="stylesheet" href="css/editTutorProfile.css" />
-       
 </head>
 <body>
 
@@ -33,19 +32,15 @@
         <div class="card-body text-center">
             <div class="hero">
                 
-            @foreach ($profile as $profile)
-                          
-                          <img  src="/profileImage/{{ $profile ->image }}" width='150' height='150' class="img-account-profile rounded-circle mb-2" alt/>
-                                 
-                          @endforeach
-                   
+                    
+                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt>
 
-                    <div class="col-xl-6">
-                    <lable for="input-file"><b>Upload image:</b></div>
-                    <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file"></lable>
-                    <div class="back" style= " margin-top:40px; margin-bottom:40px;"><a href="#"> <b>Update</b></a></div>
-            
+                    <div class="small font-italic text-muted mb-4">JPG or PNG or JPEG no larger than 5 MB</div>
+                    <lable for="input-file">Upload image</lable>
+                    <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                
             </div>
+
             <script>
                 let profilePic = document.getElementById("profile-pic");
                 let inputFile = document.getElementById("input-file");
@@ -57,9 +52,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="col-xl-8">
 <div class="card mb-4">
 <h2 style= " margin-top:20px;">When can you take classes?</h2>
@@ -268,7 +260,10 @@
     </div>
     </div>
 </div>
+</div>
+</div>
 
+	
             </section>
     @endsection
 

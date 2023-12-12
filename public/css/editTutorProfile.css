@@ -31,6 +31,25 @@ body{
 
 
 
+.nav-borders .nav-link.active {
+    color: #ff7b00;
+    border-bottom-color: #0061f2;
+}
+.nav-borders .nav-link {
+    color: #eff308;
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    /*margin-left: 1rem;*/
+    /*margin-right: 1rem;*/
+}
+
+
+
 
         
         table {
@@ -221,4 +240,69 @@ body{
             border: 1px solid #ccc;
             border-radius: 7px;
             background-color: white; /* Add a white background color */
+        
         }
+
+        /* Change color of dropdown items on hover */
+        .dropdown .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown content when hovering over the dropdown button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+    
+
+
+
+       
+
+        table {
+            background-color: #fff;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           
+            margin-top: 20px;
+           
+        }
+          
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        td {
+            cursor: pointer;
+        }
+
+        td.selected {
+            background-color: #4caf50;
+            color: white;
+        }
+        .back{
+            background-color: #bacf01;
+            color: rgb(143, 3, 3);
+            padding: 9px ;
+            font-size: 23px;
+            font-weight: 500 ;
+            width: 160px;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            text-align: center;
+            border-radius: 4px;
+            
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+
+        }
+
