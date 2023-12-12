@@ -18,6 +18,9 @@ use App\Http\Controllers\CombinedDisplayController;
 //Ramal
 use App\Http\Controllers\PdfController;
 
+use App\Http\Controllers\TimetableController;
+use App\Http\Controllers\TutorProfileController;
+
 
 
 //chat
@@ -329,17 +332,27 @@ Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminCla
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
-
-
 Route::get('/materialContent/maths', [ClassMaterialController::class, 'maths'])->name('maths');
 Route::get('/materialContent/chemistry', [ClassMaterialController::class, 'chemistry'])->name('chemistry');
 Route::get('/materialContent/physics', [ClassMaterialController::class, 'physics'])->name('physics');
 Route::get('/materialContent/biology', [ClassMaterialController::class, 'biology'])->name('biology');
 
-
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
 
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
+
+
+//TIMETABLE
+Route::get('/editTutorProfile', [TimetableController::class, 'index']);
+Route::post('/update-timetable', [TimetableController::class, 'update']);
+
+
+//Tutorprofile
+//Route::post('/editTutorProfile', [TutorProfileController::class, 'editTutorProfile'])->name('editTutorProfile');
+
+Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
+
+Route::get('/tutorDashboard', [TutorProfileController::class, 'tutorDashboard'])->name('tutorDashboard');
 
 
 
