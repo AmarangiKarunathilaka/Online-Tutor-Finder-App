@@ -113,7 +113,7 @@ body{
             width: 100%;
             max-width: 1150px;
             background: rgba(0, 0, 0, 0.5);
-            padding: 30px;
+            padding: 50px;
             margin:  1% ;
             margin-top: 40px;
             border-radius: 20px;
@@ -182,12 +182,10 @@ body{
 
         
        
-       
-        
         .btn{
             margin-left: 40%;
             width: 15%;
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 20px;
             padding: 10px;
             border:none;
@@ -291,7 +289,7 @@ body{
         }
         .back{
             background-color: #bacf01;
-            color: rgb(143, 3, 3);
+            color: rgb(73, 68, 68);
             padding: 9px ;
             font-size: 23px;
             font-weight: 500 ;
