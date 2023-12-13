@@ -12,10 +12,35 @@
     <link href="{{asset('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css')}}" rel='stylesheet'>
     
     <title>Dashboard Sidebar Menu</title> 
+    
+
+
+    
 </head>
 <body>
+
+
     <nav class="sidebar close">
         <header>
+
+            <!-- Notification Panel -->
+            <div class="notification-panel">
+                <div class="notification-icon" id="notificationIcon">
+                    <i class='bx bx-bell'></i>
+                    <!-- <span class="badge">3</span> -->
+                </div>
+
+                <div class="notification-content">
+                    <h3>Notifications</h3>
+                    <ul>
+                        <li></li>
+                        <li>New message received</li>
+                        <li>Class request accepted</li>
+                        <li>Advertisement uploaded</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="image-text">
                 <span class="image">
                     <img src="{{asset('images/f.png')}}" alt="">
@@ -29,6 +54,8 @@
             </div>
 
             <i class='bx bx-chevron-right toggle'></i>
+
+           
         </header>
 
         <div class="menu-bar">
@@ -115,10 +142,14 @@
         <div class="text"></div>
     </section>
 
-        
+   
+    
+
+
 
 
 <script src="{{ asset('js/script.js') }}"></script>
+
 
 
     
