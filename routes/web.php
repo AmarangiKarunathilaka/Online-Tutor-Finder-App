@@ -19,6 +19,8 @@ use App\Http\Controllers\combinedDisplayController;
 use App\Http\Controllers\PdfController;
 //kavin
 use App\Http\controllers\ForgetPasswordManager;
+use App\Http\Controllers\EmailController;
+
 
 
 //chat
@@ -300,6 +302,15 @@ Route::post("/forget-password",[ForgetPasswordManager::class, "forgetPasswordPos
 Route::get("reset-password/{token}",[ForgetPasswordManager::class,"resetPassword"])->name("reset.password");
 Route::post("/reset-password", [ForgetPasswordManager::class, "resetPasswordPost"])->name("reset.password.post");
 
+//email send accept/remove
+
+//Route::get('/send-email-button', [EmailController::class, 'showEmailForm'])->name('send.email.form');
+//Route::post('/send-email-button', [EmailController::class, 'sendEmail'])->name('send.email');
+
+Route::post('/send-email-button', [EmailController::class, 'sendEmailButton'])->name('send.email.button');
+Route::get('/send-email-button', [EmailController::class, 'sendEmailButton'])->name('send.email.button');
+
+Route::post('/send-email', [EmailController::class, 'sendEmail'])->name('send.email');
 //Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
 
