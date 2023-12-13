@@ -4,24 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 
-class ClassMaterial extends Model
+class TutorProfile extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'tutorName',
-        'email',
+        'tutorFullName',
+        'tutorEmail',
+        'tutorPhoneNumber',
+        'qualification',
         'subject',
-        'title',
-        'lecNote',
-        'file',
+        'medium',
+        'image',
         'tutor_id',
-        'status',
     ];
-
-    
 }
-
-

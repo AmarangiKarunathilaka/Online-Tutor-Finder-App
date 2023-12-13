@@ -23,6 +23,7 @@ return new class extends Migration
                 $table->string('studentEmail')->unique();
                 $table->string('password');
                 $table->string('studentConfirmPassword')->nullable();
+                $table->string('status')->default('pending');
                 $table->timestamps();
         });
     }

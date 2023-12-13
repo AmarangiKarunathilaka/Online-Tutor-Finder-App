@@ -88,15 +88,7 @@
 </nav>
 </header>
 
-<form action="{{ route('view-pdf') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button type="button" onclick="generateReport()">Generate Report</button>
 
-                </div>
-            </form>
-
-        </div>
     
     </section>
     @endsection

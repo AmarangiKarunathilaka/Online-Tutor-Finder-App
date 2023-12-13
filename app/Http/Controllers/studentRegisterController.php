@@ -18,6 +18,25 @@ class studentRegisterController extends Controller
         return view('adminStudentList', compact('students'));
     }
 
+    public function accept_student($id)
+    {
+        
+        $data = studentRegister::find($id);
+        $data->status = 'accepted';
+        $data->save();
+
+        return redirect()->route('adminStudentList')->with('success', 'Student accepted successfully!');
+    }
+
+    public function reject_student($id)
+    {
+        $data = studentRegister::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+        return redirect()->route('adminStudentList')->with('success', 'Student rejected successfully!');
+    }
+
     public function studentRegisterInput(Request $request)
     {
         $rules = [

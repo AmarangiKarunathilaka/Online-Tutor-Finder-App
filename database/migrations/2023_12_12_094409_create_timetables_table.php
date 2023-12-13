@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_profiles', function (Blueprint $table) {
+        Schema::create('timetables', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('contact');
-            $table->string('qualification');
-            $table->string('subject');
-            $table->string('medium');
-            $table->string('image'); // Assuming you store the image path in the database
+            $table->string('day');
+            $table->string('time');
+            $table->string('any');
+            $table->unsignedBigInteger('tutor_id');
+
+            $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_profiles');
+        Schema::dropIfExists('timetables');
     }
 };

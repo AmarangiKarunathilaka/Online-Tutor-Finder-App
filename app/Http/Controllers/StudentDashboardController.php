@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Feedback;
 use App\Models\Advertisement;
 
-
-
-class CombinedDisplayController extends Controller
+class StudentDashboardController extends Controller
 {
-    public function combinedDisplay()
+    public function advertisementDisplay()
     {
+    
         $advertisementMaths = Advertisement::where('status', '=', 'accepted')
         ->where('subject', '=', 'Mathematics')
         ->get();
@@ -28,11 +26,7 @@ class CombinedDisplayController extends Controller
         ->where('subject', '=', 'Biology')
         ->get();
         
-        $feedback = Feedback::where('status','=','accepted')->get();
-    
-        return view('index', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'feedback'));
+        return view('studentDashboard', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology'));
+        
     }
-
-    
-    
 }

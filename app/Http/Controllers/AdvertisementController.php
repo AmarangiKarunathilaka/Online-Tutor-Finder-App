@@ -7,6 +7,9 @@ use App\Models\Advertisement;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Session;
+use Auth;
 
 class AdvertisementController extends Controller
 {
@@ -18,10 +21,10 @@ class AdvertisementController extends Controller
 
     public function advertisementUploadInput(Request $request)
     {
-        $keyValue = $request->input('key');
-
+        
+        $userId = Session::get('user_id');
         $advertisement= new Advertisement();
-        $advertisement->tutor_id = $request->key;
+        $advertisement->tutor_id = $userId;
         $advertisement->tutorName = $request -> fullName;
         $advertisement->email = $request->email;
         $advertisement->payment = $request -> payment;
@@ -74,28 +77,40 @@ class AdvertisementController extends Controller
         return redirect()->route('adminAdvertisementList')->with('success', 'Advertisement rejected successfully!');
     }
 
-    public function advertisementDisplay()
+    public function myAdvertisements()
     {
-        $advertisements = 'Value 1';
-        $advertisements = Advertisement::where('status','=','accepted')->get();
-        return view('index', compact('advertisements'));
+        
+        $advertisements = Advertisement::where('status','=','accepted')
+        ->where('tutor_id','=',Session::get('user_id'))
+        ->get();
+        return view('advertismentUpload', compact('advertisements'));
         
     }
-    
 
-    public function edit($id)
+    public function showData($id)
     {
-        $advertisement = Advertisement::find($id);
-        return view('advertisements.edit', compact('advertisement'));
+        // update the advertisement
+        $data = Advertisement::find($id);
+        return view('editAdvertisement', ['advertisements'=>$data]);
+      
     }
 
-    public function update(Request $request, $id)
+    public function updateAdvertisement(Request $request, $id)
     {
-        // Validate and update the advertisement
+        // update the advertisement
         $advertisement = Advertisement::find($id);
+        $photo=$request->photo;
+
+        if($photo)
+        {
+            $photoname=time().'.'.$photo->getClientOriginalExtension();
+            $request->photo->move('uploads',$photoname);
+
+            $advertisement->photo=$photoname;
+        }
         $advertisement->update($request->all());
 
-        return redirect()->route('advertisements.index');
+        return redirect()->back();
     }
 
     public function destroy($id)
@@ -103,6 +118,6 @@ class AdvertisementController extends Controller
         // Delete the advertisement
         Advertisement::destroy($id);
 
-        return redirect()->route('advertisements.index');
+        return redirect()->back();
     }
 }
