@@ -307,6 +307,9 @@ Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('co
 //Route::resource('user-profiles', 'UserProfileController');
 //Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
+Route::get('/delete_profile/{id}', [TutorProfileController::class, 'destroy']);
+
+
 
 use App\Http\Controllers\YourController;
 
