@@ -447,8 +447,8 @@ Route::post('send-message',function (Request $request){
 
 Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardDisplay'])->name('adminDashboardDisplay');
 
-Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
-Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
+Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student']);
+Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student']);
 
 //Amarangi - delete advertisement
 Route::get('/delete_advertisement/{id}', [AdvertisementController::class, 'destroy']);
