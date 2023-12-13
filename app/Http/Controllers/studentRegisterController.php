@@ -82,10 +82,11 @@ class studentRegisterController extends Controller
         return view('login', compact('user_type'));
     }
 
+    //Amare 2023.12.13
     public function generate_pdf_student()
     {
         $students = studentRegister::all(); 
-        $pdf = Pdf::loadView('adminStudentList',array('students' => $students));
-        return $pdf->download('adminStudentList.pdf');
+        $pdf = Pdf::loadView('downloads/studentList',array('students' => $students));
+        return $pdf->download('downloads/studentList.pdf');
     }
 }

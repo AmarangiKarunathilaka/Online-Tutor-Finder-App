@@ -245,10 +245,14 @@ Route::get('/download-pdf',[PdfController::class,'download_pdf']);
 
 
 
-// Ramal End
+//Amare
 Route::post('/generate_pdf_student',[studentRegisterController::class,'generate_pdf_student'])->name('generate_pdf_student');
 
+//My
+Route::post('/generate_pdf_tutor',[tutorRegisterController::class,'generate_pdf_tutor'])->name('generate_pdf_tutor');
 
+
+//Ramal End
 
 
 

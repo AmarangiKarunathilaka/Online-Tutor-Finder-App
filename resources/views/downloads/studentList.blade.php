@@ -9,8 +9,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css"  rel="stylesheet">
+    <link href="css/report.css" rel="stylesheet">
     <title>Student Table</title>
+
+    <style>
+        
+    </style>
 
 </head>
 <body>
@@ -32,8 +36,7 @@
             </div>
         </div>
     </div>-->
-    @extends('adminHomeContent')
-    @section('content')
+    
     <section class="home">
         <div class="text">Student List</div>
     
@@ -82,6 +85,6 @@
         
     </div>
     </section>
-    @endsection
+    
 </body>
 </html>

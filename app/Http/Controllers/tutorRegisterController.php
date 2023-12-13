@@ -9,6 +9,8 @@ use App\Models\tutorSubject;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+//Ramal
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class tutorRegisterController extends Controller
 {
@@ -126,4 +128,13 @@ class tutorRegisterController extends Controller
 
         // return redirect() -> back();
      }
+
+     //Ramal 2023.12.13
+     public function generate_pdf_tutor()
+    {
+        $tutor = tutorRegister::all(); 
+        $pdf = Pdf::loadView('downloads/tutorList',array('tutor' => $tutor));
+        return $pdf->download('downloads/tutorList.pdf');
+    }
+     
 }

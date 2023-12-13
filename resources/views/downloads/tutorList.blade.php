@@ -9,8 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css"  rel="stylesheet">
-    <title>Student Table</title>
+    <title>Tutor Table</title>
 
 </head>
 <body>
@@ -32,56 +31,57 @@
             </div>
         </div>
     </div>-->
-    @extends('adminHomeContent')
-    @section('content')
+
     <section class="home">
-        <div class="text">Student List</div>
+        <div class="text">Tutor List</div>
     
 
 
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
         <div class="form-box">
             <div class="container mt-4 ">
                 
                 <table class="table table-success table-striped">
-                    
+                
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">studentFullName</th>
-                        <th scope="col">birthday</th>
-                        <th scope="col">address</th>
-                        <th scope="col">studentPhoneNumber</th>
-                        <th scope="col">studentEmail</th>
+                        <th scope="col">tutorFullName</th>
+                        <th scope="col">tutorPhoneNumber</th>
+                        <th scope="col">qualification</th>
+                        <th scope="col">tutorEmail</th>
+                        <th scope="col">tutorMedium</th>
+                        <th scope="col">tutorSubject</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
-                </thead>  
+                </thead> 
 
                 <tbody>
-                    @foreach ($students as $student)
-                
+                     
+                    @foreach ($tutor as $tutor)
+
                     <tr>
-                    <th scope="row">{{ $student->id }}</th>
-                    <td>{{ $student->studentFullName }}</td>
-                    <td>{{ $student->birthday }}</td>
-                    <td>{{ $student->address }}</td>
-                    <td>{{ $student->studentPhoneNumber }}</td>
-                    <td>{{ $student->studentEmail }}</td>
+                        <th {{ $tutor->id }}</th>
+                        <td>{{ $tutor->tutorFullName }}</td>
+                        <td>{{ $tutor->tutorPhoneNumber }}</td>
+                        <td>{{ $tutor->qualification }}</td>
+                        <td>{{ $tutor->tutorEmail }}</td>
+                        <td>{{ $tutor->tutorMedium }}</td>
+                        <td>{{ $tutor->tutorSubject}}</td>
                         <td><button type="button" class="accept">Accept </button>
                             <button type="button" class="remove">Remove</button></td>
                     </tr>
-                    
+                        
                     @endforeach
-                </tbody>
-
+                </tbody>    
+                    
                 </table>
                         
             </div>
         </div>
-        
-        
     </div>
+
     </section>
-    @endsection
+
 </body>
 </html>
