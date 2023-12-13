@@ -32,8 +32,7 @@
             </div>
         </div>
     </div>-->
-    @extends('adminHomeContent')
-    @section('content')
+    
     <section class="home">
         <div class="text">Student List</div>
     
@@ -79,15 +78,9 @@
             </div>
         </div>
         
-        <form action="{{ route('view-pdf') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button type="button" onclick="generateReport()">Generate Report</button>
-
-                </div>
-            </form>
+        
     </div>
     </section>
-    @endsection
+    
 </body>
 </html>
