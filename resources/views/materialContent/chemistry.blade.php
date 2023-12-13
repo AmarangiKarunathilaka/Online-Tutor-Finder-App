@@ -26,31 +26,58 @@
 <section class="material" id="section2">
    <table class="table table-success table-striped">
 
-   @foreach ($classmaterial as $classmaterial)
+   
    <thead>
    <tr>
-        <th><b>{{ $classmaterial->subject }}</b></th>
+        <th><b>Chemistry</b></th>
         </tr>
-    </thead> 
+  </thead> 
 
-    <tbody>
-        <tr>
-        <td>{{ $classmaterial->tutorName }}
+  <tbody>
+      
+    @php
+      $lastTutorName = null;
+    @endphp
+
+    @foreach ($note as $note)
+      @if($lastTutorName !== $note->tutorName)
+        <tr><td>Tutor Name: {{ $note->tutorName }} </td></tr>
+        <tr><td>
         <ul class="list">
             <li class="post"><b>Class Note</b></li>
-            <a href="{{url('/download',$classmaterial->file)}}"> {{ $classmaterial->title }} </a>
+            <li><a href="{{url('/download',$note->file)}}"> {{ $note->title }} </a></li>
 
-           <!-- <iframe src = "/filestore/{{ $classmaterial->file }}" > </iframe> -->
+          @php
+            $lastTutorName = $note->tutorName
+          @endphp
+      
+      @else
+        <li><a href="{{url('/download',$note->file)}}"> {{ $note->title }} </a></li>
+      @endif
 
+      @endforeach
+      </td></tr>
+        
+        <tr><td>
+        <ul class="list">
             <li class="post"><b>Assignment</b></li>
-            <a href="{{url('/download',$classmaterial->file)}}"> {{ $classmaterial->title }} </a>
+            @foreach ($ass as $ass)
+            <li><a href="{{url('/download',$ass->file)}}"> {{ $ass->title }} </a></li>
 
+      @endforeach
+      </td></tr> 
+     
+        <tr><td>
+        <ul class="list">
             <li class="post"><b>Reference</b></li>
-           <a href="{{url('/download',$classmaterial->file)}}"> {{ $classmaterial->title }} </a>
-        </td>
-        </tr>
+            @foreach ($ref as $ref)
+            <li><a href="{{url('/download',$ref->file)}}"> {{ $ref->title }} </a></li>
+
+      @endforeach
+      </td></tr> 
+
+      
     </tbody>
-    @endforeach
 </table>
 </session>
 

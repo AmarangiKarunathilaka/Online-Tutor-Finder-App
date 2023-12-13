@@ -52,19 +52,19 @@
     font-weight: bolder;
     text-align: center;
     color: #eceaf3;
-    background-color: #090901;
+    background-color: #0c0242;
 
 }
 
 .subject h3{
-    font-size: 40px;
+    font-size: 25px;
     margin-bottom: 70px;
     margin-top: 120px;
     margin-left: 50px;
     height: 40px;
     width: 25%;
     font-weight: bold;
-    color: #0b3e85;
+    color: #000307;
     background-color: #f0f187;
     display: flex;
     
@@ -73,6 +73,7 @@
   margin-bottom: 5%;
   margin-left: 25px;
   margin-right: 25px;
+  
 }
 
 .content-row    {

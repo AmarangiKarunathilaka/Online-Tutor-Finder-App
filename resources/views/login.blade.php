@@ -146,7 +146,7 @@ Bootstrap 5 HTML CSS Template
                         <label for="admin">Admin</label>
                     </div>
                 @endif                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember me  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="{{ route('password.request') }}">Forget Password</a></label>
+                        <label for=""><input type="checkbox">Remember me  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="{{ route('forget.password') }}">Forget Password</a></label>
                         
                     </div>
                     <button>Submit</button>
