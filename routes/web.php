@@ -205,6 +205,7 @@ Route::get('/editAdvertisement', function () {
 
 
 
+
 // Ramal Start
 
 Route::get('/admin/reports',  'AdminReportController@index');
@@ -302,7 +303,7 @@ Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('co
 //Gayathri
 // edit tutor profile-Gayathtri
 //Route::resource('user-profiles', 'UserProfileController');
-Route::POST('add',[UserProfileController::class,'editTutorProfile']);
+//Route::POST('add',[UserProfileController::class,'editTutorProfile']);
 
 
 use App\Http\Controllers\YourController;
