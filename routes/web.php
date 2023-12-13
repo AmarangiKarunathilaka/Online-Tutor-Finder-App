@@ -18,7 +18,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\combinedDisplayController;
 
 
-use App\Http\Controllers\CombinedDisplayController;
+
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\StudentDashboardController;
 
@@ -246,7 +246,7 @@ Route::get('/download-pdf',[PdfController::class,'download_pdf']);
 
 
 // Ramal End
-
+Route::post('/generate_pdf_student',[studentRegisterController::class,'generate_pdf_student'])->name('generate_pdf_student');
 
 
 
