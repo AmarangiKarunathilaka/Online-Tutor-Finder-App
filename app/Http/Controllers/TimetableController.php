@@ -46,9 +46,9 @@ class TimetableController extends Controller
         $timeslot= new Timetable;
         $timeslot->day = $request->day;
         $timeslot->time = $request->time;
-        $timeslot->any = $request->any;
         $timeslot->tutor_id = $userId;
 
+        $timeslot->save();
         return redirect()->back();
     }
 

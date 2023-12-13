@@ -22,7 +22,7 @@
 <form action="{{ url('/TutorprofileInput') }}" method="post"  enctype="multipart/form-data">
             @csrf
 
-            <input type="hidden" name="key" value="1">
+           
 <hr class="mt-0 mb-4">
 <div class="row">
 <div class="col-xl-4">
@@ -32,18 +32,18 @@
         <div class="card-body text-center">
             <div class="hero">
                 
-                    
+                   
                                      
             @foreach ($profile as $profile)
                           
-                          <img  src="/profileImage/{{ $profile ->image }}" width='150' height='150' class="img-account-profile rounded-circle mb-2" alt/>
+                          <img src="/profileImage/{{ $profile ->image }}" width='150' height='150' class="img-account-profile rounded-circle mb-2" alt/>
                                  
                           @endforeach
 
                     <div class="col-xl-6">
                     <lable for="input-file"><b>Upload image:</b></div>
-                    <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file"></lable>
-                    <div class="back" style= "margin-top:20px; margin-bottom:20px;"><a href="#"> <b>Update</b></a></div>
+                    <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                    <input type="submit" style= "margin-top:20px; margin-bottom:20px; background-color: #bacf01; padding:8px;width:200px;font-size:23px;font-weight:600 ; border-radius: 4px; border:none;"> 
             
             </div>
 
@@ -55,18 +55,18 @@
                     profilePic.src=URL.createObjectURL(inputFile.files[0])
                 }
             </script>
-        </div>
+        </div></form> 
     </div>
-</div>
+</div> 
 <div class="col-xl-8">
 <div class="card mb-3">
 
             </div>
-<body>
+
 
             <div class="container">
             <h1 class="form-title">When can you take classes?</h1>
-<form method="post" action="{{ url('/timeInput') }}">
+    <form method="post" action="{{ url('/timeInput') }}" enctype="multipart/form-data">
         @csrf
         <div class="main-user-info">
         <div class="user-input-box">
@@ -95,19 +95,16 @@
                 </select>
           </div>
 
-          <div class="user-input-box">
-        <label for="days"> Anther Time Slot:</label>
-        <input type="text" name="any" placeholder="Monday 9:00 AM-11:00 AM" >
 
+            <button style=" width:180px;" type="submit" class="btn"><b>Add Class<b></button>
             </div>
-
-            <button style="margin-top:100px; width:200px;" type="submit" class="btn"><b>Add Class<b></button>
-            </div>
-            </div>
+            </form>
             </div>
             </div>
-    </form>
-
+            </div>
+   
+     <form action="{{ url('/detailInput') }}" method="post"  enctype="multipart/form-data">
+            @csrf
 
             <div class="container">
             <h1 class="form-title">Profile Details</h1>
@@ -172,13 +169,13 @@
         <button type="submit" class="btn"><b>Upload<b></button>
         </div>
 
-        </form>
+       
     </div>
     </div>
 </div>
 </div>
 </div>
-
+</form>
 	
             </section>
     @endsection

@@ -91,13 +91,13 @@
                                 <h3 class="mt-4 text-center ">Information</h3>
                                 <hr class="badge-primary mt-2 w-30">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6">@foreach ($detail as $detail)
                                         <p class="font-weight-bold">Email</p>
-                                        <h6 class="text-muted">{{$profile->tutorEmail}}</h6>
+                                        <h6 class="text-muted">{{$detail->tutorEmail}}</h6>
                                     </div>
                                     <div class="col-sm-6">
                                         <p class="font-weight-bold">Phone</p>
-                                        <h6 class="text-muted">{{$profile->tutorPhoneNumber}}</h6>
+                                        <h6 class="text-muted">{{$detail->tutorPhoneNumber}}</h6>
                                     </div>
                                 </div> 
                                
@@ -105,9 +105,9 @@
                                 <div class="row">
                                     <div class="col-sm-8">
                                     <p class="font-weight-bold">Qualification</p>
-                                        <h6 class="text-muted" >{{$profile->qualification}}</h6>
+                                        <h6 class="text-muted" >{{$detail->qualification}}</h6>
                                     </div>
-                                    
+                                    @endforeach
                                 </div>
                                 <hr class="bg-primary">
                                 <ul class="list-unstyled d-flex justify-content-center" mt-4>

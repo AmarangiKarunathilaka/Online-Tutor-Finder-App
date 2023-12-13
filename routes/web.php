@@ -375,7 +375,7 @@ Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 //TIMETABLE
 //Route::get('/editTutorProfile', [TimetableController::class, 'index']);
 //Route::post('/update-timetable', [TimetableController::class, 'update']);
-Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+//Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
@@ -387,6 +387,7 @@ Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileIn
 
 Route::get('/tutorDashboard', [TutorProfileController::class, 'tutorDashboard'])->name('tutorDashboard');
 
+Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
 
 
 //nalaka
