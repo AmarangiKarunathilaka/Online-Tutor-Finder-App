@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\studentRegister;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class studentRegisterController extends Controller
 {
@@ -79,5 +80,12 @@ class studentRegisterController extends Controller
         //return redirect(route('tregister'));
         $user_type = 'student';
         return view('login', compact('user_type'));
+    }
+
+    public function generate_pdf_student()
+    {
+        $students = studentRegister::all(); 
+        $pdf = Pdf::loadView('adminStudentList',array('students' => $students));
+        return $pdf->download('adminStudentList.pdf');
     }
 }
