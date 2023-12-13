@@ -13,19 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('class_requests', function (Blueprint $table) {
+        Schema::create('tutor_profiles', function (Blueprint $table) {
             $table->id();
-            $table->date('keydate')->nullable();
-            $table->time('time')->nullable();
+            $table->string('tutorFullName');
+            $table->string('tutorEmail');
+            $table->string('tutorPhoneNumber');
+            $table->string('qualification');
             $table->string('subject');
             $table->string('medium');
-            $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('student_registers')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('student_name');
+            $table->string('image');
             $table->unsignedBigInteger('tutor_id');
+            
+
             $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('tutor_name');
-            $table->boolean('status')->default(0);
+           
             $table->timestamps();
         });
     }
@@ -37,6 +38,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_requests');
+        Schema::dropIfExists('tutor_profiles');
     }
 };
+

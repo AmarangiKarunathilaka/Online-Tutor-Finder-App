@@ -308,3 +308,12 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
+
+.register {
+    background: orangered;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}

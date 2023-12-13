@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
+    
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/advertisementstyle.css">
     
@@ -24,111 +25,23 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Student Dashboard</title> 
 </head>
 <body>
-    <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="images/f.png" alt="">
-                </span>
-
-                <div class="text logo-text">
-
-
-                    <span class="name">Tutor</span>
-                    <span class="profession">Finder System</span>
-
-
-                </div>
-            </div>
-
-            <i class='bx bx-chevron-right toggle'></i>
-        </header>
-
-        <div class="menu-bar">
-            <div class="menu">
-
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                </li>
-
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-home-alt icon' ></i>
-                            <span class="text nav-text">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-note icon' ></i>
-                            <span class="text nav-text">Class Registration</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="/classMaterial">
-                            <i class='bx bx-book-open icon'></i>
-                            <span class="text nav-text">Class Materials</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="/chat">
-                            <i class='bx bxs-conversation icon' ></i>
-                            <span class="text nav-text">Conversation</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-edit icon' ></i>
-                            <span class="text nav-text">Feedback</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="bottom-content">
-                <li class="">
-                    <a href="/">
-                        <i class='bx bx-log-out icon' ></i>
-                        <span class="text nav-text">Logout</span>
-                    </a>
-                </li>
-
-                <li class="mode">
-                    <div class="sun-moon">
-                        <i class='bx bx-moon icon moon'></i>
-                        <i class='bx bx-sun icon sun'></i>
-                    </div>
-                    <span class="mode-text text">Dark mode</span>
-
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
-                    </div>
-                </li>
-                
-            </div>
-        </div>
-
-    </nav>
-
-    <section class="home">
-
-       
-
+@extends('studentHomeContent')
+  @section('content')
+  <section class="home">
+        <div class="text"></div>
+    
+    
+    <div class="container">
+    
         
    
 
     
 <!---------------------------------------
-    advertisement   (ishara)           
+    advertisements            
   ----------------------------------------->
 
     <section class= "advertisement">
@@ -139,221 +52,127 @@
     </section>
 
 
-<section class="content">
+    <section class="content">
 
 
-     <div class="col-lg-12 col-12">
-        <div class="subject">
-            <h3><i><u>Combine Maths</u></i></h3>
-        </div>
-    </div>
-
-<div class="row">
-
-    <div class="owl-carousel reviews-carousel">
-
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                    <p> Experience: 5 years<br>
-                    Rate: $50/hour<br>
-                    <a href="#">Contact</a></p>
-    
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Mathematics</u></i></h3>
+            </div>
         </div>
 
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                    <p> Experience: 5 years<br>
-                    Rate: $50/hour<br>
-                    <a href="#">Contact</a></p>
-  
-        </div>
+        <div class="row">
 
-    
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-    
-</div>
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-    </div>
-   
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-    </div>
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementMaths as $advertisementMath)
+                        <div class="col">   
+                                    
+                            <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                            <h2>{{ $advertisementMath->tutorName }}</h2>
+                            <p>{{ $advertisementMath->description }}</p>
+                            <h3>{{ $advertisementMath->subject }}</h3>
+                            <button class="register">Register Now</button>
+                        </div>
+                    @endforeach
+            </div>
 
-</div>
-</div>
-
-
-
-<div class="col-lg-12 col-12">
-    <div class="subject">
-        <h3><i><u>Biology</u></i></h3>
-    </div>
-</div> 
-
-<div class="row">
-    
-    <div class="owl-carousel reviews-carousel">
-
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                    <p> Experience: 5 years<br>
-                    Rate: $50/hour<br>
-                    <a href="#">Contact</a></p>
-    
         </div>
 
 
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
+
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Physics</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+            
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementPhysics as $advertisementPhysic)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementPhysic ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h2>{{ $advertisementPhysic->tutorName }}</h2>
+                                <p>{{ $advertisementPhysic->description }}</p>
+                                <h3>{{ $advertisementPhysic->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+            
+        </div> 
+
+
+
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Chemistry</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementChemistry as $advertisementChem)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementChem ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h2>{{ $advertisementChem->tutorName }}</h2>
+                                <p>{{ $advertisementChem->description }}</p>
+                                <h3>{{ $advertisementChem->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+
         </div>
 
 
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                    <p> Experience: 5 years<br>
-                    Rate: $50/hour<br>
-                    <a href="#">Contact</a></p>
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Biology</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementBiology as $advertisementBio)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementBio ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h2>{{ $advertisementBio->tutorName }}</h2>
+                                <p>{{ $advertisementBio->description }}</p>
+                                <h3>{{ $advertisementBio->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+
         </div>
 
-
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                    <p> Experience: 5 years<br>
-                    Rate: $50/hour<br>
-                    <a href="#">Contact</a></p>
-        </div>
+    </section>
     
     </div>
-</div> 
+    
 
 
 
-    <div class="col-lg-12 col-12">
-        <div class="subject">
-        <h3><i><u>Chemistry</u></i></h3>
-    </div>
-</div> 
-
-<div class="row">
-
-    <div class="owl-carousel reviews-carousel">
-
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-</div>
-
-<div class="col">
-    <img src="images/team-01.jpg">
-        <h2>James Fernando </h2>
-            <p> Experience: 5 years<br>
-            Rate: $50/hour<br>
-            <a href="#">Contact</a></p>
-</div>
-
-<div class="col">
-    <img src="images/team-01.jpg">
-        <h2>James Fernando </h2>
-            <p> Experience: 5 years<br>
-            Rate: $50/hour<br>
-            <a href="#">Contact</a></p>
-</div>
-
-<div class="col">
-    <img src="images/team-01.jpg">
-        <h2>James Fernando </h2>
-            <p> Experience: 5 years<br>
-            Rate: $50/hour<br>
-            <a href="#">Contact</a></p>
-</div>
-
-</div>
-</div>
 
 
-<div class="col-lg-12 col-12">
-    <div class="subject">
-        <h3><i><u>Physics</u></i></h3>
-    </div>
-</div> 
-
-<div class="row">
-    <div class="owl-carousel reviews-carousel">
-
-        <div class="col">
-            <img src="images/team-01.jpg">
-                <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-
-        </div>
-
-    <div class="col">
-        <img src="images/team-01.jpg">
-            <h2>James Fernando </h2>
-                <p> Experience: 5 years<br>
-                Rate: $50/hour<br>
-                <a href="#">Contact</a></p>
-    </div>
-
-<div class="col">
-    <img src="images/team-01.jpg">
-        <h2>James Fernando </h2>
-            <p> Experience: 5 years<br>
-            Rate: $50/hour<br>
-            <a href="#">Contact</a></p>
-</div>
-
-<div class="col">
-    <img src="images/team-01.jpg">
-        <h2>James Fernando </h2>
-            <p> Experience: 5 years<br>
-            Rate: $50/hour<br>
-            <a href="#">Contact</a></p>
-</div>
-</div>
-</div>
-</section>
-</section> 
-
-</section>
-
-<script src="js/script.js"></script>
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
      <script src="js/click-scroll.js"></script>
      <script src="js/jquery.backstretch.min.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/custom.js"></script>
 
+     </section> 
+
+     @endsection
+
 </body>
 </html>
+</span>

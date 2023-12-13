@@ -11,7 +11,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Admin Home</title> 
 </head>
 <body>
     <nav class="sidebar close">
@@ -40,7 +40,7 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="">
+                        <a href="/adminDashboard">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -71,6 +71,13 @@
                         <a href="/adminClassMaterialList">
                             <i class='bx bx-file icon' ></i>
                             <span class="text nav-text">Class Material List</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/adminClassRequestList">
+                            <i class='bx bx-file icon' ></i>
+                            <span class="text nav-text">Class Request List</span>
                         </a>
                     </li>
 

@@ -7,6 +7,7 @@ use App\Models\ClassMaterial;
 use Illuminate\Support\Facades\Stroage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ClassMaterialController extends Controller
 {
@@ -20,6 +21,7 @@ class ClassMaterialController extends Controller
 
     public function classMaterialInput(Request $request)
     {
+        $userId = Session::get('user_id');
         $classmaterial= new ClassMaterial;
         $classmaterial->tutorName = $request->tutorName;
         $classmaterial->email = $request->email;
@@ -27,7 +29,7 @@ class ClassMaterialController extends Controller
         $classmaterial->title = $request->title;
         $classmaterial->lecNote = $request->lecNote;
         $classmaterial->file = $request->file;
-        $classmaterial->tutor_id = $request->key;
+        $classmaterial->tutor_id = $userId;
         
         $file=$request->file;
 
@@ -77,39 +79,88 @@ class ClassMaterialController extends Controller
 
     public function maths()
     {
-        $classmaterial = ClassMaterial::where('status','=','active')->get();
+        $note = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','mathematics')
+                            ->where('lecNote','=','ClassNote')
+                            ->get();
+        
+        $ass = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','mathematics')
+                            ->where('lecNote','=','Assignment')
+                            ->get();
+        
+        $ref = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','mathematics')
+                            ->where('lecNote','=','Reference')
+                            ->get();
+        
 
-        $classmaterial = ClassMaterial::where('subject','=','mathematics')->get();
-
-        return view('materialContent.maths', compact('classmaterial'));
+        return view('materialContent.maths', compact('note','ass','ref'));
     }
 
     public function chemistry()
     {
-        $classmaterial = ClassMaterial::where('status','=','active')->get();
+        $note = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','chemistry')
+                            ->where('lecNote','=','ClassNote')
+                            ->get();
 
-        $classmaterial = ClassMaterial::where('subject','=','chemistry')->get();
+        $ass = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','chemistry')
+                            ->where('lecNote','=','Assignment')
+                            ->get();
 
-        return view('materialContent.chemistry', compact('classmaterial'));
+        $ref = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','chemistry')
+                            ->where('lecNote','=','Reference')
+                            ->get();
+
+
+        return view('materialContent.chemistry', compact('note','ass','ref'));
     }
 
 
     public function physics()
     {
-        $classmaterial = ClassMaterial::where('status','=','active')->get();
+        $note = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','physics')
+                            ->where('lecNote','=','ClassNote')
+                            ->get();
 
-        $classmaterial = ClassMaterial::where('subject','=','physics')->get();
+        $ass = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','physics')
+                            ->where('lecNote','=','Assignment')
+                            ->get();
 
-        return view('materialContent.physics', compact('classmaterial'));
+        $ref = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','physics')
+                            ->where('lecNote','=','Reference')
+                            ->get();
+
+
+        return view('materialContent.physics', compact('note','ass','ref'));
     }
 
     public function biology()
     {
-        $classmaterial = ClassMaterial::where('status','=','active')->get();
+       
+        $note = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','biology')
+                            ->where('lecNote','=','ClassNote')
+                            ->get();
 
-        $classmaterial = ClassMaterial::where('subject','=','biology')->get();
+        $ass = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','biology')
+                            ->where('lecNote','=','Assignment')
+                            ->get();
 
-        return view('materialContent.physics', compact('classmaterial'));
+        $ref = ClassMaterial::where('status','=','active')
+                            ->where('subject','=','biology')
+                            ->where('lecNote','=','Reference')
+                            ->get();
+
+
+        return view('materialContent.biology', compact('note','ass','ref'));
     }
 
 

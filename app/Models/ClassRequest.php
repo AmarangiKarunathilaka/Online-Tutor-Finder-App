@@ -9,9 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClassRequest extends Model
 {
-    use HasFactory;
 
-    protected $fillable = ['keydate', 'time', 'subject', 'medium', 'student_id', 'student_name', 'tutor_id', 'tutor_name', 'status'];
+    protected $table = 'class_requests';
+    use HasFactory;
+    protected $fillable = ['tutor_id', 'tutor_name','student_id', 'student_name','keydate', 'time', 'subject', 'medium', ];
 
     public function tutor()
     {

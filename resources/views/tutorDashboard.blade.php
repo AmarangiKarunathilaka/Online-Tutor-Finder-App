@@ -22,7 +22,9 @@
   
 </head>
   <body class="be-light">
-    
+  @extends('tutorHomeContent')
+@section('content')
+<section class="home">
     <header class="header">
       <div class="header_logo">
         <a href="#">Dashboard</a>
@@ -30,23 +32,14 @@
   
       
   
-      <div class="header_profile">
-        <div class="profile">
-          
-          <img src="f.png" alt="">
-        </div>
-      </div>
+      
     </header>
   
     <!-- Mian Body Section -->
 
     <div class="main_body">
         <div class="container">
-            <div class="input-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here..." />
-                <button class="button">Search</button>
-              </div>
+            
      
         <div class="row d-flex justify-content-center">
                 <div class="col-md-11 mt-5 pt-5">
@@ -56,18 +49,26 @@
                                 
                                 <div class="profile-card">
                                     <div class="image">
-                                        <img src="images/b.jpg" alt="" class="profile-pic">
+                                             
+                             @foreach ($profile as $profile)
+                          
+                              <img  src="/profileImage/{{ $profile ->image }}" width='150' height='150' class="img-account-profile rounded-circle mb-2" alt/>
+                                     
+                              @endforeach
                                     </div>
                                     <div class="data">
-                                        <h4>Olivia Gomez</h4>
-                                        <span>Mathematics</span>
+                                        <h4>{{$profile->tutorFullName}}</h4>
+                                        <span>{{$profile->subject}}</span>
                                     </div>
                                     
                                     <div class="buttons">
                                         <a href="#" class="btn">Edit</a>
                                         <input type="checkbox" id="check">
+                                        @csrf
+                                        @method('DELETE')
                                         <label class="show_button" for="check">Delete</label>
                                     <div class="background"></div>
+                                
                                     <div class="alert_box">
                                         <div class="icon">
                                             <i class="fas fa-exclamation"></i>
@@ -92,24 +93,21 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <p class="font-weight-bold">Email</p>
-                                        <h6 class="text-muted">ninjc@gmail.com</h6>
+                                        <h6 class="text-muted">{{$profile->tutorEmail}}</h6>
                                     </div>
                                     <div class="col-sm-6">
                                         <p class="font-weight-bold">Phone</p>
-                                        <h6 class="text-muted">0146699875</h6>
+                                        <h6 class="text-muted">{{$profile->tutorPhoneNumber}}</h6>
                                     </div>
                                 </div> 
-                                <h4 class="mt-3">Projects</h4>
+                               
                                 <hr class="bg-primary">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <p class="font-weight-bold">Email</p>
-                                        <h6 class="text-muted">ninjc@gmail.com</h6>
+                                    <div class="col-sm-8">
+                                    <p class="font-weight-bold">Qualification</p>
+                                        <h6 class="text-muted" >{{$profile->qualification}}</h6>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <p class="font-weight-bold">Phone</p>
-                                        <h6 class="text-muted">0146699875</h6>
-                                    </div>
+                                    
                                 </div>
                                 <hr class="bg-primary">
                                 <ul class="list-unstyled d-flex justify-content-center" mt-4>
@@ -173,7 +171,7 @@
                     <td>3:00PM</td>
                     <td><button>View</button></td>
                   </tr>
-                  <!-- <tr >
+                   <tr >
                     <td>05</td>
                     <td>Salina</td>
                     <td>Coding</td>
@@ -190,7 +188,7 @@
                     <td>9:00AM</td>
                     <td>4:00PM</td>
                     <td><button>View</button></td>
-                  </tr> -->
+                  </tr> 
                 </tbody>
               </table>
             </div>
@@ -205,9 +203,10 @@
         
   
       </div>
-  
+      </section>
+      @endsection
       <!-- Sidebar Reviews Section -->
-      <div class="sidebar">
+     <!-- <div class="sidebar1">
         <div class="row">
           <h2>Reviews</h2>
           <a href="#">See all</a>
@@ -292,8 +291,9 @@
         </div>
   
       </div>
-    </div>
-  
+    </div>-->
+    
+   
   </body>
   </html>
   </span>

@@ -14,15 +14,25 @@ use App\Http\controllers\ClassRequestController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\combinedDisplayController;
+use App\Http\Controllers\CombinedDisplayController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\StudentDashboardController;
+
 //Ramal
 use App\Http\Controllers\PdfController;
+
 //kavin
 use App\Http\controllers\ForgetPasswordManager;
 
 
+use App\Http\Controllers\TimetableController;
+use App\Http\Controllers\TutorProfileController;
+
+
+
 //chat
 use App\Events\Message;
+
 use Illuminate\Http\Request;
 
 
@@ -74,8 +84,8 @@ Route::get('/tregister', function () {
 //     return view('studentHome');
 // });
 
-Route::get('/studentdashboard', function () {
-    return view('studentdashboard');
+Route::get('/studentDashboard', function () {
+    return view('studentDashboard');
 });
 
 Route::get('/student', function () {
@@ -141,9 +151,7 @@ Route::get('/popupBox', function () {
 //     return view('adminHome');
 // });
 
-Route::get('/classRequest', function () {
-    return view('classRequest');
-});
+
 
 Route::get('/adminAdvertisementList', function () {
     return view('adminAdvertisementList');
@@ -166,10 +174,26 @@ Route::get('/adminTutorList', function () {
     return view('adminTutorList');
 });
 
+// nalaka
 Route::get('/classRequest', function () {
     return view('classRequest');
 });
 
+Route::get('/adminClassRequestList', function () {
+    return view('adminClassRequestList');
+});
+
+Route::get('/adminDashboard', function () {
+    return view('adminDashboard');
+});
+
+Route::get('/studentRequestView', function () {
+    return view('studentRequestView');
+});
+
+Route::get('/editAdvertisement', function () {
+    return view('editAdvertisement');
+});
 
 
 
@@ -197,7 +221,7 @@ Route::get('/login', function () {
 Route::get('/', [UserController::class, 'index']);
 */
 
-Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pdf');
+//Route::post('users/view-pdf', [UserController::class, 'viewPDF'])->name('view-pdf');
 
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
@@ -261,7 +285,7 @@ Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
-Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
 
 
 
@@ -274,6 +298,12 @@ Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('co
 // edit tutor profile-Gayathtri
 //Route::resource('user-profiles', 'UserProfileController');
 Route::POST('add',[UserProfileController::class,'editTutorProfile']);
+
+
+use App\Http\Controllers\YourController;
+
+Route::delete('/items/{id}', [YourController::class, 'destroy']);
+
 
  
 //kavindra
@@ -332,23 +362,45 @@ Route::get('/adminClassMaterialList', [ClassMaterialController::class, 'adminCla
 Route::get('/accept_material/{id}', [ClassMaterialController::class, 'accept_material']);
 Route::get('/reject_material/{id}', [ClassMaterialController::class, 'reject_material']);
 
-
-
 Route::get('/materialContent/maths', [ClassMaterialController::class, 'maths'])->name('maths');
 Route::get('/materialContent/chemistry', [ClassMaterialController::class, 'chemistry'])->name('chemistry');
 Route::get('/materialContent/physics', [ClassMaterialController::class, 'physics'])->name('physics');
 Route::get('/materialContent/biology', [ClassMaterialController::class, 'biology'])->name('biology');
-
 
 Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->name('download');
 
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
+//TIMETABLE
+//Route::get('/editTutorProfile', [TimetableController::class, 'index']);
+//Route::post('/update-timetable', [TimetableController::class, 'update']);
+Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+
+Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
+
+
+//Tutorprofile
+Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfile'])->name('editTutorProfile');
+
+Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
+
+Route::get('/tutorDashboard', [TutorProfileController::class, 'tutorDashboard'])->name('tutorDashboard');
+
+
 
 //nalaka
 Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
 Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+// view requests in admin
+Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
+
+// view student home
+Route::get('/studentRequestView', [ClassRequestController::class, 'studentRequestView'])->name('studentRequestView');
+
+
+Route::get('/acceptRequest/{id}', [ClassRequestController::class, 'acceptRequest']);
+Route::get('/rejectRequest/{id}', [ClassRequestController::class, 'rejectRequest']);
 
 
 
@@ -369,7 +421,8 @@ Route::get('/adminAdvertisementList', [AdvertisementController::class, 'adminAdv
 Route::get('/accept_advertisement/{id}', [AdvertisementController::class, 'accept_advertisement']);
 Route::get('/reject_advertisement/{id}', [AdvertisementController::class, 'reject_advertisement']);
 
-// Route::get('/', [AdvertisementController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+Route::get('/advertismentUpload', [AdvertisementController::class, 'myAdvertisements'])->name('myAdvertisements');
 
 Route::get('/advertisements/search', [App\Http\Controllers\AdvertisementController::class, 'search'])->name('advertisements.search');
 
@@ -383,6 +436,19 @@ Route::post('send-message',function (Request $request){
     event(new Message($request->username, $request->message));
    return ['success' => true];
 });
+
+
+Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardDisplay'])->name('adminDashboardDisplay');
+
+Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
+Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
+
+//Amarangi - delete advertisement
+Route::get('/delete_advertisement/{id}', [AdvertisementController::class, 'destroy']);
+
+//Amarangi - update advertisement
+Route::get('/update_advertisement/{id}', [AdvertisementController::class, 'showData']);
+Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']);
 
 //Route::middleware(['auth'])->group(function () {
   //  Route::get('/chat', 'ChatController@index');

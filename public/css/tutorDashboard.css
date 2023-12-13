@@ -1,4 +1,4 @@
-<span style="font-family: verdana, geneva, sans-serif;">@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 *{
   margin: 0;
@@ -131,8 +131,10 @@
 
 
 /* Side Review bar */
-.sidebar{
-  width: 400px;
+.sidebar1{
+ display: block;
+  margin-left: 75%;
+  width: 30%;
   height: 100%;
   padding: 15px;
   overflow-y: scroll;
@@ -140,7 +142,7 @@
   background: rgb(201, 193, 193);
 }
 
-.sidebar::-webkit-scrollbar, .container::-webkit-scrollbar{
+.sidebar1::-webkit-scrollbar, .container::-webkit-scrollbar{
   display: none;
 }
 .row{
@@ -543,7 +545,7 @@ table thead tr{
   background: #a4c510;
   color: #fff;
   transition: 0.5rem;
-}</span>
+}
 
 
 

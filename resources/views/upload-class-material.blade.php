@@ -17,7 +17,7 @@
       <form action="{{ url('/classMaterialInput') }}" method="post"  enctype="multipart/form-data">
             @csrf
      
-            <input type="hidden" name="key" value="1">
+            
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="tutorName">Name</label>
@@ -60,7 +60,7 @@
           <div class="user-input-box">
             <label for="subject">Select category</label>
                 <select name="lecNote" id="lecNote">
-                    <option value="classNote">Class Note</option>
+                    <option value="ClassNote">Class Note</option>
                     <option value="Assignment">Assignment</option>
                     <option value="Reference">Reference</option>
                     
