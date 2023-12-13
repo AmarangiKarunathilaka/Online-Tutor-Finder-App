@@ -66,7 +66,7 @@
                                         <input type="checkbox" id="check">
                                         @csrf
                                         @method('DELETE')
-                                        <label class="show_button" for="check">Delete</label>
+                                        <a href="{{url('delete_profile',$profile->id)}}" ><button type="button" class="register">Delete</button>
                                     <div class="background"></div>
                                 
                                     <div class="alert_box">
