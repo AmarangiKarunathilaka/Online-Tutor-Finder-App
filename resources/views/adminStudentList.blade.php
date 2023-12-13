@@ -53,6 +53,7 @@
                         <th scope="col">address</th>
                         <th scope="col">studentPhoneNumber</th>
                         <th scope="col">studentEmail</th>
+                        <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
                 </thead>  
@@ -67,8 +68,9 @@
                     <td>{{ $student->address }}</td>
                     <td>{{ $student->studentPhoneNumber }}</td>
                     <td>{{ $student->studentEmail }}</td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
+                    <td>{{ $student->status }}</td>
+                    <td><a href="{{url('accept_student',$student->id)}}"><button type="button" class="accept">Accept </button>
+                        <a href="{{url('reject_student',$student->id)}}" ><button type="button" class="remove">Reject</button></td>
                     </tr>
                     
                     @endforeach
@@ -79,15 +81,10 @@
             </div>
         </div>
         
-        <form action="{{ route('view-pdf') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button type="button" onclick="generateReport()">Generate Report</button>
-
-                </div>
-            </form>
+        
     </div>
     </section>
     @endsection
+    
 </body>
 </html>

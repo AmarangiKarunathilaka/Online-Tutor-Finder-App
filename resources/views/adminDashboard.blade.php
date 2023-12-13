@@ -25,6 +25,13 @@
     <section class="main">
       <div class="main-top">
         <h1>Admin Dashboard</h1>
+        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button type="submit" >Generate Report</button>
+
+                </div>
+            </form>
         <i class="fas fa-user-cog"></i>
       </div>
       <div class="main-skills">
