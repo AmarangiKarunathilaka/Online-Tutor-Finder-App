@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Timetable extends Model
 {
@@ -11,7 +12,6 @@ class Timetable extends Model
     protected $fillable = [
         'day', 
         'time',
-        'any',
         'tutor_id',
     ];
 }

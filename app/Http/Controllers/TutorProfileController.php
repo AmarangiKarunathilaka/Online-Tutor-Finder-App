@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 use App\Models\Timetable;
 use App\Models\TutorProfile;
+use App\Models\Tutordetail;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Session;
+
 
 class TutorProfileController extends Controller
 {
@@ -46,9 +50,10 @@ public function destroy($id)
 }*/
 public function editTutorProfile()
     {
-
+        $detail=Tutordetail::all();
+        $time=Timetable::all();
         $profile = TutorProfile::all();
-        return view('editTutorProfile', compact('profile'));
+        return view('editTutorProfile', compact('profile','time','detail'));
       
     }
 
@@ -56,24 +61,13 @@ public function editTutorProfile()
 
 public function TutorprofileInput(Request $request)
     {
-        $keyValue = $request->input('key');
-
-
-        
+        $userId = Session::get('user_id');
         $profile=new TutorProfile;
-        $profile->tutor_id= $request -> key;
-        $profile->id=$request->id;
-        $profile->tutorFullName=$request->tutorFullName;
-        $profile->tutorPhoneNumber=$request->tutorPhoneNumber;
-        $profile->qualification=$request->qualification;
-        $profile->tutorEmail=$request->tutorEmail;
-        $profile->subject=$request->subject;
-        $profile->medium=$request->medium;
         $profile->image=$request->image;
-        
+        $profile->tutor_id = $userId;
 
         $image=$request->image;
-
+       
         if($image)
         {
             $photoname=time().'.'.$image->getClientOriginalExtension();
@@ -86,10 +80,29 @@ public function TutorprofileInput(Request $request)
       
     }
 
-    public function tutorDashboard()
+    public function detailInput(Request $request)
     {
-        $profile = TutorProfile::all();
-        return view('tutorDashboard', compact('profile'));
+        $userId = Session::get('user_id');
+        $detail= new Tutordetail;
+        $detail->tutorFullName=$request->tutorFullName;
+        $detail->tutorPhoneNumber=$request->tutorPhoneNumber;
+        $detail->qualification=$request->qualification;
+        $detail->tutorEmail=$request->tutorEmail;
+        $detail->subject=$request->subject;
+        $detail->medium=$request->medium;
+        $detail->tutor_id = $userId;
+
+
+        $detail->save();
+        return redirect()->back();
+
+
+    }
+
+    public function tutorDashboard()
+    {   $profile = TutorProfile::all();
+        $detail = Tutordetail::all();
+        return view('tutorDashboard', compact('detail','profile'));
     }
 
 }
