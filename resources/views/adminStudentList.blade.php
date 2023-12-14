@@ -84,7 +84,7 @@
         <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
 	        @csrf
                 <div>
-                    <button>Download Students PDF</button>
+                    <button>Download PDF</button>
                 </div>
         </form>
 

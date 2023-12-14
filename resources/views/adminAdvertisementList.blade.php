@@ -8,9 +8,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/adminstyle.css">
     <link href="css/report.css" rel="stylesheet">
-    <title>Student Table</title>
+    
+    <title>Advertisement Table</title>
 
 </head>
 <body>
@@ -80,17 +82,15 @@
                     
                 </table>
 
-                    
-                    <!--Ramal 2023.12.14 Button 3
-                    <form action="{{ route('generate_pdf_advertisement') }}" method="post" target="_blank">
-                        @csrf
-                            <div>
-                                <button>Download Students PDF</button>
-                            </div>
-                    </form>-->
+                <!--Ramal 2023.12.14 Button 3-->
+                <form action="{{ route('generate_pdf_advertisement') }}" method="post" target="_blank">
+                    @csrf
+                        <div>
+                            <button>Download PDF</button>
+                        </div>
+                </form>
 
-
-                        
+                 
             </div>
             
 </br>
