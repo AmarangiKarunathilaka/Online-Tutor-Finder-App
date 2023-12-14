@@ -79,6 +79,17 @@
                 </tbody>
                     
                 </table>
+
+                    
+                    <!--Ramal 2023.12.14 Button 3
+                    <form action="{{ route('generate_pdf_advertisement') }}" method="post" target="_blank">
+                        @csrf
+                            <div>
+                                <button>Download Students PDF</button>
+                            </div>
+                    </form>-->
+
+
                         
             </div>
             
@@ -102,5 +113,8 @@
             };
         });
     </script>
+
+
+
 </body>
 </html>

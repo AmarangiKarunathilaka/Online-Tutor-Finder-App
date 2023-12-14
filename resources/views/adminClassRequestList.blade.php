@@ -64,6 +64,20 @@
                 </tbody>
 
                 </table>
+
+                <!---->
+                <!--Ramal 2023.12.14 Button 5
+                <form action="{{ route('generate_pdf_request') }}" method="post" target="_blank">
+                    @csrf
+                        <div>
+                            <button>Download Students PDF</button>
+                        </div>
+                </form>-->
+
+
+
+
+
                 </div>
             </nav>
         </header>
