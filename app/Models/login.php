@@ -13,4 +13,9 @@ class login extends Model
         'email',
         'password'
     ];
+
+    public function tutor()
+{
+    return $this->hasMany(tutorRegister::class);
+}
 }
