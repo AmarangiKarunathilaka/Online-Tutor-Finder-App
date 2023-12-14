@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Stroage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+f;
+
+
 
 class ClassMaterialController extends Controller
 {
@@ -178,5 +181,10 @@ class ClassMaterialController extends Controller
         $classmaterial=ClassMaterial::find($id);
         return view('adminView', compact('classmaterial'));
     }
+
+
+    //no need pdf report
+
+
 
 }

@@ -254,12 +254,11 @@ Route::post('/generate_pdf_tutor',[tutorRegisterController::class,'generate_pdf_
 //My 3
 Route::post('/generate_pdf_advertisement',[AdvertisementController::class,'generate_pdf_advertisement'])->name('generate_pdf_advertisement');
 
-//My 4
-
+//My 4 no need
 
 
 //My 5
-
+Route::post('/generate_pdf_request',[ClassRequestController::class,'generate_pdf_request'])->name('generate_pdf_request');
 
 
 //My 6
