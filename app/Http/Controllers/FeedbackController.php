@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Feedback;
 
+//Ramal 2023.12.14
+use Barryvdh\DomPDF\Facade\Pdf;
+
+
+
 class FeedbackController extends Controller
 {
     /*function websiteFeedbackForm(Request $req){
@@ -74,7 +79,13 @@ class FeedbackController extends Controller
     }
 
     
-
+    //My 2023.12.14
+    public function generate_pdf_feedback()
+    {
+        $feedback = Feedback::all(); 
+        $pdf = Pdf::loadView('downloads/feedbackList',array('feedback' => $feedback));
+        return $pdf->download('downloads/feedbackList.pdf');
+    }
 
 
    

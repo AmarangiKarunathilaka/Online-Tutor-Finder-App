@@ -262,6 +262,7 @@ Route::post('/generate_pdf_request',[ClassRequestController::class,'generate_pdf
 
 
 //My 6
+Route::post('/generate_pdf_feedback',[FeedbackController::class,'generate_pdf_feedback'])->name('generate_pdf_feedback');
 
 
 
