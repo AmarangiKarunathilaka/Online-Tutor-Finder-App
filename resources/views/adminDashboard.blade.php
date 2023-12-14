@@ -140,7 +140,7 @@
 
                 </div>
 
-
+                </form>
                 <!-- Ramal 2023.12.13 -->
                 <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
 	            @csrf
@@ -151,7 +151,7 @@
                 </div>
             </form>
 
-            </form>
+            
       </section>
     </section>
   </div>

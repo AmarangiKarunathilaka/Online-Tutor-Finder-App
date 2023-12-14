@@ -78,8 +78,13 @@
                         
             </div>
         </div>
-        
-        
+        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button style="background-color: #f7e348; padding: 15px; margin: 15px 20px; border-radius: 8px;" type="submit" class="">Download Students PDF</button>
+
+                </div>
+</form>
     </div>
     </section>
     @endsection

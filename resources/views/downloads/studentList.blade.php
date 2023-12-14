@@ -8,8 +8,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="css/adminstyle.css">-->
+    <link href="css/ramal1.css" rel="stylesheet">
+
     <title>Student Table</title>
 
     <style>
@@ -49,7 +51,7 @@
                 <table class="table table-success table-striped">
                     
                 <thead>
-                    <tr>
+                    <tr style = "wid>
                         <th scope="col">#</th>
                         <th scope="col">studentFullName</th>
                         <th scope="col">birthday</th>
