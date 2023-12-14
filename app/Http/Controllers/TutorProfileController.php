@@ -52,7 +52,10 @@ public function editTutorProfile()
     {
         $detail=Tutordetail::all();
         $time=Timetable::all();
-        $profile = TutorProfile::all();
+        
+        $userId = Session::get('user_id');
+        $profile = TutorProfile::where('tutor_profiles.tutor_id','=', $userId)
+                            ->get();
         return view('editTutorProfile', compact('profile','time','detail'));
       
     }
@@ -99,11 +102,6 @@ public function TutorprofileInput(Request $request)
 
     }
 
-    public function tutorDashboard()
-    {   $profile = TutorProfile::all();
-        $detail = Tutordetail::all();
-        return view('tutorDashboard', compact('detail','profile'));
-    }
 
     public function destroy($id)
     {

@@ -20,7 +20,7 @@
   margin-left: 2rem;
 }
 .header_logo a{
-  color: #000;
+  color: #030322;
   font-size: 1.3rem;
   font-weight: 700;
   text-decoration: none;
@@ -218,7 +218,7 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  background-color: #a4c510;
+  background-color: #fff;
   padding: 3px;
 }
 .image .profile-pic{
@@ -264,7 +264,7 @@ span{
   border-radius: 25px;
   font-size: 18px;
   white-space: nowrap;
-  background: linear-gradient(to left, #525b5e 0%, #a4c510 100%);
+  background: linear-gradient(to left, #525b5e 0%, #73691b 100%);
 }
 .buttons .btn:hover{
   box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
@@ -285,7 +285,7 @@ span{
   position: absolute;
   height: 29%;
   width: 100%;
-  background-color: #a4c510;
+  background-color: #949432;
   top: 0;
   left: 0;
 
@@ -331,7 +331,7 @@ span{
   background: linear-gradient(to left, #525b5e 0%, #a4c510 100%);
 }
 .show_button:hover{
-  background: #d9210d;
+  background: #4d520b;
 }
 .background{
   position: absolute;
@@ -408,16 +408,16 @@ span{
   transition: all 0.3s ease;
 }
 .btns label:first-child{
-  background: #2980b9;
+  background: #7f8413;
 }
 .btns label:first-child:hover{
-  background: #2573a7;
+  background: #717a12;
 }
 .btns label:last-child{
-  background: #f23b26;
+  background: #e4f226;
 }
 .btns label:last-child:hover{
-  background: #d9210d;
+  background: #73760b;
 }
 
 /*class request list*/
@@ -483,10 +483,10 @@ span{
   cursor: pointer;
   border-radius: 10px;
   background: transparent;
-  border: 1px solid #4AD489;
+  border: 1px solid #292b04;
 }
 .users .card button:hover{
-  background: #4AD489;
+  background: #c6d44a;
   color: #fff;
   transition: 0.5s;
 }
@@ -504,28 +504,35 @@ span{
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 .table{
-  border-collapse: collapse;
+  
   margin: 25px 0;
   font-size: 15px;
   min-width: 100%;
-  overflow: hidden;
+ 
   border-radius: 5px 5px 0 0;
 }
 table thead tr{
   color: #fff;
-  background: #a4c510;
+  background:  #a5a31ad1;
   text-align: left;
   font-weight: bold;
+  border: 1px solid #899817;
 }
 .table th,
 .table td{
   padding: 12px 15px;
+  border: 1px solid #747603;
 }
 .table tbody tr{
   border-bottom: 1px solid #ddd;
+  border: 1px solid #899817;
+}
+.table tbody tr td{
+  border: 1px solid #899817;
 }
 .table tbody tr:nth-of-type(odd){
   background: #f3f3f3;
+
 }
 .table tbody tr.active{
   font-weight: bold;
@@ -539,10 +546,10 @@ table thead tr{
   border-radius: 10px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #a4c510;
+  border: 1px solid #74790d;
 }
 .table button:hover{
-  background: #a4c510;
+  background: #7c7d18;
   color: #fff;
   transition: 0.5rem;
 }
@@ -619,3 +626,6 @@ table thead tr{
       padding: 8px 18px;
     }
   }
+
+
+ 

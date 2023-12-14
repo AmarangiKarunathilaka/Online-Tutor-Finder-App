@@ -13,4 +13,9 @@ class login extends Model
         'email',
         'password'
     ];
+
+    public function timetable()
+    {
+        return $this->hasOne(Timetables::class, 'tutor_id', 'id');
+    }
 }
