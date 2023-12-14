@@ -12,7 +12,7 @@
     /* ===== Colors ===== */
     --body-color:  #c1c19cfe ;
     --sidebar-color: #FFF;
-    --primary-color: #fcbe03;
+    --primary-color: #474233;
     --primary-color-light: #F6F5FF;
     --toggle-color: #3c3c1b;
     --text-color: #707070;
@@ -350,4 +350,5 @@ body.dark .home .text{
     margin-top: 15px;
     cursor: pointer;
 
+}
 }
