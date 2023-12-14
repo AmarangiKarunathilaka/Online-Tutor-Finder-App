@@ -34,8 +34,8 @@
             <div class="menu">
 
                 <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
+                    
+                    <input type="text">
                 </li>
 
                 <ul class="menu-links">
