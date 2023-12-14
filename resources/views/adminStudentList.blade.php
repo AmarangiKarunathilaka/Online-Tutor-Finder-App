@@ -69,10 +69,18 @@
                     <td>{{ $student->studentPhoneNumber }}</td>
                     <td>{{ $student->studentEmail }}</td>
                     <td>{{ $student->status }}</td>
-                    <td><a href="{{url('accept_student',$student->id)}}"><button type="button" class="accept">Accept </button>
-                        <a href="{{url('reject_student',$student->id)}}" ><button type="button" class="remove">Reject</button></td>
+                    @if(session('message'))
+                         <div>{{ session('message') }}</div>
+                    @endif
+
+                    <form action="{{ route('send.email', ['email' => $student->studentEmail]) }}" method="POST">
+                    @csrf
+    
+                    <td><a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept">Accept</button>
+                        <a href="{{url('reject_student',$student->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
+                    </td>
+                    </form>
                     </tr>
-                    
                     @endforeach
                 </tbody>
 
