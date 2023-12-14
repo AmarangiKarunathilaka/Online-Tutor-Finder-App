@@ -105,4 +105,12 @@ public function TutorprofileInput(Request $request)
         return view('tutorDashboard', compact('detail','profile'));
     }
 
+    public function destroy($id)
+    {
+        // Delete the advertisement
+        TutorProfile::destroy($id);
+
+        return redirect()->back();
+    }
+
 }

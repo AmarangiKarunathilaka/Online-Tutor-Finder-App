@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 //Ramal
 use Barryvdh\DomPDF\Facade\Pdf;
+//use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendEmail;
 
 class studentRegisterController extends Controller
 {
@@ -27,6 +30,8 @@ class studentRegisterController extends Controller
         $data->status = 'accepted';
         $data->save();
 
+        $this->sendEmail($data->studentEmail, 'accepted');
+
         return redirect()->route('adminStudentList')->with('success', 'Student accepted successfully!');
     }
 
@@ -35,6 +40,8 @@ class studentRegisterController extends Controller
         $data = studentRegister::find($id);
         $data->status = 'rejected';
         $data->save();
+
+        $this->sendEmail($data->studentEmail, 'rejected');
 
         return redirect()->route('adminStudentList')->with('success', 'Student rejected successfully!');
     }
@@ -91,4 +98,26 @@ class studentRegisterController extends Controller
         return $pdf->download('downloads/studentList.pdf');
     }
 
-}
+
+    public function sendEmailButton()
+    {
+        return view('adminStudentList'); // Replace 'your-blade-view' with the actual name of your blade file
+    }
+
+    public function sendEmail(Request $request, $email)
+    {
+        //$emails = studentRegister::pluck('studentEmail')->toArray();
+
+        //foreach ($emails as $email) {
+
+        $details = [
+            'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'You are removed. Thank you'
+        ];
+
+        Mail::to($email)->send(new SendEmail($details));
+    //}
+    return redirect()->back();
+        //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
+
+    }
+

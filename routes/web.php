@@ -28,6 +28,8 @@ use App\Http\Controllers\PdfController;
 
 //kavin
 use App\Http\controllers\ForgetPasswordManager;
+use App\Http\Controllers\EmailController;
+
 
 
 use App\Http\Controllers\TimetableController;
@@ -205,6 +207,7 @@ Route::get('/editAdvertisement', function () {
 
 
 
+
 // Ramal Start
 
 Route::get('/admin/reports',  'AdminReportController@index');
@@ -320,7 +323,10 @@ Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('co
 //Gayathri
 // edit tutor profile-Gayathtri
 //Route::resource('user-profiles', 'UserProfileController');
-Route::POST('add',[UserProfileController::class,'editTutorProfile']);
+//Route::POST('add',[UserProfileController::class,'editTutorProfile']);
+
+Route::get('/delete_profile/{id}', [TutorProfileController::class, 'destroy']);
+
 
 
 use App\Http\Controllers\YourController;
@@ -352,6 +358,25 @@ Route::get("/forget-password",[ForgetPasswordManager::class, "forgetPassword"])-
 Route::post("/forget-password",[ForgetPasswordManager::class, "forgetPasswordPost"])->name("forget.password.post");
 Route::get("reset-password/{token}",[ForgetPasswordManager::class,"resetPassword"])->name("reset.password");
 Route::post("/reset-password", [ForgetPasswordManager::class, "resetPasswordPost"])->name("reset.password.post");
+
+//email send accept/remove
+
+//Route::get('/send-email-button', [EmailController::class, 'showEmailForm'])->name('send.email.form');
+//Route::post('/send-email-button', [EmailController::class, 'sendEmail'])->name('send.email');
+
+Route::post('/send-email-button', [studentRegisterController::class, 'sendEmailButton'])->name('send.email.button');
+Route::get('/send-email-button', [studentRegisterController::class, 'sendEmailButton'])->name('send.email.button');
+
+Route::post('/send-email/{email}', [studentRegisterController::class, 'sendEmail'])->name('send.email');
+
+Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student']);
+Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student']);
+
+Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor']);
+Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor']);
+
+Route::get('/admin/studentList', 'studentRegisterController@adminStudentList')->name('adminStudentList');
+
 
 //Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
@@ -464,8 +489,8 @@ Route::post('send-message',function (Request $request){
 
 Route::get('/adminDashboard', [AdminDashboardController::class, 'adminDashboardDisplay'])->name('adminDashboardDisplay');
 
-Route::get('/accept_student/{id}', [AdvertisementController::class, 'accept_student']);
-Route::get('/reject_student/{id}', [AdvertisementController::class, 'reject_student']);
+Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student']);
+Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student']);
 
 //Amarangi - delete advertisement
 Route::get('/delete_advertisement/{id}', [AdvertisementController::class, 'destroy']);

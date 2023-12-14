@@ -53,6 +53,7 @@
                         <th scope="col">address</th>
                         <th scope="col">studentPhoneNumber</th>
                         <th scope="col">studentEmail</th>
+                        <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
                 </thead>  
@@ -67,10 +68,19 @@
                     <td>{{ $student->address }}</td>
                     <td>{{ $student->studentPhoneNumber }}</td>
                     <td>{{ $student->studentEmail }}</td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
+                    <td>{{ $student->status }}</td>
+                    @if(session('message'))
+                         <div>{{ session('message') }}</div>
+                    @endif
+
+                    <form action="{{ route('send.email', ['email' => $student->studentEmail]) }}" method="POST">
+                    @csrf
+    
+                    <td><a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept">Accept</button>
+                        <a href="{{url('reject_student',$student->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
+                    </td>
+                    </form>
                     </tr>
-                    
                     @endforeach
                 </tbody>
 
@@ -92,5 +102,6 @@
     </div>
     </section>
     @endsection
+
 </body>
 </html>

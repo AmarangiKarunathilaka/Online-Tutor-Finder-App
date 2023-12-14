@@ -13,6 +13,9 @@
     <link href="css/report.css"  rel="stylesheet">
 
     <link rel="stylesheet" href="css/adminstyle.css">
+
+    <link href="css/report.css" rel="stylesheet">
+
     <title>Tutor Table</title>
 
 </head>
@@ -57,6 +60,7 @@
                         <th scope="col">tutorEmail</th>
                         <th scope="col">tutorMedium</th>
                         <th scope="col">tutorSubject</th>
+                        <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
                 </thead> 
@@ -66,15 +70,25 @@
                     @foreach ($data as $item)
 
                     <tr>
-                        <th {{ $item->id }}</th>
+                        <th scope="row">{{ $item->id }}</th>
                         <td>{{ $item->tutorFullName }}</td>
                         <td>{{ $item->tutorPhoneNumber }}</td>
                         <td>{{ $item->qualification }}</td>
                         <td>{{ $item->tutorEmail }}</td>
                         <td>{{ $item->tutorMedium }}</td>
                         <td>{{ $item->tutorSubject}}</td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
+                        <td>{{ $item->status }}</td>
+                        @if(session('message'))
+                         <div>{{ session('message') }}</div>
+                    @endif
+
+                    <form action="{{ route('send.email', ['email' => $item->tutorEmail]) }}" method="POST">
+                    @csrf
+    
+                    <td><a href="{{url('accept_tutor',$item->id)}}"><button type="submit" name="button" value="accept">Accept</button>
+                        <a href="{{url('reject_tutor',$item->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
+                    </td>
+                    </form>
                     </tr>
                         
                     @endforeach
