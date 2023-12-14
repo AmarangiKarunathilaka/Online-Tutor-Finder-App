@@ -14,4 +14,14 @@ class Timetable extends Model
         'time',
         'tutor_id',
     ];
+
+    public function tutorRegistration()
+    {
+        return $this->belongsTo(tutorRegister::class, 'tutor_id');
+    }
+
+    public function tutorsubject()
+    {
+        return $this->belongsTo(tutorSubject::class, 'tutor_id');
+    }
 }
