@@ -21,7 +21,7 @@ class SendEmail extends Mailable
 
     public function build()
     {
-        return $this->subject('New Email from Laravel 9 App')
+        return $this->subject('Selection')
                     ->view('send-email');
     }
 }
