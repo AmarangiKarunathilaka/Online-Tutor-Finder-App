@@ -74,7 +74,23 @@
                                         <input type="checkbox" id="check">
                                         @csrf
                                         @method('DELETE')
-                                        <label class="show_button" style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);margin-top:-10px;"for="check">Delete</label>
+                                        
+
+                                        <a href="{{url('delete_profile',$profile->id)}}" ><button type="button" class="show_button" style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);margin-top:-10px;"for="check">Delete</button>
+                                    <div class="background"></div>
+                                
+                                    <div class="alert_box">
+                                        <div class="icon">
+                                            <i class="fas fa-exclamation"></i>
+                                        </div>
+                                        <header>your account will be deleted permenantly!</header>
+                                            
+                                        <p>are you sure to proceed?</p>
+                                            <div class="btns">
+                                            <label for="check">Yes, Delete!</label>
+                                            <label for="check">Cancel</label>
+                                            </div>
+
                                         </div>
                                 
                                     
