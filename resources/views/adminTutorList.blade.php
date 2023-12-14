@@ -80,6 +80,17 @@
                         
             </div>
         </div>
+
+                 <!-- Ramal 2023.12.13 Button 2 -->
+            <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button>Download Tutors PDF</button>
+                </div>
+            </form>
+
+
+
     </div>
 
     </section>

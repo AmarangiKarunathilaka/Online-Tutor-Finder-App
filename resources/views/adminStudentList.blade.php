@@ -78,13 +78,17 @@
                         
             </div>
         </div>
-        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button style="background-color: #f7e348; padding: 15px; margin: 15px 20px; border-radius: 8px;" type="submit" class="">Download Students PDF</button>
 
+
+        <!--Ramal 2023.12.14 Button 1-->
+        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
+	        @csrf
+                <div>
+                    <button>Download Students PDF</button>
                 </div>
-</form>
+        </form>
+
+
     </div>
     </section>
     @endsection

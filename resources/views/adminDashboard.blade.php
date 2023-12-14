@@ -133,23 +133,24 @@
                     
                 </table>
 
+                <!--
                 <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button style="background-color: #f7e348; padding: 15px; margin: 15px 20px; border-radius: 8px;" type="submit" class="">Download Students PDF</button>
-
-                </div>
-
+	                 @csrf
+                    <div>
+                       <button style="background-color: #f7e348; padding: 15px; margin: 15px 20px; border-radius: 8px;" type="submit" class="">Download Students PDF</button>
+                    </div>
                 </form>
-                <!-- Ramal 2023.12.13 -->
-                <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
+
+
+
+            
+            <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
 	            @csrf
                 <div>
                     <button style="background-color: #f7e348;  padding: 15px; margin: 0px 20px; border-radius: 8px;" type="submit" class="">Download Tutors PDF</button>
-
-
                 </div>
             </form>
+            -->
 
             
       </section>
