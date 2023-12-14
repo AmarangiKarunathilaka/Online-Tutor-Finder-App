@@ -154,9 +154,9 @@ Route::get('/popupBox', function () {
 });
 
 
-// Route::get('/adminHome', function () {
-//     return view('adminHome');
-// });
+Route::get('/admintimetable', function () {
+     return view('admintimetable');
+ });
 
 
 
@@ -423,7 +423,7 @@ Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 //TIMETABLE
 //Route::get('/editTutorProfile', [TimetableController::class, 'index']);
 //Route::post('/update-timetable', [TimetableController::class, 'update']);
-//Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+Route::get('/admintimetable', [CombinedDisplayController::class, 'admintimetable'])->name('admintimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
