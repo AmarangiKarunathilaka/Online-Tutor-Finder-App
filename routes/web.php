@@ -248,10 +248,28 @@ Route::get('/download-pdf',[PdfController::class,'download_pdf']);
 
 
 
-// Ramal End
+//Amare 1
 Route::post('/generate_pdf_student',[studentRegisterController::class,'generate_pdf_student'])->name('generate_pdf_student');
 
+//My 2
+Route::post('/generate_pdf_tutor',[tutorRegisterController::class,'generate_pdf_tutor'])->name('generate_pdf_tutor');
 
+//My 3
+Route::post('/generate_pdf_advertisement',[AdvertisementController::class,'generate_pdf_advertisement'])->name('generate_pdf_advertisement');
+
+//My 4 no need
+
+
+//My 5
+Route::post('/generate_pdf_request',[ClassRequestController::class,'generate_pdf_request'])->name('generate_pdf_request');
+
+
+//My 6
+Route::post('/generate_pdf_feedback',[FeedbackController::class,'generate_pdf_feedback'])->name('generate_pdf_feedback');
+
+
+
+//Ramal End
 
 
 

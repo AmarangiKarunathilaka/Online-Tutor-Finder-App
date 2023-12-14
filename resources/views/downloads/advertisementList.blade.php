@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/adminstyle.css">
     <link href="css/report.css" rel="stylesheet">
-    
+
     <title>Advertisement Table</title>
 
 </head>
@@ -34,8 +34,7 @@
             </div>
         </div>
     </div>-->
-    @extends('adminHomeContent')
-    @section('content')
+   
     <section class="home">
         <div class="text">Advertisement List</div>
     
@@ -82,13 +81,7 @@
                     
                 </table>
 
-                <!--Ramal 2023.12.14 Button 3-->
-                <form action="{{ route('generate_pdf_advertisement') }}" method="post" target="_blank">
-                    @csrf
-                        <div>
-                            <button>Download PDF</button>
-                        </div>
-                </form>
+                
 
                  
             </div>
@@ -102,7 +95,7 @@
 
     
     </section>
-    @endsection
+  
 
     <script type="text/javascript">
         var app = angular.module('Leave', []);

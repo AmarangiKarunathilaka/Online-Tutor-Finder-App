@@ -5,15 +5,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="{{ asset('css/adminstyle.css') }}">
     <link rel="stylesheet" href="{{ asset('css/report.css') }}">
-    
     <title>Admin Feedback List</title>
 </head>
 <body>
-    @extends('adminHomeContent')
-    @section('content')
+ 
     <section class="home">
         <div class="text">Feedback Management</div>
     
@@ -61,21 +58,14 @@
                 </table>
 
 
-                <!--Ramal 2023.12.14 Button 6-->
-                <form action="{{ route('generate_pdf_feedback') }}" method="post" target="_blank">
-                    @csrf
-                        <div>
-                            <button>Download PDF</button>
-                        </div>
-                </form>
-
+                    
           
 
                 </div>
             </nav>
         </header>
     </section>
-    @endsection
+
     
 </body>
 </html>

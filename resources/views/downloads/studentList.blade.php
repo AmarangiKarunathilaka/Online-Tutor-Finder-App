@@ -8,9 +8,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css"  rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="css/adminstyle.css">-->
+    <link href="css/ramal1.css" rel="stylesheet">
+
     <title>Student Table</title>
+
+    <style>
+        
+    </style>
 
 </head>
 <body>
@@ -32,8 +38,7 @@
             </div>
         </div>
     </div>-->
-    @extends('adminHomeContent')
-    @section('content')
+    
     <section class="home">
         <div class="text">Student List</div>
     
@@ -46,14 +51,13 @@
                 <table class="table table-success table-striped">
                     
                 <thead>
-                    <tr>
+                    <tr style = "wid>
                         <th scope="col">#</th>
                         <th scope="col">studentFullName</th>
                         <th scope="col">birthday</th>
                         <th scope="col">address</th>
                         <th scope="col">studentPhoneNumber</th>
                         <th scope="col">studentEmail</th>
-                        <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
                 </thead>  
@@ -68,19 +72,10 @@
                     <td>{{ $student->address }}</td>
                     <td>{{ $student->studentPhoneNumber }}</td>
                     <td>{{ $student->studentEmail }}</td>
-                    <td>{{ $student->status }}</td>
-                    @if(session('message'))
-                         <div>{{ session('message') }}</div>
-                    @endif
-
-                    <form action="{{ route('send.email', ['email' => $student->studentEmail]) }}" method="POST">
-                    @csrf
-    
-                    <td><a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept">Accept</button>
-                        <a href="{{url('reject_student',$student->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
-                    </td>
-                    </form>
+                        <td><button type="button" class="accept">Accept </button>
+                            <button type="button" class="remove">Remove</button></td>
                     </tr>
+                    
                     @endforeach
                 </tbody>
 
@@ -88,20 +83,10 @@
                         
             </div>
         </div>
-
-
-        <!--Ramal 2023.12.14 Button 1-->
-        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
-	        @csrf
-                <div>
-                    <button>Download PDF</button>
-                </div>
-        </form>
-
-
+        
+        
     </div>
     </section>
-    @endsection
-
+    
 </body>
 </html>

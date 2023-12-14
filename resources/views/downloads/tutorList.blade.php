@@ -8,14 +8,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css"  rel="stylesheet">
-
-    <link rel="stylesheet" href="css/adminstyle.css">
-
-    <link href="css/report.css" rel="stylesheet">
-
     <title>Tutor Table</title>
 
 </head>
@@ -38,8 +31,7 @@
             </div>
         </div>
     </div>-->
-    @extends('adminHomeContent')
-    @section('content')
+
     <section class="home">
         <div class="text">Tutor List</div>
     
@@ -60,35 +52,24 @@
                         <th scope="col">tutorEmail</th>
                         <th scope="col">tutorMedium</th>
                         <th scope="col">tutorSubject</th>
-                        <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
                     </tr>
                 </thead> 
 
                 <tbody>
                      
-                    @foreach ($data as $item)
+                    @foreach ($tutor as $tutor)
 
                     <tr>
-                        <th scope="row">{{ $item->id }}</th>
-                        <td>{{ $item->tutorFullName }}</td>
-                        <td>{{ $item->tutorPhoneNumber }}</td>
-                        <td>{{ $item->qualification }}</td>
-                        <td>{{ $item->tutorEmail }}</td>
-                        <td>{{ $item->tutorMedium }}</td>
-                        <td>{{ $item->tutorSubject}}</td>
-                        <td>{{ $item->status }}</td>
-                        @if(session('message'))
-                         <div>{{ session('message') }}</div>
-                    @endif
-
-                    <form action="{{ route('send.email', ['email' => $item->tutorEmail]) }}" method="POST">
-                    @csrf
-    
-                    <td><a href="{{url('accept_tutor',$item->id)}}"><button type="submit" name="button" value="accept">Accept</button>
-                        <a href="{{url('reject_tutor',$item->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
-                    </td>
-                    </form>
+                        <th {{ $tutor->id }}</th>
+                        <td>{{ $tutor->tutorFullName }}</td>
+                        <td>{{ $tutor->tutorPhoneNumber }}</td>
+                        <td>{{ $tutor->qualification }}</td>
+                        <td>{{ $tutor->tutorEmail }}</td>
+                        <td>{{ $tutor->tutorMedium }}</td>
+                        <td>{{ $tutor->tutorSubject}}</td>
+                        <td><button type="button" class="accept">Accept </button>
+                            <button type="button" class="remove">Remove</button></td>
                     </tr>
                         
                     @endforeach
@@ -98,21 +79,9 @@
                         
             </div>
         </div>
-
-        
-                 <!-- Ramal 2023.12.13 Button 2 -->
-            <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button>Download PDF</button>
-                </div>
-            </form>
-
-
-
     </div>
 
     </section>
-    @endsection
+
 </body>
 </html>

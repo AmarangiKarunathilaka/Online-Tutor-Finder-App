@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\studentRegister;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+//Ramal
 use Barryvdh\DomPDF\Facade\Pdf;
 //use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -89,12 +90,14 @@ class studentRegisterController extends Controller
         return view('login', compact('user_type'));
     }
 
+    //Amare 2023.12.13
     public function generate_pdf_student()
     {
         $students = studentRegister::all(); 
-        $pdf = Pdf::loadView('adminStudentList',array('students' => $students));
-        return $pdf->download('adminStudentList.pdf');
+        $pdf = Pdf::loadView('downloads/studentList',array('students' => $students));
+        return $pdf->download('downloads/studentList.pdf');
     }
+
 
     public function sendEmailButton()
     {
@@ -117,4 +120,4 @@ class studentRegisterController extends Controller
         //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
 
     }
-}
+

@@ -9,8 +9,11 @@ use App\Models\tutorSubject;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
+
 
 class tutorRegisterController extends Controller
 {
@@ -151,6 +154,16 @@ class tutorRegisterController extends Controller
         // return redirect() -> back();
      }
 
+
+     //Ramal 2023.12.13
+     public function generate_pdf_tutor()
+    {
+        $tutor = tutorRegister::all(); 
+        $pdf = Pdf::loadView('downloads/tutorList',array('tutor' => $tutor));
+        return $pdf->download('downloads/tutorList.pdf');
+    }
+     
+
      public function sendEmailButton()
     {
         return view('adminTutorList'); // Replace 'your-blade-view' with the actual name of your blade file
@@ -172,4 +185,5 @@ class tutorRegisterController extends Controller
         //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
 
     }
+
 }
