@@ -385,9 +385,11 @@ Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfil
 
 Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
 
-Route::get('/tutorDashboard', [TutorProfileController::class, 'tutorDashboard'])->name('tutorDashboard');
+Route::get('/tutorDashboard', [CombinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
 
 Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
+
+
 
 
 //nalaka
