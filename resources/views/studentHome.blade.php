@@ -96,7 +96,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/chatPusher">
                             <i class='bx bxs-conversation icon' ></i>
                             <span class="text nav-text">Conversation</span>
                         </a>
