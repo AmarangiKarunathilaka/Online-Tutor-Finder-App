@@ -19,4 +19,17 @@ class AdminDashboardController extends Controller
 
         return view('adminDashboard', compact('studentCount', 'tutorCount','advertisements'));
     }
+
+    public function adminDashboard()
+    {
+        $tutorCount = $this->getTutorCount()
+                ->where('status','=','accepted')
+                ->get();;
+        $studentCount = $this->getStudentCount()
+                ->where('status','=','accepted')
+                ->get();;;
+
+        return view('adminDashboard', compact('tutorCount', 'studentCount'));
+    }
+
 }

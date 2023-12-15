@@ -20,12 +20,8 @@ return new class extends Migration
             $table->integer('rating');
             $table->text('message');
             $table->string('status')->default('pending'); // You can set a default status value.
-
             $table->unsignedBigInteger('tutor_id');
             $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');
-
-            // $table->unsignedBigInteger('student_id');
-            // $table->foreign('student_id')->references('id')->on('student_registers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
