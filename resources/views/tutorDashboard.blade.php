@@ -49,7 +49,7 @@
                 <div class="col-md-11 mt-5 pt-5">
                     <div class="row z-depth-3">
                         <div class="col-sm-4 bg-info rounded-left bg-white">
-                            <div class="card-block text-center bg-white" style=" margin-buttom:10px;">
+                            <div class="card-block text-center bg-white" style=" margin-bottom:10px;">
                                 
                                 <div class="profile-card" style="margin-left:10%; width:150%; margin-top:-40px; ">
                                     <div class="image" style=" height: 150px;">

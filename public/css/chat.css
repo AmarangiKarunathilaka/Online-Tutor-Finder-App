@@ -15,7 +15,7 @@ body {
     overflow: hidden;
 }
 
-.chat-box {
+.form-control{
     padding: 10px;
     max-height: 300px;
     overflow-y: auto;
@@ -53,9 +53,9 @@ textarea {
     resize: none;
 }
 
-button {
+.btn {
     padding: 10px 20px;
-    background-color: red;
+    background-color:rgb(233, 175, 15);
     color: #fff;
     border: none;
     border-radius: 5px;

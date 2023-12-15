@@ -16,7 +16,7 @@
     <div class="row">
 
         <div class="col-sm-6 offset-sm-3 my-2">
-            <input type="text" class="form-control" name="username" id="username" placeholder="Enter a user .........." value="{{$username->studentFullName}}">
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter a user .........." value="{{$username->tutorFullName}}">
         </div>
 
         <div class="col-sm-6 offset-sm-3">
