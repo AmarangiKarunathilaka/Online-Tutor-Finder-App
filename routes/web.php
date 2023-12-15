@@ -16,7 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\combinedDisplayController;
 
-use App\Http\Controllers\combinedDisplayController;
+//use App\Http\Controllers\combinedDisplayController;
 
 
 
@@ -538,5 +538,5 @@ Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']
 //});
 
 //search advertisement
-Route::get('/', [AdvertisementController::class, 'searchTutors'])->name('search');
+Route::get('/search', [AdvertisementController::class, 'searchTutors'])->name('search');
 
