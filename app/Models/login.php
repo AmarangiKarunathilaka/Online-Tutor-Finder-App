@@ -20,4 +20,9 @@ class login extends Model
     return $this->hasMany(tutorRegister::class);
 }
 
+public function student()
+{
+    return $this->hasMany(studentRegister::class);
+}
+
 }
