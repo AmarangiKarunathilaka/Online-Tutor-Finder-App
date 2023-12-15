@@ -55,7 +55,7 @@
                         <th scope="col">tutorEmail</th>
                         <th scope="col">tutorMedium</th>
                         <th scope="col">tutorSubject</th>
-                        <th scope="col">Accept/Remove</th>
+                        
                     </tr>
                 </thead> 
 

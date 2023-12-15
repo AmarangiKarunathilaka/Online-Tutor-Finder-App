@@ -54,7 +54,7 @@
                         <th scope="col">Subject</th>
                         <th scope="col">Tutor Id</th>
                         <th scope="col">Status Accept</th>
-                        <th scope="col">Accept/Reject</th>
+                        
                     </tr>
                 </thead>  
 
