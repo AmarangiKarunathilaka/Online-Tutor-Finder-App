@@ -71,5 +71,11 @@ tr {
 }
 
 .form-box {
+
     padding: 100px;
+
+
+button:hover {
+    color: rgb(2, 2, 2);
+
 }

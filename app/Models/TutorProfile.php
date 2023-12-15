@@ -13,4 +13,9 @@ class TutorProfile extends Model
         'image',
         'tutor_id',
     ];
+
+    public function tutorprofil()
+    {
+        return $this->belongsTo(tutorRegister::class, 'tutor_id');
+    }
 }

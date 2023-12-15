@@ -59,7 +59,7 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="/editTutorProfile">
+                        <a href="/tutorDashboard">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -97,6 +97,14 @@
                         <a href="/websiteFeedbackForm">
                             <i class='bx bx-edit icon' ></i>
                             <span class="text nav-text">Feedback</span>
+                        </a>
+                    </li>
+
+                    
+                    <li class="nav-link">
+                        <a href="/editTutorProfile">
+                            <i class='bx bx-edit icon' ></i>
+                            <span class="text nav-text">Edit Profile</span>
                         </a>
                     </li>
 

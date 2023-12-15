@@ -15,4 +15,9 @@ class tutorSubject extends Model
         'tutorSubject_id',
         'tutorSubject'
     ];
+
+    public function tutortimetable()
+    {
+        return $this->hasMany(Timetable::class, 'tutor_id');
+    }
 }

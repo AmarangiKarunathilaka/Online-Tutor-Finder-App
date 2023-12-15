@@ -32,13 +32,17 @@
         <div class="card-body text-center">
             <div class="hero">
                 
-                   
+            @if(isset($profile) && count($profile)>0)     
                                      
             @foreach ($profile as $profile)
                           
                           <img src="/profileImage/{{ $profile ->image }}" width='150' height='150' class="img-account-profile rounded-circle mb-2" alt/>
                                  
                           @endforeach
+              
+                          @else
+                                  <h4 style="color:#000;  font-weight: bold;"> Please Submit Your Profile Details</h4>
+                                @endif
 
                     <div class="col-xl-6">
                     <lable for="input-file"><b>Upload image:</b></div>

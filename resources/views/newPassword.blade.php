@@ -22,10 +22,9 @@
 
         <link href="css/owl.carousel.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/registrationstyle.css">
-
-        <link rel="stylesheet" href="css/style.css">
-        
+    
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/registrationstyle.css') }}">
 <!--
 
 Tooplate 2133 Moso Interior
@@ -73,7 +72,7 @@ Bootstrap 5 HTML CSS Template
            
         <section class="hero-section hero-slide d-flex justify-content-center align-items-center">
 
-        <section>
+        
         <div class="form-box" style="margin-top: 10%; height:400px;">
             <div class="form-value text-center"  style="padding:25px">
     
@@ -95,24 +94,25 @@ Bootstrap 5 HTML CSS Template
             @endif
 
         </div>
-        <h1>Create your New Password</h1>
+        
             <form action="{{route('reset.password.post')}}" method="POST">
                 @csrf
+                <h3 class="mt-6">Create your New Password</h3>
                 <input type="hidden" name="token" hidden value="{{$token}}">
 
                 <div class="text-center mt-md-3 mt-2 mb-2 mb-md-3">
                     <div>
-                        <label for="studentEmail" class="form-lable">Email Address</label>
+                        <label for="studentEmail" class="form-lable" style="font-weight: bold; color: white;">Email Address</label>
                         <input type="email" class="form-control" name="studentEmail" >
                     </div>
 
                     <div>
-                        <label for="password" class="form-lable">New Password</label>
+                        <label for="password" class="form-lable" style="font-weight: bold; color: white;">New Password</label>
                         <input type="password" class="form-control" name="password">
                     </div>
 
                     <div>
-                        <label for="password_confirmation" class="form-lable">Confirm Password</label>
+                        <label for="password_confirmation" class="form-lable" style="font-weight: bold; color: white;">Confirm Password</label>
                         <input type="password" class="form-control" name="password_confirmation">
                     </div>
                 </div>

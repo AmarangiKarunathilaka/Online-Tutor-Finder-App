@@ -54,7 +54,7 @@ class ForgetPasswordManager extends Controller
     function resetPasswordPost(Request $request){
         $request->validate([
             //"studentEmail" => "required|email|exists:student_registers",
-            "password" => "required|string|min:6|confirmed",
+            "password" => "required|string|min:8|confirmed",
             "password_confirmation"=>"required" // 'confirmed' will check if password_confirmation matches
         ]);
 

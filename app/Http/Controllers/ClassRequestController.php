@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\ClassRequest;
 use App\Http\controllers\Controller;
 use Illuminate\Support\Facades\Session;
+//Ramal 2023.12.14
+use Barryvdh\DomPDF\Facade\Pdf;
+
+
 
 class ClassRequestController extends Controller
 {
@@ -109,14 +113,14 @@ class ClassRequestController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
+      //My 2023.12.14
+      public function generate_pdf_request()
+      {
+          $request = ClassRequest::all(); 
+          $pdf = Pdf::loadView('downloads/requestList',array('requests' => $request));
+          return $pdf->download('downloads/requestList.pdf');
+      }
+  
     
+
 }

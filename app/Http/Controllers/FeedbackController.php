@@ -9,6 +9,11 @@ use App\Models\TutorFeedback;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\LoginController;
 
+//Ramal 2023.12.14
+use Barryvdh\DomPDF\Facade\Pdf;
+
+
+
 class FeedbackController extends Controller
 {  
     public function feedback(){
@@ -147,6 +152,7 @@ class FeedbackController extends Controller
     }
 
     
+
     // this is on StudentDashboardController
     // public function tfeedbackDisplay()
     // {
@@ -157,6 +163,15 @@ class FeedbackController extends Controller
         
 
     // }
+
+    //My 2023.12.14
+    public function generate_pdf_feedback()
+    {
+        $feedback = Feedback::all(); 
+        $pdf = Pdf::loadView('downloads/feedbackList',array('feedback' => $feedback));
+        return $pdf->download('downloads/feedbackList.pdf');
+    }
+
 
     public function accepttFeedback($id)
     {
