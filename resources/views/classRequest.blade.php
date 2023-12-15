@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="css/classMaterial.css" />
+    <link rel="stylesheet" href="{{ asset('css/editTutorProfile.css') }}">
     
     <title>Class Request Form</title>
 </head>
@@ -18,138 +18,78 @@
     @extends('studentHomeContent')
     @section('content')
    
-    <div class="container1">
-
-
-    <div class="row justify-content-center">
-    <div class="form-box">
-    <div class="container mt-4 ">
-           
-        <div class="form">
-            
-            <h1><div class="row justify-content-center"> Request</div></h1>
-
-                <table>
+    <section class="home">
+   
+    <div class="container" style="margin-top:6%;  margin-left:6%; max-width: 850px;">
+      <h1 class="form-title" style=" margin-bottom:20px;">Class Request</h1>
+                
                     <form id="" action="{{ url('/classRequestInput') }}" method="post">
                         @csrf 
                         
-                        
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="TutorId" name="tutorId" required></td>
-                               
-                            </div>
-                        </tr>
-                        
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="TutorName" name="tutorname" required></td>
-                               
-                            </div>
-                        </tr>
-
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="studentId"  name="studentId" required></td>
-                               
-                            </div>
-                        </tr>
-                        
-                        <tr>
-                            <div class="mt-4">
-                                
-                                <td><input type="text" class="form-control" placeholder="studentname" name="studentname" required></td>
-                               
-                            </div>
-                        </tr>
-
-
-                        <tr>
-                            <div class="mt-4">
-                            <td><label for="date"> Date:</label>
-                            <input type="date" id="date" name="date"></td>
-
-                               
-                            </div>
-                            
-                        </tr>
-                
-                        <tr>
-                            <div class="mt-4">
-                           <td><label for="time">Time:</label>
-                            <input type="time" id="time" name="time"></td>
-
-                               
-                            </div>
-                            
-                        </tr>
-
-                        
-
-                    </table>
-
-                        
+           @foreach($tutorFullName as $tutorFullName)                 
+        <div class="main-user-info">
+          <div class="user-input-box"  style=" margin-bottom:20px;">
+            <label for="tutorName"> Tutor Name: </label>
+           
+            <input type="text"
+                    id="tutorName"
+                    name="tutorFullName"
+                    placeholder="" value="{{ $tutorFullName->tutorFullName }}"/>
                     
-                        
-                <table>
-                    <tr>
-                        <tr>
-                            <div class="TutorReg-1">
-                            <td><input type="text" class="form-control" placeholder="Subject" name="subject" required></td>
-                                
-                            </div>
-                       
+                    @endforeach
+                   
+          </div>
 
-                        <tr>
-                            <tr>
-                                <div class="TutorReg-1">
-                                    <td><label for="TR-medium"> Medium :</label></td>
-                                    <td><input type="radio" class="TR-input" name="medium">
-                                    <label for="TR-medium1"> Sinhala </label></td>
-                                </div>
-                            </tr>
-                            <tr>
-                                <td><td><input type="radio" class="TR-input" name="medium">
-                                    <label for="TR-medium2"> English </label></td></td>
-                            <tr>
-                            <tr>
-                                <td><td><input type="radio" class="TR-input" name="medium">
-                                    <label for="TR-medium3"> Tamil </label></td></td>
-                            </tr>
-                        </tr>
-                        
-                        
+          <div class="user-input-box"    style=" margin-bottom:20px; ">
+            <label for="subject">Subject:</label>
+            <input type="subject"
+                    id="subject"
+                    name="subject"
+                    placeholder="subject"/>
+          </div>
+
+          <div class="user-input-box"    style=" margin-bottom:20px; justify-content: end;">
+            <label for="medium">Medium :</label>
+            <input type="medium"
+                    id="medium"
+                    name="medium"
+                    placeholder="medium"/>
+          </div>
+                
+         
+          <div class="user-input-box"    style=" margin-bottom:20px;">
+            <label for="day">Select Day:</label>
+                <select name="day" id="day">
+                    <option value="discription">Day</option>
+                    @foreach($days as $day)
+                <option value="{{ $day }}">{{ $day }}</option>
+            @endforeach
                     
-                        
-                    </table>
-                    </tr>
-                
-                            <div class="row">
-                            <div class="form-group col-1">
-                                <input type="checkbox" class="TR-input" name="terms" required>
-                                </div>
-                                <div class="form-group col-11">
-                                <label for="TR-terms"> I Agree to the <a href="terms.html">Terms and Conditions</a>  </label>
-                            </div>
-                        </div>
-                        
-                        
-                        <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> Submit </button>
-                        
-        
-                    </form>
-                
+                    
+                </select>
+          </div>
+
+          <div class="user-input-box"    style=" margin-left:200px; margin-bottom:20px;">
+            <label for="time">Select Time:</label>
+                <select name="time" id="time">
+                <option value="discription">Time Slot</option>
+                @foreach($timeSlots as $timeSlot)
+                <option value="{{ $timeSlot }}">{{ $timeSlot }}</option>
+            @endforeach
             
-            </div>
-        </div>
+                    
+                </select>
+          </div>
+                
+                           
+                        
+          <div class="form-submit-btn" >
+          <button type="submit" class="btn"  style="width:200px; margin-left:130%; margin-top:15%;"><b>Send Request</b></button>
+         </div>
+      
+        </form>
     </div>
-    </div>
-
-        </div>
-@endsection
-
-</body>
+    @endsection
+    </section>
+  </body>
 </html>
