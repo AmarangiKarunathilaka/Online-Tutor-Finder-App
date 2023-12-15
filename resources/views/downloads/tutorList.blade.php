@@ -44,8 +44,8 @@
         <div class="form-box">
             <div class="container mt-4 ">
                 
-                <table class="table table-success table-striped">
-                
+                <table class="table table-success table-striped" border: 1px solid;>
+                 
                 <thead>
                     <tr>
                         <th scope="col">#</th>
