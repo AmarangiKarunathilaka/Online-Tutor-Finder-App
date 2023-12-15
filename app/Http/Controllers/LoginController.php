@@ -47,7 +47,7 @@ class LoginController extends Controller
                 return redirect('/adminHome');
             } elseif ($guard == 'tutor') {
                 
-                return redirect('/tutorHome');
+                return redirect('/tutorDashboard');
             } else {
                 return redirect('/studentHome');
             }

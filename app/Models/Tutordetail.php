@@ -18,4 +18,9 @@ class Tutordetail extends Model
         'medium',
         'tutor_id',
     ];
+
+    public function detail()
+    {
+        return $this->belongsTo(tutorRegister::class, 'tutor_id');
+    }
 }

@@ -68,7 +68,7 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="">
+                        <a href="/studentDashboard">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -103,12 +103,19 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-edit icon' ></i>
-                            <span class="text nav-text">Feedback</span>
+                        <a href="/tutorFeedback">
+                            <i class='bx bx-user icon'></i>
+                            <span class="text nav-text">Tutor Feedback</span>                            
                         </a>
                     </li>
 
+                    <li class="nav-link">
+                        <a href="/websiteFeedback">
+                            <i class='bx bx-globe icon'></i>
+                            <span class="text nav-text">Website Feedback</span>
+                        </a>
+                    </li>
+                       
                 </ul>
             </div>
 

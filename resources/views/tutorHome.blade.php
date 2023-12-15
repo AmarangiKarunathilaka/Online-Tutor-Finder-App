@@ -16,6 +16,25 @@
 <body>
     <nav class="sidebar close">
         <header>
+
+            <!-- Notification Panel -->
+            <div class="notification-panel">
+                <div class="notification-icon" id="notificationIcon">
+                    <i class='bx bx-bell'></i>
+                    <!-- <span class="badge">3</span> -->
+                </div>
+
+                <div class="notification-content">
+                    <h3>Notifications</h3>
+                    <ul>
+                        <li></li>
+                        <li>New message received</li>
+                        <li>Class request accepted</li>
+                        <li>Advertisement uploaded</li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="image-text">
                 <span class="image">
                     <img src="{{ asset('images/f.png')}}" alt="">
@@ -40,7 +59,7 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="/editTutorProfile">
+                        <a href="/tutorDashboard">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -78,6 +97,14 @@
                         <a href="/websiteFeedbackForm">
                             <i class='bx bx-edit icon' ></i>
                             <span class="text nav-text">Feedback</span>
+                        </a>
+                    </li>
+
+                    
+                    <li class="nav-link">
+                        <a href="/editTutorProfile">
+                            <i class='bx bx-edit icon' ></i>
+                            <span class="text nav-text">Edit Profile</span>
                         </a>
                     </li>
 

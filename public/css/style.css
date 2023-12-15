@@ -150,7 +150,7 @@ strong {
     
 
 .navbar {
-    background-color: #36363e;
+    background-color: #3e3736;
     padding-top: 0;
     padding-bottom: 0;
     transition: all 0.3s;
@@ -628,6 +628,12 @@ nav ul li:last-child a {
   margin-bottom: 80px;
   margin-top: 30px;
  
+ 
+  
+}
+
+.reviews-section h6{
+  color: #920707; 
  
   
 }

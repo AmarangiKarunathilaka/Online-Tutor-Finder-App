@@ -15,7 +15,7 @@ class Feedback extends Model
         'email',
         'rating',
         'message',
-        'student_id',     
+        'tutor_id',     
     ];
 
 }

@@ -25,13 +25,7 @@
     <section class="main">
       <div class="main-top">
         <h1>Admin Dashboard</h1>
-        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button type="submit" >Generate Report</button>
-
-                </div>
-            </form>
+        
         <i class="fas fa-user-cog"></i>
       </div>
       <div class="main-skills">
@@ -91,7 +85,7 @@
         <i class='bx bx-table' ></i>
           <h3>Time Table</h3>
           <p>Join Over 1 million Students.</p>
-          <button>Open</button>
+          <a href="/admintimetable" class="button" style="padding:5px; margin-left:35%; margin-top:10%;"><button>Open</button></a>
         </div>
       </div>
 
@@ -138,6 +132,27 @@
                 </tbody>
                     
                 </table>
+
+                <!--
+                <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
+	                 @csrf
+                    <div>
+                       <button style="background-color: #f7e348; padding: 15px; margin: 15px 20px; border-radius: 8px;" type="submit" class="">Download Students PDF</button>
+                    </div>
+                </form>
+
+
+
+            
+            <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button style="background-color: #f7e348;  padding: 15px; margin: 0px 20px; border-radius: 8px;" type="submit" class="">Download Tutors PDF</button>
+                </div>
+            </form>
+            -->
+
+            
       </section>
     </section>
   </div>

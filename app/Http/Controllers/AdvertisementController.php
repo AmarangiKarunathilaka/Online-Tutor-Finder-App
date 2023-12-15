@@ -12,6 +12,8 @@ use App\Models\tutorRegister;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\File;
 use Auth;
+//Ramal 2023.12.14
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdvertisementController extends Controller
 {
@@ -156,4 +158,17 @@ class AdvertisementController extends Controller
 
     return view('index', compact('searchtutors'));
     }
+
+
+    //My 2023.12.14
+    public function generate_pdf_advertisement()
+    {
+        $advertisements = Advertisement::all(); 
+        $pdf = Pdf::loadView('downloads/advertisementList',array('advertisements' => $advertisements));
+        return $pdf->download('downloads/advertisementList.pdf');
+    }
+
+
+
+
 }

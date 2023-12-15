@@ -31,4 +31,27 @@ class tutorRegister extends Authenticatable
     {
         return $this->belongsTo(tutorSubject::class);
     }*/
+
+
+    public function timetableEntries()
+    {
+        return $this->hasMany(Timetable::class, 'tutor_id');
+        
+    }
+
+    public function tutorprofile()
+    {
+        return $this->hasMany(TutorProfile::class, 'tutor_id');
+    }
+
+    public function tutordetails()
+    {
+        return $this->hasMany(Tutordetail::class, 'tutor_id');
+    
+    }
+
+    public function clzrequest()
+    {
+        return $this->hasMany(ClassRequest::class, 'tutor_id');
+    }
 }

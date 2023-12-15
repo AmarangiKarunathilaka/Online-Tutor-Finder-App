@@ -19,6 +19,7 @@ use App\Http\Controllers\combinedDisplayController;
 
 
 
+
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\StudentDashboardController;
 
@@ -28,6 +29,8 @@ use App\Http\Controllers\PdfController;
 
 //kavin
 use App\Http\controllers\ForgetPasswordManager;
+use App\Http\Controllers\EmailController;
+
 
 
 use App\Http\Controllers\TimetableController;
@@ -141,8 +144,11 @@ Route::get('/upload-class-material', function () {
 });
 
 
-Route::get('/TutorFeedback', function () {
-    return view('TutorFeedback');
+Route::get('/tutorFeedback', function () {
+    return view('tutorFeedback');
+});
+Route::get('/websiteFeedback', function () {
+    return view('websiteFeedback');
 });
 Route::get('/websiteFeedbackForm', function () {
     return view('websiteFeedbackForm');
@@ -152,9 +158,9 @@ Route::get('/popupBox', function () {
 });
 
 
-// Route::get('/adminHome', function () {
-//     return view('adminHome');
-// });
+Route::get('/admintimetable', function () {
+     return view('admintimetable');
+ });
 
 
 
@@ -249,10 +255,28 @@ Route::get('/download-pdf',[PdfController::class,'download_pdf']);
 
 
 
-// Ramal End
+//Amare 1
 Route::post('/generate_pdf_student',[studentRegisterController::class,'generate_pdf_student'])->name('generate_pdf_student');
 
+//My 2
+Route::post('/generate_pdf_tutor',[tutorRegisterController::class,'generate_pdf_tutor'])->name('generate_pdf_tutor');
 
+//My 3
+Route::post('/generate_pdf_advertisement',[AdvertisementController::class,'generate_pdf_advertisement'])->name('generate_pdf_advertisement');
+
+//My 4 no need
+
+
+//My 5
+Route::post('/generate_pdf_request',[ClassRequestController::class,'generate_pdf_request'])->name('generate_pdf_request');
+
+
+//My 6
+Route::post('/generate_pdf_feedback',[FeedbackController::class,'generate_pdf_feedback'])->name('generate_pdf_feedback');
+
+
+
+//Ramal End
 
 
 
@@ -285,16 +309,37 @@ Route::get('/tutorDashboard', function () {
 Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
 Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
 
+Route::post('/websiteFeedback', [FeedbackController::class, 'wfeedback'])->name('wfeedback');
+Route::post('/wfeedbackInput',[FeedbackController::class, 'uploadwFeedbackInput'])->name('uploadwFeedbackInput');
+
+Route::post('/tutorFeedback', [FeedbackController::class, 'tfeedback'])->name('tfeedback');
+Route::post('/tfeedbackInput',[FeedbackController::class, 'uploadtFeedbackInput'])->name('uploadtFeedbackInput');
+
 // View feedback list to admin
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
-// view feedback in guest interface
-// Route::get('/', [FeedbackController::class, 'feedbackDisplay'])->name('feedbackDisplay');
+Route::get('/adminFeedbackList', [FeedbackController::class, 'combinedAdminDisplay'])->name('combinedAdminDisplay');
 
+// view feedback in guest interface
+Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
+// accept & reject
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
-Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
+Route::get('/acceptwFeedback/{id}', [FeedbackController::class, 'acceptwFeedback']);
+Route::get('/rejectwFeedback/{id}', [FeedbackController::class, 'rejectwFeedback']);
+
+Route::get('/accepttFeedback/{id}', [FeedbackController::class, 'accepttFeedback']);
+Route::get('/rejecttFeedback/{id}', [FeedbackController::class, 'rejecttFeedback']);
+
+// view feedback
+Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
+
 
 
 
@@ -307,6 +352,9 @@ Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('co
 // edit tutor profile-Gayathtri
 //Route::resource('user-profiles', 'UserProfileController');
 //Route::POST('add',[UserProfileController::class,'editTutorProfile']);
+
+Route::get('/delete_profile/{id}', [TutorProfileController::class, 'destroy']);
+
 
 
 use App\Http\Controllers\YourController;
@@ -338,6 +386,25 @@ Route::get("/forget-password",[ForgetPasswordManager::class, "forgetPassword"])-
 Route::post("/forget-password",[ForgetPasswordManager::class, "forgetPasswordPost"])->name("forget.password.post");
 Route::get("reset-password/{token}",[ForgetPasswordManager::class,"resetPassword"])->name("reset.password");
 Route::post("/reset-password", [ForgetPasswordManager::class, "resetPasswordPost"])->name("reset.password.post");
+
+//email send accept/remove
+
+//Route::get('/send-email-button', [EmailController::class, 'showEmailForm'])->name('send.email.form');
+//Route::post('/send-email-button', [EmailController::class, 'sendEmail'])->name('send.email');
+
+Route::post('/send-email-button', [studentRegisterController::class, 'sendEmailButton'])->name('send.email.button');
+Route::get('/send-email-button', [studentRegisterController::class, 'sendEmailButton'])->name('send.email.button');
+
+Route::post('/send-email/{email}', [studentRegisterController::class, 'sendEmail'])->name('send.email');
+
+Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student']);
+Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student']);
+
+Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor']);
+Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor']);
+
+Route::get('/admin/studentList', 'studentRegisterController@adminStudentList')->name('adminStudentList');
+
 
 //Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
@@ -381,10 +448,8 @@ Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->nam
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
-//TIMETABLE
-//Route::get('/editTutorProfile', [TimetableController::class, 'index']);
-//Route::post('/update-timetable', [TimetableController::class, 'update']);
-//Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+//Timetable
+Route::get('/admintimetable', [combinedDisplayController::class, 'admintimetable'])->name('admintimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
@@ -394,14 +459,20 @@ Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfil
 
 Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
 
-Route::get('/tutorDashboard', [TutorProfileController::class, 'tutorDashboard'])->name('tutorDashboard');
+Route::get('/tutorDashboard', [combinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
 
 Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
 
 
+//Class Request
+Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
+
+
+
+
 //nalaka
-Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
-Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+//Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'classRequestInput'])->name('classRequestInput');
 // view requests in admin
 Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
 

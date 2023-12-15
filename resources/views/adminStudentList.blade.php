@@ -8,8 +8,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/report.css">
+    
+
     <title>Student Table</title>
 
 </head>
@@ -69,10 +72,18 @@
                     <td>{{ $student->studentPhoneNumber }}</td>
                     <td>{{ $student->studentEmail }}</td>
                     <td>{{ $student->status }}</td>
-                    <td><a href="{{url('accept_student',$student->id)}}"><button type="button" class="accept">Accept </button>
-                        <a href="{{url('reject_student',$student->id)}}" ><button type="button" class="remove">Reject</button></td>
+                    @if(session('message'))
+                         <div>{{ session('message') }}</div>
+                    @endif
+
+                    <form action="{{ route('send.email', ['email' => $student->studentEmail]) }}" method="POST">
+                    @csrf
+    
+                    <td><a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept">Accept</button>
+                        <a href="{{url('reject_student',$student->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
+                    </td>
+                    </form>
                     </tr>
-                    
                     @endforeach
                 </tbody>
 
@@ -80,11 +91,20 @@
                         
             </div>
         </div>
-        
-        
+
+
+        <!--Ramal 2023.12.14 Button 1-->
+        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
+	        @csrf
+                <div>
+                    <button class="button">Download PDF</button>
+                </div>
+        </form>
+
+
     </div>
     </section>
     @endsection
-    
+
 </body>
 </html>

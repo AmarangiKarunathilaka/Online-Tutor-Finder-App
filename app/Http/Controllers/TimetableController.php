@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Timetable;
 use App\Models\TutorProfile;
 use Illuminate\Http\Request;
+use App\Models\login;
 use Illuminate\Support\Facades\Session;
 
 class TimetableController extends Controller
@@ -50,6 +51,21 @@ class TimetableController extends Controller
 
         $timeslot->save();
         return redirect()->back();
+    }
+
+    
+    public function create()
+    {
+        
+        $userId = Session::get('user_id');
+        $timeSlots = Timetable::where('timetables.tutor_id','=', $userId)
+                                ->distinct()->pluck('time');
+
+        $userId = Session::get('user_id');                        
+        $days = Timetable::where('timetables.tutor_id','=', $userId)
+                        ->distinct()->pluck('day');
+
+        return view('classRequest', compact('timeSlots', 'days'));
     }
 
 

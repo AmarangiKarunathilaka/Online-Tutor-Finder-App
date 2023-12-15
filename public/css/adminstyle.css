@@ -9,7 +9,7 @@ table {
 
 th, td {
     border: 1px solid #dfdbce;;
-    padding: 8px;
+    padding: 2px;
     text-align: left;
 }
 
@@ -43,7 +43,7 @@ tr {
 }
 
 .values .val-box i {
-    font-size: 25px;
+    font-size: 10px;
     width: 60px;
     height: 60px;
     line-height: 60px;
@@ -63,16 +63,18 @@ tr {
     font-size: 15px;
     color: #7e7d7d;
 }
-.accept{
+.accept {
     background-color: rgb(233, 175, 15);
     border-radius: 5px;
 }
 .remove{
     background-color: rgb(255, 0, 0);
     border-radius: 5px;
+    margin-top: 5px;
 }
 
 .form-box {
+
     padding: 20px;
 }
 
@@ -85,4 +87,14 @@ tr {
     .form-box {
         padding: 20px;
     }
+
+
+    
+
+}
+button:hover {
+    color: rgb(2, 2, 2);
+
+
+
 }
