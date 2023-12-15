@@ -21,7 +21,7 @@ class Message implements ShouldBroadcast
 
     public function __construct($username,$message)
     {
-        //$userId = Session::get('user_id');
+        
         $this->username = $username;
         $this->message = $message;
     }
