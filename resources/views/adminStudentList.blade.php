@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css"  rel="stylesheet">
+    <link rel="stylesheet" href="css/report.css">
+    
 
     <title>Student Table</title>
 
@@ -96,7 +97,7 @@
         <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
 	        @csrf
                 <div>
-                    <button class="button1">Download PDF</button>
+                    <button class="button">Download PDF</button>
                 </div>
         </form>
 
