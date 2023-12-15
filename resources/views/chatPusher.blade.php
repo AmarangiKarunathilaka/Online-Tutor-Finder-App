@@ -16,20 +16,20 @@
     <div class="row">
 
         <div class="col-sm-6 offset-sm-3 my-2">
-            <input type="text" class="form-control" name="username" id="username" placeholder="Enter a user ..........">
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter a user .........." value="{{$username->studentFullName}}">
         </div>
 
         <div class="col-sm-6 offset-sm-3">
-            <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box  direct-chat direct-chat-primary">
 
                 <div class="box-body">
-                    <div class="direct-chat-messages" id="messages"></div>
+                    <div class="direct-chat-messages" id="messages"  ></div>
                 </div>
 
                 <div class="box-footer">
                     <form action="#" method="post" id="message_form">
                         <div class="input-group">
-                            <input type="text" name="message" id="message" placeholder="Type Message ..." class="form-control">
+                            <input type="text" name="message" id="message" placeholder="Type Message ..." class="form-control" >
                             <span class="input-group-btn">
                                 <button type="submit" id="send_message"  class="btn btn-primary btn-flat">Send</button>
                           </span>
