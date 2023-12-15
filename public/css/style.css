@@ -632,6 +632,12 @@ nav ul li:last-child a {
   
 }
 
+.reviews-section h6{
+  color: #920707; 
+ 
+  
+}
+
 .reviews-carousel .owl-item img{
   border-radius: 50%;
   width: 250px;

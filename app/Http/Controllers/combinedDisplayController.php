@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Feedback;
+use App\Models\WebsiteFeedback;
+use App\Models\TutorFeedback;
 use App\Models\Advertisement;
 use App\Models\Timetable;
 use App\Models\TutorProfile;
@@ -34,9 +36,14 @@ class CombinedDisplayController extends Controller
         ->get();
         
         $feedback = Feedback::where('status','=','accepted')->get();
+        $wfeedback = WebsiteFeedback::where('status','=','accepted')->get();
+        $tfeedback = TutorFeedback::where('status','=','accepted')->get();
     
-        return view('index', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'feedback'));
+        return view('index', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'feedback', 'wfeedback', 'tfeedback'));
     }
+
+        
+
 
     
     
@@ -308,6 +315,7 @@ class CombinedDisplayController extends Controller
                                             ,'time10','time11','time12','time13','time14','time15','time16','time17','time18','time19','time20'
                                             ,'time21','time22','time23','time24','time25','time26','time27','time28'));
     }
+
 }
     
 

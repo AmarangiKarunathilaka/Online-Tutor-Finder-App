@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Advertisement;
+use App\Models\TutorFeedback;
 
 class StudentDashboardController extends Controller
 {
@@ -25,8 +26,10 @@ class StudentDashboardController extends Controller
         $advertisementBiology = Advertisement::where('status', '=', 'accepted')
         ->where('subject', '=', 'Biology')
         ->get();
+
+        $tfeedback = TutorFeedback::where('status','=','accepted')->get();
         
-        return view('studentDashboard', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology'));
+        return view('studentDashboard', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'tfeedback'));
         
     }
 }
