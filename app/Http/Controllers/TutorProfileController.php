@@ -106,6 +106,7 @@ public function TutorprofileInput(Request $request)
     public function destroy($id)
     {
         // Delete the advertisement
+        
         TutorProfile::destroy($id);
 
         return redirect()->back();
