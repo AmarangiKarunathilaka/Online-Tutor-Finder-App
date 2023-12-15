@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
+    <link rel="stylesheet" href="css/ramal1.css">
 
     <title>Tutor Table</title>
 
@@ -44,7 +44,7 @@
         <div class="form-box">
             <div class="container mt-4 ">
                 
-                <table class="table table-success table-striped" border: 1px solid;>
+                <table class="table table-success table-striped" >
                  
                 <thead>
                     <tr>
