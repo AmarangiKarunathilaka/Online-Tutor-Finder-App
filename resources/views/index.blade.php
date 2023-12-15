@@ -103,15 +103,7 @@ Bootstrap 5 HTML CSS Template
                         <div class="col-lg-8 col-12 text-center mx-auto">
                            
                                 <h3>Find a Tutor </h3>
-                                <form action="#" method="get" | class="search-bar">
-                                <input type="text" placeholder="Enter subject..." name="subject">
-                           
-        
-                               
-                                 <button type="submit"><i class='bx bx-search'></i></button>
-                                </div>
-                                </form>
-                            
+                                
                         </div>
                     </div>
                 </div>
@@ -119,7 +111,55 @@ Bootstrap 5 HTML CSS Template
             </section>
     
             
-            <section class="about-section section-padding" id="section_2">
+                
+            <section class="advertisement" id="">
+        <div class="col-lg-12 col-12">
+            <h2></h2>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <form action="{{ route('search') }}" method="GET">
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Search Tutors by Subject:</label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" >
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+            @forelse ($searchtutors as $subject => $tutors)
+                <div class="col-lg-12 col-12">
+                    <div class="subject">
+                        <h3><i><u>{{ $subject }}</u></i></h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="owl-carousel reviews-carousel">
+                        @foreach ($tutors as $tutor)
+                            @if (is_object($tutor))
+                                <div class="col">   
+                                    <img src="/uploads/{{ $tutor->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                    <h2>{{ $tutor->tutorName }}</h2>
+                                    <p>{{ $tutor->description }}</p>
+                                    <h3>{{ $tutor->subject }}</h3>
+                                    <button class="register">Register Now</button>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            @empty
+                <div class="col-md-12 p-2">
+                    <h4>No Tutors Available</h4>
+                </div>
+            @endforelse
+        </div>
+    </section>
+
+
+<section class="about-section section-padding" id="section_2">
                 
                 <div class="container">
                     
@@ -146,121 +186,6 @@ Bootstrap 5 HTML CSS Template
                     </div>
                 </div>
             </section>
-
-            
-
-
-
-            
-            
-               
-            <section class= "advertisement" id="">
-
-                <div class="col-lg-12 col-12">
-                     <h2>Our Tutors</h2>
-                </div>
-            </section>
-            
-            <section class="content">
-            
-                
-            <div class="col-lg-12 col-12">
-            <div class="subject">
-                <h3><i><u>Mathematics</u></i></h3>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <div class="owl-carousel reviews-carousel">
-                    @foreach ($advertisementMaths as $advertisementMath)
-                        <div class="col">   
-                                    
-                            <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                            <h2>{{ $advertisementMath->tutorName }}</h2>
-                            <p>{{ $advertisementMath->description }}</p>
-                            <h3>{{ $advertisementMath->subject }}</h3>
-                            <button class="register">Register Now</button>
-                        </div>
-                    @endforeach
-            </div>
-
-        </div>
-
-
-
-        <div class="col-lg-12 col-12">
-            <div class="subject">
-                <h3><i><u>Physics</u></i></h3>
-            </div>
-        </div> 
-
-        <div class="row">
-            
-            <div class="owl-carousel reviews-carousel">
-                    @foreach ($advertisementPhysics as $advertisementPhysic)
-                            <div class="col">   
-                                
-                                <img src="/uploads/{{ $advertisementPhysic ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                                <h2>{{ $advertisementPhysic->tutorName }}</h2>
-                                <p>{{ $advertisementPhysic->description }}</p>
-                                <h3>{{ $advertisementPhysic->subject }}</h3>
-                                <button class="register">Register Now</button>
-                            </div>
-                    @endforeach
-            </div>
-            
-        </div> 
-
-
-
-        <div class="col-lg-12 col-12">
-            <div class="subject">
-                <h3><i><u>Chemistry</u></i></h3>
-            </div>
-        </div> 
-
-        <div class="row">
-
-            <div class="owl-carousel reviews-carousel">
-                    @foreach ($advertisementChemistry as $advertisementChem)
-                            <div class="col">   
-                                
-                                <img src="/uploads/{{ $advertisementChem ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                                <h2>{{ $advertisementChem->tutorName }}</h2>
-                                <p>{{ $advertisementChem->description }}</p>
-                                <h3>{{ $advertisementChem->subject }}</h3>
-                                <button class="register">Register Now</button>
-                            </div>
-                    @endforeach
-            </div>
-
-        </div>
-
-
-        <div class="col-lg-12 col-12">
-            <div class="subject">
-                <h3><i><u>Biology</u></i></h3>
-            </div>
-        </div> 
-
-        <div class="row">
-            <div class="owl-carousel reviews-carousel">
-                    @foreach ($advertisementBiology as $advertisementBio)
-                            <div class="col">   
-                                
-                                <img src="/uploads/{{ $advertisementBio ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                                <h2>{{ $advertisementBio->tutorName }}</h2>
-                                <p>{{ $advertisementBio->description }}</p>
-                                <h3>{{ $advertisementBio->subject }}</h3>
-                                <button class="register">Register Now</button>
-                            </div>
-                    @endforeach
-            </div>
-
-        </div>
-    
-</section> 
 
 <section class="reviews-section section-padding pb-0">
     <div class="container">

@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\LoginController;
+use App\Models\tutorRegister;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\File;
 use Auth;
 //Ramal 2023.12.14
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -24,11 +26,12 @@ class AdvertisementController extends Controller
     public function advertisementUploadInput(Request $request)
     {
         
+        
         $userId = Session::get('user_id');
         $advertisement= new Advertisement();
         $advertisement->tutor_id = $userId;
-        $advertisement->tutorName = $request -> fullName;
-        $advertisement->email = $request->email;
+        $advertisement->tutorName = $request -> input('fullName');
+        $advertisement->email = $request->input('email');
         $advertisement->payment = $request -> payment;
         $advertisement->subject = $request->subject;
         $advertisement->photo = $request->photo;
@@ -85,35 +88,59 @@ class AdvertisementController extends Controller
         $advertisements = Advertisement::where('status','=','accepted')
         ->where('tutor_id','=',Session::get('user_id'))
         ->get();
-        return view('advertismentUpload', compact('advertisements'));
+
+        $userId = Session::get('user_id');
+        $tutorName = tutorRegister::where('tutor_registers.id','=',$userId)
+                                 ->select('tutor_registers.tutorFullName')
+                                ->get();
+
+        //dd($tutorName);
+
+        $userId = Session::get('user_id');
+        $email = tutorRegister::where('tutor_registers.id','=',$userId)
+                                ->get();
+
+        
+        return view('advertismentUpload', compact('advertisements','tutorName','email'));
         
     }
 
-    public function showData($id)
-    {
-        // update the advertisement
-        $data = Advertisement::find($id);
-        return view('editAdvertisement', ['advertisements'=>$data]);
-      
-    }
+    public function showData($id){
 
-    public function updateAdvertisement(Request $request, $id)
-    {
-        // update the advertisement
         $advertisement = Advertisement::find($id);
-        $photo=$request->photo;
-
-        if($photo)
-        {
-            $photoname=time().'.'.$photo->getClientOriginalExtension();
-            $request->photo->move('uploads',$photoname);
-
-            $advertisement->photo=$photoname;
-        }
-        $advertisement->update($request->all());
-
-        return redirect()->back();
+        return view('editAdvertisement' , compact('advertisement')); 
     }
+
+    //update the adevertisement 
+    public function updateAdvertisement(Request $request, $id) {
+
+        $advertisement = Advertisement::find($id);
+
+        $advertisement->tutorName = $request -> input('fullName');
+        $advertisement->email = $request->input('email');
+        $advertisement->payment = $request -> input('payment');
+        $advertisement->subject = $request->input('subject');
+        $advertisement->description = $request -> input('message'); 
+       
+        if($request -> hasFile('photo')){
+            $destination = 'uploads/'.$advertisement->photo;
+            if(File::exists($destination)) {
+                File::delete($destination);
+
+            }
+            $photo = $request->file('photo');
+            $extention = $photo->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $photo->move('uploads/',$filename);
+            $advertisement->photo = $filename;
+        }
+
+        $advertisement->update();
+        return redirect()->back()-with('status','advertisement updated successfully');
+
+
+    }
+
 
     public function destroy($id)
     {
@@ -121,6 +148,15 @@ class AdvertisementController extends Controller
         Advertisement::destroy($id);
 
         return redirect()->back();
+    }
+
+    //search advertisement
+    public function searchTutors(Request $request){
+
+        $subject = $request->input('subject');
+        $searchtutors = Advertisement::where('subject', 'like', "%$subject%")->get()->groupBy('subject');
+
+    return view('index', compact('searchtutors'));
     }
 
 
@@ -131,6 +167,7 @@ class AdvertisementController extends Controller
         $pdf = Pdf::loadView('downloads/advertisementList',array('advertisements' => $advertisements));
         return $pdf->download('downloads/advertisementList.pdf');
     }
+
 
 
 

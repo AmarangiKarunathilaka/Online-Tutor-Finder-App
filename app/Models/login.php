@@ -14,5 +14,10 @@ class login extends Model
         'password'
     ];
 
-    
+
+    public function tutor()
+{
+    return $this->hasMany(tutorRegister::class);
+}
+
 }

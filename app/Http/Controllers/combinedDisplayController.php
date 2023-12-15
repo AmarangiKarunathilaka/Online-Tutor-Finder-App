@@ -37,8 +37,10 @@ class combinedDisplayController extends Controller
         ->get();
         
         $feedback = Feedback::where('status','=','accepted')->get();
+
         $wfeedback = WebsiteFeedback::where('status','=','accepted')->get();
         $tfeedback = TutorFeedback::where('status','=','accepted')->get();
+
     
         return view('index', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'feedback', 'wfeedback', 'tfeedback'));
     }

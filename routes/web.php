@@ -208,6 +208,9 @@ Route::get('/editAdvertisement', function () {
 
 
 
+Route::get('/search', function () {
+    return view('search');
+});
 
 
 
@@ -532,4 +535,7 @@ Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
 //});
+
+//search advertisement
+Route::get('/', [AdvertisementController::class, 'searchTutors'])->name('search');
 
