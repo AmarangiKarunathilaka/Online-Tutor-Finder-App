@@ -68,17 +68,11 @@
                                 @endif
                                     </div>
                                     
-                                    <div class="buttons">
-                                        <a href="/editTutorProfile" class="btn">Edit</a>
+                                    <div class="buttons" style="margin-left:1%;">
+                                        <a href="/editTutorProfile" class="btn" >Edit</a>
                                         <input type="checkbox" id="check">
-                                        @csrf
-                                        @method('DELETE')
+                                       
 
-                                        @if(isset($profile))
-                                        <a href="{{url('delete_profile',$profile->id)}}" ><button type="button" class="show_button" style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);margin-top:-10px;"for="check">Delete</button></a>
-                                        @else
-                                        <label class="show_button" style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);margin-top:-10px;"for="check">Delete</label>
-                                        @endif
                                    
                                       </div>
                                 

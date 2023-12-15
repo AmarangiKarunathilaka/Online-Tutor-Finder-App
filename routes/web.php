@@ -420,9 +420,7 @@ Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->nam
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
-//TIMETABLE
-//Route::get('/editTutorProfile', [TimetableController::class, 'index']);
-//Route::post('/update-timetable', [TimetableController::class, 'update']);
+//Timetable
 Route::get('/admintimetable', [CombinedDisplayController::class, 'admintimetable'])->name('admintimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
@@ -438,11 +436,15 @@ Route::get('/tutorDashboard', [CombinedDisplayController::class, 'tutorDashboard
 Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
 
 
+//Class Request
+Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
+
+
 
 
 //nalaka
-Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
-Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+//Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'classRequestInput'])->name('classRequestInput');
 // view requests in admin
 Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
 
