@@ -147,4 +147,13 @@ class AdvertisementController extends Controller
 
         return redirect()->back();
     }
+
+    //search advertisement
+    public function searchTutors(Request $request){
+
+        $subject = $request->input('subject');
+        $searchtutors = Advertisement::where('subject', 'like', "%$subject%")->get()->groupBy('subject');
+
+    return view('index', compact('searchtutors'));
+    }
 }

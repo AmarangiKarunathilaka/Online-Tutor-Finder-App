@@ -8,7 +8,7 @@ use App\Models\Advertisement;
 
 
 
-class CombinedDisplayController extends Controller
+class combinedDisplayController extends Controller
 {
     public function combinedDisplay()
     {
@@ -29,6 +29,8 @@ class CombinedDisplayController extends Controller
         ->get();
         
         $feedback = Feedback::where('status','=','accepted')->get();
+
+
     
         return view('index', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'feedback'));
     }
