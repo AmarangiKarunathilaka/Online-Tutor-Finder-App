@@ -522,6 +522,11 @@ public function admintimetable()
                                         ,'time21','time22','time23','time24','time25','time26','time27','time28'));
 }
 
+public function error()
+{
+////
+
 }
     
 
+}
