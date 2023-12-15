@@ -9,8 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/adminstyle.css">
-    <link href="css/report.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ramal1.css">
 
     <title>Advertisement Table</title>
 
