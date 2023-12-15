@@ -71,8 +71,7 @@
                         <td>{{ $tutor->tutorEmail }}</td>
                         <td>{{ $tutor->tutorMedium }}</td>
                         <td>{{ $tutor->tutorSubject}}</td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
+                        
                     </tr>
                         
                     @endforeach
