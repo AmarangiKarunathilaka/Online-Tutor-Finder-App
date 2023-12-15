@@ -130,7 +130,7 @@
 
 
 
-/* Side Review bar */
+/* Side Review bar 
 .sidebar1{
  display: block;
   margin-left: 75%;
@@ -195,7 +195,7 @@
   font-size: 11px;
   word-spacing: 3px;
   color: rgb(119, 119, 119);
-}
+}*/
 
 /*profile card css*/
 
@@ -215,7 +215,7 @@
 }
 .image{
   position: relative;
-  height: 150px;
+  height: 10px;
   width: 150px;
   border-radius: 50%;
   background-color: #fff;
@@ -529,6 +529,12 @@ table thead tr{
 }
 .table tbody tr td{
   border: 1px solid #899817;
+}
+
+.table tbody tr td li{
+ color:#000;
+ font-weight:500;
+ 
 }
 .table tbody tr:nth-of-type(odd){
   background: #f3f3f3;

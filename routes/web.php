@@ -16,6 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\combinedDisplayController;
 
+use App\Http\Controllers\combinedDisplayController;
 
 
 
@@ -158,9 +159,9 @@ Route::get('/popupBox', function () {
 });
 
 
-// Route::get('/adminHome', function () {
-//     return view('adminHome');
-// });
+Route::get('/admintimetable', function () {
+     return view('admintimetable');
+ });
 
 
 
@@ -208,6 +209,9 @@ Route::get('/editAdvertisement', function () {
 
 
 
+Route::get('/search', function () {
+    return view('search');
+});
 
 
 
@@ -324,6 +328,9 @@ Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('co
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
+
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
 Route::get('/acceptwFeedback/{id}', [FeedbackController::class, 'acceptwFeedback']);
 Route::get('/rejectwFeedback/{id}', [FeedbackController::class, 'rejectwFeedback']);
 
@@ -332,6 +339,7 @@ Route::get('/rejecttFeedback/{id}', [FeedbackController::class, 'rejecttFeedback
 
 // view feedback
 Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
 
 
 
@@ -441,10 +449,8 @@ Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->nam
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
-//TIMETABLE
-//Route::get('/editTutorProfile', [TimetableController::class, 'index']);
-//Route::post('/update-timetable', [TimetableController::class, 'update']);
-//Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+//Timetable
+Route::get('/admintimetable', [combinedDisplayController::class, 'admintimetable'])->name('admintimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
@@ -454,16 +460,20 @@ Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfil
 
 Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
 
-Route::get('/tutorDashboard', [CombinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
+Route::get('/tutorDashboard', [combinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
 
 Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
+
+
+//Class Request
+Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
 
 
 
 
 //nalaka
-Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
-Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+//Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'classRequestInput'])->name('classRequestInput');
 // view requests in admin
 Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
 
@@ -526,4 +536,7 @@ Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
 //});
+
+//search advertisement
+Route::get('/', [AdvertisementController::class, 'searchTutors'])->name('search');
 

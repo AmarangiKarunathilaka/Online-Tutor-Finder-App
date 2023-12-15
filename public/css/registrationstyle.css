@@ -147,8 +147,11 @@ strong {
   NAVIGATION              
 -----------------------------------------*/
 
-    
-
+/*Ramal 2023.12.15*/   
+li {
+  display: inline;
+  float: right;
+}
 
 .navbar {
   background-color: #36363e;
@@ -160,8 +163,8 @@ strong {
 .navbar img  {
   margin-bottom: 1px;
   border-radius: 5%;
-  width: 10%;
-  padding-top: 8px;
+  width: 100%;
+  padding-top: 1px;
 }
 
 

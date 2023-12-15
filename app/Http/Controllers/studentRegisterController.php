@@ -115,7 +115,7 @@ class studentRegisterController extends Controller
         ];
 
         Mail::to($email)->send(new SendEmail($details));
-    //}
+    
     return redirect()->back();
         //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
 

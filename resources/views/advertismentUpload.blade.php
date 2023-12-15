@@ -31,25 +31,29 @@
       <form action="{{ url('/advertisementInput') }}" method="post" enctype="multipart/form-data">
         @csrf
 
+        @foreach ($tutorName as $tutorName)
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="fullName">Name</label>
             <input type="text"
                     id="fullName"
                     name="fullName"
-                    placeholder="Name to be displayed"/>
+                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}"/>
           </div>
+          @endforeach
+
+          @foreach ($email as $email)
           <div class="user-input-box">
             <label for="email">Email</label>
             <input type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your Email"/>
+                    placeholder="Enter your Email" value="{{$email->tutorEmail}}"/>
           </div>
-          
+          @endforeach
           
           <div class="user-input-box">
-            <label for="title">Payment</label>
+            <label for="title">Class Fee</label>
             <input type="text"
                     id="title"
                     name="payment"
