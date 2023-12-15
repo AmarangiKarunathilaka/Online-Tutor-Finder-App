@@ -156,7 +156,7 @@ class AdvertisementController extends Controller
         $subject = $request->input('subject');
         $searchtutors = Advertisement::where('subject', 'like', "%$subject%")->get()->groupBy('subject');
 
-    return view('index', compact('searchtutors'));
+    return view('search', compact('searchtutors'));
     }
 
 
