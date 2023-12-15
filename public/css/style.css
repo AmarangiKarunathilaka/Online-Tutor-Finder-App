@@ -150,7 +150,7 @@ strong {
     
 
 .navbar {
-    background-color: #3e3736;
+    background-color: #36363e;
     padding-top: 0;
     padding-bottom: 0;
     transition: all 0.3s;
@@ -373,7 +373,13 @@ nav ul li:last-child a {
     margin-top: 3%;
     margin-left:10%;
     height: 50px;
+    text-align: center;
     
+    
+}
+
+::placeholder {
+  color: #dbee10;
 }
 
 .search-bar input {
@@ -390,7 +396,7 @@ nav ul li:last-child a {
 }
 
 ::placeholder {
-    color: #919197;
+    color: #eec910;
 }
 
 .search-bar button img  {
@@ -402,7 +408,7 @@ nav ul li:last-child a {
     border: 0;
     padding: 10px 10px;
     border-radius:50%;
-    background-color: #ffffff;
+    background-color: #e8ac20;
 }
 
 /*---------------------------------------

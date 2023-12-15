@@ -88,13 +88,6 @@ Bootstrap 5 HTML CSS Template
 
     <section class="content">
         <div class="container">
-            <form action="{{ route('search') }}" method="GET">
-                <div class="mb-3">
-                    <label for="subject" class="form-label">Search Tutors by Subject:</label>
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject">
-                </div>
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
 
             @forelse ($searchtutors as $subject => $tutors)
                 <div class="col-lg-12 col-12">

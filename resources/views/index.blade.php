@@ -113,52 +113,118 @@ Bootstrap 5 HTML CSS Template
             
                 
             <section class="advertisement" id="">
-        <div class="col-lg-12 col-12">
-            <h2></h2>
-        </div>
-    </section>
+                <div class="col-lg-12 col-12">
+                    <h2></h2>
+                </div>
+            </section>
 
     <section class="content">
         <div class="container">
             <form action="{{ route('search') }}" method="GET">
                 <div class="mb-3">
-                    <label for="subject" class="form-label">Search Tutors by Subject:</label>
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" >
+                    <label for="subject" class="form-label"></label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Search Tutors by Subject:" >
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary" style="color:#eec910">Search</button>
             </form>
 
-            @forelse ($searchtutors as $subject => $tutors)
-                <div class="col-lg-12 col-12">
-                    <div class="subject">
-                        <h3><i><u>{{ $subject }}</u></i></h3>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="owl-carousel reviews-carousel">
-                        @foreach ($tutors as $tutor)
-                            @if (is_object($tutor))
-                                <div class="col">   
-                                    <img src="/uploads/{{ $tutor->photo }}"  width='50' height='50' class="img img-responsive"/>
-                                    <h2>{{ $tutor->tutorName }}</h2>
-                                    <p>{{ $tutor->description }}</p>
-                                    <h3>{{ $tutor->subject }}</h3>
-                                    <button class="register">Register Now</button>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-            @empty
-                <div class="col-md-12 p-2">
-                    <h4>No Tutors Available</h4>
-                </div>
-            @endforelse
+            <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Mathematics</u></i></h3>
+            </div>
         </div>
-    </section>
+
+        <div class="row">
+
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementMaths as $advertisementMath)
+                        <div class="col">   
+                                    
+                            <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                            <h4>{{ $advertisementMath->tutorName }}</h4>
+                            <p>{{ $advertisementMath->description }}</p>
+                            <h5>{{ $advertisementMath->subject }}</h5>
+                            <button class="register">Register Now</button>
+                        </div>
+                    @endforeach
+            </div>
+
+        </div>
 
 
+
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Physics</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+            
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementPhysics as $advertisementPhysic)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementPhysic ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h4>{{ $advertisementPhysic->tutorName }}</h4>
+                                <p>{{ $advertisementPhysic->description }}</p>
+                                <h3>{{ $advertisementPhysic->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+            
+        </div> 
+
+
+
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Chemistry</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementChemistry as $advertisementChem)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementChem ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h4>{{ $advertisementChem->tutorName }}</h4>
+                                <p>{{ $advertisementChem->description }}</p>
+                                <h3>{{ $advertisementChem->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-12 col-12">
+            <div class="subject">
+                <h3><i><u>Biology</u></i></h3>
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="owl-carousel reviews-carousel">
+                    @foreach ($advertisementBiology as $advertisementBio)
+                            <div class="col">   
+                                
+                                <img src="/uploads/{{ $advertisementBio ->photo }}"  width='50' height='50' class="img img-responsive"/>
+                                <h4>{{ $advertisementBio->tutorName }}</h4>
+                                <p>{{ $advertisementBio->description }}</p>
+                                <h3>{{ $advertisementBio->subject }}</h3>
+                                <button class="register">Register Now</button>
+                            </div>
+                    @endforeach
+            </div>
+
+        </div>
+
+</section>
 <section class="about-section section-padding" id="section_2">
                 
                 <div class="container">
@@ -232,7 +298,7 @@ Bootstrap 5 HTML CSS Template
                                 <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
                                     <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                         <p class="text-white mb-0">
-                                            <strong>{{ $feedback->name }}</strong> ( <small>Tutor</small> )
+                                            <strong>{{ $feedback->name }}</strong> ( <small>Student</small> )
                                         </p>
 
                                         <div class="reviews-icons">
@@ -250,60 +316,54 @@ Bootstrap 5 HTML CSS Template
                                                
                                         
 
-                    @if(isset($wfeedback) && count($wfeedback)>0)
-                        @foreach ($wfeedback as $wfeedback)
-                            <div class="reviews-thumb">
-                                <div class="reviews-body">
-                                    <h4>{{ $wfeedback->message }}</h4>
-                                </div>
+                    <!-- <div class="reviews-thumb">
+                        <div class="reviews-body">
+                            <h4>Please recommend Tutor4u website to your friends.</h4>
+                        </div>
 
-                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                        <p class="text-white mb-0">
-                                            <strong>{{ $wfeedback->name }}</strong> ( <small>Student</small> )
-                                        </p>
+                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                            
 
-                                        <div class="reviews-icons">
-                                            @for ($i = 0; $i <= 4; $i++)
-                                            <i class="bi-star-fill{{ $i >= $wfeedback->rating ? 'active' : '' }}"></i>
-                                            @endfor
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @else
-                        <p>No reviews found</p>
-                    @endif
-                    
+                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                <p class="text-white mb-0">
+                                    <strong>Helen</strong>, <small>Client</small>
+                                </p>
 
-                    @if(isset($tfeedback) && count($tfeedback)>0)
-                        @foreach ($tfeedback as $tfeedback)
-                            <div class="reviews-thumb">
-                                <div class="reviews-body">
-                                    <h6>{{ $tfeedback->tutor }}</h6>
-                                    <h4>{{ $tfeedback->message }}</h4>
-                                </div>
-
-                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                        <p class="text-white mb-0">
-                                            <strong>{{ $tfeedback->name }}</strong> ( <small>Student</small> )
-                                        </p>
-
-                                        <div class="reviews-icons">
-                                            @for ($i = 0; $i <= 4; $i++)
-                                            <i class="bi-star-fill{{ $i >= $tfeedback->rating ? 'active' : '' }}"></i>
-                                            @endfor
-                                        </div>
-                                    </div>
+                                <div class="reviews-icons">
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
                                 </div>
                             </div>
-                        @endforeach
-                    @else
-                        <p>No reviews found</p>
-                    @endif
+                        </div>
+                    </div> -->
                     
+
+                    <!-- <div class="reviews-thumb">
+                        <div class="reviews-body">
+                            <h4>Thank you for visiting Tooplate to download free templates.</h4>
+                        </div>
+
+                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                            
+
+                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                <p class="text-white mb-0">
+                                    <strong>Susan</strong>, <small>Boss</small>
+                                </p>
+
+                                <div class="reviews-icons">
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
 
                 <!-- <div class="col-lg-12 col-12">
