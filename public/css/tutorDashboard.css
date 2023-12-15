@@ -530,6 +530,12 @@ table thead tr{
 .table tbody tr td{
   border: 1px solid #899817;
 }
+
+.table tbody tr td li{
+ color:#000;
+ font-weight:500;
+ 
+}
 .table tbody tr:nth-of-type(odd){
   background: #f3f3f3;
 
