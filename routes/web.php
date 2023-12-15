@@ -311,7 +311,7 @@ Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
-Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
 
 
 
@@ -421,7 +421,7 @@ Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
 //Timetable
-Route::get('/admintimetable', [CombinedDisplayController::class, 'admintimetable'])->name('admintimetable');
+Route::get('/admintimetable', [combinedDisplayController::class, 'admintimetable'])->name('admintimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
@@ -431,7 +431,7 @@ Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfil
 
 Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
 
-Route::get('/tutorDashboard', [CombinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
+Route::get('/tutorDashboard', [combinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
 
 Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
 

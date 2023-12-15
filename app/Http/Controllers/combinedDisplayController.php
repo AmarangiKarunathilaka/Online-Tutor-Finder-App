@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 
 
 
-class CombinedDisplayController extends Controller
+class combinedDisplayController extends Controller
 {
     public function combinedDisplay()
     {
