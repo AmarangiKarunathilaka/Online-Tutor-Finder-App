@@ -40,7 +40,7 @@ use App\Http\Controllers\TutorProfileController;
 
 //chat
 use App\Events\Message;
-
+use App\Http\Controllers\ChatController;
 use Illuminate\Http\Request;
 
 
@@ -512,6 +512,10 @@ Route::get('/chatPusher', function () {
     return view('chatPusher');
 });
 
+Route::get('/chatPusherTutor', function () {
+    return view('chatPusherTutor');
+});
+
 
 Route::post('send-message',function (Request $request){
     event(new Message($request->username, $request->message));
@@ -538,4 +542,7 @@ Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']
 
 //search advertisement
 Route::get('/', [AdvertisementController::class, 'searchTutors'])->name('search');
+
+Route::get('/chatPusher', [ChatController::class, 'chatStudent'])->name('chatStudent');
+Route::get('/chatPusherTutor', [ChatController::class, 'chatTutor'])->name('chatTutor');
 
