@@ -47,5 +47,11 @@ class tutorRegister extends Authenticatable
     public function tutordetails()
     {
         return $this->hasMany(Tutordetail::class, 'tutor_id');
+    
+    }
+
+    public function clzrequest()
+    {
+        return $this->hasMany(ClassRequest::class, 'tutor_id');
     }
 }

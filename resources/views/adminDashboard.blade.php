@@ -12,6 +12,9 @@
     
   <!-- Font Awesome Cdn Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
 
@@ -85,7 +88,7 @@
         <i class='bx bx-table' ></i>
           <h3>Time Table</h3>
           <p>Join Over 1 million Students.</p>
-          <button>Open</button>
+          <a href="/admintimetable" class="button" style="padding:5px; margin-left:35%; margin-top:10%;"><button>Open</button></a>
         </div>
       </div>
 
@@ -156,8 +159,44 @@
       </section>
     </section>
   </div>
+
+    <!-- Add this code at the end of your Blade file -->
+    <canvas id="pieChart" width="300" height="300"></canvas>
+
+<script>
+    // Get the counts from Blade variables
+    var tutorCount = {{ $tutorCount }};
+    var studentCount = {{ $studentCount }};
+
+    // Get the canvas element
+    var ctx = document.getElementById('pieChart').getContext('2d');
+
+    // Create the pie chart
+    var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Tutors', 'Students'],
+        datasets: [{
+            data: [tutorCount, studentCount],
+            backgroundColor: ['#3f0c0c', 'rgb(255, 0, 0)'],
+        }]
+    },
+    options: {
+        responsive: false, // Disable responsiveness
+        maintainAspectRatio: false, // Allow the chart to change aspect ratio
+        // Explicitly set width and height
+        width: 300,
+        height: 300,
+    }
+});
+
+</script>
+
+
   </section>
     @endsection
+
+  
 
     <script src="js/click-scroll.js"></script>
 </body>

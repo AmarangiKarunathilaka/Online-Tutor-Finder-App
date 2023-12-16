@@ -19,7 +19,7 @@ class studentRegisterController extends Controller
         return view('sRegister');
     }
 
-    
+
     public function studentRegisterInput(Request $request)
     {
         $rules = [
@@ -156,4 +156,5 @@ class studentRegisterController extends Controller
         //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
 
     }
+
 }

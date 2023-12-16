@@ -1,6 +1,9 @@
+.container{
+    display: flex;
+  }
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
 
 }
 
@@ -52,7 +55,7 @@ tr {
 }
 
 .values .val-box h3 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -72,11 +75,35 @@ tr {
 
 .form-box {
 
-    padding: 150px;
+    padding: 20px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 580px) {
+    .values {
+        padding: 50px 20px 0 20px;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+
+
+    @media screen and (min-width: 600px) {
+        th {
+          display: inside;
+        }
+    
+        .card-block {
+          display: inside;
+        }
+      }
+    
 
 }
 button:hover {
     color: rgb(2, 2, 2);
+
 
 
 }

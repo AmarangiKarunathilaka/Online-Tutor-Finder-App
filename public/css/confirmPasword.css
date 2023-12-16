@@ -1,0 +1,758 @@
+
+body {
+  background:linear-gradient(45deg,#dfdf81,#3b3b33a9,#3d3d38,#e6eba8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------
+  NAVIGATION              
+-----------------------------------------*/
+
+    
+
+.navbar {
+    background-color: #36363e;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: all 0.3s;
+    height: 200px;
+  }
+  
+  
+  
+ 
+ 
+ 
+  
+  
+   
+
+
+
+  
+  
+  
+ 
+  
+  
+  
+ 
+ 
+  
+
+  
+  
+  
+  /*---------------------------------------
+    HERO              
+  -----------------------------------------*/
+  .hero-section {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    min-height: 580px;
+  }
+  
+  .hero-section-text{
+    margin-top: 18% ;
+  }
+  .hero-title {
+    color: #f1e314;
+    
+  }
+  @media screen and (min-width: 1500px) {
+    .hero-section {
+      height: calc(100vh - 70px);
+    }
+    .hero-section-text{
+      margin-top: 15%;
+      
+    }
+    .row h1 {
+      margin-top: 5%;
+    }
+  }
+  
+ 
+  .hero-icon,
+  .contact-icon {
+    color: var(--secondary-color);
+  }
+  
+  
+ 
+  /*---------------------------------------
+    search              
+  -----------------------------------------*/
+
+ 
+
+
+
+  
+.subject h3{
+    font-size: 40px;
+    margin-bottom: 70px;
+    margin-top: 120px;
+    margin-left: 50px;
+    height: 40px;
+    width: 25%;
+    font-weight: bold;
+    color: #0a254b;
+    background-color: #f0f187;
+    display: flex;
+    
+}
+.content{
+  margin-bottom: 5%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.content-row    {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.col {
+    height: 580px;
+	  flex-basis: 30%;
+    padding: 20px 12px;
+    background-color: #d8d6a4fe;
+    border: #050500;
+    border-radius: 10%;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.col h2{
+    margin: 10px 0;
+    font-weight: 600;
+    color: #3f0c0c;
+    padding: 3px 0 0;
+}
+
+
+.col img:hover {
+    box-shadow: 0 0 20px 0px rgba(9, 0, 0, 0.5);
+}
+
+.col p {
+    color: #0c0242;
+    display: block;
+    font-size: 25px;
+    font-style: normal;
+    line-height: 30px;
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.col a{
+  color: #086ba9;
+ 
+}
+.col:hover a{
+  text-decoration: underline;
+}
+.col:hover{
+    box-shadow: 0 0 30px 0px rgba(7, 8, 0, 0.982);
+}
+
+.col h4{
+  color: #3f0c0c;;
+}
+
+
+
+
+/*---------------------------------------
+  SOCIAL ICON               
+-----------------------------------------*/
+.social-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.social-icon-item {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.social-icon-link {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  display: block;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.social-icon-link:hover {
+  color: var(--secondary-color);
+}
+
+.social-icon-twitter {
+  color: var(--twitter-color);
+}
+
+.social-icon-facebook {
+  color: var(--facebook-color);
+}
+
+.social-icon-instagram {
+  color: var(--instagram-color);
+}
+
+.social-icon-pinterest {
+  color: var(--pinterest-color);
+}
+
+.social-icon-whatsapp {
+  color: var(--whatsapp-color);
+}
+
+
+
+
+/*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
+@media screen and (max-width: 991px) {
+ 
+
+  .section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  
+  .navbar {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    text-align: center;
+    padding: 15px 30px;
+    min-width: 125px;
+  }
+  .about-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .about-image {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-image-small {
+    width: 180px;
+    height: 180px;
+  }
+
+  .reviews-thumb {
+    margin-bottom: 24px;
+  }
+
+  .reviews-body {
+    padding: 40px 30px;
+  }
+}
+
+
+
+@media screen and (max-width: 580px) {
+  .site-footer {
+    text-align: center;
+  }
+  .copyright-text-wrap {
+    justify-content: center;
+  }
+  .navbar img  {
+    margin-bottom: 1px;
+    border-radius: 1%;
+    width: 30%;
+  }
+}
+
+
+
+/*
+
+Tooplate 2133 Moso Interior
+
+https://www.tooplate.com/view/2133-moso-interior
+
+*/
+
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+  --white-color:                  #ffffff;
+  --primary-color:                #eed171;
+  --secondary-color:              #b8b5a3;
+  --section-bg-color:             #eee458;
+  --site-footer-bg-color:         #36363e;
+  --custom-btn-bg-color:          #00a05d;
+  --dark-color:                   #000000;
+  --p-color:                      #464643;
+  --border-color:                 #e9eaeb;
+  --nav-btn-color:                #aeae9b;
+  --p-bg-color:                   #dfd72f;
+
+  
+
+  --twitter-color:                #1da1f2;
+  --facebook-color:               #1877f2;
+  --instagram-color:              #c13584;
+  --pinterest-color:              #e60023;
+  --whatsapp-color:               #128c7e;
+
+  --body-font-family:             'League Spartan', sans-serif;
+
+  --h1-font-size:                 62px;
+  --h2-font-size:                 48px;
+  --h3-font-size:                 36px;
+  --h4-font-size:                 32px;
+  --h5-font-size:                 26px;
+  --h6-font-size:                 22px;
+  --p-font-size:                  20px;
+  --btn-font-size:                16px;
+  --copyright-font-size:          14px;
+
+  --border-radius-large:          100px;
+  --border-radius-medium:         20px;
+  --border-radius-small:          10px;
+
+  --font-weight-thin:             100;
+  --font-weight-light:            300;
+  --font-weight-normal:           400;
+  --font-weight-semibold:         600;
+  --font-weight-bold:             700;
+}
+  /*---------------------------------------
+TYPOGRAPHY               
+  -----------------------------------------*/
+
+body{
+background:linear-gradient(45deg,#191918,#52504ca9,#36363e,#c9d523);;
+background-position: top;
+background-size:cover;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-weight: var(--font-weight-semibold);
+}
+
+h1 {
+font-size: var(--h1-font-size);
+font-weight: var(--font-weight-bold);
+}
+
+h2 {
+font-size: var(--h2-font-size);
+}
+
+h3 {
+font-size: var(--h3-font-size);
+}
+
+h4 {
+font-size: var(--h4-font-size);
+}
+
+h5 {
+font-size: var(--h5-font-size);
+line-height: normal;
+}
+
+h6 {
+font-size: var(--h6-font-size);
+}
+
+p {
+color: var(--p-color);
+font-size: var(--p-font-size);
+font-weight: var(--font-weight-light);
+}
+
+ul li {
+color: var(--p-color);
+font-size: var(--p-font-size);
+font-weight: var(--font-weight-normal);
+}
+
+a, 
+button {
+touch-action: manipulation;
+transition: all 0.3s;
+}
+
+a {
+color: var(--p-color);
+text-decoration: none;
+}
+
+a:hover {
+color: var(--secondary-color);
+}
+
+b,
+strong {
+font-weight: var(--font-weight-bold);
+}
+
+.tooplate-red {
+color: var( --pinterest-color);
+}
+.tooplate-green {
+color: var(--custom-btn-bg-color);
+}
+
+/*---------------------------------------
+NAVIGATION              
+-----------------------------------------*/
+
+/*Ramal 2023.12.15*/   
+li {
+display: inline;
+float: right;
+}
+
+.navbar {
+background-color: #36363e;
+padding-top: 0;
+padding-bottom: 0;
+transition: all 0.3s;
+height: 75px;
+}
+.navbar img  {
+margin-bottom: 1px;
+border-radius: 5%;
+width: 100%;
+padding-top: 1px;
+}
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+margin-right: 10px;
+margin-left: 0;
+margin-bottom: 5px;
+padding: 5px 5px;
+
+
+}
+
+.navbar-nav .nav-link {
+display: inline-block;
+color: var(--p-bg-color);
+font-size: var(--p-font-size);
+font-weight: var(--font-weight-medium);
+position: relative;
+padding-top: 8px;
+padding-bottom: 8px;
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link:hover {
+background: var(--primary-color);
+color: var(--dark-color);
+}
+
+
+
+
+
+
+
+
+
+
+.registration{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  margin-top: -3%;
+  background-position: center;
+  background-size: cover;  
+}
+
+
+.box1{
+  position: relative;
+  right: 20px;
+  
+  padding: 10px 15px;
+  width: 800px;
+  height: 400px;
+  background: transparent;
+  border: 4px solid  rgb(237, 218, 109);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  justify-content: center;
+  align-items: center;
+}
+h3{
+  margin-top:-150px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 50px;
+}
+.row button{
+  width: 70%;
+  height: 50px;
+  margin-top: 5%;
+  border-radius: 40px;
+  background: rgb(237, 220, 123);
+  border: none;
+  outline: none;
+  margin-left: 15%;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+
+.box1{
+  margin-left: 8%;
+}
+}
+
+/*---------------------------------------
+tutor registration form             
+-----------------------------------------*/
+.form-box1 {
+background: transparent;
+border: 4px solid  rgba(242, 225, 126, 0.992);
+border-radius: 20px;
+backdrop-filter: blur(15px);
+justify-content: center;
+align-items: center;
+padding: 40px;
+width: 100%;
+min-width: 300px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 15px;
+text-align: left;
+-webkit-transition: all 0.4s ease;
+transition: all 0.4s ease;
+font-size: 20px;
+color: #e9e575;
+text-align: left;
+font-weight: 550;
+margin-top: 12%
+
+
+
+}
+
+th, td {
+padding: 20px;
+text-align: left;
+}
+
+/*---------------------------------------
+terms and conditions
+-----------------------------------------*/
+
+.terms-box{
+  position: relative;
+  margin-top: 15%;
+  margin-bottom: 8%;
+  padding: 20px 5px;
+  width:60%;
+  background: transparent;
+  border: 4px solid  rgb(234, 213, 99);
+  border-radius: 20px;
+  color: #ffffff;
+  backdrop-filter: blur(15px);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.terms-box h2 {
+color: #ffffff;
+font-size: 40px;
+}
+
+.terms-box h4 {
+padding: 20px 20px 20px 20px;
+text-align: left;
+color: #ebeab0;
+font-size: 30px;
+}
+
+@media screen and (max-width: 991px) {
+
+.terms-box{
+  width:90%;
+  text-align: center;
+}
+}
+
+/*---------------------------------------
+login form
+-----------------------------------------*/
+
+.form-box{
+position: relative;
+margin-top: 60%;
+padding: 15px 15px;
+width: 100%;
+height: 550px;
+
+background: transparent;
+border: 4px solid  rgb(239, 224, 136);
+border-radius: 20px;
+backdrop-filter: blur(5px);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+h2{
+font-size: 40px;
+color: rgb(242, 243, 179);
+text-align: center;
+}
+
+.input-box{
+position: relative;
+margin: 40px 0;
+width: 300px;
+border-bottom: 2px solid #021b2e9c;
+}
+
+.input-box label{
+position: absolute;
+top: 50%;
+left: 5px;
+transform: translateY(-50%);
+color: aliceblue;
+font-size: lem;
+font-weight: 900;
+pointer-events: none;
+transition: .5s;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+
+.login-form input:valid ~ label {
+top: -10px;
+}
+.input-box input{
+width: 100%;
+height: 50px;
+background: transparent;
+border: none;
+outline: none;
+font-size: 1em;
+padding: 0 35px 0 5px;
+color: aliceblue;
+}
+
+.input-box ion-icon{
+position: absolute;
+right: 5px;
+color: aliceblue;
+font-size: 1.2em;
+top: 15px;
+}
+
+.forget{
+margin-top: 10px;
+margin: 5px 0 15px;
+font-size: 15px;
+color: #fff;
+display: flex;
+justify-content: center;
+}
+
+.forget label input{
+margin-right: 3px;
+}
+
+.forget label a{
+color: #fff;
+text-decoration: none;
+font-size: 15px;
+font-weight: 800;
+
+}
+
+.forget label a:hover{
+text-decoration: underline;
+
+}
+
+button{
+width: 100%;
+height: 40px;
+margin-top: 10px;
+border-radius: 40px;
+background: rgb(232, 215, 118);
+border: none;
+outline: none;
+cursor: pointer;
+font-size: 1.6em;
+font-weight:  var(--font-weight-bold);
+}
+
+.register p{
+font-size: 1.5em;
+color: #716a0a;
+text-align: center;
+margin: 25px 0 10px;
+font-weight: var(--font-weight-bold);
+}
+
+.register p a{
+text-decoration: none;
+color: #fff;
+font-weight: 600;
+}
+
+.register p a:hover{
+text-decoration: underline;
+color: #fff;
+font-weight: 600;
+}

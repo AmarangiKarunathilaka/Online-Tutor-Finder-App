@@ -178,8 +178,8 @@ body{
             outline: none;
             border: 1px solid grey;
             padding: 0 15px;
+           
         }
-
         
        
         .btn{
@@ -190,12 +190,12 @@ body{
             padding: 10px;
             border:none;
             border-radius: 3px;
-            background-color: #98a902;
-            color: rgb(43, 3, 143);
+            background-color: yellow;
+            color: rgb(6, 3, 15);
         }
         
         .btn:hover{
-            background:rgba(230, 226, 9, 0.849);
+            background:#ff7b00;
             color: rgb(255, 255, 255);
         }
         
@@ -304,4 +304,6 @@ body{
             cursor: pointer;
 
         }
+
+        
 

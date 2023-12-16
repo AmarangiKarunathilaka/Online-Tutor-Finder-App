@@ -14,8 +14,15 @@ class login extends Model
         'password'
     ];
 
-    public function timetable()
-    {
-        return $this->hasOne(Timetables::class, 'tutor_id', 'id');
-    }
+
+    public function tutor()
+{
+    return $this->hasMany(tutorRegister::class);
+}
+
+public function student()
+{
+    return $this->hasMany(studentRegister::class);
+}
+
 }

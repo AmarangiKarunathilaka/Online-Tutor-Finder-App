@@ -130,7 +130,7 @@
 
 
 
-/* Side Review bar */
+/* Side Review bar 
 .sidebar1{
  display: block;
   margin-left: 75%;
@@ -195,7 +195,7 @@
   font-size: 11px;
   word-spacing: 3px;
   color: rgb(119, 119, 119);
-}
+}*/
 
 /*profile card css*/
 
@@ -215,7 +215,7 @@
 }
 .image{
   position: relative;
-  height: 150px;
+  height: 10px;
   width: 150px;
   border-radius: 50%;
   background-color: #fff;
@@ -530,6 +530,12 @@ table thead tr{
 .table tbody tr td{
   border: 1px solid #899817;
 }
+
+.table tbody tr td li{
+ color:#000;
+ font-weight:500;
+ 
+}
 .table tbody tr:nth-of-type(odd){
   background: #f3f3f3;
 
@@ -607,6 +613,11 @@ table thead tr{
   .input-box .button:active {
     transform: translateY(-50%) scale(0.98);
   }
+
+  table {
+    width: 80%;
+  } 
+
   /* Responsive */
   @media screen and (max-width: 500px) {
     .input-box {
@@ -625,7 +636,23 @@ table thead tr{
       font-size: 14px;
       padding: 8px 18px;
     }
+
+    table, th, td {
+      font-size: 12px;
+      padding: 5px;
+    }
+
+    
+    
   }
-
-
  
+
+  @media screen and (min-width: 600px) {
+    th {
+      display: inside;
+    }
+
+    .card-block {
+      display: inside;
+    }
+  }

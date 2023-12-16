@@ -52,7 +52,7 @@
     font-weight: bolder;
     text-align: center;
     color: #eceaf3;
-    background-color: #0c0242;
+    background-color: #121216;
 
 }
 
@@ -65,7 +65,7 @@
     width: 25%;
     font-weight: bold;
     color: #000307;
-    background-color: #f0f187;
+    background-color:yellow;
     display: flex;
     
 }
@@ -101,7 +101,7 @@
 .col h2{
     margin: 10px 0;
     font-weight: 600;
-    color: #052883;
+    color: #000000;
     padding: 3px 0 0;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .col p {
-    color: #0c0242;
+    color: #000000;
     display: block;
     font-size: 25px;
     font-style: normal;
