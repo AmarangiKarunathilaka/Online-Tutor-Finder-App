@@ -14,6 +14,7 @@ use App\Http\controllers\ClassRequestController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\combinedDisplayController;
 
 
 
@@ -332,6 +333,8 @@ Route::get('/rejecttFeedback/{id}', [FeedbackController::class, 'rejecttFeedback
 // view feedback
 Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
 
+// show tutors name in feedback form
+Route::get('/tutorFeedback', [FeedbackController::class, 'showTutorFeedbackForm'])->name('tutor.feedback.form');
 
 
 
