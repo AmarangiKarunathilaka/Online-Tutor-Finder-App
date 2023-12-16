@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Feedback;
 use App\Models\WebsiteFeedback;
 use App\Models\TutorFeedback;
+use App\Models\tutorRegister;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\LoginController;
 
@@ -149,6 +150,13 @@ class FeedbackController extends Controller
         $tfeedback->save();
 
         return redirect() -> back();
+    }
+
+    // show tutors name in feedback form
+    public function showTutorFeedbackForm()
+    {
+        $tutors = tutorRegister::pluck('tutorFullName', 'tutorFullName'); // Assuming 'name' is the field you want to display
+        return view('TutorFeedback', compact('tutors'));
     }
 
     
