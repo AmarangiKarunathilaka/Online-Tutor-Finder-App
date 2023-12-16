@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 class studentRegister extends Authenticatable
 {
     protected $table = 'student_registers';
+    protected $primarykey = 'id'; 
 
     use HasFactory;
 
