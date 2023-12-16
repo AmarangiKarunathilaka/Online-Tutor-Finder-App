@@ -96,7 +96,7 @@ class studentRegisterController extends Controller
 
        
 
-        return redirect()->route('adminStudentList')->with('success', 'Student rejected successfully!');
+        return redirect()->back();
     }
   /*  public function handleActionView()
     {
