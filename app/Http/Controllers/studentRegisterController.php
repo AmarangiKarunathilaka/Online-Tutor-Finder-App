@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\studentRegister;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 //Ramal
 use Barryvdh\DomPDF\Facade\Pdf;
 //use Illuminate\Http\Request;
@@ -18,34 +19,7 @@ class studentRegisterController extends Controller
         return view('sRegister');
     }
 
-    public function adminStudentList(){
-        $students = studentRegister::all(); 
-        return view('adminStudentList', compact('students'));
-    }
-
-    public function accept_student($id)
-    {
-        
-        $data = studentRegister::find($id);
-        $data->status = 'accepted';
-        $data->save();
-
-        $this->sendEmail($data->studentEmail, 'accepted');
-
-        return redirect()->route('adminStudentList')->with('success', 'Student accepted successfully!');
-    }
-
-    public function reject_student($id)
-    {
-        $data = studentRegister::find($id);
-        $data->status = 'rejected';
-        $data->save();
-
-        $this->sendEmail($data->studentEmail, 'rejected');
-
-        return redirect()->route('adminStudentList')->with('success', 'Student rejected successfully!');
-    }
-
+    
     public function studentRegisterInput(Request $request)
     {
         $rules = [
@@ -98,6 +72,67 @@ class studentRegisterController extends Controller
         return $pdf->download('downloads/studentList.pdf');
     }
 
+    public function adminStudentList(){
+        $students = studentRegister::all(); 
+        return view('adminStudentList', compact('students'));
+    }
+
+    public function accept_student($id)
+    {
+        
+        $data = studentRegister::find($id);
+        $data->status = 'accepted';
+        $data->save();
+
+
+        return redirect()->route('adminStudentList')->with('success', 'Student accepted successfully!');
+    }
+
+    public function reject_student($id)
+    {
+        $data = studentRegister::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+       
+
+        return redirect()->route('adminStudentList')->with('success', 'Student rejected successfully!');
+    }
+  /*  public function handleActionView()
+    {
+        return view('adminStudentList');
+    }
+
+    public function handleAction($id, $action)
+{
+    $data = studentRegister::find($id);
+
+    if ($action === 'accept') {
+        $data->status = 'accepted';
+        $data->save();
+
+        // Insert into another table (e.g., accepted_students)
+        DB::table('accepted_students')->insert([
+            'id' => $data->id,
+            'studentFullName' => $data->studentFullName,
+            'birthday' => $data->birthday,
+            'address' => $data->address,
+            'studentPhoneNumber' => $data->studentPhoneNumber,
+            'studentEmail' => $data->studentEmail,
+            'status' => 'accepted',
+        ]);
+
+        $this->sendEmail($data->studentEmail, 'accepted');
+    } elseif ($action === 'remove') {
+        $data->status = 'rejected';
+        $data->save();
+        $this->sendEmail($data->studentEmail, 'rejected');
+    }
+
+    return redirect()->route('adminStudentList')->with('success', 'Student ' . ucfirst($action) . 'ed successfully!');
+}*/
+
+//public function addStudent(Request $request,)
 
     public function sendEmailButton()
     {
@@ -110,9 +145,10 @@ class studentRegisterController extends Controller
 
         //foreach ($emails as $email) {
 
-        $details = [
-            'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'You are removed. Thank you'
-        ];
+            $details = [
+                'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'We are extremely sorry. You are not accepted.',
+                'loginLink' => $request->button == 'accept' ? 'http://127.0.0.1:8000/login' : null,
+            ];
 
         Mail::to($email)->send(new SendEmail($details));
     
