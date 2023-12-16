@@ -8,8 +8,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/adminstyle.css">
+
+    <link rel="stylesheet" href="css/ramal1.css">
+
     <title>Tutor Table</title>
+
 
 </head>
 <body>
@@ -41,8 +44,8 @@
         <div class="form-box">
             <div class="container mt-4 ">
                 
-                <table class="table table-success table-striped">
-                
+                <table class="table table-success table-striped" >
+                 
                 <thead>
                     <tr>
                         <th scope="col">#</th>

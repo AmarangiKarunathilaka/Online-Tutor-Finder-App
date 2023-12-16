@@ -54,7 +54,7 @@ body.dark{
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
-    z-index: 100;  
+    z-index: 1;  
 }
 .sidebar.close{
     width: 88px;
@@ -341,7 +341,9 @@ body.dark .home .text{
     border-radius: 100%;
     padding: -10px 4px;
     margin-left: -10px;
-}
+
+}   
+
 .register {
     background: orangered;
     color: #fff;

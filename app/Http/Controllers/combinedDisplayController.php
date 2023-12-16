@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Feedback;
+use App\Models\WebsiteFeedback;
+use App\Models\TutorFeedback;
 use App\Models\Advertisement;
 use App\Models\Timetable;
 use App\Models\TutorProfile;
@@ -35,9 +37,14 @@ class combinedDisplayController extends Controller
         ->get();
         
         $feedback = Feedback::where('status','=','accepted')->get();
+        $wfeedback = WebsiteFeedback::where('status','=','accepted')->get();
+        $tfeedback = TutorFeedback::where('status','=','accepted')->get();
     
-        return view('index', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'feedback'));
+        return view('index', compact('advertisementMaths', 'advertisementPhysics', 'advertisementChemistry', 'advertisementBiology', 'feedback', 'wfeedback', 'tfeedback'));
     }
+
+        
+
 
     
     
@@ -314,6 +321,7 @@ class combinedDisplayController extends Controller
 
 
 
+
 //admin time table display
 
 public function admintimetable()
@@ -522,11 +530,7 @@ public function admintimetable()
                                         ,'time21','time22','time23','time24','time25','time26','time27','time28'));
 }
 
-public function error()
-{
-////
 
-}
     
 
 }

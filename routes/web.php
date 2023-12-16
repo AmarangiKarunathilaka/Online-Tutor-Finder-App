@@ -19,6 +19,7 @@ use App\Http\Controllers\combinedDisplayController;
 
 
 
+
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\StudentDashboardController;
 
@@ -143,8 +144,11 @@ Route::get('/upload-class-material', function () {
 });
 
 
-Route::get('/TutorFeedback', function () {
-    return view('TutorFeedback');
+Route::get('/tutorFeedback', function () {
+    return view('tutorFeedback');
+});
+Route::get('/websiteFeedback', function () {
+    return view('websiteFeedback');
 });
 Route::get('/websiteFeedbackForm', function () {
     return view('websiteFeedbackForm');
@@ -302,16 +306,37 @@ Route::get('/tutorDashboard', function () {
 Route::post('/websiteFeedbackForm', [FeedbackController::class, 'feedback'])->name('feedback');
 Route::post('/feedbackInput',[FeedbackController::class, 'uploadFeedbackInput'])->name('uploadFeedbackInput');
 
+Route::post('/websiteFeedback', [FeedbackController::class, 'wfeedback'])->name('wfeedback');
+Route::post('/wfeedbackInput',[FeedbackController::class, 'uploadwFeedbackInput'])->name('uploadwFeedbackInput');
+
+Route::post('/tutorFeedback', [FeedbackController::class, 'tfeedback'])->name('tfeedback');
+Route::post('/tfeedbackInput',[FeedbackController::class, 'uploadtFeedbackInput'])->name('uploadtFeedbackInput');
+
 // View feedback list to admin
 Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'])->name('adminFeedbackList');
 
-// view feedback in guest interface
-// Route::get('/', [FeedbackController::class, 'feedbackDisplay'])->name('feedbackDisplay');
+Route::get('/adminFeedbackList', [FeedbackController::class, 'combinedAdminDisplay'])->name('combinedAdminDisplay');
 
+// view feedback in guest interface
+Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
+// accept & reject
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
+
 Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
+Route::get('/acceptwFeedback/{id}', [FeedbackController::class, 'acceptwFeedback']);
+Route::get('/rejectwFeedback/{id}', [FeedbackController::class, 'rejectwFeedback']);
+
+Route::get('/accepttFeedback/{id}', [FeedbackController::class, 'accepttFeedback']);
+Route::get('/rejecttFeedback/{id}', [FeedbackController::class, 'rejecttFeedback']);
+
+// view feedback
+Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
+
 
 
 
