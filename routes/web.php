@@ -16,7 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 
 
-
+use App\Http\Controllers\CombinedDisplayController;
 
 
 use App\Http\Controllers\AdminDashboardController;
@@ -389,11 +389,13 @@ Route::get('/send-email-button', [studentRegisterController::class, 'sendEmailBu
 
 Route::post('/send-email/{email}', [studentRegisterController::class, 'sendEmail'])->name('send.email');
 
-Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student']);
-Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student']);
+ Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student'])->name('accept_student');
+ Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student'])->name('reject_student');
 
-Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor']);
-Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor']);
+ Route::post('/send-email/{email}', [tutorRegisterController::class, 'sendEmail'])->name('send.email');
+
+Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor'])->name('accept_tutor');
+Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor'])->name('reject_tutor');
 
 Route::get('/admin/studentList', 'studentRegisterController@adminStudentList')->name('adminStudentList');
 
