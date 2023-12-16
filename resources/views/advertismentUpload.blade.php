@@ -38,7 +38,7 @@
             <input type="text"
                     id="fullName"
                     name="fullName"
-                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}"/>
+                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}" disabled/>
           </div>
           @endforeach
 
@@ -48,7 +48,7 @@
             <input type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your Email" value="{{$email->tutorEmail}}"/>
+                    placeholder="Enter your Email" value="{{$email->tutorEmail}}" disabled/>
           </div>
           @endforeach
           
@@ -76,10 +76,24 @@
           <div class="user-input-box">
             <label for="subject">Select Subject</label>
                 <select name="subject" id="subject">
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Chemistry">Biology</option>
+                  @foreach($subjects as $subject)
+                    <option value="{{$subject}}">{{$subject}}</option>
+                  @endforeach 
+                    
+                </select>
+          </div>
+        </div>
+
+        <div class="category-details-box">
+          
+          </br>
+          </br>
+          <div class="user-input-box">
+            <label for="subject">Select Medium</label>
+                <select name="medium" id="medium">
+                  @foreach($medium as $medium)
+                    <option value="{{$medium}}">{{$medium}}</option>
+                  @endforeach 
                     
                 </select>
           </div>

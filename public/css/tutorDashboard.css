@@ -613,6 +613,11 @@ table thead tr{
   .input-box .button:active {
     transform: translateY(-50%) scale(0.98);
   }
+
+  table {
+    width: 80%;
+  } 
+
   /* Responsive */
   @media screen and (max-width: 500px) {
     .input-box {
@@ -631,7 +636,23 @@ table thead tr{
       font-size: 14px;
       padding: 8px 18px;
     }
+
+    table, th, td {
+      font-size: 12px;
+      padding: 5px;
+    }
+
+    
+    
   }
-
-
  
+
+  @media screen and (min-width: 600px) {
+    th {
+      display: inside;
+    }
+
+    .card-block {
+      display: inside;
+    }
+  }

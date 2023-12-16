@@ -89,7 +89,15 @@ tr {
     }
 
 
-
+    @media screen and (min-width: 600px) {
+        th {
+          display: inside;
+        }
+    
+        .card-block {
+          display: inside;
+        }
+      }
     
 
 }

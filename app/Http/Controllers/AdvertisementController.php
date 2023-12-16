@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\LoginController;
+use App\Models\tutorMedium;
 use App\Models\tutorRegister;
+use App\Models\tutorSubject;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\File;
 use Auth;
@@ -100,8 +102,16 @@ class AdvertisementController extends Controller
         $email = tutorRegister::where('tutor_registers.id','=',$userId)
                                 ->get();
 
+        $userId = Session::get('user_id');
+        $subjects = tutorSubject::where('tutor_subjects.tutorSubject_id','=',$userId)
+                                ->distinct()->pluck('tutorSubject');
+         
+        $userId = Session::get('user_id');
+        $medium = tutorMedium::where('tutor_mediums.tutorMedium_id','=',$userId)
+                                                        ->distinct()->pluck('tutorMedium');
+                        
         
-        return view('advertismentUpload', compact('advertisements','tutorName','email'));
+        return view('advertismentUpload', compact('advertisements','tutorName','email','subjects','medium'));
         
     }
 
