@@ -78,5 +78,9 @@ tr {
 button:hover {
     color: rgb(2, 2, 2);
 
+}
 
+button {
+    padding: 5px;
+    background-color: greenyellow;
 }
