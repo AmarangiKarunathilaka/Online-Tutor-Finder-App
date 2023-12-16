@@ -356,7 +356,7 @@ Bootstrap 5 HTML CSS Template
                         @foreach ($tfeedback as $tfeedback)
                             <div class="reviews-thumb">
                                 <div class="reviews-body">
-                                    <h6>{{ $tfeedback->tutor }}</h6>
+                                    <h6>{{ $tfeedback->tutor }} - Tutor</h6>
                                     <h4>{{ $tfeedback->message }}</h4>
                                 </div>
 
