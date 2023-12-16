@@ -130,7 +130,8 @@ class tutorRegisterController extends Controller
     {
         $data = tutorRegister::join('tutor_mediums', 'tutor_mediums.tutorMedium_id', '=', 'tutor_registers.id')
                             ->join('tutor_subjects', 'tutor_subjects.tutorSubject_id', '=', 'tutor_registers.id')
-                            ->get(['tutor_registers.tutorFullName',
+                            ->get(['tutor_registers.id',
+                                    'tutor_registers.tutorFullName',
                                     'tutor_registers.tutorPhoneNumber',
                                     'tutor_registers.qualification',
                                     'tutor_registers.tutorEmail',
@@ -149,9 +150,9 @@ class tutorRegisterController extends Controller
         $data->status = 'accepted';
         $data->save();
 
-        $this->sendEmail($data->tutorEmail, 'accepted');
+        
 
-        return redirect()->route('adminTutorList')->with('success', 'Tutor accepted successfully!');
+        return redirect()->back();
     }
 
     public function reject_tutor($id)
@@ -160,9 +161,9 @@ class tutorRegisterController extends Controller
         $data->status = 'rejected';
         $data->save();
 
-        $this->sendEmail($data->tutorEmail, 'rejected');
+        
 
-        return redirect()->route('adminTutorList')->with('success', 'Tutor rejected successfully!');
+        return redirect()->back();
     }
 
 

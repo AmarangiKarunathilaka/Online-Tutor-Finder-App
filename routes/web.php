@@ -407,6 +407,11 @@ Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor'
 Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor'])->name('reject_tutor');
 
 Route::get('/admin/studentList', 'studentRegisterController@adminStudentList')->name('adminStudentList');
+Route::get('/admin/tutorList', 'tutorRegisterController@adminTutorList')->name('adminTutorList');
+
+Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor'])->name('accept_tutor');
+Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor'])->name('reject_tutor');
+
 
 
 //Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
