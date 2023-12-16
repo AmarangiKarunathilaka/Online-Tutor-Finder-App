@@ -178,8 +178,8 @@ body{
             outline: none;
             border: 1px solid grey;
             padding: 0 15px;
+           
         }
-
         
        
         .btn{
@@ -304,4 +304,6 @@ body{
             cursor: pointer;
 
         }
+
+        
 
