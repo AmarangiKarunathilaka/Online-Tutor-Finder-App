@@ -313,11 +313,13 @@ class combinedDisplayController extends Controller
                         ->where('day','=','Saturday')
                         ->where('time','=','04:00 PM - 06:00 PM')
                         ->get();
+
+        $tfeedback = TutorFeedback::where('status','=','accepted')->get();
         
         
         return view('tutorDashboard', compact('detail','profile','time1','time2','time3','time4','time5','time6','time7','time8','time9'
                                             ,'time10','time11','time12','time13','time14','time15','time16','time17','time18','time19','time20'
-                                            ,'time21','time22','time23','time24','time25','time26','time27','time28'));
+                                            ,'time21','time22','time23','time24','time25','time26','time27','time28', 'tfeedback'));
     }
 
 

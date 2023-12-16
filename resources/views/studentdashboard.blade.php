@@ -168,7 +168,7 @@
                             @foreach ($tfeedback as $tfeedback)
                                 <div class="reviews-thumb">
                                     <div class="reviews-body">
-                                        <h4>{{ $tfeedback->tutor }}</h4>
+                                        <h4>{{ $tfeedback->tutor }} - Tutor</h4>
                                         <h3>{{ $tfeedback->message }}</h3>
                                     </div>
 

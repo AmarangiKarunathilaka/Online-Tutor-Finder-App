@@ -341,10 +341,20 @@ Bootstrap 5 HTML CSS Template
                     </div> -->
                     
 
+
+                    @if(isset($tfeedback) && count($tfeedback)>0)
+                        @foreach ($tfeedback as $tfeedback)
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h6>{{ $tfeedback->tutor }} - Tutor</h6>
+                                    <h4>{{ $tfeedback->message }}</h4>
+                                </div>
+
                     <!-- <div class="reviews-thumb">
                         <div class="reviews-body">
                             <h4>Thank you for visiting Tooplate to download free templates.</h4>
                         </div>
+
 
                         <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
                             
