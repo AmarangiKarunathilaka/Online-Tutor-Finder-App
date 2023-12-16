@@ -10,6 +10,8 @@
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    
     
     <title>Dashboard Sidebar Menu</title> 
 </head>
@@ -86,12 +88,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="/chatPusherTutor">
-                            <i class='bx bxs-conversation icon' ></i>
-                            <span class="text nav-text">Conversation</span>
-                        </a>
-                    </li>
+                
 
                     <li class="nav-link">
                         <a href="/websiteFeedbackForm">
@@ -138,6 +135,9 @@
     <section class="home">
 
         <div class="text"></div>
+
+        <button id="chat-button">Chat</button>
+
     </section>
    
 
