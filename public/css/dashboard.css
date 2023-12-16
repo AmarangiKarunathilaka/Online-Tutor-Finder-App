@@ -345,7 +345,7 @@ body.dark .home .text{
 }   
 
 .register {
-    background: orangered;
+    background: linear-gradient(to left, #525b5e 0%, #73691b 100%);
     color: #fff;
     padding: 7px 15px;
     border-radius: 10px;

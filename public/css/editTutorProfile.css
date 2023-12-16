@@ -190,12 +190,12 @@ body{
             padding: 10px;
             border:none;
             border-radius: 3px;
-            background-color: #98a902;
+            background-color: yellow;
             color: rgb(6, 3, 15);
         }
         
         .btn:hover{
-            background:rgba(230, 226, 9, 0.849);
+            background:#ff7b00;
             color: rgb(255, 255, 255);
         }
         

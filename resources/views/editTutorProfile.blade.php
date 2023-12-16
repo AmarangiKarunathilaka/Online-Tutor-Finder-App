@@ -47,7 +47,7 @@
                     <div class="col-xl-6">
                     <lable for="input-file"><b>Upload image:</b></div>
                     <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file">
-                    <input type="submit" style= "margin-top:20px; margin-bottom:20px; background-color: #bacf01; padding:8px;width:200px;font-size:23px;font-weight:600 ; border-radius: 4px; border:none;"> 
+                    <input type="submit" style= "margin-top:20px; margin-bottom:20px; background-color: yellow; padding:10px;width:200px;font-size:20px;font-weight:bold;  border-radius: 4px; border:none;"> 
             
             </div>
 
