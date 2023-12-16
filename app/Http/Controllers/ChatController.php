@@ -18,7 +18,7 @@ class ChatController extends Controller
         $username = studentRegister::where('student_registers.id','=',$userId)
                                  ->select('student_registers.studentFullName')
                                 ->first();
-                                //dd($studentName);
+                            
         return view('chatPusher', compact('username'));
     }
 
@@ -26,11 +26,11 @@ class ChatController extends Controller
     {
         $userId = Session::get('user_id');
        
-        $username = tutorRegister::where('student_registers.id','=',$userId)
-                                 ->select('student_registers.studentFullName')
-                                ->get();
+        $username = tutorRegister::where('tutor_registers.id','=',$userId)
+                                 ->select('tutor_registers.tutorFullName')
+                                ->first();
 
-                                //dd($studentName);
+                                
         return view('chatPusherTutor', compact('username'));
     }
 
