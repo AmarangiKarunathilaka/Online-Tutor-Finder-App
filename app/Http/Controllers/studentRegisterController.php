@@ -32,7 +32,7 @@ class studentRegisterController extends Controller
 
         $this->sendEmail($data->studentEmail, 'accepted');
 
-        return redirect()->route('adminStudentList')->with('success', 'Student accepted successfully!');
+        return redirect()->back()->with('success', 'Student accepted successfully!');
     }
 
     public function reject_student($id)
@@ -43,7 +43,7 @@ class studentRegisterController extends Controller
 
         $this->sendEmail($data->studentEmail, 'rejected');
 
-        return redirect()->route('adminStudentList')->with('success', 'Student rejected successfully!');
+        return redirect()->back()->with('success', 'Student rejected successfully!');
     }
 
     public function studentRegisterInput(Request $request)
@@ -115,7 +115,7 @@ class studentRegisterController extends Controller
         ];
 
         Mail::to($email)->send(new SendEmail($details));
-    //}
+    
     return redirect()->back();
         //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
 

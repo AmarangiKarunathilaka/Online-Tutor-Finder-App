@@ -8,6 +8,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Queue\SerializesModels;
 
 class Message implements ShouldBroadcast
@@ -17,8 +18,10 @@ class Message implements ShouldBroadcast
     public $username;
     public $message;
 
+
     public function __construct($username,$message)
     {
+        
         $this->username = $username;
         $this->message = $message;
     }

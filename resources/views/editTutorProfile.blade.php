@@ -47,7 +47,7 @@
                     <div class="col-xl-6">
                     <lable for="input-file"><b>Upload image:</b></div>
                     <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file">
-                    <input type="submit" style= "margin-top:20px; margin-bottom:20px; background-color: #bacf01; padding:8px;width:200px;font-size:23px;font-weight:600 ; border-radius: 4px; border:none;"> 
+                    <input type="submit" style= "margin-top:20px; margin-bottom:20px; background-color: yellow; padding:10px;width:200px;font-size:20px;font-weight:bold;  border-radius: 4px; border:none;"> 
             
             </div>
 
@@ -76,13 +76,13 @@
         <div class="user-input-box">
             <label for="day">Select Day</label>
                 <select name="day" id="day">
-                    <option value="sunday">Sunday</option>
-                    <option value="monday ">Monday</option>
-                    <option value="tueseday">Tuesday</option>
-                    <option value="wednesday">Wednesday</option>
-                    <option value="thursday ">Thursday</option>
-                    <option value="friday">Friday</option>
-                    <option value="saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday ">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday ">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
                     
                     
                 </select>
@@ -91,10 +91,10 @@
           <div class="user-input-box">
             <label for="time">Select Time-Slot</label>
                 <select name="time" id="time">
-                    <option value="slot1">8:00 AM - 10:00 AM</option>
-                    <option value="slot2 ">10:00 AM - 12:00 PM</option>
-                    <option value="slot3">02:00 PM - 04:00 PM</option>
-                    <option value="slot4">04:00 PM - 06:00 PM</option>
+                    <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+                    <option value="10:00 AM - 12:00 PM ">10:00 AM - 12:00 PM</option>
+                    <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+                    <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
                    
                 </select>
           </div>

@@ -9,19 +9,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClassRequest extends Model
 {
-
     protected $table = 'class_requests';
     use HasFactory;
-    protected $fillable = ['tutor_id', 'tutor_name','student_id', 'student_name','keydate', 'time', 'subject', 'medium', ];
+    protected $fillable = [ 'tutorFullName','subject', 'medium','day', 'time', 'tutor_id', ];
 
-    public function tutor()
+    public function classrequest()
     {
-        return $this->belongsTo(Tutor::class);
+        return $this->belongsTo(tutorRegister::class, 'tutor_id');
     }
 
     public function subject()
     {
         return $this->belongsTo(Subject::class);
+    }
+
+    public function mediumsrequest()
+    {
+        return $this->belongsTo(tutorMedium::class, 'tutorMedium_id');
     }
 }
 

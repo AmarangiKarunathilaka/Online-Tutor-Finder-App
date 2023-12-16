@@ -1,12 +1,15 @@
+.container{
+    display: flex;
+  }
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
 
 }
 
 th, td {
     border: 1px solid #dfdbce;;
-    padding: 8px;
+    padding: 2px;
     text-align: left;
 }
 
@@ -40,7 +43,7 @@ tr {
 }
 
 .values .val-box i {
-    font-size: 25px;
+    font-size: 10px;
     width: 60px;
     height: 60px;
     line-height: 60px;
@@ -52,7 +55,7 @@ tr {
 }
 
 .values .val-box h3 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -60,7 +63,7 @@ tr {
     font-size: 15px;
     color: #7e7d7d;
 }
-.accept{
+.accept {
     background-color: rgb(233, 175, 15);
     border-radius: 5px;
 }
@@ -71,12 +74,36 @@ tr {
 }
 
 .form-box {
-
-    padding: 100px;
+    padding: 20px;
 }
 
+/* Media query for smaller screens */
+@media screen and (max-width: 580px) {
+    .values {
+        padding: 50px 20px 0 20px;
+    }
 
+    .form-box {
+        padding: 20px;
+    }
+
+
+
+    @media screen and (min-width: 600px) {
+        th {
+          display: inside;
+        }
+    
+        .card-block {
+          display: inside;
+        }
+      }
+    
+
+}
 button:hover {
     color: rgb(2, 2, 2);
+
+
 
 }

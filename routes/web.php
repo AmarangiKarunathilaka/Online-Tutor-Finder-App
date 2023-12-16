@@ -16,6 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\combinedDisplayController;
 
+//use App\Http\Controllers\combinedDisplayController;
 
 
 
@@ -40,7 +41,7 @@ use App\Http\Controllers\TutorProfileController;
 
 //chat
 use App\Events\Message;
-
+use App\Http\Controllers\ChatController;
 use Illuminate\Http\Request;
 
 
@@ -158,9 +159,9 @@ Route::get('/popupBox', function () {
 });
 
 
-// Route::get('/adminHome', function () {
-//     return view('adminHome');
-// });
+Route::get('/admintimetable', function () {
+     return view('admintimetable');
+ });
 
 
 
@@ -208,6 +209,9 @@ Route::get('/editAdvertisement', function () {
 
 
 
+Route::get('/search', function () {
+    return view('search');
+});
 
 
 
@@ -324,6 +328,9 @@ Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('co
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
+
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
 Route::get('/acceptwFeedback/{id}', [FeedbackController::class, 'acceptwFeedback']);
 Route::get('/rejectwFeedback/{id}', [FeedbackController::class, 'rejectwFeedback']);
 
@@ -335,6 +342,7 @@ Route::get('/studentDashboard', [StudentDashboardController::class, 'advertiseme
 
 // show tutors name in feedback form
 Route::get('/tutorFeedback', [FeedbackController::class, 'showTutorFeedbackForm'])->name('tutor.feedback.form');
+
 
 
 
@@ -443,10 +451,8 @@ Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->nam
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
-//TIMETABLE
-//Route::get('/editTutorProfile', [TimetableController::class, 'index']);
-//Route::post('/update-timetable', [TimetableController::class, 'update']);
-//Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+//Timetable
+Route::get('/admintimetable', [combinedDisplayController::class, 'admintimetable'])->name('admintimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
@@ -456,16 +462,20 @@ Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfil
 
 Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
 
-Route::get('/tutorDashboard', [CombinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
+Route::get('/tutorDashboard', [combinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
 
 Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
+
+
+//Class Request
+Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
 
 
 
 
 //nalaka
-Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
-Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+//Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'classRequestInput'])->name('classRequestInput');
 // view requests in admin
 Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
 
@@ -505,6 +515,10 @@ Route::get('/chatPusher', function () {
     return view('chatPusher');
 });
 
+Route::get('/chatPusherTutor', function () {
+    return view('chatPusherTutor');
+});
+
 
 Route::post('send-message',function (Request $request){
     event(new Message($request->username, $request->message));
@@ -528,4 +542,10 @@ Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
 //});
+
+//search advertisement
+Route::get('/search', [AdvertisementController::class, 'searchTutors'])->name('search');
+
+Route::get('/chatPusher', [ChatController::class, 'chatStudent'])->name('chatStudent');
+Route::get('/chatPusherTutor', [ChatController::class, 'chatTutor'])->name('chatTutor');
 

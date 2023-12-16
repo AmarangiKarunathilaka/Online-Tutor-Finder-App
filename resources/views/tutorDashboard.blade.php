@@ -16,7 +16,26 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     rel="stylesheet"/>
     <!-- MDB -->
-  
+
+     <!----===== Boxicons CSS ===== -->
+     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* Add some basic styling for the chat button */
+        #chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            height: 50px;
+            width:50px;
+            background: linear-gradient(to left, #525b5e 0%, #73691b 100%);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 90px;
+            cursor: pointer;
+        }
+    </style>
   
 </head>
  
@@ -31,7 +50,7 @@
 <section class="home">
     <header class="header">
       <div class="header_logo">
-        <a href="#">Dashboard</a>
+        <a href="#" style="color:#000;  font-weight: bold; font-size:22px;">Dashboard</a>
       </div>
   
       
@@ -49,35 +68,40 @@
                 <div class="col-md-11 mt-5 pt-5">
                     <div class="row z-depth-3">
                         <div class="col-sm-4 bg-info rounded-left bg-white">
-                            <div class="card-block text-center bg-white ">
+                            <div class="card-block text-center bg-white" style=" margin-bottom:10px;">
                                 
-                                <div class="profile-card" style="margin-left:10%; width:150%;margin-top:-40px;">
-                                    <div class="image">
+                                <div class="profile-card" style="margin-left:10%; width:150%; margin-top:-40px; ">
+                                    <div class="image" style=" height: 150px;">
                                     @if(isset($profile) && count($profile)>0)            
                              @foreach ($profile as $profile)
                           
-                              <img  src="/profileImage/{{ $profile ->image }}" style="width:170; height:170; border-radius:50%;margin-left:-6%;margin-top:-10%;" alt/>
+                              <img  src="/profileImage/{{ $profile ->image }}" style="width:170; height:170; border-radius:50%;margin-left:-6%;margin-top:-2%;" alt/>
                                      
-                              @endforeach
+                              @endforeach  
                                     </div>
                                     <div class="data">
-                                        <h4>{{$profile->tutorFullName}}</h4>
-                                        <span>{{$profile->subject}}</span> 
                                         
+                                           
                                         @else
-                                  <h2 style="color:#000;  font-weight: bold;"> Please Edit Your Profile</h2>
+                                  <h1 style="color:#000;  font-weight: bold; margin-top:20px;"> Please Edit Your Profile</h1>
                                 @endif
                                     </div>
                                     
-                                    <div class="buttons">
-                                        <a href="/editTutorProfile" class="btn">Edit</a>
+                                    <div class="buttons" style="margin-left:1%;">
+                                        <a href="/editTutorProfile" class="btn" >Edit</a>
                                         <input type="checkbox" id="check">
-                                        
 
-                                        </div>
+
+                                       
+
+                                   
+                                      </div>
                                 
-                                    
+
+
+                                
                                         
+                                       
                                     </div>
                                 
                                
@@ -88,11 +112,22 @@
                                 <h3 class="mt-4 text-center " style="margin-left:40%;">Information</h3>
                                 <hr class="badge-primary mt-2 w-30">
                                 <div class="row">
-                                    <div class="col-sm-8" style="margin-left:10%;">@foreach ($detail as $detail)
+
+                                <div class="col-sm-8" style="margin-left:20%;">
+                                        <p class="font-weight-bold">Name</p>@foreach ($detail as $detail)
+                                        <h6 class="text-muted">{{$detail->tutorFullName}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-left:95%;">
+                                        <p class="font-weight-bold">Subject</p>
+                                        <h6 class="text-muted">{{$detail->subject}}</h6>
+                                    </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-sm-8" style="margin-left:20%;">
                                         <p class="font-weight-bold">Email</p>
                                         <h6 class="text-muted">{{$detail->tutorEmail}}</h6>
                                     </div>
-                                    <div class="col-sm-6" style="margin-left:30%;">
+                                    <div class="col-sm-6" style="margin-left:45%;">
                                         <p class="font-weight-bold">Phone</p>
                                         <h6 class="text-muted">{{$detail->tutorPhoneNumber}}</h6>
                                     </div>
@@ -100,7 +135,7 @@
                                
                                 <hr class="bg-primary">
                                 <div class="row">
-                                    <div class="col-sm-8"style="margin-left:10%;">
+                                    <div class="col-sm-8"style="margin-left:20%;">
                                     <p class="font-weight-bold">Qualification</p>
                                         <h6 class="text-muted" >{{$detail->qualification}}</h6>
                                     </div>
@@ -118,7 +153,7 @@
        
           <section class="attendance">
             <div class="attendance-list">
-              <h1>class Request List</h1>
+              <h1 style="color:#000;  font-weight: bold; font-size:30px;">class Request List</h1>
               <table class="table">
                 <thead>
                   <tr>
@@ -192,104 +227,10 @@
         
        
         
-        
-  
-        
-        
-  
-      
-     
-      <!-- Sidebar Reviews Section -->
-     <!-- <div class="sidebar1">
-        <div class="row">
-          <h2>Reviews</h2>
-          <a href="#">See all</a>
-        </div>
-  
-        <div class="review">
-          <div class="details">
-            
-            <div class="title">
-              <h2>Smith David</h2>
-              <span>1 day ago</span>
-            </div>
-          </div>
-          <div class="review_post">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore harum vero consectetur expedita numquam accusantium necessitatibus. Sit accusantium nobis assumenda.</p>
-          </div>
-        </div>
-  
-        <div class="review">
-          <div class="details">
-            
-            <div class="title">
-              <h2>Elyana Gomiz</h2>
-              <span>1 day ago</span>
-            </div>
-          </div>
-          <div class="review_post">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore harum vero consectetur expedita numquam accusantium necessitatibus. Sit accusantium nobis assumenda.</p>
-          </div>
-        </div>
-  
-        <div class="review">
-          <div class="details">
-            
-            <div class="title">
-              <h2>Sam Jhon</h2>
-              <span>1 day ago</span>
-            </div>
-          </div>
-          <div class="review_post">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore harum vero consectetur expedita numquam accusantium necessitatibus. Sit accusantium nobis assumenda.</p>
-          </div>
-        </div>
-  
-        <div class="review">
-          <div class="details">
-            
-            <div class="title">
-              <h2>Salina David</h2>
-              <span>1 day ago</span>
-            </div>
-          </div>
-          <div class="review_post">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore harum vero consectetur expedita numquam accusantium necessitatibus. Sit accusantium nobis assumenda.</p>
-          </div>
-        </div>
-  
-        <div class="review">
-          <div class="details">
-            
-            <div class="title">
-              <h2>Smith David</h2>
-              <span>1 day ago</span>
-            </div>
-          </div>
-          <div class="review_post">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore harum vero consectetur expedita numquam accusantium necessitatibus. Sit accusantium nobis assumenda.</p>
-          </div>
-        </div>
-  
-        <div class="review">
-          <div class="details">
-            
-            <div class="title">
-              <h2>Elyana Gomiz</h2>
-              <span>1 day ago</span>
-            </div>
-          </div>
-          <div class="review_post">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore harum vero consectetur expedita numquam accusantium necessitatibus. Sit accusantium nobis assumenda.</p>
-          </div>
-        </div>
-  
-      </div>
-    </div>-->
     
     <section class="attendance">
             <div class="attendance-list">
-              <h1>class Time table</h1>
+              <h1 style="color:#000;  font-weight: bold; font-size:30px;">class Time table</h1>
     <table class="table" style=" border: 1px solid #110d0d;"> 
     <thead style="width:100%; border: 1px solid #110d0d;">
         <tr>
@@ -493,7 +434,12 @@
 </div>
 
 
+
         </section> 
+
+    
+<a href="/chatPusherTutor"><button id="chat-button"><i class='bx bxs-conversation icon' ></i></button></a>
+
 
 </div>
       </section>
