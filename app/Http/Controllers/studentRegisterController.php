@@ -85,7 +85,7 @@ class studentRegisterController extends Controller
         $data->save();
 
 
-        return redirect()->route('adminStudentList')->with('success', 'Student accepted successfully!');
+        return redirect()->back();
     }
 
     public function reject_student($id)

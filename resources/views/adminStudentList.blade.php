@@ -74,7 +74,7 @@
                     <td>{{ $student->studentEmail }}</td>
                     <td>{{ $student->status }}</td>
                    
-                    <td>    <a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept">Accept</button>
+                    <td>    <a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept" >Accept </button>
                             <a href="{{url('reject_student',$student->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
                     </td>
                     
