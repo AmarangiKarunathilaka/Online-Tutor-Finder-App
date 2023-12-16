@@ -22,5 +22,10 @@ class ClassRequest extends Model
     {
         return $this->belongsTo(Subject::class);
     }
+
+    public function mediumsrequest()
+    {
+        return $this->belongsTo(tutorMedium::class, 'tutorMedium_id');
+    }
 }
 
