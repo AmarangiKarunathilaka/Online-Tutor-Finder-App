@@ -19,10 +19,20 @@ class Advertisement extends Model
         'payment',
         'description',
         'subject',
+        'medium',
         'status',
         'tutor_id',
         
     ];
 
+    public function tutor()
+    {
+        return $this->belongsTo(tutorRegister::class);
+    }
+
+    public function timetable()
+    {
+        return $this->hasOne(Timetable::class, 'tutor_id', 'tutor_id');
+    }
    
 }
