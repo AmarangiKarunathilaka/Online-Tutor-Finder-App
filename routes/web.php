@@ -323,7 +323,7 @@ Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'
 Route::get('/adminFeedbackList', [FeedbackController::class, 'combinedAdminDisplay'])->name('combinedAdminDisplay');
 
 // view feedback in guest interface
-Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
 
 // accept & reject
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
@@ -344,6 +344,9 @@ Route::get('/studentDashboard', [StudentDashboardController::class, 'advertiseme
 // show tutors name in feedback form (chirantha)
 Route::get('/tutorFeedback', [FeedbackController::class, 'getAcceptedTutorNames'])->name('tutor.feedback.form');
 
+// auto fill feedback data (bingun)
+Route::get('/websiteFeedbackForm', [FeedbackController::class, 'autoFill1'])->name('autoFill1');
+Route::get('/websiteFeedback', [FeedbackController::class, 'autoFill2'])->name('autoFill2');
 
 
 
