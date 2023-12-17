@@ -9,7 +9,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    	<link rel="stylesheet" href="css/editTutorProfile.css" />
+    	<link rel="stylesheet" href="css/editTutorProfile.css" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+          
+        button{
+            height: 40px;
+            width: 80px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        button,.fa{
+            color: #383838;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .fa{
+            font-size: 20px;
+            padding: 10px 18px;
+        }
+        #back,.fa-mail-forward{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        
+        .fa-mail-reply{
+            background: linear-gradient(#ffeb3b,#ff5722);
+        }
+        
+    </style>
 </head>
 <body>
 
@@ -28,6 +59,9 @@
 <div class="col-xl-4">
 
 <div class="card mb-4 mb-xl-0">
+    <a href="/tutorDashboard">
+      <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+       
     <div class="card-header">Profile Picture</div>
         <div class="card-body text-center">
             <div class="hero">
@@ -111,6 +145,8 @@
             @csrf
 
             <div class="container">
+            <a href="/tutorDashboard">
+      <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
             <h1 class="form-title">Profile Details</h1>
             
         <div class="main-user-info">

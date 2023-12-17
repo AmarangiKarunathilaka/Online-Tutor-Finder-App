@@ -22,46 +22,17 @@
     
 
     <section class="main">
-      <div class="main-top">
-        <h1>Skills</h1>
-        <i class="fas fa-user-cog"></i>
-      </div>
-      <div class="main-skills">
-        <div class="card">
-          <i class="fas fa-laptop-code"></i>
-          <h3>Web developemt</h3>
-          <p>Join Over 1 million Students.</p>
-          <button>Get Started</button>
-        </div>
-        <div class="card">
-          <i class="fab fa-wordpress"></i>
-          <h3>WordPress</h3>
-          <p>Join Over 3 million Students.</p>
-          <button>Get Started</button>
-        </div>
-        <div class="card">
-          <i class="fas fa-palette"></i>
-          <h3>graphic design</h3>
-          <p>Join Over 2 million Students.</p>
-          <button>Get Started</button>
-        </div>
-        <div class="card">
-          <i class="fab fa-app-store-ios"></i>
-          <h3>IOS dev</h3>
-          <p>Join Over 1 million Students.</p>
-          <button>Get Started</button>
-        </div>
-      </div>
+      
+     
+       
+        
+        
+      
 
       <section class="main-course">
-        <h1>Class Materials</h1>
+        <h2>Class Materials</h2>
         <div class="course-box">
-          <ul>
-            <li class="active">In progress</li>
-            <li>explore</li>
-            <li>incoming</li>
-            <li>finished</li>
-          </ul>
+         
 
           
 
@@ -69,29 +40,29 @@
             <div class="box">
               <h3>Combined Mathematics</h3>
               
-              <a href="/materialContent/maths"> <button>continue</button></a>
-              <i class="fab fa-html5 html"></i>
+              <a href="/materialContent/maths"> <button style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);">continue</button></a>
+              <i class="fas fa-book"></i>
             </div>
 
             <div class="box">
               <h3>Biology</h3>
               
-              <a href="/materialContent/biology"> <button>continue</button></a>
-              <i class="fab fa-css3-alt css"></i>
+              <a href="/materialContent/biology"> <button style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);">continue</button></a>
+              <i class="fas fa-book"></i>
             </div>
 
             <div class="box">
               <h3>Chemistry</h3>
               
-              <a href="/materialContent/chemistry"> <button>continue</button></a>
-              <i class="fab fa-js-square js"></i>
+              <a href="/materialContent/chemistry"> <button style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);">continue</button></a>
+              <i class="fas fa-book"></i>
             </div>
 
             <div class="box">
               <h3>Physics</h3>
               
-              <a href="/materialContent/physics"> <button>continue</button></a>
-              <i class="fab fa-js-square js"></i>
+              <a href="/materialContent/physics"> <button style="background: linear-gradient(to left, #525b5e 0%, #73691b 100%);">continue</button></a>
+              <i class="fas fa-book"></i>
             </div>
 
           </div>

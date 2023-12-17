@@ -6,6 +6,31 @@
         <title>Feedback Form</title>
 
         <link rel="stylesheet" href="css/feedback1.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+          
+        
+        button,.fa{
+            color: #383838;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .fa{
+            font-size: 20px;
+            padding: 10px 18px;
+        }
+        #back,.fa-mail-forward{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        
+        .fa-mail-reply{
+            background: linear-gradient(#ffeb3b,#ff5722);
+        }
+        
+    </style>
 
     </head>
     <body>
@@ -15,7 +40,9 @@
         <div class="text"></div>
 
             <div class="container">
-
+            <a href="/studentDashboard">
+      <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+     
                 <h1 class="form-title">Tutor Feedback form</h1>
                 <p><span class="highlighted">We value your feedback! Please let us know about your experience with your tutor.</span></p>
                 <form id="website-feedback-form" action="{{url('/tfeedbackInput')}}" method="POST">
