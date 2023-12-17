@@ -78,12 +78,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="/chatPusher">
-                            <i class='bx bxs-conversation icon' ></i>
-                            <span class="text nav-text">Conversation</span>
-                        </a>
-                    </li>
+                    
 
                     <li class="nav-link">
                         <a href="/tutorFeedback">

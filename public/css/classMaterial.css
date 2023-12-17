@@ -154,13 +154,14 @@ textarea {
     font-size: 20px;
     padding: 10px;
     border:none;
-    border-radius: 3px;
-    color: rgb(209, 209, 209);
-    background: rgba(224, 155, 5, 0.7);
+    font-weight: bold;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    background: yellow;
 }
 
 .btn:hover{
-    background:rgba(230, 226, 9, 0.849);
+    background:#ff7b00;
     color: rgb(255, 255, 255);
 }
 

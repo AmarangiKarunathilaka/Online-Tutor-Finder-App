@@ -10,6 +10,32 @@
     <link href="css/style.css" rel="stylesheet">
    
     <title>Registation For Tutor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+          
+        
+        button,.fa{
+            color: #383838;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .fa{
+            margin-left: -80px;
+            font-size: 20px;
+            padding: 10px 18px;
+        }
+        #back,.fa-mail-forward{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        
+        .fa-mail-reply{
+            background: linear-gradient(#ffeb3b,#ff5722);
+        }
+        
+    </style>
 </head>
 <body>
     
@@ -17,6 +43,9 @@
     <nav class="navbar navbar-expand-lg  fixed-top shadow-lg">
        
        <div class="container">
+       <a href="/#section_1">
+      <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+
            
            <img src="images/f.png" alt="" />
 
@@ -172,9 +201,10 @@
                             </div>
                         </div>
                         
-                        
-                       <br> <button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> <b>Register<b> </button>
-                        
+                        <form action="{{ route('register1') }}" method="post">
+        @csrf
+                        <br><button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> <b>Register<b> </button>
+                        </form>
         
                     </form>
                 

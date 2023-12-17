@@ -72,8 +72,7 @@
                     <td>{{ $student->address }}</td>
                     <td>{{ $student->studentPhoneNumber }}</td>
                     <td>{{ $student->studentEmail }}</td>
-                        <td><button type="button" class="accept">Accept </button>
-                            <button type="button" class="remove">Remove</button></td>
+                        
                     </tr>
                     
                     @endforeach

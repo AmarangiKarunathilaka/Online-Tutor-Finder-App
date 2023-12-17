@@ -13,6 +13,8 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
+use App\Mail\WelcomeEmail1;
+
 
 
 class tutorRegisterController extends Controller
@@ -22,44 +24,7 @@ class tutorRegisterController extends Controller
         return view('tregister');
     }
 
-    public function adminTutorList()
-    {
-        $data = tutorRegister::join('tutor_mediums', 'tutor_mediums.tutorMedium_id', '=', 'tutor_registers.id')
-                            ->join('tutor_subjects', 'tutor_subjects.tutorSubject_id', '=', 'tutor_registers.id')
-                            ->get(['tutor_registers.tutorFullName',
-                                    'tutor_registers.tutorPhoneNumber',
-                                    'tutor_registers.qualification',
-                                    'tutor_registers.tutorEmail',
-                                    'tutor_mediums.tutorMedium', 'tutor_subjects.tutorSubject']);
-
-
-        return view('adminTutorList', compact('data'));
-
-    }
     
-    public function accept_tutor($id)
-    {
-        
-        $data = tutorRegister::find($id);
-        $data->status = 'accepted';
-        $data->save();
-
-        $this->sendEmail($data->tutorEmail, 'accepted');
-
-        return redirect()->route('adminTutorList')->with('success', 'Tutor accepted successfully!');
-    }
-
-    public function reject_tutor($id)
-    {
-        $data = tutorRegister::find($id);
-        $data->status = 'rejected';
-        $data->save();
-
-        $this->sendEmail($data->tutorEmail, 'rejected');
-
-        return redirect()->route('adminTutorList')->with('success', 'Tutor rejected successfully!');
-    }
-
     public function tutorRegisterInput(Request $request){
 
         $rules = [
@@ -148,12 +113,24 @@ class tutorRegisterController extends Controller
             ]);
         } 
         
-        $user_type = 'tutor';
-        return view('login', compact('user_type'));
+     
+     $user1 = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => $request->password
+    ];
+    
+    if (isset($user1['email'])) {
+        Mail::to($user1['email'])->send(new WelcomeEmail1($user1));
+    } else {
+        // Handle the case where the email is not set
+    }
+    
+    $user_type = 'tutor';
+    return view('tregister', compact('user_type'));
 
-        // return redirect() -> back();
-     }
-
+    // return redirect() -> back();
+    }
 
      //Ramal 2023.12.13
      public function generate_pdf_tutor()
@@ -163,6 +140,56 @@ class tutorRegisterController extends Controller
         return $pdf->download('downloads/tutorList.pdf');
     }
      
+    // public function adminTutorList()
+    // {
+    //     $data = tutorRegister::join('tutor_mediums', 'tutor_mediums.tutorMedium_id', '=', 'tutor_registers.id')
+    //                         ->join('tutor_subjects', 'tutor_subjects.tutorSubject_id', '=', 'tutor_registers.id')
+    //                         ->get(['tutor_registers.id',
+    //                                 'tutor_registers.tutorFullName',
+    //                                 'tutor_registers.tutorPhoneNumber',
+    //                                 'tutor_registers.qualification',
+    //                                 'tutor_registers.tutorEmail',
+    //                                 'tutor_registers.status',
+    //                                 'tutor_mediums.tutorMedium', 'tutor_subjects.tutorSubject']);
+
+
+    //     return view('adminTutorList', compact('data'));
+
+    // }
+    
+     // List all 
+     public function adminTutorList()
+     {
+         
+         $data = tutorRegister::all();
+ 
+         // Return the advertisement  list view
+         return view('adminTutorList', compact('data'));
+     }
+ 
+    public function accept_tutor($id)
+    {
+        
+        $data = tutorRegister::find($id);
+        $data->status = 'accepted';
+        $data->save();
+
+        
+
+        return redirect()->back();
+    }
+
+    public function reject_tutor($id)
+    {
+        $data = tutorRegister::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+        
+
+        return redirect()->back();
+    }
+
 
      public function sendEmailButton()
     {
@@ -175,9 +202,10 @@ class tutorRegisterController extends Controller
 
         //foreach ($emails as $email) {
 
-        $details = [
-            'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'You are removed. Thank you'
-        ];
+            $details = [
+                'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'We are extremely sorry. You are not accepted.',
+                'loginLink' => $request->button == 'accept' ? 'http://127.0.0.1:8000/login' : null,
+            ];
 
         Mail::to($email)->send(new SendEmail($details));
     //}

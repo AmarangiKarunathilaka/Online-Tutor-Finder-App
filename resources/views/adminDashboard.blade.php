@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <title>Dashboard</title>
-  <link rel="stylesheet" href="css/student.css" />
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/adminstyle.css">
+ 
 
-      <!----===== Boxicons CSS ===== -->
-      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="{{ asset('css/tutorDashboard.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('css/adminDashboard.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"/>
+
+ 
     
-  <!-- Font Awesome Cdn Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-
+ 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
@@ -21,17 +23,14 @@
 @extends('adminHomeContent')
 @section('content')
 <section class="home">
-        <div class="text"></div>
-  <div class="container">
-    
-
+<header class="header">
+      <div class="header_logo">
+        <a href="#"style="color:#fff;  font-weight: bold; font-size:25px;">Admin Dashboard</a>
+      </div>   
+    </header>
     <section class="main">
-      <div class="main-top">
-        <h1>Admin Dashboard</h1>
-        
-        <i class="fas fa-user-cog"></i>
-      </div>
-      <div class="main-skills">
+     
+      <div class="main-skills" style="margin-top: -10%;">
         <div class="card">
         <i class='bx bxs-user-check'></i>
           <h3>No of registered students</h3>
@@ -92,15 +91,30 @@
         </div>
       </div>
 
-     
-      <section class="main-course" id="section_1">
-      <div class="main-top">
-        <h1>Accepted Student List</h1>
-        </br>
+    </section>
+      <div class="chart" style="margin-top: -10%; margin-left: 20%;">
+      <!-- Add this code at the end of your Blade file -->
+      <canvas id="pieChart" width="300" height="300"></canvas>
       </div>
-      <table class="table table-success table-striped">
-                    
-                <thead>
+
+      <section class="main-course" id="section_1">
+    
+      <div class="main_body" >
+        <div class="container">
+            
+     
+        <div class="row d-flex justify-content-center">
+                <div class="col-md-11 mt-5 pt-5">
+                    <div class="row z-depth-3">
+                        <div class="col-sm-4 bg-info rounded-left bg-white" style=" margin-top:-50px;">
+
+                        <section class="attendance">
+            <div class="attendance-list" style=" margin-top:-20px; ">
+            <h2>Accepted Student List</h2>
+            <table class="table" style=" border: 1px solid #110d0d;"> 
+            <thead style="width:100%; border: 1px solid #6b6b49; ">
+                
+
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Tutor Name</th>
@@ -160,8 +174,7 @@
     </section>
   </div>
 
-    <!-- Add this code at the end of your Blade file -->
-    <canvas id="pieChart" width="300" height="300"></canvas>
+  
 
 <script>
     // Get the counts from Blade variables

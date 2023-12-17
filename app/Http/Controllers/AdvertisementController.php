@@ -54,6 +54,12 @@ class AdvertisementController extends Controller
         return redirect()->back();
     }
 
+    //postman api testing
+// public function create()
+// {
+//     return view('advertisements.create');  
+// }
+
 
 
     // List all advertisements

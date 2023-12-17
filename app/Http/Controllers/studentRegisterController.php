@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\studentRegister;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 //Ramal
 use Barryvdh\DomPDF\Facade\Pdf;
 //use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
+use App\Mail\WelcomeEmail;
+
 
 class studentRegisterController extends Controller
 {
@@ -18,34 +21,7 @@ class studentRegisterController extends Controller
         return view('sRegister');
     }
 
-    public function adminStudentList(){
-        $students = studentRegister::all(); 
-        return view('adminStudentList', compact('students'));
-    }
-
-    public function accept_student($id)
-    {
-        
-        $data = studentRegister::find($id);
-        $data->status = 'accepted';
-        $data->save();
-
-        $this->sendEmail($data->studentEmail, 'accepted');
-
-        return redirect()->back()->with('success', 'Student accepted successfully!');
-    }
-
-    public function reject_student($id)
-    {
-        $data = studentRegister::find($id);
-        $data->status = 'rejected';
-        $data->save();
-
-        $this->sendEmail($data->studentEmail, 'rejected');
-
-        return redirect()->back()->with('success', 'Student rejected successfully!');
-    }
-
+    
     public function studentRegisterInput(Request $request)
     {
         $rules = [
@@ -79,15 +55,24 @@ class studentRegisterController extends Controller
             // 'studentConfirmPassword'=> $request -> studentReEnterPassword
            ]);
 
+           $user = [
+            'name' => $request->name,
+            'email' => $request->studentEmail,
+            'password' => $request->password
+        ];
         
-
+        if (isset($user['email'])) {
+            Mail::to($user['email'])->send(new WelcomeEmail($user));
+        } else {
+            // Handle the case where the email is not set
+        }
         // Create a new record in the database
         //$register = Register::create($request->all());
  
         // Redirect after successfully creating the record
         //return redirect(route('tregister'));
         $user_type = 'student';
-        return view('login', compact('user_type'));
+        return view('sRegister', compact('user_type'));
     }
 
     //Amare 2023.12.13
@@ -98,6 +83,67 @@ class studentRegisterController extends Controller
         return $pdf->download('downloads/studentList.pdf');
     }
 
+    public function adminStudentList(){
+        $students = studentRegister::all(); 
+        return view('adminStudentList', compact('students'));
+    }
+
+    public function accept_student($id)
+    {
+        
+        $data = studentRegister::find($id);
+        $data->status = 'accepted';
+        $data->save();
+
+
+        return redirect()->back();
+    }
+
+    public function reject_student($id)
+    {
+        $data = studentRegister::find($id);
+        $data->status = 'rejected';
+        $data->save();
+
+       
+
+        return redirect()->back();
+    }
+  /*  public function handleActionView()
+    {
+        return view('adminStudentList');
+    }
+
+    public function handleAction($id, $action)
+{
+    $data = studentRegister::find($id);
+
+    if ($action === 'accept') {
+        $data->status = 'accepted';
+        $data->save();
+
+        // Insert into another table (e.g., accepted_students)
+        DB::table('accepted_students')->insert([
+            'id' => $data->id,
+            'studentFullName' => $data->studentFullName,
+            'birthday' => $data->birthday,
+            'address' => $data->address,
+            'studentPhoneNumber' => $data->studentPhoneNumber,
+            'studentEmail' => $data->studentEmail,
+            'status' => 'accepted',
+        ]);
+
+        $this->sendEmail($data->studentEmail, 'accepted');
+    } elseif ($action === 'remove') {
+        $data->status = 'rejected';
+        $data->save();
+        $this->sendEmail($data->studentEmail, 'rejected');
+    }
+
+    return redirect()->route('adminStudentList')->with('success', 'Student ' . ucfirst($action) . 'ed successfully!');
+}*/
+
+//public function addStudent(Request $request,)
 
     public function sendEmailButton()
     {
@@ -110,9 +156,10 @@ class studentRegisterController extends Controller
 
         //foreach ($emails as $email) {
 
-        $details = [
-            'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'You are removed. Thank you'
-        ];
+            $details = [
+                'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'We are extremely sorry. You are not accepted.',
+                'loginLink' => $request->button == 'accept' ? 'http://127.0.0.1:8000/login' : null,
+            ];
 
         Mail::to($email)->send(new SendEmail($details));
     
@@ -120,5 +167,4 @@ class studentRegisterController extends Controller
         //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
 
     }
-
 }

@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
     <link rel="stylesheet" href="css/feedback1.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+          
+        
+        button,.fa{
+            color: #383838;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .fa{
+            font-size: 20px;
+            padding: 10px 18px;
+        }
+        #back,.fa-mail-forward{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        
+        .fa-mail-reply{
+            background: linear-gradient(#ffeb3b,#ff5722);
+        }
+        
+    </style>
 </head>
 <body>
 @extends('studentHomeContent')
@@ -14,21 +39,28 @@
     
     
     <div class="container">
-        
+    <a href="/studentDashboard">
+      <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
         <h1 class="form-title">Website Feedback form</h1>
         <p><span class="highlighted">We value your feedback! Please fill out the form below:</span></p>
-        <form id="website-feedback-form" action="{{url('/wfeedbackInput')}}" method="POST">
+        <form id="website-feedback-form" action="{{url('/wfeedbackInput')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <input type="hidden" name="key" value="1">
+            @foreach ($studentName as $studentName)
             <div class="form-group">
                 
-                <input type="text" id="name" name="name" placeholder="Name"required>
+                <input type="text" id="name" name="name" placeholder="Name" value="{{$studentName->studentFullName}}" disabled/>
             </div>
+            @endforeach
+
+            @foreach ($email as $email)
             <div class="form-group">
                 
-                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="email" id="email" name="email" placeholder="Email" value="{{$email->studentEmail}}" disabled/>
             </div>
+            @endforeach
+
             <div class="form-group">
                 <label for="rating">Rating:</label>
                 <select id="rating" name="rating" required>

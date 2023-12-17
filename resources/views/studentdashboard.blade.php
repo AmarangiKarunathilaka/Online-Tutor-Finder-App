@@ -19,13 +19,29 @@
     
     <link href="css/reviews-styles.css" rel="stylesheet">
 
-       
+    
         
 
 
-    
-    <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <!----===== Boxicons CSS ===== -->
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+<style>
+    /* Add some basic styling for the chat button */
+    #chat-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        height: 50px;
+        width:50px;
+        background: linear-gradient(to left, #525b5e 0%, #73691b 100%);
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 90px;
+        cursor: pointer;
+    }
+</style>
     
     <title>Student Dashboard</title> 
 </head>
@@ -39,7 +55,7 @@
     <div class="container">
     
         
-   
+    <a href="/chatPusher"><button id="chat-button"><i class='bx bxs-conversation icon' ></i></button></a>
 
     
 <!---------------------------------------
@@ -168,7 +184,7 @@
                             @foreach ($tfeedback as $tfeedback)
                                 <div class="reviews-thumb">
                                     <div class="reviews-body">
-                                        <h4>{{ $tfeedback->tutor }}</h4>
+                                        <h4>{{ $tfeedback->tutor }} - Tutor</h4>
                                         <h3>{{ $tfeedback->message }}</h3>
                                     </div>
 

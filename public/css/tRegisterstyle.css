@@ -185,7 +185,7 @@ nav ul li:last-child a {
 
 .btn {
     display: inline-block;
-    background-color: rgb(244, 242, 105);
+    background-color:yellow;
     color: #575656;
     padding: 10px 20px;
     border-radius: 5px;
@@ -194,7 +194,7 @@ nav ul li:last-child a {
 }
 
 .btn:hover {
-    background-color: #ffea03;
+    background-color: #ff7b00;
     color: #0e0d0d;
 }
 
