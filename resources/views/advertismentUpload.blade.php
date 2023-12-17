@@ -15,6 +15,49 @@
     <link href="css/owl.carousel.min.css" rel="stylesheet"> 
 
     <link href="css/bootstrap-icons.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+          
+         
+        .box{
+            margin-top: 580px; 
+            margin-left: 1200px;
+            height: 40px;
+            width: 120px;
+            display: flex;
+            
+           
+        }
+        button{
+            height: 40px;
+            width: 100px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        button,.fa{
+            color: #383838;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .fa{
+            font-size: 20px;
+            padding: 10px 18px;
+        }
+        #back,.fa-mail-forward{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        
+        .fa-mail-reply{
+            
+            background: linear-gradient(#ffeb3b,#ff5722);
+        }
+        
+    </style>
 
   </head>
   <body>
@@ -24,9 +67,13 @@
   <section class="home">
         <div class="text"></div>
     
-    
+        
     <div class="container">
+
       <div>
+      <a href="/tutorDashboard">
+      <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+        <button id="back">BACK</button>
       <h1 class="form-title">Advertisment Upload</h1>
       <form action="{{ url('/advertisementInput') }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -107,6 +154,10 @@
                     popup.classList.remove("open-popup"); 
                     }
                 </script>
+               
+        
+       
+   
         </div>
       </form>
         </div>
