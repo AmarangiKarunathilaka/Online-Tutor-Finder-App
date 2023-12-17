@@ -344,6 +344,9 @@ Route::get('/studentDashboard', [StudentDashboardController::class, 'advertiseme
 // show tutors name in feedback form (chirantha)
 Route::get('/tutorFeedback', [FeedbackController::class, 'getAcceptedTutorNames'])->name('tutor.feedback.form');
 
+// auto fill feedback data (bingun)
+Route::get('/websiteFeedbackForm', [FeedbackController::class, 'autoFill1'])->name('autoFill1');
+Route::get('/websiteFeedback', [FeedbackController::class, 'autoFill2'])->name('autoFill2');
 
 
 
