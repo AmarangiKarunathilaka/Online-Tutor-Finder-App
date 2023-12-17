@@ -18,13 +18,13 @@
         <div class="text">Class Materials View</div>
     
         
-    <table>
+    <table class="time" style="width:90%;">
         <tr>
-        <td><b>Tutor Name: </b>{{ $classmaterial->tutorName }}</td>
-        <td><b>Title:   </b>{{ $classmaterial->title }}</td></tr>
+        <td class="inside" style="font-size:23px;"><b>Tutor Name: </b>{{ $classmaterial->tutorName }}</td>
+        <td class="inside" style="font-size:23px;"><b>Title:   </b>{{ $classmaterial->title }}</td></tr>
         <tr>
-        <td><b>Subject: </b>{{ $classmaterial->subject }}</td>
-        <td><b>Category: </b>{{ $classmaterial->lecNote }}</td></tr>
+        <td class="inside" style="font-size:23px;"><b>Subject: </b>{{ $classmaterial->subject }}</td>
+        <td class="inside" style="font-size:23px;"><b>Category: </b>{{ $classmaterial->lecNote }}</td></tr>
 
 </table>
 

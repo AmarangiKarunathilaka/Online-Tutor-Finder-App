@@ -179,8 +179,10 @@ Bootstrap 5 HTML CSS Template
                             <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
                             <h2>{{ $advertisementMath->tutorName }}</h2>
                             <p>{{ $advertisementMath->description }}</p>
-                            <h3>{{ $advertisementMath->subject }}</h3>
-                            <button class="register">Register Now</button>
+
+                            <h5>{{ $advertisementMath->subject }}</h5>
+                           <p> <a href="/registration">Register Now</a></p> 
+
                         </div>
                     @endforeach
             </div>
@@ -205,7 +207,7 @@ Bootstrap 5 HTML CSS Template
                                 <h2>{{ $advertisementPhysic->tutorName }}</h2>
                                 <p>{{ $advertisementPhysic->description }}</p>
                                 <h3>{{ $advertisementPhysic->subject }}</h3>
-                                <button class="register">Register Now</button>
+                                <p> <a href="/registration">Register Now</a></p> 
                             </div>
                     @endforeach
             </div>
@@ -230,7 +232,7 @@ Bootstrap 5 HTML CSS Template
                                 <h2>{{ $advertisementChem->tutorName }}</h2>
                                 <p>{{ $advertisementChem->description }}</p>
                                 <h3>{{ $advertisementChem->subject }}</h3>
-                                <button class="register">Register Now</button>
+                                <p> <a href="/registration">Register Now</a></p> 
                             </div>
                     @endforeach
             </div>
@@ -253,7 +255,7 @@ Bootstrap 5 HTML CSS Template
                                 <h2>{{ $advertisementBio->tutorName }}</h2>
                                 <p>{{ $advertisementBio->description }}</p>
                                 <h3>{{ $advertisementBio->subject }}</h3>
-                                <button class="register">Register Now</button>
+                                <p> <a href="/registration">Register Now</a></p> 
                             </div>
                     @endforeach
             </div>

@@ -24,4 +24,9 @@ class Timetable extends Model
     {
         return $this->belongsTo(tutorSubject::class, 'tutor_id');
     }
+
+    public function tutortime()
+    {
+        return $this->belongsTo(Advertisement::class, 'tutor_id');
+    }
 }

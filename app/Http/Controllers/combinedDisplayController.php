@@ -51,7 +51,12 @@ class combinedDisplayController extends Controller
     
     public function tutorDashboard()
 
-    {   
+    {            
+        $userId = Session::get('user_id');
+        $requests = ClassRequest::where('class_requests.tutor_id','=', $userId)
+                                ->get();
+
+
         $userId = Session::get('user_id');
         $profile = TutorProfile::where('tutor_profiles.tutor_id','=', $userId)
                             ->get();
@@ -316,7 +321,7 @@ class combinedDisplayController extends Controller
         $tfeedback = TutorFeedback::where('status','=','accepted')->get();
         
         
-        return view('tutorDashboard', compact('detail','profile','time1','time2','time3','time4','time5','time6','time7','time8','time9'
+        return view('tutorDashboard', compact('requests','detail','profile','time1','time2','time3','time4','time5','time6','time7','time8','time9'
                                             ,'time10','time11','time12','time13','time14','time15','time16','time17','time18','time19','time20'
                                             ,'time21','time22','time23','time24','time25','time26','time27','time28', 'tfeedback'));
     }

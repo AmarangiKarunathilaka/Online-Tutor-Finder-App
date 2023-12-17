@@ -40,20 +40,20 @@
       $lastTutorName = null;
     @endphp
 
-    @foreach ($note as $note)
-      @if($lastTutorName !== $note->tutorName)
-        <tr><td>Tutor Name: {{ $note->tutorName }} </td></tr>
+    @foreach ($combinedResults as $combinedResults)
+      @if($lastTutorName !== $combinedResults->tutorName)
+        <tr><td>Tutor Name: {{ $combinedResults->tutorName }} </td></tr>
         <tr><td>
         <ul class="list">
             <li class="post"><b>Class Note</b></li>
-            <li><a href="{{url('/download',$note->file)}}"> {{ $note->title }} </a></li>
+            <li><a href="{{url('/download',$combinedResults->file)}}"> {{ $combinedResults->title }} </a></li>
 
           @php
-            $lastTutorName = $note->tutorName
+            $lastTutorName = $combinedResults->tutorName
           @endphp
       
       @else
-        <li><a href="{{url('/download',$note->file)}}"> {{ $note->title }} </a></li>
+        <li><a href="{{url('/download',$combinedResults->file)}}"> {{ $combinedResults->title }} </a></li>
       @endif
 
       @endforeach
@@ -65,8 +65,8 @@
         <tr><td>
         <ul class="list">
             <li class="post"><b>Assignment</b></li>
-            @foreach ($ass as $ass)
-            <li><a href="{{url('/download',$ass->file)}}"> {{ $ass->title }} </a></li>
+            @foreach ($combinedass as $combinedass)
+            <li><a href="{{url('/download',$combinedass->file)}}"> {{ $combinedass->title }} </a></li>
 
       @endforeach
       </td></tr> 

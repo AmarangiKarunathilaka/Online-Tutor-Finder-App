@@ -472,6 +472,7 @@ Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout'
 
 //ishara
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
+Route::get('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
 
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
 
@@ -507,10 +508,9 @@ Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name
 
 
 //Class Request
-Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
+//Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
 
-
-
+Route::get('/classRequest/{id}', [ClassRequestController::class, 'showrequestdetail']);
 
 //nalaka
 //Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
@@ -519,7 +519,7 @@ Route::post('classRequestInput', [ClassRequestController::class, 'classRequestIn
 Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
 
 // view student home
-Route::get('/studentRequestView', [ClassRequestController::class, 'studentRequestView'])->name('studentRequestView');
+//Route::get('/studentRequestView', [ClassRequestController::class, 'studentRequestView'])->name('studentRequestView');
 
 
 Route::get('/acceptRequest/{id}', [ClassRequestController::class, 'acceptRequest']);

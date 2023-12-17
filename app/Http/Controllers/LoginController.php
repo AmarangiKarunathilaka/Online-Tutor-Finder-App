@@ -42,6 +42,16 @@ class LoginController extends Controller
             // Check the 'status' column value
             $status = $user->status; // Assuming 'status' is the column name, update it accordingly
 
+
+            //if ($guard == 'admin') {
+              //  return redirect('/adminDashboard');
+            //} elseif ($guard == 'tutor') {
+                
+              //  return redirect('/tutorDashboard');
+            //} else {
+              //  return redirect('/studentDashboard');
+            //}
+
             // Check if the user is accepted or rejected
            
                 // Access and print the user's ID
@@ -62,6 +72,7 @@ class LoginController extends Controller
            
                 
             
+
         }
         
         return redirect()->back()->with('error', 'Credentials do not match')->with('user_type', $request->user_type);

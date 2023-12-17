@@ -85,7 +85,7 @@
             <input type="text"
                     id="fullName"
                     name="fullName"
-                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}" disabled/>
+                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}" />
           </div>
           @endforeach
 
@@ -95,7 +95,7 @@
             <input type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your Email" value="{{$email->tutorEmail}}" disabled/>
+                    placeholder="Enter your Email" value="{{$email->tutorEmail}}"/>
           </div>
           @endforeach
           

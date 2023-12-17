@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('photo', 300);
             $table->text('description');
             $table->string('subject');
+            $table->string('medium');
             $table->string('status')->default('pending'); // You can set a default status value.
             $table->unsignedBigInteger('tutor_id');
             $table->foreign('tutor_id')->references('id')->on('tutor_registers')->onUpdate('cascade')->onDelete('cascade');

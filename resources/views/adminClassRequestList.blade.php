@@ -5,25 +5,53 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/adminstyle.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/report.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tutorDashboard.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"/>
+    <!-- MDB -->
     <title>Admin class Request List</title>
 </head>
 <body>
     @extends('adminHomeContent')
     @section('content')
     <section class="home">
-        <div class="text">Class Request Management</div>
-    
+    <header class="header">
+      <div class="header_logo">
+        <a href="#"style="color:#000;  font-weight: bold; font-size:25px; color:#fff;"> Accepted Class Request List </a>
+      </div>
+  
+      
+  
+      
+    </header>
 
 
-    <div class="row justify-content-center">
-        <div class="form-box">
-            <div class="container mt-4 ">
+     <!--Ramal 2023.12.14 Button 5-->
+     <form action="{{ route('generate_pdf_request') }}" method="post" target="_blank">
+                    @csrf
+                        <div>
+                            <button>Download PDF</button>
+                        </div>
+                </form>
 
-                    <table class="table table-success table-striped">
-                    
-                <thead>
+  
+    <!-- Mian Body Section -->
+
+    <div class="main_body">
+        <div class="container">
+            
+     
+        <div class="row d-flex justify-content-center">
+                <div class="col-md-11 mt-5 pt-5">
+                    <div class="row z-depth-3">
+                        <div class="col-sm-4 bg-info rounded-left bg-white" style=" margin-top:-50px;">
+
+                        <section class="attendance">
+            <div class="attendance-list" style=" margin-top:-20px; ">
+              
+    <table class="table" style=" border: 1px solid #110d0d;"> 
+    <thead style="width:100%; border: 1px solid #110d0d; ">
                 <tr>
                         <th scope="col">Student Name</th>
                         <th scope="col">Subject</th>
@@ -32,18 +60,17 @@
                         <th scope="col">Date</th>
                         <th scope="col">Time</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Accept/Reject</th>
+                       
                     </tr>
                 </thead>  
 
                 <tbody>
                     
                 <tr>
-                @foreach($studentName as $studentName )
-                        <td>{{ $studentName->studentFullName }}</td>@endforeach
+               
                     @foreach ($requests as $request )
                 
-                    
+                    <td>{{ $request->studentName }}</td>
                     <td>{{ $request->subject }}</td>
                     <td>{{ $request->medium }}</td>
                     <td>{{ $request->tutorFullName }}</td>
@@ -52,10 +79,6 @@
                     <td>{{ $request->status}}</td>
                    
                     
-                    <td>
-                        <a href="{{url('acceptRequest',$request->id)}}"><button type="button" class="accept">Accept </button>
-                        <a href="{{url('rejectRequest',$request->id)}}" ><button type="button" class="remove">Reject</button>
-                    </td>
                     </tr>
                   
                   
@@ -67,21 +90,14 @@
                 </table>
 
 
-                 <!--Ramal 2023.12.14 Button 5-->
-                 <form action="{{ route('generate_pdf_request') }}" method="post" target="_blank">
-                    @csrf
-                        <div>
-                            <button class="button1">Download PDF</button>
-                        </div>
-                </form>
 
 
 
-
+                </div>
     
                 </div>
             </nav>
-        </header>
+            </section>
     </section>
     @endsection
     

@@ -11,7 +11,7 @@ class ClassRequest extends Model
 {
     protected $table = 'class_requests';
     use HasFactory;
-    protected $fillable = [ 'tutorFullName','subject', 'medium','day', 'time', 'tutor_id', ];
+    protected $fillable = ['studentName', 'tutorFullName','subject', 'medium','day', 'time', 'tutor_id','student_id' ,];
 
     public function classrequest()
     {
@@ -26,6 +26,13 @@ class ClassRequest extends Model
     public function mediumsrequest()
     {
         return $this->belongsTo(tutorMedium::class, 'tutorMedium_id');
+    
     }
+
+    public function classreq()
+    {
+        return $this->belongsTo(Advertisement::class);
+    }
+
 }
 

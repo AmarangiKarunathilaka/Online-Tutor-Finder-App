@@ -789,3 +789,40 @@ table thead tr{
       display: inside;
     }
   }
+
+  form {
+    max-width: 200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #74790d;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  background: #7c7d18;
+  color: #fff;
+  transition: 0.5rem;
+}
