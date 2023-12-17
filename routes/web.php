@@ -431,6 +431,7 @@ Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout'
 
 //ishara
 Route::post('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
+Route::get('/upload-class-material', [ClassMaterialController::class, 'classMaterials'])->name('classMaterials');
 
 Route::post('/classMaterialInput',[ClassMaterialController::class, 'classMaterialInput'])->name('classMaterialInput');
 

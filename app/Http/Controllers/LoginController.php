@@ -44,12 +44,12 @@ class LoginController extends Controller
             Session::put('user_id', $userId);
 
             if ($guard == 'admin') {
-                return redirect('/adminHome');
+                return redirect('/adminDashboard');
             } elseif ($guard == 'tutor') {
                 
                 return redirect('/tutorDashboard');
             } else {
-                return redirect('/studentHome');
+                return redirect('/studentDashboard');
             }
         }
         
