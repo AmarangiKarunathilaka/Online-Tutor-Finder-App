@@ -126,23 +126,33 @@ class tutorRegisterController extends Controller
         return $pdf->download('downloads/tutorList.pdf');
     }
      
-    public function adminTutorList()
-    {
-        $data = tutorRegister::join('tutor_mediums', 'tutor_mediums.tutorMedium_id', '=', 'tutor_registers.id')
-                            ->join('tutor_subjects', 'tutor_subjects.tutorSubject_id', '=', 'tutor_registers.id')
-                            ->get(['tutor_registers.id',
-                                    'tutor_registers.tutorFullName',
-                                    'tutor_registers.tutorPhoneNumber',
-                                    'tutor_registers.qualification',
-                                    'tutor_registers.tutorEmail',
-                                    'tutor_registers.status',
-                                    'tutor_mediums.tutorMedium', 'tutor_subjects.tutorSubject']);
+    // public function adminTutorList()
+    // {
+    //     $data = tutorRegister::join('tutor_mediums', 'tutor_mediums.tutorMedium_id', '=', 'tutor_registers.id')
+    //                         ->join('tutor_subjects', 'tutor_subjects.tutorSubject_id', '=', 'tutor_registers.id')
+    //                         ->get(['tutor_registers.id',
+    //                                 'tutor_registers.tutorFullName',
+    //                                 'tutor_registers.tutorPhoneNumber',
+    //                                 'tutor_registers.qualification',
+    //                                 'tutor_registers.tutorEmail',
+    //                                 'tutor_registers.status',
+    //                                 'tutor_mediums.tutorMedium', 'tutor_subjects.tutorSubject']);
 
 
-        return view('adminTutorList', compact('data'));
+    //     return view('adminTutorList', compact('data'));
 
-    }
+    // }
     
+     // List all 
+     public function adminTutorList()
+     {
+         
+         $data = tutorRegister::all();
+ 
+         // Return the advertisement  list view
+         return view('adminTutorList', compact('data'));
+     }
+ 
     public function accept_tutor($id)
     {
         
