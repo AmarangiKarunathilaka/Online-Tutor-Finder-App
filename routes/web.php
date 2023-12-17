@@ -94,6 +94,9 @@ Route::get('/tregister', function () {
 Route::get('/studentDashboard', function () {
     return view('studentDashboard');
 });
+Route::get('/backButton', function () {
+    return view('backButton');
+});
 
 Route::get('/student', function () {
     return view('student');
@@ -338,8 +341,10 @@ Route::get('/rejecttFeedback/{id}', [FeedbackController::class, 'rejecttFeedback
 // view feedback
 Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
 
-// show tutors name in feedback form
-Route::get('/tutorFeedback', [FeedbackController::class, 'showTutorFeedbackForm'])->name('tutor.feedback.form');
+// show tutors name in feedback form (chirantha)
+Route::get('/tutorFeedback', [FeedbackController::class, 'getAcceptedTutorNames'])->name('tutor.feedback.form');
+
+
 
 
 

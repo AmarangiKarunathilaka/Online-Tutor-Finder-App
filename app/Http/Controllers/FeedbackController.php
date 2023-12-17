@@ -152,11 +152,14 @@ class FeedbackController extends Controller
         return redirect() -> back();
     }
 
-    // show tutors name in feedback form
-    public function showTutorFeedbackForm()
+    // show tutors name in feedback form (chirantha)
+    public function getAcceptedTutorNames()
     {
-        $tutors = tutorRegister::pluck('tutorFullName', 'tutorFullName'); // Assuming 'name' is the field you want to display
-        return view('TutorFeedback', compact('tutors'));
+        // Retrieve only the 'name' of accepted tutors from the database
+        $acceptedTutors = tutorRegister::where('status', '=', 'accepted')->pluck('tutorFullName');
+
+        // Pass the accepted tutor names to the view
+        return view('TutorFeedback', ['tutorNames' => $acceptedTutors]);
     }
 
     

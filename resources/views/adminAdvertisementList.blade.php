@@ -53,6 +53,7 @@
 
         
     
+
         <div class="row justify-content-center">
             <!--Ramal 2023.12.14 Button 3-->
             <form action="{{ route('generate_pdf_advertisement') }}" method="post" target="_blank">
@@ -76,6 +77,7 @@
               
             <table class="table" style=" border: 1px solid #110d0d;"> 
             <thead style="width:100%; border: 1px solid #6b6b49; ">
+
                     
                 
                     <tr>
