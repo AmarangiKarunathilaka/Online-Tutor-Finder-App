@@ -323,7 +323,7 @@ Route::get('/adminFeedbackList', [FeedbackController::class, 'adminFeedbackList'
 Route::get('/adminFeedbackList', [FeedbackController::class, 'combinedAdminDisplay'])->name('combinedAdminDisplay');
 
 // view feedback in guest interface
-Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
 
 // accept & reject
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
@@ -398,7 +398,7 @@ Route::post("/reset-password", [ForgetPasswordManager::class, "resetPasswordPost
 //Route::get('/send-email-button', [EmailController::class, 'showEmailForm'])->name('send.email.form');
 //Route::post('/send-email-button', [EmailController::class, 'sendEmail'])->name('send.email');
 
-Route::post('/send-email-button', [studentRegisterController::class, 'sendEmailButton'])->name('send.email.button');
+Route::post('/send-email-button', [studentRegisterController::class, 'Button'])->name('send.email.button');
 Route::get('/send-email-button', [studentRegisterController::class, 'sendEmailButton'])->name('send.email.button');
 
 Route::post('/send-email/{email}', [studentRegisterController::class, 'sendEmail'])->name('send.email');
@@ -417,8 +417,34 @@ Route::get('/admin/tutorList', 'tutorRegisterController@adminTutorList')->name('
 Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor'])->name('accept_tutor');
 Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor'])->name('reject_tutor');
 
+//register Email
+
+Route::get('/welcomeEmail', function () {
+    return view('welcomeEmail');
+});
+Route::get('/welcomeEmail1', function () {
+    return view('welcomeEmail1');
+});
+//Route::post('/register', 'studentRegisterController@register')->name('register');
+Route::post('/register', 'studentRegisterController@studentRegisterInput')->name('register');
+Route::post('/register1', 'tutorRegisterController@tutorRegisterInput')->name('register1');
+
+//logout
+Route::get('/logout', 'LoginController@logout')->name('logout');
+//Route::get('/logout', 'LoginController@logout')->name('logout')->middleware('PreventBackHistory');
 
 
+//Route::post('/studentRegisterInput', [StudentRegisterController::class, 'studentRegisterInput'])->name('student.register');
+//Route::post('/student-email', [studentRegisterController::class, 'studentRegisterInput'])->name('student.register');
+
+//Route::post('/student-email/{email}', [StudentRegisterController::class, 'studentRegisterInput'])->name('student.register');
+
+
+// Route for displaying the email confirmation form
+//Route::get('/student-email/{email}', [StudentRegisterController::class, 'studentRegisterInput'])->name('student.register');
+
+// Route for handling email confirmation
+//Route::get('/confirm-email/{email}', [StudentRegisterController::class, 'confirmEmail'])->name('student.email.confirm');
 //Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
 

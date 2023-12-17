@@ -12,6 +12,8 @@ use Barryvdh\DomPDF\Facade\Pdf;
 //use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
+use App\Mail\WelcomeEmail;
+
 
 class studentRegisterController extends Controller
 {
@@ -19,7 +21,7 @@ class studentRegisterController extends Controller
         return view('sRegister');
     }
 
-
+    
     public function studentRegisterInput(Request $request)
     {
         $rules = [
@@ -53,15 +55,24 @@ class studentRegisterController extends Controller
             // 'studentConfirmPassword'=> $request -> studentReEnterPassword
            ]);
 
+           $user = [
+            'name' => $request->name,
+            'email' => $request->studentEmail,
+            'password' => $request->password
+        ];
         
-
+        if (isset($user['email'])) {
+            Mail::to($user['email'])->send(new WelcomeEmail($user));
+        } else {
+            // Handle the case where the email is not set
+        }
         // Create a new record in the database
         //$register = Register::create($request->all());
  
         // Redirect after successfully creating the record
         //return redirect(route('tregister'));
         $user_type = 'student';
-        return view('login', compact('user_type'));
+        return view('sRegister', compact('user_type'));
     }
 
     //Amare 2023.12.13
@@ -156,5 +167,4 @@ class studentRegisterController extends Controller
         //return redirect()->route('send.email.button')->with('message', 'Email sent successfully!');
 
     }
-
 }
