@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ClassMaterial;
 use App\Models\ClassRequest;
+use App\Models\tutorMedium;
+use App\Models\tutorRegister;
+use App\Models\tutorSubject;
 use Illuminate\Support\Facades\Stroage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +21,22 @@ class ClassMaterialController extends Controller
     
     public function classMaterials()
     {
-        return view('upload-class-material');
+        
+        $userId = Session::get('user_id');
+        $tutorName = tutorRegister::where('tutor_registers.id','=',$userId)
+                                 ->select('tutor_registers.tutorFullName')
+                                ->get();
+
+        $userId = Session::get('user_id');
+        $email = tutorRegister::where('tutor_registers.id','=',$userId)
+                                ->get();
+
+        $userId = Session::get('user_id');
+        $subjects = tutorSubject::where('tutor_subjects.tutorSubject_id','=',$userId)
+                                ->distinct()->pluck('tutorSubject');
+
+                                
+        return view('upload-class-material',compact('tutorName','email','subjects'));;
     }
 
     
@@ -27,8 +45,8 @@ class ClassMaterialController extends Controller
     {
         $userId = Session::get('user_id');
         $classmaterial= new ClassMaterial;
-        $classmaterial->tutorName = $request->tutorName;
-        $classmaterial->email = $request->email;
+        $classmaterial->tutorName = $request->input('tutorName');
+        $classmaterial->email = $request->input('email');
         $classmaterial->subject = $request->subject;
         $classmaterial->title = $request->title;
         $classmaterial->lecNote = $request->lecNote;
