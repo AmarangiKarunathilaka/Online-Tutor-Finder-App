@@ -96,6 +96,9 @@ Route::get('/tregister', function () {
 Route::get('/studentDashboard', function () {
     return view('studentDashboard');
 });
+Route::get('/backButton', function () {
+    return view('backButton');
+});
 
 Route::get('/student', function () {
     return view('student');
