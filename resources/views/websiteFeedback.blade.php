@@ -43,18 +43,24 @@
       <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
         <h1 class="form-title">Website Feedback form</h1>
         <p><span class="highlighted">We value your feedback! Please fill out the form below:</span></p>
-        <form id="website-feedback-form" action="{{url('/wfeedbackInput')}}" method="POST">
+        <form id="website-feedback-form" action="{{url('/wfeedbackInput')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <input type="hidden" name="key" value="1">
+            @foreach ($studentName as $studentName)
             <div class="form-group">
                 
-                <input type="text" id="name" name="name" placeholder="Name"required>
+                <input type="text" id="name" name="name" placeholder="Name" value="{{$studentName->studentFullName}}" disabled/>
             </div>
+            @endforeach
+
+            @foreach ($email as $email)
             <div class="form-group">
                 
-                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="email" id="email" name="email" placeholder="Email" value="{{$email->studentEmail}}" disabled/>
             </div>
+            @endforeach
+
             <div class="form-group">
                 <label for="rating">Rating:</label>
                 <select id="rating" name="rating" required>
