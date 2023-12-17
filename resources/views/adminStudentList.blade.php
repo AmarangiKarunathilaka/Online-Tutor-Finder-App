@@ -58,13 +58,14 @@
                         <th scope="col">studentEmail</th>
                         <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
+                        <th scope="col">sendEmail</th>
                     </tr>
                 </thead>  
 
                 <tbody>
                     @foreach ($students as $student)
                 
-                    <tr>
+                <tr>
                     <th scope="row">{{ $student->id }}</th>
                     <td>{{ $student->studentFullName }}</td>
                     <td>{{ $student->birthday }}</td>
@@ -72,18 +73,20 @@
                     <td>{{ $student->studentPhoneNumber }}</td>
                     <td>{{ $student->studentEmail }}</td>
                     <td>{{ $student->status }}</td>
-                    @if(session('message'))
-                         <div>{{ session('message') }}</div>
-                    @endif
-
-                    <form action="{{ route('send.email', ['email' => $student->studentEmail]) }}" method="POST">
-                    @csrf
-    
-                    <td><a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept">Accept</button>
-                        <a href="{{url('reject_student',$student->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
+                   
+                    <td>    <a href="{{url('accept_student',$student->id)}}"><button type="submit" name="button" value="accept" >Accept </button>
+                            <a href="{{url('reject_student',$student->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
                     </td>
+                    
+                    <td>
+                    <form action="{{ route('send.email', ['email' => $student->studentEmail]) }}" method="POST">
+                        @csrf
+                        <button type="submit" name="button" value="accept">Accept Email</button>
+                        <button type="submit" name="button" value="remove">Remove Email</button>
                     </form>
-                    </tr>
+                    </td>
+                    
+                </tr>
                     @endforeach
                 </tbody>
 

@@ -87,6 +87,7 @@
                                 @endif
                                     </div>
                                     
+
                                     <div class="buttons" style="margin-left:1%;">
                                         <a href="/editTutorProfile" class="btn" >Edit</a>
                                         <input type="checkbox" id="check">
@@ -96,6 +97,7 @@
 
                                    
                                       </div>
+
                                 
 
 
