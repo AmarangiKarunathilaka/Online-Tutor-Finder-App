@@ -177,11 +177,11 @@ Bootstrap 5 HTML CSS Template
                         <div class="col">   
                                     
                             <img src="/uploads/{{ $advertisementMath ->photo }}"  width='50' height='50' class="img img-responsive"/>
-                            <h2>{{ $advertisementMath->tutorName }}</h2>
-                            <p>{{ $advertisementMath->description }}</p>
+                            <h2 style="color: black;">{{ $advertisementMath->tutorName }}</h2>
+                            <p style="color: black;">{{ $advertisementMath->description }}</p>
 
                             <h5>{{ $advertisementMath->subject }}</h5>
-                           <p> <a href="/registration">Register Now</a></p> 
+                            <button style="background: yellow;"> <a href="/registration">Register Now</a></button> 
 
                         </div>
                     @endforeach
