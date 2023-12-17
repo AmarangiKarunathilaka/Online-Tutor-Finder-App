@@ -4,13 +4,15 @@
 
 <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/adminstyle.css">
-    <link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="{{ asset('css/tutorDashboard.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"/>
     
 
     <title>Student Table</title>
@@ -38,17 +40,32 @@
     @extends('adminHomeContent')
     @section('content')
     <section class="home">
-        <div class="text">Student List</div>
+    <header class="header">
+      <div class="header_logo">
+        <a href="#"style="color:#fff;  font-weight: bold; font-size:25px;">Student List</a>
+      </div>
+  
+      
+  
+      
+    </header>
     
 
 
-    <div class="row justify-content-center">
-        <div class="form-box">
-            <div class="container mt-4 ">
-                
-                <table class="table table-success table-striped">
-                    
-                <thead>
+    <div class="main_body">
+        <div class="container">
+            
+     
+        <div class="row d-flex justify-content-center">
+                <div class="col-md-11 mt-5 pt-5">
+                    <div class="row z-depth-3">
+                        <div class="col-sm-4 bg-info rounded-left bg-white" style=" margin-top:-50px;">
+
+                        <section class="attendance">
+            <div class="attendance-list" style=" margin-top:-20px; ">
+              
+            <table class="table" style=" border: 1px solid #110d0d;"> 
+            <thead style="width:100%; border: 1px solid #6b6b49; ">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">studentFullName</th>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{ asset('css/adminstyle.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/report.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tutorDashboard.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"/>
     
     <title>Admin Feedback List</title>
 </head>
@@ -15,17 +16,33 @@
     @extends('adminHomeContent')
     @section('content')
     <section class="home">
-        <div class="text">Feedback Management</div>
+    <header class="header">
+      <div class="header_logo">
+        <a href="#"style="color:#fff;  font-weight: bold; font-size:25px;">Feedback List</a>
+      </div>
+  
+      
+  
+      
+    </header>
     
 
 
-        <div class="row justify-content-center">
-            <div class="form-box">
-                <div class="container mt-4 ">
-                    <h2>Website Feedback by Tutors</h2>
-                    <table class="table table-success table-striped">
-                            
-                        <thead>
+    <div class="main_body">
+        <div class="container">
+            
+     
+        <div class="row d-flex justify-content-center">
+                <div class="col-md-11 mt-5 pt-5">
+                    <div class="row z-depth-3">
+                        <div class="col-sm-4 bg-info rounded-left bg-white" style=" margin-top:-50px;">
+
+                        <section class="attendance">
+            <div class="attendance-list" style=" margin-top:-20px; ">
+            <h2>Website Feedback By Tutors</h2>
+            <table class="table" style=" border: 1px solid #110d0d;"> 
+            <thead style="width:100%; border: 1px solid #6b6b49; ">
+                
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
@@ -60,10 +77,16 @@
 
                     </table><br><br>
 
-                    <h2>Website Feedback by Students</h2>
-                    <table class="table table-success table-striped">
-                            
-                        <thead>
+                 <div class="row d-flex justify-content-center">
+                <div class="col-md-11 mt-5 pt-5">
+                    <div class="row z-depth-3">
+                        <div class="col-sm-4 bg-info rounded-left bg-white" style=" margin-top:-50px;">
+
+                        <section class="attendance">
+            <div class="attendance-list" style=" margin-top:-20px; ">
+            <h2>Website Feedback By Students</h2>  
+            <table class="table" style=" border: 1px solid #110d0d;"> 
+            <thead style="width:100%; border: 1px solid #6b6b49; ">
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
@@ -98,10 +121,16 @@
 
                     </table><br><br>
                     
-                    <h2>Tutor Feedback by Students</h2>
-                    <table class="table table-success table-striped">
-                            
-                        <thead>
+        <div class="row d-flex justify-content-center">
+                <div class="col-md-11 mt-5 pt-5">
+                    <div class="row z-depth-3">
+                        <div class="col-sm-4 bg-info rounded-left bg-white" style=" margin-top:-50px;">
+
+                        <section class="attendance">
+            <div class="attendance-list" style=" margin-top:-20px; ">
+            <h2>Tutor Feedback by Students</h2>
+            <table class="table" style=" border: 1px solid #110d0d;"> 
+            <thead style="width:100%; border: 1px solid #6b6b49; ">
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
