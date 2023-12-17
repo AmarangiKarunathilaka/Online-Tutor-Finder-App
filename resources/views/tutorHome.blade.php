@@ -136,7 +136,7 @@
 
         <div class="text"></div>
 
-        <button id="chat-button">Chat</button>
+       
 
     </section>
    
