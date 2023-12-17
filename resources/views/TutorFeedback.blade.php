@@ -45,16 +45,21 @@
      
                 <h1 class="form-title">Tutor Feedback form</h1>
                 <p><span class="highlighted">We value your feedback! Please let us know about your experience with your tutor.</span></p>
-                <form id="website-feedback-form" action="{{url('/tfeedbackInput')}}" method="POST">
+                <form id="website-feedback-form" action="{{url('/tfeedbackInput')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     
+                    @foreach ($studentName as $studentName)
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name">
+                        
+                        <input type="text" id="name" name="name" placeholder="Name" value="{{$studentName->studentFullName}}" disabled/>
                     </div>
+                    @endforeach
 
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Email">
+                    @foreach ($email as $email)
+                    <div class="form-group">                
+                        <input type="email" id="email" name="email" placeholder="Email" value="{{$email->studentEmail}}" disabled/>
                     </div>
+                    @endforeach
 
                     <div class="form-group">
                         <label for="tutor_select">Select a Tutor:</label>
