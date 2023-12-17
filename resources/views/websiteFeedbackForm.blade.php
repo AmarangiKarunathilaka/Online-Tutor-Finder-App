@@ -17,18 +17,23 @@
         
         <h1 class="form-title">Website Feedback form</h1>
         <p><span class="highlighted">We value your feedback! Please fill out the form below:</span></p>
-        <form id="website-feedback-form" action="{{url('/feedbackInput')}}" method="POST">
-            @csrf
+        <form id="website-feedback-form" action="{{url('/feedbackInput')}}" method="POST" enctype="multipart/form-data">
+            @csrf            
+            
+            @foreach ($tutorName as $tutorName)
+            <div class="form-group">
+                
+                <input type="text" id="name" name="name" placeholder="Name" value="{{$tutorName->tutorFullName}}" disabled/>
+            </div>
+            @endforeach
 
-            <input type="hidden" name="key" value="1">
+            @foreach ($email as $email)
             <div class="form-group">
                 
-                <input type="text" id="name" name="name" placeholder="Name"required>
+                <input type="email" id="email" name="email" placeholder="Email" value="{{$email->tutorEmail}}" disabled/>
             </div>
-            <div class="form-group">
-                
-                <input type="email" id="email" name="email" placeholder="Email">
-            </div>
+            @endforeach
+
             <div class="form-group">
                 <label for="rating">Rating:</label>
                 <select id="rating" name="rating" required>
