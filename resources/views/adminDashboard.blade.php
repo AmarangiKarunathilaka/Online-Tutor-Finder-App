@@ -59,7 +59,7 @@
                     <a href="/adminTutorList"> <button>Registered Tutor List</button></a> 
                 </td>
                 <td>
-                    <a class="click-scroll" href="#section_1"> <button>Accepted Tutor List</button></a>
+                    <a class="click-scroll" href="#section_2"> <button>Accepted Tutor List</button></a>
                 </td>
             </tr>
           </table>
@@ -116,32 +116,31 @@
                 
 
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Tutor Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Payment</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">description</th>
-                        <th scope="col">Subject</th>
-                        <th scope="col">Tutor Id</th>
-                        <th scope="col">Status Accept</th>
+                    <th scope="col">#</th>
+                        <th scope="col">studentFullName</th>
+                        <th scope="col">birthday</th>
+                        <th scope="col">address</th>
+                        <th scope="col">studentPhoneNumber</th>
+                        <th scope="col">studentEmail</th>
+                        <th scope="col">status</th>
+                        
                        
                     </tr>
                 </thead>  
 
                 <tbody>
-                    @foreach ($advertisements as $advertisement)
+                @foreach ($students as $student)
                 
                     <tr>
-                    <th scope="row">{{ $advertisement->id }}</th>
-                    <td>{{ $advertisement->tutorName }}</td>
-                    <td>{{ $advertisement->email }}</td>
-                    <td>{{ $advertisement->payment }}</td>
-                    <td><img src="/uploads/{{ $advertisement ->photo }}"  width='50' height='50' class="img img-responsive"/></td>
-                    <td>{{ $advertisement->description }}</td>
-                    <td>{{ $advertisement->subject }}</td>
-                    <td>{{ $advertisement->tutor_id }}</td>
-                    <td>{{ $advertisement->status }}</td>
+                    <th scope="row">{{ $student->id }}</th>
+                    <td>{{ $student->studentFullName }}</td>
+                    <td>{{ $student->birthday }}</td>
+                    <td>{{ $student->address }}</td>
+                    <td>{{ $student->studentPhoneNumber }}</td>
+                    <td>{{ $student->studentEmail }}</td>
+                    <td>{{ $student->status }}</td>
+                   
+                   
                         
                     </tr>
                     
@@ -149,28 +148,87 @@
                 </tbody>
                     
                 </table>
+            </div>
+            </section>
 
-                <!--
-                <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
-	                 @csrf
-                    <div>
-                       <button style="background-color: #f7e348; padding: 15px; margin: 15px 20px; border-radius: 8px;" type="submit" class="">Download Students PDF</button>
+                        </div>
                     </div>
-                </form>
-
-
-
-            
-            <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button style="background-color: #f7e348;  padding: 15px; margin: 0px 20px; border-radius: 8px;" type="submit" class="">Download Tutors PDF</button>
                 </div>
-            </form>
-            -->
+        </div>
+        </div>
+       </div>
 
+        </section>
+
+
+        <section class="main-course" id="section_2">
+    
+      <div class="main_body" style=" margin-top:-10%; ">
+        <div class="container">
             
-      </section>
+     
+        <div class="row d-flex justify-content-center" >
+                <div class="col-md-11 mt-5 pt-5">
+                    <div class="row z-depth-3">
+                        <div class="col-sm-4 bg-info rounded-left bg-white" style=" margin-top:-50px;">
+
+                        <section class="attendance">
+            <div class="attendance-list" >
+            <h2>Accepted Tutor List</h2>
+            <table class="table" style=" border: 1px solid #110d0d;"> 
+            <thead style="width:100%; border: 1px solid #6b6b49; ">
+                
+
+                    
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">tutorFullName</th>
+                        <th scope="col">tutorPhoneNumber</th>
+                        <th scope="col">qualification</th>
+                        <th scope="col">tutorEmail</th>
+                       
+                        <th scope="col">status</th>
+                        
+                       
+                    </tr>
+                </thead>  
+
+                <tbody>
+                @foreach ($tutors as $tutor)
+                
+                    <tr>
+                    <th scope="row">{{ $tutor->id }}</th>
+                        <td>{{ $tutor->tutorFullName }}</td>
+                        <td>{{ $tutor->tutorPhoneNumber }}</td>
+                        <td>{{ $tutor->qualification }}</td>
+                        <td>{{ $tutor->tutorEmail }}</td>
+                       
+                        <td>{{ $tutor ->status }}</td>
+                   
+                   
+                        
+                    </tr>
+                    
+                    @endforeach
+                </tbody>
+                    
+                </table>
+            </div>
+            </section>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+       </div>
+
+        </section>
+
+
+
+
+
     </section>
   </div>
 

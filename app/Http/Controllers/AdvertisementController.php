@@ -180,7 +180,8 @@ class AdvertisementController extends Controller
     //My 2023.12.14
     public function generate_pdf_advertisement()
     {
-        $advertisements = Advertisement::all(); 
+        $advertisements = Advertisement::all()
+                            ->where('status','=','accepted'); 
         $pdf = Pdf::loadView('downloads/advertisementList',array('advertisements' => $advertisements));
         return $pdf->download('downloads/advertisementList.pdf');
     }
