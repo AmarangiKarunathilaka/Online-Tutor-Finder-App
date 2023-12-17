@@ -203,7 +203,7 @@ class tutorRegisterController extends Controller
         //foreach ($emails as $email) {
 
             $details = [
-                'message' => $request->button == 'accept' ? 'You are accepted. Thank you' : 'We are extremely sorry. You are not accepted.',
+                'message' => $request->button == 'accept' ? 'You are accepted.' : 'We are extremely sorry. You are not accepted.',
                 'loginLink' => $request->button == 'accept' ? 'http://127.0.0.1:8000/login' : null,
             ];
 

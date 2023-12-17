@@ -5,6 +5,10 @@
     <title>Welcome Page</title>
 </head>
 <body>
-    <h1>Welcome to our website!</h1>
+<h1>Welcome to Tutor Finder App!</h1>
+    <p>
+        
+        Your Registration submitted Successfully . Please wait until we accept your registration.
+    </p>
 </body>
 </html>
