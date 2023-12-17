@@ -466,10 +466,9 @@ Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name
 
 
 //Class Request
-Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
+//Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
 
-
-
+Route::get('/classRequest/{id}', [ClassRequestController::class, 'showrequestdetail']);
 
 //nalaka
 //Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
@@ -478,7 +477,7 @@ Route::post('classRequestInput', [ClassRequestController::class, 'classRequestIn
 Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
 
 // view student home
-Route::get('/studentRequestView', [ClassRequestController::class, 'studentRequestView'])->name('studentRequestView');
+//Route::get('/studentRequestView', [ClassRequestController::class, 'studentRequestView'])->name('studentRequestView');
 
 
 Route::get('/acceptRequest/{id}', [ClassRequestController::class, 'acceptRequest']);

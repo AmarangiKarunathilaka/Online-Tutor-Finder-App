@@ -153,7 +153,52 @@
             <div class="attendance-list">
               <h1 style="color:#000;  font-weight: bold; font-size:30px;">class Request List</h1>
               <table class="table">
-                <thead>
+
+              <thead>
+                <tr>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Tutor Name</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Medium</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Accept/Reject</th>
+                    </tr>
+                </thead>  
+
+                <tbody>
+                    
+                <tr>
+                
+                        
+                    @foreach ($requests as $request )
+                
+                    <td>{{ $request->studentName }}</td>
+                    <td>{{ $request->tutorFullName }}</td>
+                    <td>{{ $request->subject }}</td>
+                    <td>{{ $request->medium }}</td>
+                    <td>{{ $request->day }}</td>
+                    <td>{{ $request->time }}</td>
+                    <td>{{ $request->status}}</td>
+                   
+                    
+                    <td>
+                        <a href="{{url('acceptRequest',$request->id)}}"><button type="button" class="accept">Accept </button>
+                        <a href="{{url('rejectRequest',$request->id)}}" ><button type="button" class="remove">Reject</button>
+                    </td>
+                    </tr>
+                  
+                  
+
+                 
+                    @endforeach
+                </tbody>
+
+
+
+
+                <!--<thead>
                   <tr>
                     <th>No</th>
                     <th>Name</th>
@@ -219,7 +264,7 @@
                     <td>4:00PM</td>
                     <td><button>View</button></td>
                   </tr> 
-                </tbody>
+                </tbody>-->
               </table>
             </div>
         

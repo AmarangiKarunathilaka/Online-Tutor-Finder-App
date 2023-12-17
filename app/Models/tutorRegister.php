@@ -50,8 +50,9 @@ class tutorRegister extends Authenticatable
     
     }
 
-    public function clzrequest()
+    public function advertisements()
     {
-        return $this->hasMany(ClassRequest::class, 'tutor_id');
+        return $this->hasMany(Advertisement::class);
     }
+    
 }

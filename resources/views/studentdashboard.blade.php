@@ -73,7 +73,7 @@
                             <h2>{{ $advertisementMath->tutorName }}</h2>
                             <p>{{ $advertisementMath->description }}</p>
                             <h3>{{ $advertisementMath->subject }}</h3>
-                            <button class="register">Register Now</button>
+                            <a href="{{url('classRequest',$advertisementMath->id)}}" ><button type="button" class="register">Register Now</button>
                         </div>
                     @endforeach
             </div>
@@ -98,7 +98,7 @@
                                 <h2>{{ $advertisementPhysic->tutorName }}</h2>
                                 <p>{{ $advertisementPhysic->description }}</p>
                                 <h3>{{ $advertisementPhysic->subject }}</h3>
-                                <button class="register">Register Now</button>
+                                <a href="/classRequest">Register Now</a>
                             </div>
                     @endforeach
             </div>
@@ -123,7 +123,7 @@
                                 <h2>{{ $advertisementChem->tutorName }}</h2>
                                 <p>{{ $advertisementChem->description }}</p>
                                 <h3>{{ $advertisementChem->subject }}</h3>
-                                <button class="register">Register Now</button>
+                                <a href="/classRequest">Register Now</a>
                             </div>
                     @endforeach
             </div>
@@ -146,7 +146,7 @@
                                 <h2>{{ $advertisementBio->tutorName }}</h2>
                                 <p>{{ $advertisementBio->description }}</p>
                                 <h3>{{ $advertisementBio->subject }}</h3>
-                                <button class="register">Register Now</button>
+                                <a href="{{url('classRequest',$advertisementBio->id)}}" ><button type="button" class="register">Register Now</button></a>
                             </div>
                     @endforeach
             </div>
