@@ -135,9 +135,10 @@
                             </div>
                         </div>
                         
-                        
+                        <form action="{{ route('register') }}" method="post">
+        @csrf
                         <br><button type="submit" name="submit" class="btn" style="font-size: 20px; text-align:center; width: 100%"> <b>Register<b> </button>
-                        
+                        </form>
         
                     </form>
                 
