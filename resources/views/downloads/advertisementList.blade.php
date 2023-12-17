@@ -54,7 +54,7 @@
                         <th scope="col">Subject</th>
                         <th scope="col">Tutor Id</th>
                         <th scope="col">Status Accept</th>
-                        <th scope="col">Accept/Reject</th>
+                        
                     </tr>
                 </thead>  
 
@@ -71,8 +71,7 @@
                     <td>{{ $advertisement->subject }}</td>
                     <td>{{ $advertisement->tutor_id }}</td>
                     <td>{{ $advertisement->status }}</td>
-                        <td><a href="{{url('accept_advertisement',$advertisement->id)}}"><button type="button" class="accept">Accept </button>
-                        <a href="{{url('reject_advertisement',$advertisement->id)}}" ><button type="button" class="remove">Reject</button></td>
+                       
                     </tr>
                     
                     @endforeach

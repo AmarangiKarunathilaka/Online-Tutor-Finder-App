@@ -15,7 +15,6 @@ use App\Models\login;
 use Illuminate\Support\Facades\Session;
 
 
-
 class combinedDisplayController extends Controller
 {
     public function combinedDisplay()
