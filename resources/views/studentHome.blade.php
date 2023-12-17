@@ -58,7 +58,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/admintimetable">
+                        <a href="/studentTimetable">
                             <i class='bx bx-note icon' ></i>
                             <span class="text nav-text">Class Time Table</span>
                         </a>
