@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('tutor_registers', function (Blueprint $table) {
-            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+        Schema::table('student_registers', function (Blueprint $table) {
+            $table->dropColumn('status');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('tutor_registers', function (Blueprint $table) {
-            $table->dropColumn('status');
+        Schema::table('student_registers', function (Blueprint $table) {
+            $table->type('status');
         });
     }
 };

@@ -14,8 +14,8 @@ use App\Http\controllers\ClassRequestController;
 use App\Models\Advertisement;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CustomAuthController;
-
 use App\Http\Controllers\combinedDisplayController;
+
 
 
 
@@ -39,7 +39,7 @@ use App\Http\Controllers\TutorProfileController;
 
 //chat
 use App\Events\Message;
-
+use App\Http\Controllers\ChatController;
 use Illuminate\Http\Request;
 
 
@@ -157,9 +157,9 @@ Route::get('/popupBox', function () {
 });
 
 
-// Route::get('/adminHome', function () {
-//     return view('adminHome');
-// });
+Route::get('/admintimetable', function () {
+     return view('admintimetable');
+ });
 
 
 
@@ -207,6 +207,9 @@ Route::get('/editAdvertisement', function () {
 
 
 
+Route::get('/search', function () {
+    return view('search');
+});
 
 
 
@@ -323,6 +326,9 @@ Route::get('/', [CombinedDisplayController::class, 'combinedDisplay'])->name('co
 Route::get('/acceptFeedback/{id}', [FeedbackController::class, 'acceptFeedback']);
 Route::get('/rejectFeedback/{id}', [FeedbackController::class, 'rejectFeedback']);
 
+
+Route::get('/', [combinedDisplayController::class, 'combinedDisplay'])->name('combinedDisplay');
+
 Route::get('/acceptwFeedback/{id}', [FeedbackController::class, 'acceptwFeedback']);
 Route::get('/rejectwFeedback/{id}', [FeedbackController::class, 'rejectwFeedback']);
 
@@ -331,6 +337,9 @@ Route::get('/rejecttFeedback/{id}', [FeedbackController::class, 'rejecttFeedback
 
 // view feedback
 Route::get('/studentDashboard', [StudentDashboardController::class, 'advertisementDisplay'])->name('advertisementDisplay');
+
+// show tutors name in feedback form
+Route::get('/tutorFeedback', [FeedbackController::class, 'showTutorFeedbackForm'])->name('tutor.feedback.form');
 
 
 
@@ -389,13 +398,20 @@ Route::get('/send-email-button', [studentRegisterController::class, 'sendEmailBu
 
 Route::post('/send-email/{email}', [studentRegisterController::class, 'sendEmail'])->name('send.email');
 
-Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student']);
-Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student']);
+ Route::get('/accept_student/{id}', [studentRegisterController::class, 'accept_student'])->name('accept_student');
+ Route::get('/reject_student/{id}', [studentRegisterController::class, 'reject_student'])->name('reject_student');
 
-Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor']);
-Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor']);
+ Route::post('/send-email/{email}', [tutorRegisterController::class, 'sendEmail'])->name('send.email');
+
+Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor'])->name('accept_tutor');
+Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor'])->name('reject_tutor');
 
 Route::get('/admin/studentList', 'studentRegisterController@adminStudentList')->name('adminStudentList');
+Route::get('/admin/tutorList', 'tutorRegisterController@adminTutorList')->name('adminTutorList');
+
+Route::get('/accept_tutor/{id}', [tutorRegisterController::class, 'accept_tutor'])->name('accept_tutor');
+Route::get('/reject_tutor/{id}', [tutorRegisterController::class, 'reject_tutor'])->name('reject_tutor');
+
 
 
 //Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -440,10 +456,8 @@ Route::get('/download/{file}',[ClassMaterialController::class, 'download'])->nam
 Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 
-//TIMETABLE
-//Route::get('/editTutorProfile', [TimetableController::class, 'index']);
-//Route::post('/update-timetable', [TimetableController::class, 'update']);
-//Route::get('/editTutorProfile', [TimetableController::class, 'editTutorProfile'])->name('editTutorProfile');
+//Timetable
+Route::get('/admintimetable', [combinedDisplayController::class, 'admintimetable'])->name('admintimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 
@@ -453,16 +467,20 @@ Route::get('/editTutorProfile', [TutorProfileController::class, 'editTutorProfil
 
 Route::post('/TutorprofileInput',[TutorProfileController::class, 'TutorprofileInput'])->name('TutorprofileInput');
 
-Route::get('/tutorDashboard', [CombinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
+Route::get('/tutorDashboard', [combinedDisplayController::class, 'tutorDashboard'])->name('tutorDashboard');
 
 Route::post('/detailInput',[TutorProfileController::class, 'detailInput'])->name('detailInput');
+
+
+//Class Request
+Route::get('/classRequest', [ClassRequestController::class, 'classRequests']);
 
 
 
 
 //nalaka
-Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
-Route::post('classRequestInput', [ClassRequestController::class, 'uploadClassRequestInput'])->name('uploadClassRequestInput');
+//Route::post('classRequest', [ClassRequestController::class, 'classRequests'])->name('classRequests');
+Route::post('classRequestInput', [ClassRequestController::class, 'classRequestInput'])->name('classRequestInput');
 // view requests in admin
 Route::get('/adminClassRequestList', [ClassRequestController::class, 'adminClassRequestList'])->name('adminClassRequestList');
 
@@ -502,6 +520,10 @@ Route::get('/chatPusher', function () {
     return view('chatPusher');
 });
 
+Route::get('/chatPusherTutor', function () {
+    return view('chatPusherTutor');
+});
+
 
 Route::post('send-message',function (Request $request){
     event(new Message($request->username, $request->message));
@@ -525,4 +547,10 @@ Route::put('/edit/{id}', [AdvertisementController::class, 'updateAdvertisement']
   //  Route::get('/chat', 'ChatController@index');
    // Route::post('/send-message', 'ChatController@sendMessage');
 //});
+
+//search advertisement
+Route::get('/search', [AdvertisementController::class, 'searchTutors'])->name('search');
+
+Route::get('/chatPusher', [ChatController::class, 'chatStudent'])->name('chatStudent');
+Route::get('/chatPusherTutor', [ChatController::class, 'chatTutor'])->name('chatTutor');
 

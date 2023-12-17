@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/adminstyle.css">
+   
     <link href="css/report.css" rel="stylesheet">
     
     <title>Advertisement Table</title>
@@ -38,12 +39,22 @@
     @section('content')
     <section class="home">
         <div class="text">Advertisement List</div>
+
+        
     
         <div class="row justify-content-center">
+            <!--Ramal 2023.12.14 Button 3-->
+            <form action="{{ route('generate_pdf_advertisement') }}" method="post" target="_blank">
+                    @csrf
+                        <div>
+                            <button>Download PDF</button>
+                        </div>
+                </form>
+                </div>
         <div class="form-box">
             <div class="container mt-4 ">
                 
-                <table class="table table-success table-striped">
+                <table class="table table-success table-striped table-responsive">
                     
                 <thead>
                     <tr>
@@ -82,6 +93,7 @@
                     
                 </table>
 
+
                 <!--Ramal 2023.12.14 Button 3-->
                 <form action="{{ route('generate_pdf_advertisement') }}" method="post" target="_blank">
                     @csrf
@@ -90,6 +102,7 @@
                         </div>
                 </form>
 
+                </div>
                  
             </div>
             

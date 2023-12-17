@@ -14,9 +14,11 @@
 
     <link rel="stylesheet" href="css/adminstyle.css">
 
+
     <link href="css/report.css" rel="stylesheet">
 
     <title>Tutor Table</title>
+
 
 </head>
 <body>
@@ -62,6 +64,7 @@
                         <th scope="col">tutorSubject</th>
                         <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
+                        <th scope="col">sendEmail</th>
                     </tr>
                 </thead> 
 
@@ -78,17 +81,17 @@
                         <td>{{ $item->tutorMedium }}</td>
                         <td>{{ $item->tutorSubject}}</td>
                         <td>{{ $item->status }}</td>
-                        @if(session('message'))
-                         <div>{{ session('message') }}</div>
-                    @endif
+                        <td><a href="{{url('accept_tutor',$item->id)}}"><button type="submit" name="button" value="accept">Accept</button>
+                            <a href="{{url('reject_tutor',$item->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
+                        </td>
+                        <td>
+                        <form action="{{ route('send.email', ['email' => $item->tutorEmail]) }}" method="POST">
+                            @csrf
+                            <button type="submit" name="button" value="accept">Accept Email</button>
+                            <button type="submit" name="button" value="remove">Remove Email</button>
+                        </form>
+                        </td>
 
-                    <form action="{{ route('send.email', ['email' => $item->tutorEmail]) }}" method="POST">
-                    @csrf
-    
-                    <td><a href="{{url('accept_tutor',$item->id)}}"><button type="submit" name="button" value="accept">Accept</button>
-                        <a href="{{url('reject_tutor',$item->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
-                    </td>
-                    </form>
                     </tr>
                         
                     @endforeach

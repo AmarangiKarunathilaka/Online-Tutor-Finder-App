@@ -62,8 +62,8 @@
             <div class="menu">
 
             <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
+                    
+                    
                 </li>
 
                 <ul class="menu-links">
@@ -96,7 +96,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/chatPusher">
                             <i class='bx bxs-conversation icon' ></i>
                             <span class="text nav-text">Conversation</span>
                         </a>

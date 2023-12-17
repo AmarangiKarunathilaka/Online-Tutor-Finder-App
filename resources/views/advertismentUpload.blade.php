@@ -31,25 +31,29 @@
       <form action="{{ url('/advertisementInput') }}" method="post" enctype="multipart/form-data">
         @csrf
 
+        @foreach ($tutorName as $tutorName)
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="fullName">Name</label>
             <input type="text"
                     id="fullName"
                     name="fullName"
-                    placeholder="Name to be displayed"/>
+                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}" disabled/>
           </div>
+          @endforeach
+
+          @foreach ($email as $email)
           <div class="user-input-box">
             <label for="email">Email</label>
             <input type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your Email"/>
+                    placeholder="Enter your Email" value="{{$email->tutorEmail}}" disabled/>
           </div>
-          
+          @endforeach
           
           <div class="user-input-box">
-            <label for="title">Payment</label>
+            <label for="title">Class Fee</label>
             <input type="text"
                     id="title"
                     name="payment"
@@ -72,10 +76,24 @@
           <div class="user-input-box">
             <label for="subject">Select Subject</label>
                 <select name="subject" id="subject">
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Chemistry">Biology</option>
+                  @foreach($subjects as $subject)
+                    <option value="{{$subject}}">{{$subject}}</option>
+                  @endforeach 
+                    
+                </select>
+          </div>
+        </div>
+
+        <div class="category-details-box">
+          
+          </br>
+          </br>
+          <div class="user-input-box">
+            <label for="subject">Select Medium</label>
+                <select name="medium" id="medium">
+                  @foreach($medium as $medium)
+                    <option value="{{$medium}}">{{$medium}}</option>
+                  @endforeach 
                     
                 </select>
           </div>

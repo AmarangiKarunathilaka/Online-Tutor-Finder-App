@@ -25,41 +25,42 @@
                     
                 <thead>
                 <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Tutor Id</th>
-                        <th scope="col">Tutor Name</th>
-                        <th scope="col">Student Id</th>
                         <th scope="col">Student Name</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Time</th>
                         <th scope="col">Subject</th>
                         <th scope="col">Medium</th>
+                        <th scope="col">Tutor Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
                         <th scope="col">Status</th>
                         <th scope="col">Accept/Reject</th>
                     </tr>
                 </thead>  
 
                 <tbody>
-                    @foreach ($requests as $request)
+                    
+                <tr>
+                @foreach($studentName as $studentName )
+                        <td>{{ $studentName->studentFullName }}</td>@endforeach
+                    @foreach ($requests as $request )
                 
-                    <tr>
-                    <th scope="row">{{$request->id}}</th>
-                    <td>{{ $request->tutor_id }}</td>
-                    <td>{{ $request->tutor_name }}</td>
-                    <td>{{ $request->student_id }}</td>
-                    <td>{{ $request->student_name }}</td>
-                    <td>{{ $request->date }}</td>
-                    <td>{{ $request->time }}</td>
+                    
                     <td>{{ $request->subject }}</td>
                     <td>{{ $request->medium }}</td>
+                    <td>{{ $request->tutorFullName }}</td>
+                    <td>{{ $request->day }}</td>
+                    <td>{{ $request->time }}</td>
                     <td>{{ $request->status}}</td>
+                   
                     
                     <td>
                         <a href="{{url('acceptRequest',$request->id)}}"><button type="button" class="accept">Accept </button>
                         <a href="{{url('rejectRequest',$request->id)}}" ><button type="button" class="remove">Reject</button>
                     </td>
                     </tr>
-                    
+                  
+                  
+
+                 
                     @endforeach
                 </tbody>
 

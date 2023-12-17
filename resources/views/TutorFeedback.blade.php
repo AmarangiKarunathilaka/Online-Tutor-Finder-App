@@ -32,9 +32,12 @@
                     <div class="form-group">
                         <label for="tutor_select">Select a Tutor:</label>
                         <select id="tutor_select" name="tutor" required>
-                            <option value="tutor 1">Tutor 1</option>
+                            @foreach($tutors as $tutorId => $tutorName)
+                                <option value="{{ $tutorId }}">{{ $tutorName }}</option>
+                            @endforeach
+                            <!-- <option value="tutor 1">Tutor 1</option>
                             <option value="tutor 2">Tutor 2</option>
-                            <option value="tutor 3">Tutor 3</option>
+                            <option value="tutor 3">Tutor 3</option> -->
                             <!-- Add more tutors as needed -->
                         </select>
                     </div>
