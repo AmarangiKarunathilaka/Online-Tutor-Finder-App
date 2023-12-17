@@ -32,8 +32,8 @@
                     <div class="form-group">
                         <label for="tutor_select">Select a Tutor:</label>
                         <select id="tutor_select" name="tutor" required>
-                            @foreach($tutors as $tutorId => $tutorName)
-                                <option value="{{ $tutorId }}">{{ $tutorName }}</option>
+                            @foreach($tutorNames as $tutorName)
+                                <option value="{{ $tutorName }}">{{ $tutorName }}</option>
                             @endforeach
                             <!-- <option value="tutor 1">Tutor 1</option>
                             <option value="tutor 2">Tutor 2</option>
