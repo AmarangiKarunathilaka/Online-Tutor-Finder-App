@@ -19,28 +19,31 @@
      
             
         <div class="main-user-info">
+        @foreach ($tutorName as $tutorName)
           <div class="user-input-box">
             <label for="tutorName">Name</label>
             <input type="text"
                     id="tutorName"
                     name="tutorName"
-                    placeholder="Enter Full Name"/>
+                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}" />
+                    @endforeach
           </div>
+          @foreach ($email as $email)
           <div class="user-input-box">
             <label for="email">Email</label>
             <input type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter Email"/>
+                    placeholder="Enter your Email" value="{{$email->tutorEmail}}"/>
+                    @endforeach
           </div>
           
           <div class="user-input-box">
             <label for="subject">Select Subject</label>
                 <select name="subject" id="subject">
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Biology ">Biology</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Physics">Physics</option>
+                @foreach($subjects as $subject)
+                    <option value="{{$subject}}">{{$subject}}</option>
+                  @endforeach 
                     
                 </select>
           </div>

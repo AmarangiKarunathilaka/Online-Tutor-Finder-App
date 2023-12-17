@@ -114,27 +114,32 @@
             <h1 class="form-title">Profile Details</h1>
             
         <div class="main-user-info">
+        @foreach ($tutorName as $tutorName)
           <div class="user-input-box">
             <label for="tutorName">Name</label>
             <input type="text"
                     id="tutorName"
                     name="tutorFullName"
-                    placeholder="Enter Full Name"/>
+                    placeholder="Name to be displayed" value="{{$tutorName->tutorFullName}}" />
+                    @endforeach
           </div>
+          @foreach ($email as $email)
           <div class="user-input-box">
             <label for="email">Email</label>
             <input type="email"
                     id="email"
                     name="tutorEmail"
-                    placeholder="Enter Email"/>
+                    placeholder="Enter your Email" value="{{$email->tutorEmail}}"/>
+                    @endforeach
           </div>
-
+          @foreach ($phon as $phon)
           <div class="user-input-box">
             <label for="num">Contact No.</label>
             <input type="text"
                     id="num"
                     name="tutorPhoneNumber"
-                    placeholder="+94"/>
+                    placeholder="+94" value="{{$phon->tutorPhoneNumber}}"/>
+                    @endforeach
           </div>
           
          
@@ -149,10 +154,10 @@
             <div class="user-input-box">
             <label for="subject">Select Subject</label>
                 <select name="subject" id="subject">
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Biology ">Biology</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Physics">Physics</option>
+                @foreach($subjects as $subject)
+                    <option value="{{$subject}}">{{$subject}}</option>
+                  @endforeach 
+                  
                     
                 </select>
           </div>
@@ -161,9 +166,10 @@
           <div class="user-input-box">
             <label for="subject">Select Medium</label>
                 <select name="medium" id="medium">
-                    <option value="sinhala">Sinhala</option>
-                    <option value="english">English</option>
-                    <option value="tamil">Tamil</option>
+                @foreach($medium as $medium)
+                    <option value="{{$medium}}">{{$medium}}</option>
+                  @endforeach 
+                   
                     
                 </select>
           </div>
