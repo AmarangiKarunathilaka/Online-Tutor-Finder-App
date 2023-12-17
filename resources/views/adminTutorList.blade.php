@@ -60,8 +60,7 @@
                         <th scope="col">tutorPhoneNumber</th>
                         <th scope="col">qualification</th>
                         <th scope="col">tutorEmail</th>
-                        <th scope="col">tutorMedium</th>
-                        <th scope="col">tutorSubject</th>
+                       
                         <th scope="col">status</th>
                         <th scope="col">Accept/Remove</th>
                         <th scope="col">sendEmail</th>
@@ -78,8 +77,7 @@
                         <td>{{ $item->tutorPhoneNumber }}</td>
                         <td>{{ $item->qualification }}</td>
                         <td>{{ $item->tutorEmail }}</td>
-                        <td>{{ $item->tutorMedium }}</td>
-                        <td>{{ $item->tutorSubject}}</td>
+                       
                         <td>{{ $item->status }}</td>
                         <td><a href="{{url('accept_tutor',$item->id)}}"><button type="submit" name="button" value="accept">Accept</button>
                             <a href="{{url('reject_tutor',$item->id)}}" ><button type="submit" name="button" value="remove">Remove</button>
