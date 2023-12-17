@@ -18,4 +18,5 @@ class TutorProfile extends Model
     {
         return $this->belongsTo(tutorRegister::class, 'tutor_id');
     }
+    
 }
