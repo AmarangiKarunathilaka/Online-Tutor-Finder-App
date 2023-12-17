@@ -13,6 +13,8 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
+use App\Mail\WelcomeEmail1;
+
 
 
 class tutorRegisterController extends Controller
@@ -111,12 +113,24 @@ class tutorRegisterController extends Controller
             ]);
         } 
         
-        $user_type = 'tutor';
-        return view('login', compact('user_type'));
+     
+     $user1 = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => $request->password
+    ];
+    
+    if (isset($user1['email'])) {
+        Mail::to($user1['email'])->send(new WelcomeEmail1($user1));
+    } else {
+        // Handle the case where the email is not set
+    }
+    
+    $user_type = 'tutor';
+    return view('tregister', compact('user_type'));
 
-        // return redirect() -> back();
-     }
-
+    // return redirect() -> back();
+    }
 
      //Ramal 2023.12.13
      public function generate_pdf_tutor()
