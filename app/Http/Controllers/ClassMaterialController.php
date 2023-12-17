@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ClassMaterial;
+use App\Models\ClassRequest;
 use Illuminate\Support\Facades\Stroage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -82,15 +83,26 @@ class ClassMaterialController extends Controller
 
     public function maths()
     {
+
         $note = ClassMaterial::where('status','=','active')
-                            ->where('subject','=','mathematics')
-                            ->where('lecNote','=','ClassNote')
-                            ->get();
-        
+        ->where('subject','=','mathematics')
+        ->where('lecNote','=','ClassNote')
+        ->get();
+
+        $userId = Session::get('user_id');
+    
+        $requests = ClassRequest::where('class_requests.student_id','=', $userId)
+                                ->where('status','=','accepted')
+                                ->get();
+                                  
+                                $combinedResults = $requests->merge($note);
+                              
         $ass = ClassMaterial::where('status','=','active')
                             ->where('subject','=','mathematics')
                             ->where('lecNote','=','Assignment')
                             ->get();
+
+        $combinedass = $requests->intersect($ass);
         
         $ref = ClassMaterial::where('status','=','active')
                             ->where('subject','=','mathematics')
@@ -98,7 +110,7 @@ class ClassMaterialController extends Controller
                             ->get();
         
 
-        return view('materialContent.maths', compact('note','ass','ref'));
+        return view('materialContent.maths', compact('note','ass','ref','combinedResults','combinedass'));
     }
 
     public function chemistry()

@@ -36,6 +36,7 @@ class AdvertisementController extends Controller
         $advertisement->email = $request->input('email');
         $advertisement->payment = $request -> payment;
         $advertisement->subject = $request->subject;
+        $advertisement->medium = $request->medium;
         $advertisement->photo = $request->photo;
         $advertisement->description = $request -> message;
 
@@ -179,6 +180,6 @@ class AdvertisementController extends Controller
     }
 
 
-
+   
 
 }
