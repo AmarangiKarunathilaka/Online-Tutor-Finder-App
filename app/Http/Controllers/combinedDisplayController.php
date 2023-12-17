@@ -538,7 +538,214 @@ public function admintimetable()
                                         ,'time21','time22','time23','time24','time25','time26','time27','time28'));
 }
 
+//student class time table 
 
+
+public function studentTimetable()
+{   
+
+
+    $time1 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','sunday')
+                    ->where('time','=','8:00 AM - 10:00 AM')
+                    ->get();
+
+    $time2 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','sunday')
+                    ->where('time','=','10:00 AM - 12:00 PM')
+                    ->get();
+
+    $time3 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','sunday')
+                    ->where('time','=','02:00 PM - 04:00 PM')
+                    ->get();
+
+    $time4 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','sunday')
+                    ->where('time','=','04:00 PM - 06:00 PM')
+                    ->get();
+
+    $time5 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','monday')
+                    ->where('time','=','8:00 AM - 10:00 AM')
+                    ->get();
+
+    $time6 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','monday')
+                    ->where('time','=','10:00 AM - 12:00 PM')
+                    ->get();
+
+    $time7 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','monday')
+                    ->where('time','=','02:00 PM - 04:00 PM')
+                    ->get();
+
+    $time8 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','monday')
+                    ->where('time','=','04:00 PM - 06:00 PM')
+                    ->get();
+    
+    $time9 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','tueseday')
+                    ->where('time','=','8:00 AM - 10:00 AM')
+                    ->get();
+
+    $time10 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','tueseday')
+                    ->where('time','=','10:00 AM - 12:00 PM')
+                    ->get();
+
+    $time11 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','tueseday')
+                    ->where('time','=','02:00 PM - 04:00 PM')
+                    ->get();
+
+    $time12 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','tueseday')
+                    ->where('time','=','04:00 PM - 06:00 PM')
+                    ->get();
+
+    $time13 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','wednesday')
+                    ->where('time','=','8:00 AM - 10:00 AM')
+                    ->get();
+
+    $time14 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','wednesday')
+                    ->where('time','=','10:00 AM - 12:00 PM')
+                    ->get();
+
+    $time15 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','wednesday')
+                    ->where('time','=','02:00 PM - 04:00 PM')
+                    ->get();
+
+    $time16 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','wednesday')
+                    ->where('time','=','04:00 PM - 06:00 PM')
+                    ->get();
+
+    $time17 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','thursday')
+                    ->where('time','=','8:00 AM - 10:00 AM')
+                    ->get();
+
+    $time18 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','thursday')
+                    ->where('time','=','10:00 AM - 12:00 PM')
+                    ->get();
+
+    $time19 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','thursday')
+                    ->where('time','=','02:00 PM - 04:00 PM')
+                    ->get();
+
+    $time20 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','thursday')
+                    ->where('time','=','04:00 PM - 06:00 PM')
+                    ->get();
+
+    $time21 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','friday')
+                    ->where('time','=','8:00 AM - 10:00 AM')
+                    ->get();
+
+    $time22 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','friday')
+                    ->where('time','=','10:00 AM - 12:00 PM')
+                    ->get();
+
+    $time23 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','friday')
+                    ->where('time','=','02:00 PM - 04:00 PM')
+                    ->get();
+
+    $time24 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','friday')
+                    ->where('time','=','04:00 PM - 06:00 PM')
+                    ->get();
+    
+    $time25 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','saturday')
+                    ->where('time','=','8:00 AM - 10:00 AM')
+                    ->get();
+
+    $time26 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','saturday')
+                    ->where('time','=','10:00 AM - 12:00 PM')
+                    ->get();
+
+    $time27 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','saturday')
+                    ->where('time','=','02:00 PM - 04:00 PM')
+                    ->get();
+
+    $time28 = Timetable::join('tutor_registers', 'timetables.tutor_id', '=', 'tutor_registers.id')
+                    ->join('tutor_subjects', 'timetables.tutor_id', '=', 'tutor_subjects.id')
+                    ->select('timetables.*', 'tutor_registers.tutorFullName','tutor_subjects.tutorSubject')
+                    ->where('day','=','saturday')
+                    ->where('time','=','04:00 PM - 06:00 PM')
+                    ->get();
+    
+    
+    return view('studentTimetable', compact('time1','time2','time3','time4','time5','time6','time7','time8','time9'
+                                        ,'time10','time11','time12','time13','time14','time15','time16','time17','time18','time19','time20'
+                                        ,'time21','time22','time23','time24','time25','time26','time27','time28'));
+}
     
 
 }

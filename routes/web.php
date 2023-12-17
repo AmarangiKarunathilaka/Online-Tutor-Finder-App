@@ -164,6 +164,10 @@ Route::get('/admintimetable', function () {
      return view('admintimetable');
  });
 
+ Route::get('/studentTimetable', function () {
+    return view('studentTimetable');
+});
+
 
 
 Route::get('/adminAdvertisementList', function () {
@@ -289,6 +293,7 @@ Route::get('/editTutorProfile', function () {
 Route::get('/advertismentUpload', function () {
     return view('advertismentUpload');
 });
+
 
 Route::get('/classRequestList', function () {
     return view('classRequestList');
@@ -493,6 +498,8 @@ Route::get('/view/{id}',[ClassMaterialController::class, 'view'])->name('view');
 
 //Timetable
 Route::get('/admintimetable', [combinedDisplayController::class, 'admintimetable'])->name('admintimetable');
+
+Route::get('/studentTimetable', [combinedDisplayController::class, 'studentTimetable'])->name('studentTimetable');
 
 Route::post('/timeInput',[TimetableController::class, 'timeInput'])->name('timeInput');
 

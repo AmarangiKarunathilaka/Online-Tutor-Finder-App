@@ -87,7 +87,7 @@
         <i class='bx bx-table' ></i>
           <h3>Time Table</h3>
           <p>Join Over 1 million Students.</p>
-          <a href="/admintimetable" class="button" style="padding:5px; margin-left:35%; margin-top:10%;"><button>Open</button></a>
+          <a href="/admintimetable" class="button" style="padding:5px; margin-left:4%; margin-top:10%;"><button>Open</button></a>
         </div>
       </div>
 
