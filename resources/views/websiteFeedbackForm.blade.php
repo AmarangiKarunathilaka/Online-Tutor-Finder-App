@@ -23,14 +23,14 @@
             @foreach ($tutorName as $tutorName)
             <div class="form-group">
                 
-                <input type="text" id="name" name="name" placeholder="Name" value="{{$tutorName->tutorFullName}}" disabled/>
+                <input type="text" id="name" name="name" placeholder="Name" value="{{$tutorName->tutorFullName}}" />
             </div>
             @endforeach
 
             @foreach ($email as $email)
             <div class="form-group">
                 
-                <input type="email" id="email" name="email" placeholder="Email" value="{{$email->tutorEmail}}" disabled/>
+                <input type="email" id="email" name="email" placeholder="Email" value="{{$email->tutorEmail}}" />
             </div>
             @endforeach
 

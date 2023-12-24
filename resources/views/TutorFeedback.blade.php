@@ -51,13 +51,13 @@
                     @foreach ($studentName as $studentName)
                     <div class="form-group">
                         
-                        <input type="text" id="name" name="name" placeholder="Name" value="{{$studentName->studentFullName}}" disabled/>
+                        <input type="text" id="name" name="name" placeholder="Name" value="{{$studentName->studentFullName}}" />
                     </div>
                     @endforeach
 
                     @foreach ($email as $email)
                     <div class="form-group">                
-                        <input type="email" id="email" name="email" placeholder="Email" value="{{$email->studentEmail}}" disabled/>
+                        <input type="email" id="email" name="email" placeholder="Email" value="{{$email->studentEmail}}" />
                     </div>
                     @endforeach
 

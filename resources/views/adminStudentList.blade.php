@@ -78,6 +78,15 @@
   
       
     </header>
+
+    
+        <!--Ramal 2023.12.14 Button 1-->
+        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
+	        @csrf
+                <div>
+                    <button class="button1">Download PDF</button>
+                </div>
+        </form>
     
 
 
@@ -142,13 +151,6 @@
         </div>
 
 
-        <!--Ramal 2023.12.14 Button 1-->
-        <form action="{{ route('generate_pdf_student') }}" method="post" target="_blank">
-	        @csrf
-                <div>
-                    <button class="button1">Download PDF</button>
-                </div>
-        </form>
 
 
     </div>

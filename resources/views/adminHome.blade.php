@@ -17,23 +17,7 @@
     <nav class="sidebar close">
         <header>
 
-            <!-- Notification Panel -->
-            <div class="notification-panel">
-                <div class="notification-icon" id="notificationIcon">
-                    <i class='bx bx-bell'></i>
-                    <!-- <span class="badge">3</span> -->
-                </div>
-
-                <div class="notification-content">
-                    <h3>Notifications</h3>
-                    <ul>
-                        <li></li>
-                        <li>New message received</li>
-                        <li>Class request accepted</li>
-                        <li>Advertisement uploaded</li>
-                    </ul>
-                </div>
-            </div>
+            
             
             <div class="image-text">
                 <span class="image">
@@ -107,12 +91,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="/report">
-                            <i class='bx bx-edit icon' ></i>
-                            <span class="text nav-text">Reports</span>
-                        </a>
-                    </li>
+                    
 
                 </ul>
             </div>

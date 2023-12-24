@@ -15,9 +15,11 @@ class AdminDashboardController extends Controller
         $studentCount = studentRegister::count();
         $tutorCount = tutorRegister::count();
         //$classCount = ClassRequest::count();
+        $students = studentRegister::where('status','=','accepted')->get();
+        $tutors = tutorRegister::where('status','=','accepted')->get();
         $advertisements = Advertisement::where('status','=','accepted')->get();
 
-        return view('adminDashboard', compact('studentCount', 'tutorCount','advertisements'));
+        return view('adminDashboard', compact('studentCount', 'tutorCount', 'students','tutors', 'advertisements'));
     }
 
     public function adminDashboard()

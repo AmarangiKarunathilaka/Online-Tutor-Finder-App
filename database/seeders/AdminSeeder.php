@@ -19,8 +19,8 @@ class AdminSeeder extends Seeder
 
         AdminRegister::create([
             'adminName' => 'Admin User',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin')
+            'email' => 'onlinetutorfinderapp@gmail.com',
+            'password' => Hash::make('Tutorfinder@2023')
         ]);
     }
 }

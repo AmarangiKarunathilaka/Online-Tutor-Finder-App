@@ -68,6 +68,7 @@
     <section class="home">
     <header class="header">
       <div class="header_logo">
+
       <a href="/adminDashboard">
             <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
         <a href="#"style="color:#fff;  font-weight: bold; margin-left:20px; font-size:25px;">Tutor List</a>
@@ -76,8 +77,18 @@
       
   
       
+
+        <a href="#"style="color:#fff;  font-weight: bold; font-size:25px;">Tutor List</a>
+    </div> 
+
     </header>
-    
+           <!-- Ramal 2023.12.13 Button 2 -->
+           <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button class="button1">Download PDF</button>
+                </div>
+            </form>
 
 
     <div class="main_body">
@@ -143,13 +154,7 @@
         </div>
 
         
-                 <!-- Ramal 2023.12.13 Button 2 -->
-            <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button class="button1">Download PDF</button>
-                </div>
-            </form>
+          
 
 
 
