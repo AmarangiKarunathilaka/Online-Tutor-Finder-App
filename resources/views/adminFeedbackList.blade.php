@@ -9,7 +9,33 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     rel="stylesheet"/>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+          
+        
+        button,.fa{
+            color: #383838;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .fa{
+            margin-left: -10px;
+            font-size: 20px;
+            padding: 10px 18px;
+        }
+        #back,.fa-mail-forward{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        
+        .fa-mail-reply{
+            background: white;
+        }
+        
+    </style>
+        
     <title>Admin Feedback List</title>
 </head>
 <body>
@@ -18,7 +44,9 @@
     <section class="home">
     <header class="header">
       <div class="header_logo">
-        <a href="#"style="color:#fff;  font-weight: bold; font-size:25px;">Feedback List</a>
+      <a href="/adminDashboard">
+            <i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+        <a href="#"style="color:#fff; margin-left:20px; font-weight: bold; font-size:25px;">Feedback List</a>
       </div>
   
       
