@@ -153,7 +153,7 @@ class AdvertisementController extends Controller
         }
 
         $advertisement->update();
-        return redirect()->back()-with('status','advertisement updated successfully');
+        return redirect()->back();
 
 
     }

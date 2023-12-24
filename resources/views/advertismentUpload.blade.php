@@ -200,7 +200,7 @@
                             <h2>{{ $advertisement->tutorName }}</h2>
                             <p>{{ $advertisement->description }}</p>
                             <h3>{{ $advertisement->subject }}</h3>
-                            <a href="{{url('update_advertisement',$advertisement->id)}}" ><button type="button" class="register">Update Advertisement</button>
+                            <a href="{{url('update_advertisement',$advertisement->id)}}" ><button type="button" class="register">Update</button>
                             <a href="{{url('delete_advertisement',$advertisement->id)}}" ><button type="button" class="register">Delete</button>
                         </div>
                     @endforeach

@@ -298,7 +298,7 @@ Bootstrap 5 HTML CSS Template
                                 <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
                                     <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                         <p class="text-white mb-0">
-                                            <strong>{{ $feedback->name }}</strong> ( <small>Student</small> )
+                                            <strong>{{ $feedback->name }}</strong> ( <small>Tutor</small> )
                                         </p>
 
                                         <div class="reviews-icons">
@@ -316,55 +316,62 @@ Bootstrap 5 HTML CSS Template
                                                
                                         
 
-                    <!-- <div class="reviews-thumb">
-                        <div class="reviews-body">
-                            <h4>Please recommend Tutor4u website to your friends.</h4>
-                        </div>
+                    @if(isset($wfeedback) && count($wfeedback)>0)
+                        @foreach ($wfeedback as $wfeedback)
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h4>{{ $wfeedback->message }}</h4>
+                                </div>
 
-                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                            
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>{{ $wfeedback->name }}</strong> ( <small>Student</small> )
+                                        </p>
 
-                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                <p class="text-white mb-0">
-                                    <strong>Helen</strong>, <small>Client</small>
-                                </p>
-
-                                <div class="reviews-icons">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
+                                        <div class="reviews-icons">
+                                            @for ($i = 0; $i <= 4; $i++)
+                                            <i class="bi-star-fill{{ $i >= $wfeedback->rating ? 'active' : '' }}"></i>
+                                            @endfor
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> -->
+                        @endforeach
+                    @else
+                        <p>No reviews found</p>
+                    @endif
                     
 
-                    <!-- <div class="reviews-thumb">
-                        <div class="reviews-body">
-                            <h4>Thank you for visiting Tooplate to download free templates.</h4>
-                        </div>
+                    @if(isset($tfeedback) && count($tfeedback)>0)
+                        @foreach ($tfeedback as $tfeedback)
+                            <div class="reviews-thumb">
+                                <div class="reviews-body">
+                                    <h6>{{ $tfeedback->tutor }} - Tutor</h6>
+                                    <h4>{{ $tfeedback->message }}</h4>
+                                </div>
 
-                        <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                            
+                                <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                        <p class="text-white mb-0">
+                                            <strong>{{ $tfeedback->name }}</strong> ( <small>Student</small> )
+                                        </p>
 
-                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                <p class="text-white mb-0">
-                                    <strong>Susan</strong>, <small>Boss</small>
-                                </p>
-
-                                <div class="reviews-icons">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
+                                        <div class="reviews-icons">
+                                            @for ($i = 0; $i <= 4; $i++)
+                                            <i class="bi-star-fill{{ $i >= $tfeedback->rating ? 'active' : '' }}"></i>
+                                            @endfor
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> -->
+                        @endforeach
+                    @else
+                        <p>No reviews found</p>
+                    @endif
+                    
                 </div>
+
 
                 <!-- <div class="col-lg-12 col-12">
                     <p class="d-flex justify-content-center align-items-center mt-lg-5">Write some reviews on <a href="#" class="custom-btn btn ms-3"><i class="bi-facebook me-2"></i>facebook</a></p>

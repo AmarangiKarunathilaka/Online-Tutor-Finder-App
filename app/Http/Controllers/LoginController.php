@@ -40,7 +40,7 @@ class LoginController extends Controller
             $user = Auth::guard($guard)->user();
 
             // Check the 'status' column value
-            $status = $user->status; // Assuming 'status' is the column name, update it accordingly
+            //$status = $user->status; // Assuming 'status' is the column name, update it accordingly
 
 
             //if ($guard == 'admin') {
