@@ -43,13 +43,15 @@
     <header class="header">
       <div class="header_logo">
         <a href="#"style="color:#fff;  font-weight: bold; font-size:25px;">Tutor List</a>
-      </div>
-  
-      
-  
-      
+    </div> 
     </header>
-    
+           <!-- Ramal 2023.12.13 Button 2 -->
+           <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
+	            @csrf
+                <div>
+                    <button class="button1">Download PDF</button>
+                </div>
+            </form>
 
 
     <div class="main_body">
@@ -115,13 +117,7 @@
         </div>
 
         
-                 <!-- Ramal 2023.12.13 Button 2 -->
-            <form action="{{ route('generate_pdf_tutor') }}" method="post" target="_blank">
-	            @csrf
-                <div>
-                    <button class="button1">Download PDF</button>
-                </div>
-            </form>
+          
 
 
 

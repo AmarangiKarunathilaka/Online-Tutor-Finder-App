@@ -50,7 +50,7 @@
 <section class="home">
     <header class="header">
       <div class="header_logo">
-        <a href="#" style="color:#000;  font-weight: bold; font-size:22px;">Dashboard</a>
+        <a href="#" style="color:#fff;  font-weight: bold; font-size:22px;">Dashboard</a>
       </div>
   
       
